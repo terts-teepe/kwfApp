@@ -43,4 +43,4 @@ app.listen(3000, () => {
   console.log('Server running')
 })
 
-module.exports = app;
+// module.exports = app;
