@@ -11,8 +11,8 @@ const express = require('express'),
       login = require('./routes/login'),
       logout = require('./routes/logout'),
       index = require('./routes/index'),
-      register = require('./routes/register');
-const profile = require('./routes/profile');
+      register = require('./routes/register'),
+      profile = require('./routes/profile');
 
 
 // View engine setup
