@@ -1,18 +1,18 @@
 // Libraries
-const express = require('express'),
-	    path = require('path'),
-      session = require('express-session'),
-      bodyParser = require('body-parser'),
-      db = require(__dirname + '/models/database.js'),
-      app = express(),
-      bcrypt = require('bcrypt'),
+const express = require('express');
+const path = require('path');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const db = require(__dirname + '/models/database.js');
+const app = express();
+const bcrypt = require('bcrypt');
 
 // Including usage of routes
-      login = require('./routes/login'),
-      logout = require('./routes/logout'),
-      index = require('./routes/index'),
-      register = require('./routes/register'),
-      profile = require('./routes/profile');
+const login = require('./routes/login');
+const logout = require('./routes/logout');
+const index = require('./routes/index');
+const register = require('./routes/register');
+const profile = require('./routes/profile');
 
 
 // View engine setup
