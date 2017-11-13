@@ -1,28 +1,25 @@
 // Libraries
-const express = require('express');
-const path = require('path');
-const session = require('express-session');
-const bodyParser = require('body-parser');
-const db = require(__dirname + '/models/database.js')
-const app = express();
+const express = require('express'),
+	  path = require('path'),
+      session = require('express-session'),
+      bodyParser = require('body-parser'),
+      db = require(__dirname + '/models/database.js'),
+      app = express(),
+      bcrypt = require('bcrypt'),
 
 // Including usage of routes
-const login = require('./routes/login');
-const logout = require('./routes/logout');
-const index = require('./routes/index');
-const register = require('./routes/register');
+      login = require('./routes/login'),
+      logout = require('./routes/logout'),
+      index = require('./routes/index'),
+      register = require('./routes/register');
 
-const bcrypt = require('bcrypt');
 
 // View engine setup
 app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'pug');
 
 // Middleware
-app.use(bodyParser.json()); //activates middleware of body-parser -- request.body is nu beschikbaar onder elke app.post
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use('/', bodyParser()); //creates key-value pairs request.body in app.post, e.g. request.body.username
 
 app.use(express.static(path.join(__dirname, 'public'))); //To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express.
 

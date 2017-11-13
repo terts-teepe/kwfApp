@@ -8,9 +8,7 @@ router.get('/', function(req, res) {
   res.render('login')
 })
 
-router.post('/', bodyParser.urlencoded({
-  extended: true
-}), function(request, response) {
+router.post('/', function(request, response) {
   if (request.body.username.length === 0) {
     response.redirect('/login?message=' + encodeURIComponent("Please fill out your username"));
     return;
