@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+	head
+		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+		link(href ='css/home.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+	body
+		.container
+			.text-center.col-md-4.col-md-push-4.col-xs-12.col-xs-push-3
+				h1 Friend magnet
+				form(method='post', action='/login', autocomplete="off")
+					button
+						a(href='/login') Sign In
+					p Don't have an account yet?
+					a(href='/register') Sign up
