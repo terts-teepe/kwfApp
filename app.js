@@ -5,15 +5,15 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       db = require(__dirname + '/models/database.js'),
       app = express(),
+      bcrypt = require('bcrypt'),
 
 // Including usage of routes
       login = require('./routes/login'),
       logout = require('./routes/logout'),
-
-      bcrypt = require('bcrypt');
+      index = require('./routes/index');
 
 // View engine setup
-app.set('views', path.join(__dirname, 'src/views'));
+app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'pug');
 
 // Middleware
@@ -31,6 +31,7 @@ app.use(session({
 //Routes
 app.use('/login', login);
 app.use('/logout', logout);
+app.use('/index', index);
 
 // Running server
 app.listen(3000, () => {
