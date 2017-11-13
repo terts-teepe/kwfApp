@@ -9,6 +9,7 @@ const app = express();
 // Including usage of routes
 const login = require('./routes/login');
 const logout = require('./routes/logout');
+const index = require('./routes/index');
 
 const bcrypt = require('bcrypt');
 
@@ -34,6 +35,7 @@ app.use(session({
 //Routes
 app.use('/login', login);
 app.use('/logout', logout);
+app.use('/index', index);
 
 // Running server
 app.listen(3000, () => {
