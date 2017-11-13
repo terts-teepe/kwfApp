@@ -6,10 +6,11 @@ html(lang='en')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		.container
-			.text-center.col-md-4.col-md-push-4.col-xs-12.col-xs-push-3
-				h1 Friend magnet
-				form(method='post', action='/login', autocomplete="off")
-					button
-						a(href='/login') Sign In
-					p Don't have an account yet?
-					a(href='/register') Sign up
+			.col-md-4.col-md-push-4.col-xs-8.col-xs-push-2.text-center
+				.myForm
+					h1.header Friend magnet
+					form(method='post', action='/login', autocomplete="off")
+						button.btn.btn-lg
+							a(href='/login') Sign In
+						p Don't have an account yet?
+						a(href='/register') Sign up
