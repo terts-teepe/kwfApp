@@ -1,6 +1,6 @@
 // Libraries
 const express = require('express'),
-	    path = require('path'),
+	  path = require('path'),
       session = require('express-session'),
       bodyParser = require('body-parser'),
       db = require(__dirname + '/models/database.js'),
@@ -10,7 +10,9 @@ const express = require('express'),
 // Including usage of routes
       login = require('./routes/login'),
       logout = require('./routes/logout'),
-      index = require('./routes/index');
+      index = require('./routes/index'),
+      register = require('./routes/register');
+
 
 // View engine setup
 app.set('views', path.join(__dirname, '/src/views'));
@@ -32,6 +34,7 @@ app.use(session({
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/index', index);
+app.use('/register', register);
 
 // Running server
 app.listen(3000, () => {
