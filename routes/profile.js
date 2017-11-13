@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models/database.js');
 const bodyParser = require('body-parser');
 
-// Render index form
+// Render profile page
 router.get('/', function(req, res) {
   if (req.session.user) {
     res.render('profile')
