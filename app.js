@@ -22,7 +22,7 @@ app.set('view engine', 'pug');
 // Middleware
 app.use('/', bodyParser()); //creates key-value pairs request.body in app.post, e.g. request.body.username
 
-app.use(express.static(path.join(__dirname, 'public'))); //To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express.
+app.use(express.static('src/public')); //To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express.
 
 // Session
 app.use(session({
@@ -34,7 +34,7 @@ app.use(session({
 //Routes
 app.use('/login', login);
 app.use('/logout', logout);
-app.use('/index', index);
+app.use(['/index', '/'], index);
 app.use('/register', register);
 app.use('/profile', profile);
 

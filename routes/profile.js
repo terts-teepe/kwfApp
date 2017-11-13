@@ -5,7 +5,11 @@ const bodyParser = require('body-parser');
 
 // Render index form
 router.get('/', function(req, res) {
-  res.render('profile')
+  if (req.session.user) {
+    res.render('profile')
+  } else {
+    res.redirect('/login??message=' + encodeURIComponent("Login First"));
+  }
 })
 
 module.exports = router;
