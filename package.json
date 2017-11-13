@@ -1,0 +1,27 @@
+{
+  "name": "kwfapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terts-teepe/kwfApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/terts-teepe/kwfApp/issues"
+  },
+  "homepage": "https://github.com/terts-teepe/kwfApp#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-rc.4"
+  }
+}
