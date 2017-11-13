@@ -1,9 +1,16 @@
-h1 Welcome to FriendMagnet, Please Register!
-	form(method='post', action='/register', autocomplete="off")
-		input(class="login", type="text", name="username", placeholder="username")
-		br
-		input(class="login", type="password", name="password", placeholder="password")
-		br
-		input(class="login", type="text", name="email", placeholder="email")
-		br
-		input(class="submit" type="submit", value="Register")
+doctype html
+html(lang='en')
+	head
+		title Activity
+		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+	body
+		h1 Welcome to FriendMagnet, Please Register!
+		form(method='post', action='/register', autocomplete="off")
+			input(class="login", type="text", name="username", placeholder="username")
+			br
+			input(class="login", type="password", name="password", placeholder="password")
+			br
+			input(class="login", type="text", name="email", placeholder="email")
+			br
+			input(class="submit" type="submit", value="Register")
