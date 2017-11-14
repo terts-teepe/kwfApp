@@ -15,6 +15,7 @@ const register = require('./routes/register');
 const profile = require('./routes/profile');
 const activity = require('./routes/activity');
 const home = require('./routes/home');
+const addFriends = require('./routes/addFriends');
 
 
 // View engine setup
@@ -36,11 +37,12 @@ app.use(session({
 //Routes
 app.use('/login', login);
 app.use('/logout', logout);
-app.use(['/index', '/'], index);
+app.use('/index', index);
 app.use('/register', register);
 app.use('/profile', profile);
 app.use('/activity', activity);
-app.use('/home', home);
+app.use(['/home', '/'], home);
+app.use('/addFriends', addFriends);
 
 // Running server
 app.listen(3000, () => {

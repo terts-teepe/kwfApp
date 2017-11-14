@@ -29,7 +29,7 @@ router.post('/', function(req, res) {
           })
         
           .then((user) => {
-            res.redirect('/login?message=' + encodeURIComponent("User created"));
+            res.redirect('/addFriends?message=' + encodeURIComponent("User created"));
             // Alert that user registered worked
           })
       }
@@ -37,3 +37,5 @@ router.post('/', function(req, res) {
 });
 
 module.exports = router;
+
+
