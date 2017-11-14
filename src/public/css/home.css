@@ -1,11 +1,10 @@
-body {
+/*body {
 	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(http://www.wasteurtime.com/curiosity_corner/why_magnet_attract_metals.jpg) no-repeat;
 	background-size: cover;
-}
+}*/
 
 .header {
 	text-transform: uppercase;
-	color: #E53719;
 }
 
 /* Form */
@@ -15,10 +14,9 @@ body {
 
 .btn-lg {
 	margin: 20px 0;
-	background-color: #0059a2;
 }
 
 .btn-lg > a {
-	color: #fff;
+	
 }
 
