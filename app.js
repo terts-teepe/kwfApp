@@ -8,6 +8,7 @@ const app = express();
 const bcrypt = require('bcrypt');
 
 // Including usage of routes
+const signin = require('./routes/signin');
 const login = require('./routes/login');
 const logout = require('./routes/logout');
 const index = require('./routes/index');
@@ -46,6 +47,7 @@ app.use('/activity', activity);
 app.use(['/home', '/'], home);
 app.use('/addFriends', addFriends);
 app.use('/inviteFriends', invite);
+app.use('/signin', signin);
 
 
 // Running server
