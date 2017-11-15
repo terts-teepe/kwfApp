@@ -9,6 +9,12 @@ const User = db.define('user', {
   email: Sequelize.STRING
 });
 
+const Relationship = db.define('relationship', {
+  user_one_id: Sequelize.INTEGER,
+  user_two_id: Sequelize.INTEGER,
+  action_user_id: Sequelize.INTEGER
+});
+
 db.sync({
     force: true,
 })
@@ -25,6 +31,26 @@ db.sync({
       username: 'rawan.ad',
       password: '1234r',
       email: 'rawan@live.nl'
+    })    
+    User.create({
+      username: 'anuj',
+      password: '1234a',
+      email: 'anuj@live.nl'
+    })    
+    User.create({
+      username: 'fabio',
+      password: '1234f',
+      email: 'fabio@live.nl'
+    })    
+    User.create({
+      username: 'Pascal',
+      password: '1234p',
+      email: 'pascal@live.nl'
+    })    
+    User.create({
+      username: 'Pierre',
+      password: '1234p',
+      email: 'pierre@live.nl'
     })
 
     .catch(e => console.log(e))
@@ -36,3 +62,15 @@ module.exports = {
   db: db,
   User: User
 }
+
+/*User.findOne({
+  where: {id:1}
+})
+.then(user){
+
+}
+Relationship.create({
+  user_one_id: Sequelize.INTEGER,
+  user_two_id: Sequelize.INTEGER,
+  action_user_id: Sequelize.INTEGER
+})*/
