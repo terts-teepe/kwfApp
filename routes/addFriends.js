@@ -4,7 +4,12 @@ const db = require('../models/database.js');
 const bodyParser = require('body-parser');
 
 router.get('/', function(req, res) {
-	res.render('addFriends')
+	var user = req.session.user
+	db.User.findAll()
+	.then((users) =>{
+		console.log(users)
+		res.render('addFriends', {users: users})
+	})
 })
 
 module.exports = router;

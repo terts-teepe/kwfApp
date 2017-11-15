@@ -9,22 +9,24 @@ html(lang='en')
 			h1 These friends are already using the app, would you like to add then to your network?
 				.container
 					h1 Choose the friends you would like to add
-					.checkbox
-						label
-							input(type='checkbox', value='')
-							| Terts
-					.checkbox
-						label
-							input(type='checkbox', value='')
-							| Anuj
-					.checkbox
-						label
-							input(type='checkbox', value='')
-							| Rawan
-					.checkbox.disabled
-						label
-							input(type='checkbox', value='', disabled='')
-							| Fabio
+					each user in users
+						.checkbox
+							label
+								input(type='checkbox', value='')
+								h3 #{user.username}
+					//- 		| Terts
+					//- .checkbox
+					//- 	label
+					//- 		input(type='checkbox', value='')
+					//- 		| Anuj
+					//- .checkbox
+					//- 	label
+					//- 		input(type='checkbox', value='')
+					//- 		| Rawan
+					//- .checkbox.disabled
+					//- 	label
+					//- 		input(type='checkbox', value='', disabled='')
+					//- 		| Fabio
 					button.btn.btn-lg
 						a(href='/inviteFriends') Add Friends
 
