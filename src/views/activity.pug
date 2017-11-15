@@ -26,22 +26,11 @@ html(lang='en')
 					| Cook
 			div.choose
 				h1 Choose who you want to ask for help
-				.checkbox
-					label
-						input(type='checkbox', value='')
-						| Terts
-				.checkbox
-					label
-						input(type='checkbox', value='')
-						| Anuj
-				.checkbox
-					label
-						input(type='checkbox', value='')
-						| Rawan
-				.checkbox.disabled
-					label
-						input(type='checkbox', value='', disabled='')
-						| Fabio
+				each friend in friends
+					.checkbox
+						label
+							input(type='checkbox', name='friends')
+							h3 #{friend}
 			div.when
 				h1 When do you want help?
 				.radio

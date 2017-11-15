@@ -52,7 +52,6 @@ db.sync({
       password: '1234p',
       email: 'pierre@live.nl'
     })
-
     .catch(e => console.log(e))
 })
 
@@ -60,17 +59,6 @@ db.sync({
 
 module.exports = {
   db: db,
-  User: User
+  User: User,
+  Relationship: Relationship
 }
-
-/*User.findOne({
-  where: {id:1}
-})
-.then(user){
-
-}
-Relationship.create({
-  user_one_id: Sequelize.INTEGER,
-  user_two_id: Sequelize.INTEGER,
-  action_user_id: Sequelize.INTEGER
-})*/
