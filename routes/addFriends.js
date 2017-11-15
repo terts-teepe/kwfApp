@@ -23,7 +23,7 @@ router.get('/', function(req, res) {
     }
 });
 
-router.post('/', function(req,res){
+/*router.post('/', function(req,res){
 	var currentUserId = req.session.user.id
 	var friends = req.body.friends
 	for(var i=0; i<friends.length; i++){
@@ -34,6 +34,6 @@ router.post('/', function(req,res){
 		})
 	}
 	res.redirect('inviteFriends')
-})
+})*/
 
 module.exports = router;
