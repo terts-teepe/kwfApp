@@ -4,7 +4,11 @@ const db = require('../models/database.js');
 const bodyParser = require('body-parser');
 
 router.get('/', function(req, res) {
-	res.render('addFriends')
+  if (req.session.user) {
+    res.render('addFriends')
+  } else {
+    res.redirect('/login??message=' + encodeURIComponent("Login First"));
+  }
 })
 
 module.exports = router;

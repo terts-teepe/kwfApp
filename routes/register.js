@@ -29,6 +29,7 @@ router.post('/', function(req, res) {
           })
         
           .then((user) => {
+            req.session.user = user;
             res.redirect('/addFriends?message=' + encodeURIComponent("User created"));
             // Alert that user registered worked
           })
