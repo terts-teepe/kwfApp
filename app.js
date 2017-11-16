@@ -54,5 +54,3 @@ app.use('/signin', signin);
 app.listen(3000, () => {
   console.log('Server running')
 })
-
-// module.exports = app;

@@ -52,6 +52,11 @@ db.sync({
       password: '1234p',
       email: 'pierre@live.nl'
     })
+    User.create({
+      username: 'Eva',
+      password: '1234e',
+      email: 'eva@live.nl'
+    })
     .catch(e => console.log(e))
 })
 
