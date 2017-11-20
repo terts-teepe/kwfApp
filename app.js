@@ -24,6 +24,7 @@ const reachMethod = require('./routes/reachMethod');
 const password = require('./routes/password');
 
 
+
 // View engine setup
 app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'pug');
@@ -56,6 +57,18 @@ app.use('/name', name);
 app.use('/reachMethod', reachMethod);
 app.use('/password', password);
 
+/*// Redirect the user to the OAuth provider for authentication.  When
+// complete, the provider will redirect the user back to the application at
+//     /auth/provider/callback
+app.get('/auth/provider', passport.authenticate('provider'));
+
+// The OAuth provider has redirected the user back to the application.
+// Finish the authentication process by attempting to obtain an access
+// token.  If authorization was granted, the user will be logged in.
+// Otherwise, authentication has failed.
+app.get('/auth/provider/callback',
+  passport.authenticate('provider', { successRedirect: '/profile',
+                                      failureRedirect: '/' })); */
 
 // Running server
 app.listen(3000, () => {

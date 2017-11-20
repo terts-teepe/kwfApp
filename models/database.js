@@ -16,6 +16,21 @@ const User = db.define('user', {
     password: Sequelize.STRING
 });
 
+/*const User = db.define('user', {
+    local: {
+      name: Sequelize.STRING,
+      phoneNumber: Sequelize.INTEGER,
+      email: Sequelize.STRING,
+      password: Sequelize.STRING     
+    },
+    facebook: {
+      id: Sequelize.STRING,
+      token: Sequelize.STRING,
+      email: Sequelize.STRING,
+      name: Sequelize.STRING
+    }
+});*/
+
 const Relationship = db.define('relationship', {
     user_one_id: Sequelize.INTEGER,
     user_two_id: Sequelize.INTEGER,
