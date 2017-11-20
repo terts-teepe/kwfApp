@@ -29,4 +29,17 @@ router.get('/', (req, res) => {
 	})  
 })
 
+router.post('/', (req,res)=>{
+	let categorie = req.body.categorie;
+	let friend = req.body.friend;
+	let time = req.body.time;
+	let location = req.body.location;
+	db.Activity.create({
+		categorie: categorie,
+		time: time,
+		friend: friend,
+		location: location
+	})
+})
+
 module.exports = router;

@@ -6,51 +6,52 @@ html(lang='en')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		.container
-			div.categorie
-				h1 Choose an activity
-				.radio
-					label
-					input(type='radio', name='categorie')
-					| Groceries
-				.radio
-					label
-					input(type='radio', name='categorie')
-					| Drive me
-				.radio
-					label
-					input(type='radio', name='categorie')
-					| Baby sit
-				.radio
-					label
-					input(type='radio', name='categorie')
-					| Cook
-			div.choose
-				h1 Choose who you want to ask for help
-				each friend in friends
-					.checkbox
+			form(method='post', action='/activity', autocomplete="off")
+				div.categorie
+					h1 Choose an activity
+					.radio
 						label
-							input(type='checkbox', name='friends')
-							h3 #{friend}
-			div.when
-				h1 When do you want help?
-				.radio
-					label
-					input(type='radio', name='time')
-					| Now
-				.radio
-					label
-					input(type='radio', name='time')
-					| Other Time
-			div.where
-				h1 Where do you want help?
-				.radio
-					label
-					input(type='radio', name='location')
-					| My current location
-				.radio
-					label
-					input(type='radio', name='loaction')
-					| Somewhere else
-			button.btn.btn-success.btn-lg
-				a(href='/home') Plan Activity!
-			
+						input(type='radio', name='categorie')
+						| Groceries
+					.radio
+						label
+						input(type='radio', name='categorie')
+						| Drive me
+					.radio
+						label
+						input(type='radio', name='categorie')
+						| Baby sit
+					.radio
+						label
+						input(type='radio', name='categorie')
+						| Cook
+				div.choose
+					h1 Choose who you want to ask for help
+					each friend in friends
+						.checkbox
+							label
+								input(type='checkbox', name='friend')
+								h3 #{friend}
+				div.when
+					h1 When do you want help?
+					.radio
+						label
+						input(type='radio', name='time')
+						| Now
+					.radio
+						label
+						input(type='radio', name='time')
+						| Other Time
+				div.where
+					h1 Where do you want help?
+					.radio
+						label
+						input(type='radio', name='location')
+						| My current location
+					.radio
+						label
+						input(type='radio', name='loaction')
+						| Somewhere else
+				button.btn.btn-success.btn-lg(type='submit')
+					a(href='/home') Plan Activity!
+				

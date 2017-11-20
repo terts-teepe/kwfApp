@@ -119,5 +119,6 @@ db.sync({
 module.exports = {
   db: db,
   User: User,
-  Relationship: Relationship
+  Relationship: Relationship,
+  Activity: Activity
 }
