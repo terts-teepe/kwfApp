@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/database.js');
 const bodyParser = require('body-parser');
-const passport = require('passport');
+// const passport = require('passport');
 
 // Render index form
-/*router.get('/', function(req, res) {
+router.get('/', function(req, res) {
   res.render('login');
 });
 
@@ -20,11 +20,8 @@ router.post('/', function(request, response) {
     return;
   }
 
-  db.User.findOne({*/
-/*      where: {
-        username: request.body.username
-      }*/
-/*      where: {
+  db.User.findOne({
+      where: {
         name: request.body.name
       }
     })
@@ -41,19 +38,19 @@ router.post('/', function(request, response) {
       function(error) {
         response.redirect('/login?message=' + encodeURIComponent("Invalid email or password."));
       })
-});*/
+});
 
 // route for facebook authentication and login
 // different scopes while logging in
-router.get('/', 
-  passport.authenticate('facebook', { scope : 'email' }
-));
+// router.get('/', 
+//   passport.authenticate('facebook', { scope : 'email' }
+// ));
  
-// handle the callback after facebook has authenticated the user
-router.get('/',
-  passport.authenticate('facebook', {
-    successRedirect : '/home',
-    failureRedirect : '/'
-  })
-);
+// // handle the callback after facebook has authenticated the user
+// router.get('/',
+//   passport.authenticate('facebook', {
+//     successRedirect : '/home',
+//     failureRedirect : '/'
+//   })
+// );
 module.exports = router;

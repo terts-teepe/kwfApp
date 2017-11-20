@@ -29,6 +29,7 @@ router.get('/', (req, res) => {
 	})  
 })
 
+
 router.post('/', (req,res)=>{
 	let categorie = req.body.categorie;
 	let friend = req.body.friend;
