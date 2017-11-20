@@ -3,16 +3,23 @@ const connectionString = ('postgres://' + process.env.POSTGRES_USER + ':' + proc
 const db = new Sequelize(connectionString);
 
 // defining elements of table user
-const User = db.define('user', {
+/*const User = db.define('user', {
   username: Sequelize.STRING,
   password: Sequelize.STRING,
   email: Sequelize.STRING
+});*/
+
+const User = db.define('user', {
+    name: Sequelize.STRING,
+    phoneNumber: Sequelize.INTEGER,
+    email: Sequelize.STRING,
+    password: Sequelize.STRING
 });
 
 const Relationship = db.define('relationship', {
-  user_one_id: Sequelize.INTEGER,
-  user_two_id: Sequelize.INTEGER,
-  action_user_id: Sequelize.INTEGER
+    user_one_id: Sequelize.INTEGER,
+    user_two_id: Sequelize.INTEGER,
+    action_user_id: Sequelize.INTEGER
 });
 
 db.sync({
@@ -22,7 +29,7 @@ db.sync({
 .then(yolo => {
 
     //create test data -- always do this after synchronizing the database, otherwise NodeJS with it's asynchronisity will fuck you up.
-    User.create({
+/*    User.create({
       username: 'terts-teepe',
       password: 'weetikniet',
       email: 'terts@live.nl'
@@ -56,7 +63,32 @@ db.sync({
       username: 'Eva',
       password: '1234e',
       email: 'eva@live.nl'
+    })*/
+    User.create({
+      name: 'terts-teepe',
+      password: 'weetikniet',
+      email: 'terts@live.nl',
+      phoneNumber: 0643526354
     })
+    User.create({
+      name: 'Rawan',
+      password: '1234r',
+      email: 'rawan@live.nl',
+      phoneNumber: 0643526354
+    })    
+    User.create({
+      name: 'Anuj',
+      password: '1234a',
+      email: 'anuj@live.nl',
+      phoneNumber: 0643526354
+    })    
+    User.create({
+      name: 'Fabio',
+      password: '1234f',
+      email: 'fabio@live.nl',
+      phoneNumber: 0643526354
+    })   
+
     .catch(e => console.log(e))
 })
 

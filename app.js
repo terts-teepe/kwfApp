@@ -18,7 +18,10 @@ const activity = require('./routes/activity');
 const home = require('./routes/home');
 const addFriends = require('./routes/addFriends');
 const invite = require('./routes/inviteFriends');
-
+const tutorial = require('./routes/tutorial');
+const name = require('./routes/name');
+const reachMethod = require('./routes/reachMethod');
+const password = require('./routes/password');
 
 
 // View engine setup
@@ -48,6 +51,10 @@ app.use(['/home', '/'], home);
 app.use('/addFriends', addFriends);
 app.use('/inviteFriends', invite);
 app.use('/signin', signin);
+app.use('/tutorial', tutorial);
+app.use('/name', name);
+app.use('/reachMethod', reachMethod);
+app.use('/password', password);
 
 
 // Running server

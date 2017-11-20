@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 
 // Render index form
 router.get('/', function(req, res) {
-  res.render('login')
-})
+  res.render('login');
+});
 
 router.post('/', function(request, response) {
   if (request.body.username.length === 0) {

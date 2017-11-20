@@ -12,14 +12,12 @@ router.get('/', (req, res) => {
 	})
 	.then((ids) =>{
 		for(var i=0; i<ids.length; i++){
-			var friendId = ids[i].user_two_id
+			var friendId = ids[i].user_two_id;
 			db.User.findOne({
 				where: {id: friendId}
 			})
 			.then((friend)=>{
 				var username = friend.dataValues.username;
-				console.log('friend');
-				console.log(username);
 				friends.push(username);
 			})
 			.then(()=>{
