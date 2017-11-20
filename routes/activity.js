@@ -19,6 +19,10 @@ router.get('/', (req, res) => {
 			.then((friend)=>{
 				var username = friend.dataValues.username;
 				friends.push(username);
+				console.log('Check here');
+				console.log(friends);
+				console.log(friend);
+				console.log(username);
 			})
 			.then(()=>{
 				if(friends.length === ids.length){
@@ -26,6 +30,10 @@ router.get('/', (req, res) => {
 				}
 			})
 		}
+		console.log('Check here');
+		console.log(friends);
+		console.log(friend);
+		console.log(username);
 	})  
 })
 
