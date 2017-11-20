@@ -4,10 +4,9 @@ const db = require('../models/database.js');
 const bodyParser = require('body-parser');
 
 // Render profile page
-var friends = [];
 router.get('/', (req, res) => {
 	var currentUserId = req.session.user.id;
-	console.log(currentUserId)
+	var friends = [];
 	db.Relationship.findAll({
 		where: {action_user_id: currentUserId}
 	})
@@ -18,13 +17,11 @@ router.get('/', (req, res) => {
 				where: {id: friendId}
 			})
 			.then((friend)=>{
-				var username = friend.dataValues.username;
-				friends.push(username);
+				var friendName = friend.dataValues.name;
+				friends.push(friendName);
 			})
 			.then(()=>{
 				if(friends.length === ids.length){
-					console.log("friends")
-					console.log(friends)
 					res.render('activity', {friends: friends})
 				}
 			})
