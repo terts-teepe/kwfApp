@@ -22,6 +22,13 @@ const Relationship = db.define('relationship', {
     action_user_id: Sequelize.INTEGER
 });
 
+const Activity = db.define('activity', {
+    categorie: Sequelize.STRING,
+    time: Sequelize.DATE,
+    friend: Sequelize.STRING,
+    location: Sequelize.STRING
+});
+
 db.sync({
     force: true,
 })
