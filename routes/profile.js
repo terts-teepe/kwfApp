@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 // Render profile page
 router.get('/', (req, res) =>{
   if (req.session.user) {
-    res.render('profile', {user: req.session.user.name})
+    res.render('profile', {user: req.session.user})
   } else {
     res.redirect('/login?message=' + encodeURIComponent("Login First"));
   }

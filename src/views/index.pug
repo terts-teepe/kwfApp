@@ -12,4 +12,18 @@ html(lang='en')
 				button.btn.btn-md.btn-primary
 					a(href='/activity') Plan Activity!
 				br
+				table.table
+					thead
+						tr
+							th Activity
+							th Friends
+							th Time
+							th Location
+					each activity in activities
+						tbody
+							tr
+								td #{activity.categorie}
+								td #{activity.friend}
+								td #{activity.time}
+								td #{activity.location}
 				a(href="/logout") Logout

@@ -2,3 +2,7 @@
 	color: #fff;
 	text-decoration: none;
 }
+
+th,td {
+	text-align: center;
+}

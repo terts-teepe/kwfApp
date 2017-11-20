@@ -31,19 +31,21 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req,res)=>{
+	let currentUserId = req.session.user.id;
 	let categorie = req.body.categorie;
-	let friend = req.body.friend;
+	let friends = req.body.friends;
 	let time = req.body.time;
 	let location = req.body.location;
-	db.Activity.create({
-		categorie: categorie,
-		time: time,
-		friend: friend,
-		location: location
-	})
-	.then(()=>{
-		res.redirect('/profile')
-	})
+	for (var i = 0; i < friends.length; i++) {
+		db.Activity.create({
+			plannerId: currentUserId,
+			categorie: categorie,
+			time: time,
+			friend: friends[i],
+			location: location
+		})
+	}
+	res.redirect('/index')
 })
 
 module.exports = router;

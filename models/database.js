@@ -13,7 +13,23 @@ const User = db.define('user', {
     name: Sequelize.STRING,
     phoneNumber: Sequelize.INTEGER,
     email: Sequelize.STRING,
-    password: Sequelize.STRING
+    password: Sequelize.STRING,
+    image: Sequelize.STRING
+});
+
+const Relationship = db.define('relationship', {
+    user_one_id: Sequelize.INTEGER,
+    user_two_id: Sequelize.INTEGER,
+    action_user_id: Sequelize.INTEGER
+});
+
+const Activity = db.define('activity', {
+    plannerId: Sequelize.INTEGER,
+    categorie: Sequelize.STRING,
+/*    time: Sequelize.DATE,*/
+    time: Sequelize.STRING,
+    friend: Sequelize.STRING,
+    location: Sequelize.STRING
 });
 
 /*const User = db.define('user', {
@@ -30,20 +46,6 @@ const User = db.define('user', {
       name: Sequelize.STRING
     }
 });*/
-
-const Relationship = db.define('relationship', {
-    user_one_id: Sequelize.INTEGER,
-    user_two_id: Sequelize.INTEGER,
-    action_user_id: Sequelize.INTEGER
-});
-
-const Activity = db.define('activity', {
-    categorie: Sequelize.STRING,
-/*    time: Sequelize.DATE,*/
-    time: Sequelize.STRING,
-    friend: Sequelize.STRING,
-    location: Sequelize.STRING
-});
 
 db.sync({
     force: true,
@@ -97,7 +99,8 @@ db.sync({
       name: 'Rawan',
       password: '1234r',
       email: 'rawan@live.nl',
-      phoneNumber: 0643526354
+      phoneNumber: 0643526354,
+      image: 'https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg'
     })    
     User.create({
       name: 'Anuj',
