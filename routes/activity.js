@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 var friends = [];
 router.get('/', (req, res) => {
 	var currentUserId = req.session.user.id;
+	console.log(currentUserId)
 	db.Relationship.findAll({
 		where: {action_user_id: currentUserId}
 	})
@@ -22,6 +23,8 @@ router.get('/', (req, res) => {
 			})
 			.then(()=>{
 				if(friends.length === ids.length){
+					console.log("friends")
+					console.log(friends)
 					res.render('activity', {friends: friends})
 				}
 			})

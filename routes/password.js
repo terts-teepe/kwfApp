@@ -16,10 +16,6 @@ router.post('/', (req,res)=> {
 	let email = req.query.email;
 	let phoneNumber = req.query.number;
 	let password = req.body.password;
-	console.log(name)
-	console.log(email)
-	console.log(phoneNumber)
-	console.log(password)
   	// Check if Username already exists
 /*  	db.User.findOne({
       	where: {

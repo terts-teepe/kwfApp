@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(request, response) {
-  if (request.body.username.length === 0) {
+  if (request.body.name.length === 0) {
     response.redirect('/login?message=' + encodeURIComponent("Please fill out your username"));
     return;
   }
@@ -20,8 +20,11 @@ router.post('/', function(request, response) {
   }
 
   db.User.findOne({
-      where: {
+/*      where: {
         username: request.body.username
+      }*/
+      where: {
+        name: request.body.name
       }
     })
   
