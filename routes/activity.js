@@ -41,6 +41,9 @@ router.post('/', (req,res)=>{
 		friend: friend,
 		location: location
 	})
+	.then(()=>{
+		res.redirect('/profile')
+	})
 })
 
 module.exports = router;

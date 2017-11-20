@@ -39,7 +39,8 @@ const Relationship = db.define('relationship', {
 
 const Activity = db.define('activity', {
     categorie: Sequelize.STRING,
-    time: Sequelize.DATE,
+/*    time: Sequelize.DATE,*/
+    time: Sequelize.STRING,
     friend: Sequelize.STRING,
     location: Sequelize.STRING
 });
