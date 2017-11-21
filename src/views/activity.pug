@@ -3,6 +3,7 @@ html(lang='en')
 	head
 		title Activity
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+		link(href ='css/activity.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		.container
@@ -34,14 +35,21 @@ html(lang='en')
 								h3 #{friend}
 				div.when
 					h1 When do you want help?
-					.radio
-						label
-						input(type='radio', name='time', value='Now')
-						| Now
-					.radio
-						label
-						input(type='radio', name='time', value='Other Time')
-						| Other Time
+							label.control-label.col-sm-3(for='registration-date')
+							.input-group.registration-date-time
+								span#basic-addon1.input-group-addon
+									span.glyphicon.glyphicon-calendar(aria-hidden='true')
+								input#registration-date.form-control(name='registration_date', type='date')
+								span#basic-addon1.input-group-addon
+									span.glyphicon.glyphicon-time(aria-hidden='true')
+								input#registration-time.form-control(name='registration_time', type='time')
+								span.input-group-btn
+									button.btn.btn-default(type='button', onclick='addNow()')
+										span.glyphicon.glyphicon-map-marker(aria-hidden='true')
+										|  Now
+									button.btn.btn-default(type='button', onclick='stopNow()')
+										span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
+										|  Stop
 				div.where
 					h1 Where do you want help?
 					.radio
@@ -54,3 +62,18 @@ html(lang='en')
 						| Somewhere else
 				button.btn.btn-success.btn-lg.submit(type='submit') 
 					a(href='/profile') Plan Activity!
+		nav.navbar-fixed-bottom.navbar.navbar-default
+			.container
+				.row
+					ul.nav.nav-justified
+						li.active
+							a(href="/addFriends") Add Friends	
+						li
+							a(href='/agenda') Agenda
+						li
+							a(href='/notification') Notification
+						li
+							a(href='/profile') Profile
+	script(src='http://momentjs.com/downloads/moment-with-locales.js')
+	script(src='http://momentjs.com/downloads/moment-timezone-with-data.js')
+	script(src='js/activity.js')

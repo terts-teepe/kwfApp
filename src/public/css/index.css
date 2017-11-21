@@ -11,11 +11,12 @@ h1 {
 	padding-bottom: 50px;
 }
 
-.hoofd {
-	display: flex;
-	justify-content: center;
-}
+/* @media (max-width: 1230px) {
+	ul.nav.nav-justified > li{
+		display: inline-block;
+	}
 
-.fleks {
-	flex-grow: 1;
-}
+	ul.nav.nav-justified {
+		white-space:nowrap
+	}
+} */
