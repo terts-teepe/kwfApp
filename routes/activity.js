@@ -36,8 +36,7 @@ router.post('/', (req,res)=>{
 	let friends = req.body.friends;
 	let time = req.body.time;
 	let location = req.body.location;
-	console.log('friends')
-	console.log(friends)
+	// If there are multiple friends
 	if(Array.isArray(friends)){
 		for (var i = 0; i < friends.length; i++) {
 			db.Activity.create({
@@ -58,7 +57,6 @@ router.post('/', (req,res)=>{
 			location: location
 		})
 	}
-
 	res.redirect('/index')
 })
 
