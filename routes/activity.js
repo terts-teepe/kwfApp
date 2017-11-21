@@ -36,17 +36,27 @@ router.post('/', (req,res)=>{
 	let friends = req.body.friends;
 	let time = req.body.time;
 	let location = req.body.location;
-	console.log('friends');
-	console.log(friends);
-	for (var i = 0; i < friends.length; i++) {
+	if(Array.isArray(friends)){
+		for (var i = 0; i < friends.length; i++) {
+			db.Activity.create({
+				plannerId: currentUserId,
+				categorie: categorie,
+				time: time,
+				friend: friends[i],
+				location: location
+			})
+		}
+	}
+	else {
 		db.Activity.create({
 			plannerId: currentUserId,
 			categorie: categorie,
 			time: time,
-			friend: friends[i],
+			friend: friends,
 			location: location
 		})
 	}
+
 	res.redirect('/index')
 })
 
