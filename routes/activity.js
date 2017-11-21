@@ -36,6 +36,8 @@ router.post('/', (req,res)=>{
 	let friends = req.body.friends;
 	let time = req.body.time;
 	let location = req.body.location;
+	console.log('friends');
+	console.log(friends);
 	for (var i = 0; i < friends.length; i++) {
 		db.Activity.create({
 			plannerId: currentUserId,
