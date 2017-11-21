@@ -24,14 +24,14 @@ html(lang='en')
 								td #{activity.friend}
 								td #{activity.time}
 								td #{activity.location}
-					.d-inline-flex.p-2
-						nav.navbar-fixed-bottom.navbar.navbar-default.d-flex.justify-content-around.d-flex.justify-content-around
-							ul.nav.navbar-nav
-								li.active
-									a(href="/logout") Logout	
-								li
-									a(href='addFriends') Add Friends
-								li
-									a(href='/activity') Plan Activity
-								li
-									a(href='#') Notifications
+		.d-inline-flex.p-2.flex-row
+			nav.navbar-fixed-bottom.navbar.navbar-default
+				ul.nav.navbar-nav.align-items-stretch.justify-content-around
+					li.active
+						a(href="/logout") Logout	
+					li
+						a(href='addFriends') Add Friends
+					li
+						a(href='/activity') Plan Activity
+					li
+						a(href='#') Notifications
