@@ -9,8 +9,6 @@ html(lang='en')
 		.container
 			.text-center
 				h1 Welcome #{user}
-				button.btn.btn-md.btn-primary
-					a(href='/activity') Plan Activity!
 				br
 				table.table
 					thead
@@ -26,4 +24,14 @@ html(lang='en')
 								td #{activity.friend}
 								td #{activity.time}
 								td #{activity.location}
-				a(href="/logout") Logout
+					.d-inline-flex.p-2
+						nav.navbar-fixed-bottom.navbar.navbar-default.d-flex.justify-content-around.d-flex.justify-content-around
+							ul.nav.navbar-nav
+								li.active
+									a(href="/logout") Logout	
+								li
+									a(href='addFriends') Add Friends
+								li
+									a(href='/activity') Plan Activity
+								li
+									a(href='#') Notifications
