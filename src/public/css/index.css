@@ -11,11 +11,13 @@ h1 {
 	padding-bottom: 50px;
 }
 
-.mainContaine {
-	display: flex;
-	justify-content: center;
-}
+/* @media (max-width: 1230px) {
+	ul.nav.nav-justified > li{
+		display: inline-block;
+	}
+>>>>>>> 985091290f609b7a677ef11735674aae11602a81
 
-.fleks {
-	flex-grow: 1;
-}
+	ul.nav.nav-justified {
+		white-space:nowrap
+	}
+} */

@@ -8,4 +8,18 @@ html(lang='en')
 		h1 Welcome to your profile #{user.name}
 		img(src=user.image)
 
+			
+		nav.navbar-fixed-bottom.navbar.navbar-default
+			.container
+				.row
+					ul.nav.nav-justified
+						li.active
+							a(href="/addFriends") Add Friends	
+						li
+							a(href='/agenda') Agenda
+						li
+							a(href='/notification') Notification
+						li
+							a(href='/profile') Profile
+
 		a(href="/logout") Logout
