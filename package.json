@@ -28,6 +28,7 @@
     "path": "^0.12.7",
     "pg": "^7.4.0",
     "pug": "^2.0.0-rc.4",
+    "push.js": "^1.0.5",
     "sequelize": "^4.22.6",
     "social-login": "^0.2.8",
     "sociallogin": "0.0.15"
