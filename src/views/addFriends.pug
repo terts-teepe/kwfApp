@@ -3,18 +3,19 @@ html(lang='en')
 	head
 		title Activity
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+		link(href ='css/addFriends.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		.container
-			h1 These friends are already using the app, would you like to add them to your network?
-				.container
-					h1 Choose the friends you would like to add
-					form(action='/addFriends', method='post', role='form')
-						each user in users
-							.checkbox
-								label
-									input(type='checkbox', value= user.id, name='friends')
-									//- h3 #{user.username}
-									h3 #{user.name}
-						button.btn.btn-lg(type='submit') Add Friends
+			.text-center
+				h3 These friends are already using the app, would you like to add them to your network?
+					h3 Choose the friends you would like to add
+					.text-left.clickNames
+						form(action='/addFriends', method='post', role='form')
+							each user in users
+								.checkbox
+									label
+										input(type='checkbox', value= user.id, name='friends')
+										h3.names #{user.name}
+							button.btn.btn-success.btn-lg.submit(type='submit') Add Friends
 

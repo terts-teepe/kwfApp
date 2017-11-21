@@ -90,7 +90,7 @@ db.sync({
       email: 'eva@live.nl'
     })*/
     User.create({
-      name: 'terts-teepe',
+      name: 'Terts',
       password: 'weetikniet',
       email: 'terts@live.nl',
       phoneNumber: 0643526354
