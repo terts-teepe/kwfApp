@@ -6,6 +6,6 @@ function addNow() {
   set = setTimeout(function () { addNow(); }, 1000);
 }
 
-function stopNow() {
+/*function stopNow() {
   clearTimeout(set);
-}
+}*/

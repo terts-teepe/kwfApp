@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 			})
 			.then((friend)=>{
 				var friendName = friend.dataValues.name;
+				console.log(friendName)
 				friends.push(friendName);
 			})
 			.then(()=>{
@@ -34,13 +35,13 @@ router.post('/', (req,res)=>{
 	let currentUserId = req.session.user.id;
 	let categorie = req.body.categorie;
 	let friends = req.body.friends;
-	let time = req.body.registration_time;
-	let date = req.body.registration_date;
+	let time = req.body.time;
+/*	let date = req.body.date;*/
 	let location = req.body.location;
 	console.log('time')
 	console.log(time)
-	console.log('date')
-	console.log(date)
+/*	console.log('date')
+	console.log(date)*/
 	// If there are multiple friends
 	if(Array.isArray(friends)){
 		for (var i = 0; i < friends.length; i++) {

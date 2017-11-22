@@ -7,7 +7,7 @@ html(lang='en')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		.container
-			form(method='post', action='/activity', autocomplete="off")
+			form.col-sm-10.col-sm-offset-1(method='post', action='/activity', autocomplete="off")
 				div.categorie
 					h1 Choose an activity
 					.radio
@@ -31,25 +31,33 @@ html(lang='en')
 					each friend in friends
 						.checkbox
 							label
-								input(type='checkbox', name='friend', value=friend)
+								input(type='checkbox', name='friends', value=friend)
 								h3 #{friend}
 				div.when
 					h1 When do you want help?
-							label.control-label.col-sm-3(for='registration-date')
-							.input-group.registration-date-time
-								span#basic-addon1.input-group-addon
-									span.glyphicon.glyphicon-calendar(aria-hidden='true')
-								input#registration-date.form-control(name='registration_date', type='date')
-								span#basic-addon1.input-group-addon
-									span.glyphicon.glyphicon-time(aria-hidden='true')
-								input#registration-time.form-control(name='registration_time', type='time')
-								span.input-group-btn
-									button.btn.btn-default(type='button', onclick='addNow()')
-										span.glyphicon.glyphicon-map-marker(aria-hidden='true')
-										|  Now
-									button.btn.btn-default(type='button', onclick='stopNow()')
-										span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
-										|  Stop
+					.radio
+						label
+						input(type='radio', name='time', value='now')
+						| Now
+					.radio
+						label
+						input(type='radio', name='time', value='later')
+						| Later
+						//- label.control-label.col-sm-3(for='registration-date')
+						//- .input-group.registration-date-time
+						//- 	span#basic-addon1.input-group-addon
+						//- 		span.glyphicon.glyphicon-calendar(aria-hidden='true')
+						//- 	input#registration-date.form-control(name='registration_date', type='date')
+						//- 	span#basic-addon1.input-group-addon
+						//- 		span.glyphicon.glyphicon-time(aria-hidden='true')
+						//- 	input#registration-time.form-control(name='registration_time', type='time')
+						//- 	span.input-group-btn
+						//- 		button.btn.btn-default(type='button', onclick='addNow()')
+						//- 			span.glyphicon.glyphicon-map-marker(aria-hidden='true')
+						//- 			|  Now
+						//- 		button.btn.btn-default(type='button', onclick='stopNow()')
+						//- 			span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
+						//- 			|  Stop
 				div.where
 					h1 Where do you want help?
 					.radio
