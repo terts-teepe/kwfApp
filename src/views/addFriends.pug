@@ -18,4 +18,16 @@ html(lang='en')
 										input(type='checkbox', value= user.id, name='friends')
 										h3.names #{user.name}
 							button.btn.btn-success.btn-lg.submit(type='submit') Add Friends
+		nav.navbar-fixed-bottom.navbar.navbar-default
+			.container
+				.row
+					ul.nav.nav-justified
+						li.active
+							a(href="/activity") Plan Activity
+						li
+							a(href='/addFriends') Add Friends
+						li
+							a(href='/notification') Notification
+						li
+							a(href='/profile') Profile
 

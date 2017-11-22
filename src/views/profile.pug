@@ -6,20 +6,21 @@ html(lang='en')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 		link(href ='css/profile.css' type='text/css' rel='stylesheet')
 	body
-		h1.text-center Welcome to your profile #{user.name}
-		img.foto(src=user.image)
-		h1 These are your friends!
-		each friend in friends
-			h3 #{friend}
-		nav.navbar-fixed-bottom.navbar.navbar-default
-			.container
-				.row
-					ul.nav.nav-justified
-						li.active
-							a(href="/addFriends") Add Friends	
-						li
-							a(href='/agenda') Agenda
-						li
-							a(href='/notification') Notification
-						li
-							a(href='/profile') Profile
+		.container
+			h1.text-center Welcome to your profile #{user.name}
+			img.foto(src=user.image)
+			h1 These are your friends!
+			each friend in friends
+				h3 #{friend}
+			nav.navbar-fixed-bottom.navbar.navbar-default
+				.container
+					.row
+						ul.nav.nav-justified
+							li.active
+								a(href="/addFriends") Add Friends	
+							li
+								a(href='/addFriends') Add Friends
+							li
+								a(href='/notification') Notification
+							li
+								a(href='/profile') Profile

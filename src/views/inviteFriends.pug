@@ -3,27 +3,40 @@ html(lang='en')
 	head
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		link(href ='css/inviteFriends.css' type='text/css' rel='stylesheet')
 	body
 		.container
-			h1 Thank you for adding your friends!
-			h2 Can I meet your other friends which are not on the platform yet?
-				.container
-					h2 Invite Friends To Network
-					.checkbox
-						label
-							input(type='checkbox', value='')
-							| WhatsApp
-					.checkbox
-						label
-							input(type='checkbox', value='')
-							| FB Messenger
-					.checkbox
-						label
-							input(type='checkbox', value='')
-							| SMS
-					.checkbox.disabled
-						label
-							input(type='checkbox', value='')
-							| Gmail
-					button.btn.btn-success.btn-lg.submit
-						a(href='/index') Invite Friends
+			h2 Thank you for adding your friends!
+			h3 Can I meet your other friends which are not on the platform yet?
+			.container.vrienden
+				h4 Invite Friends To Network
+				.checkbox
+					label
+						input(type='checkbox', value='')
+						| WhatsApp
+				.checkbox
+					label
+						input(type='checkbox', value='')
+						| FB Messenger
+				.checkbox
+					label
+						input(type='checkbox', value='')
+						| SMS
+				.checkbox.disabled
+					label
+						input(type='checkbox', value='')
+						| Gmail
+				button.btn.btn-success.btn-lg.submit
+					a(href='/sendEmails') Invite Friends
+		nav.navbar-fixed-bottom.navbar.navbar-default
+			.container
+				.row
+					ul.nav.nav-justified
+						li.active
+							a(href="/activity") Plan Activity
+						li
+							a(href='/addFriends') Add Friends
+						li
+							a(href='/notification') Notification
+						li
+							a(href='/profile') Profile

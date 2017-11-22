@@ -93,26 +93,29 @@ db.sync({
       name: 'Terts',
       password: 'weetikniet',
       email: 'terts@live.nl',
-      phoneNumber: 0643526354
+      phoneNumber: 0643526354,
+      image: 'img/terts.jpg'
     })
     User.create({
       name: 'Rawan',
       password: '1234r',
       email: 'rawan@live.nl',
       phoneNumber: 0643526354,
-      image: 'https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg'
+      image: 'img/rawan.jpg'
     })    
     User.create({
       name: 'Anuj',
       password: '1234a',
       email: 'anuj@live.nl',
-      phoneNumber: 0643526354
+      phoneNumber: 0643526354,
+      image: 'img/anuj.jpg'
     })    
     User.create({
       name: 'Fabio',
       password: '1234f',
       email: 'fabio@live.nl',
-      phoneNumber: 0643526354
+      phoneNumber: 0643526354,
+      image: 'img/fabio.jpg'
     })   
 
     .catch(e => console.log(e))
