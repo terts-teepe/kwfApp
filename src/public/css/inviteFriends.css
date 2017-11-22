@@ -1,5 +1,17 @@
-button.btn.btn-success {
-	margin-bottom: 130px;
+h2 {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+
+.vrienden {
+	margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    max-width: 250px;
 }
 
 ul li:nth-child(odd) {  
@@ -15,4 +27,5 @@ ul li:nth-child(even) {
 ul a {
 	color: white;
 }
+
 

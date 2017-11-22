@@ -22,6 +22,7 @@ const tutorial = require('./routes/tutorial');
 const name = require('./routes/name');
 const reachMethod = require('./routes/reachMethod');
 const password = require('./routes/password');
+const sendEmails = require('./routes/sendEmails');
 
 
 
@@ -56,6 +57,8 @@ app.use('/tutorial', tutorial);
 app.use('/name', name);
 app.use('/reachMethod', reachMethod);
 app.use('/password', password);
+app.use('/sendEmails', sendEmails);
+
 
 /*// Redirect the user to the OAuth provider for authentication.  When
 // complete, the provider will redirect the user back to the application at
