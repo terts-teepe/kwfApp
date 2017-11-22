@@ -106,7 +106,8 @@ db.sync({
       name: 'Anuj',
       password: '1234a',
       email: 'anuj@live.nl',
-      phoneNumber: 0643526354
+      phoneNumber: 0643526354,
+      image: 'img/anuj.jpg'
     })    
     User.create({
       name: 'Fabio',
