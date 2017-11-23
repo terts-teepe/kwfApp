@@ -39,14 +39,16 @@ html(lang='en')
 								h3.names #{friend}
 				div.when
 					h1 When do you want help?
-					.radio
-						label
-						input(type='radio', name='time', value='now')
-						| Now
-					.radio
-						label
-						input(type='radio', name='time', value='later')
-						| Later
+					//- .radio
+					//- 	label
+					//- 	input(type='radio', name='time', value='now')
+					//- 	| Now
+					//- .radio
+					//- 	label
+					//- 	input(type='radio', name='time', value='later')
+					//- 	| Later
+					input#registration-date.form-control(name='registration_date', type='date')
+					input#registration-time.form-control(name='registration_time', type='time')
 						//- label.control-label.col-sm-3(for='registration-date')
 						//- .input-group.registration-date-time
 						//- 	span#basic-addon1.input-group-addon
