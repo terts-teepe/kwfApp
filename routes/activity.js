@@ -38,8 +38,8 @@ router.post('/', (req,res)=>{
 	let time = req.body.time;
 /*	let date = req.body.date;*/
 	let location = req.body.location;
-	console.log('time')
-	console.log(time)
+	console.log('friends')
+	console.log(friends)
 /*	console.log('date')
 	console.log(date)*/
 	// If there are multiple friends
@@ -52,6 +52,9 @@ router.post('/', (req,res)=>{
 				friend: friends[i],
 				location: location
 			})
+			if(i === friends.length - 1){
+				res.redirect('/index')
+			}
 		}
 	}
 	else {
@@ -62,8 +65,10 @@ router.post('/', (req,res)=>{
 			friend: friends,
 			location: location
 		})
+		.then(()=>{
+			res.redirect('/index')
+		})
 	}
-	res.redirect('/index')
 })
 
 module.exports = router;
