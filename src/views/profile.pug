@@ -9,9 +9,14 @@ html(lang='en')
 		.container
 			h1.text-center Welcome to your profile #{user.name}
 			img.foto(src=user.image)
-			h1 These are your friends!
-			each friend in friends
-				h3 #{friend}
+			if friends
+				h2 These are your friends!
+					each friend in friends
+						h3 #{friend}
+			else
+				h2 You don't have any friends yet! <a href='/addFriends'>Add your friends
+			Button(type='button')
+				a(href='/logout') Log out
 		nav.navbar-fixed-bottom.navbar.navbar-default
 			.container
 				.row

@@ -31,9 +31,9 @@ router.get('/', (req, res) => {
 					})
 				}
 			}
-/*			else {
+			else {
 				res.render('profile', {user: user})
-			}*/
+			}
 		})
 	}
 	else {
