@@ -12,12 +12,17 @@ html(lang='en')
 					h3 Choose the friends you would like to add
 					.text-left.clickNames
 						form(action='/addFriends', method='post', role='form')
+							.checkbox
+								label
+									input(type='checkbox', onclick='toggle(this)') 
+									h3.names Select All
 							each user in users
 								.checkbox
 									label
 										input(type='checkbox', value= user.id, name='friends')
 										h3.names #{user.name}
 							button.btn.btn-success.btn-lg.submit(type='submit') Add Friends
+
 		nav.navbar-fixed-bottom.navbar.navbar-default
 			.container
 				.row
@@ -30,4 +35,5 @@ html(lang='en')
 							a(href='/notification') Notification
 						li
 							a(href='/profile') Profile
+		script(src='js/addFriends.js')
 

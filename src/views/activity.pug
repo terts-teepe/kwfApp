@@ -28,11 +28,15 @@ html(lang='en')
 						| Cook
 				div.choose
 					h1 Choose who you want to ask for help
+					.checkbox
+						label
+							input(type='checkbox', onclick='toggle(this)') 
+							h3.names Select All
 					each friend in friends
 						.checkbox
 							label
 								input(type='checkbox', name='friends', value=friend)
-								h3 #{friend}
+								h3.names #{friend}
 				div.when
 					h1 When do you want help?
 					.radio

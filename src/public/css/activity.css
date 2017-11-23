@@ -16,3 +16,8 @@ ul a {
 	color: white;
 }
 
+.names {
+	position: relative;
+	bottom: 22px;
+}
+

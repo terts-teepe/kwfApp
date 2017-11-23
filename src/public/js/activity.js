@@ -6,6 +6,9 @@ function addNow() {
   set = setTimeout(function () { addNow(); }, 1000);
 }
 
-/*function stopNow() {
-  clearTimeout(set);
-}*/
+function toggle(source) {
+  checkboxes = document.getElementsByName('friends');
+  for(var i=0, n=checkboxes.length;i<n;i++) {
+    checkboxes[i].checked = source.checked;
+  }
+}
