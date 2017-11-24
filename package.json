@@ -32,6 +32,7 @@
     "push.js": "^1.0.5",
     "sequelize": "^4.22.6",
     "social-login": "^0.2.8",
-    "sociallogin": "0.0.15"
+    "sociallogin": "0.0.15",
+    "socket.io": "^2.0.4"
   }
 }
