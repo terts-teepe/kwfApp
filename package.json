@@ -33,6 +33,7 @@
     "sequelize": "^4.22.6",
     "social-login": "^0.2.8",
     "sociallogin": "0.0.15",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.0.4",
+    "twilio": "^3.10.0"
   }
 }

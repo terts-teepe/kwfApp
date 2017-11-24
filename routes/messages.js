@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const twilio = require('twilio');
 const accountSid = 'ACbcdc77c3e680fef8b9eecbdb7bcc5ba4'; // Your Account SID from www.twilio.com/console
 const authToken = 'f038a6a0dc3c0c41916100aeefca14f5';   // Your Auth Token from www.twilio.com/console
-
 const client = new twilio(accountSid, authToken);
 
 router.get('/', function(req, res) {
@@ -13,24 +12,26 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', (req, res) => {
-    
-client.messages.create({
-    body: 'Hello from Node',
-    to: '+31620528245',  // Text this number
-    from: '+3197004498785' // From a valid Twilio number
-})
-.then((message) => console.log(message.sid));
+	var recipient = req.body.to;
+	// var name = req.body.name;
+    // console.log(recipient);
+    // console.log(name);
+
+	client.messages.create({
+	    body: 'Hello Rawan, do you want to join the vriendendienst network!',
+	    to: `${recipient}`,  // Text this number
+	    from: '+3197004498785' // From a valid Twilio number
+	})
+
+	.then((message) => {
+		console.log(message.sid)
+		res.send('Message sent')
+	});
 
 });
 
 
-
-
-
-
-
-
-
+// `${recipient}`
 
 
 
