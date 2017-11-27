@@ -30,30 +30,37 @@ router.get('/', function(req, res) {
 
 router.post('/', (req,res)=>{
 	let currentUser = req.session.user.name;
-	let frindName = req.body.name;
+	let friendName = req.body.name;
 	let friendEmail = req.body.email;
-	let message = {
-	    // Comma separated list of recipients
-	    to: `${friendEmail}`,
-	    // Subject of the message
-	    subject: `${currentUser} Invited you`,
-	    // plaintext body
-	    text: `Hello ${frindName}`,
-	    // HTML body
-	    html: `<p><b>Your friend ${currentUser}</b> would like you to join the Vriendendienst app </p>`
+	let friends = [];
+	for(var i= 0; i<friendEmail.length; i++){
+		friends.push({friendName: friendName[i] , friendEmail: friendEmail[i]})
+		console.log(friends)
+		let message = {
+		    // Comma separated list of recipients
+		    to: `${friends[i].friendEmail}`,
+		    // Subject of the message
+		    subject: `${currentUser} Invited you`,
+		    // plaintext body
+		    text: `Hello ${friends[i].friendName}`,
+		    // HTML body
+		    html: `<p><b>Your friend ${currentUser}</b> would like you to join the Vriendendienst app </p>`
+		}
+		console.log('Sending Mail');
+		transporter.sendMail(message, (error, info) => {
+		    if (error) {
+		        console.log('Error occurred');
+		        console.log(error.message);
+		        return;
+		    }
+		    console.log('Message sent successfully!');
+		    console.log('Server responded with "%s"', info.response);
+		    transporter.close();
+		});
+		if(i == friendEmail.length - 1){
+			res.send('Invitation has been sent')
+		}
 	}
-	console.log('Sending Mail');
-	transporter.sendMail(message, (error, info) => {
-	    if (error) {
-	        console.log('Error occurred');
-	        console.log(error.message);
-	        return;
-	    }
-	    console.log('Message sent successfully!');
-	    console.log('Server responded with "%s"', info.response);
-	    transporter.close();
-	});
-	res.send('Invitation has been sent')
 })
 
 module.exports = router;
