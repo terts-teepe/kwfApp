@@ -14,10 +14,16 @@ router.get('/', function(req, res) {
 
 
 router.post('/', (req, res) => {
-	var people = [{phonenumber: '+31620528245', name: 'Terts'},
-				  {phonenumber: '+31614845655', name: 'Rawan'}];
-	var recipient = req.body.to;
-	var name = req.body.name;
+/*	var people = [{phonenumber: '+31620528245', name: 'Terts'},
+				  {phonenumber: '+31614845655', name: 'Rawan'}];*/
+	let recipient = req.body.to;
+	let name = req.body.name;
+	console.log("recipient")
+	console.log(recipient)
+	console.log("name")
+	console.log(name)
+	let people = [{phonenumber: recipient[0], name: name[0]},
+				  {phonenumber: recipient[1], name: name[1]}]
 
 	for(var i=0; i<people.length; i++) {
 
