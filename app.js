@@ -27,6 +27,7 @@ const reachMethod = require('./routes/reachMethod');
 const password = require('./routes/password');
 const sendEmails = require('./routes/sendEmails');
 const messages = require('./routes/messages')
+const friendsInvited = require('./routes/friendsInvited')
 
 
 
@@ -64,6 +65,7 @@ app.use('/reachMethod', reachMethod);
 app.use('/password', password);
 app.use('/sendEmails', sendEmails);
 app.use('/messages', messages);
+app.use('/friendsInvited', friendsInvited);
 
 
 /*// Redirect the user to the OAuth provider for authentication.  When
