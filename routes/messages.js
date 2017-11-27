@@ -30,7 +30,9 @@ router.post('/', (req, res) => {
 		})
 		.then((message) => {
 			console.log(people.length);
-			if(i === people.length - 1) {
+			if (err) throw err;
+			
+			if(!err && (i === people.length - 1)) {
 				console.log(people.length);
 				console.log(message.sid)
 				res.redirect('/inviteFriends');
