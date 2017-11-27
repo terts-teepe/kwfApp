@@ -28,10 +28,12 @@ router.post('/', (req, res) => {
 	    to: `${recipient}`,  // Text this number
 	    from: '+3197004498785' // From a valid Twilio number
 	})
+
 	.then((message) => {
 		console.log(message.sid)
 		res.render('messages', {done: 'Invitation has been sent'})
 	});*/
+	
 		client.messages.create({
 		    body: `Hello ${people[i].name}, do you want to join the vriendendienst network! Check it out here: https://share.proto.io/FAFPRN/`,
 		    to: people[i].phonenumber,  // Text this number
@@ -39,11 +41,14 @@ router.post('/', (req, res) => {
 		})
 		if(i == people.length - 1) {
 			console.log(people.length);
-			res.redirect('/inviteFriends')
+			// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
+
+			res.render('friendsInvited', {people: people});
 			// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
 		}
-	}
+	};
 });
+	
 
 
 

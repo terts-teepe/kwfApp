@@ -9,6 +9,8 @@ const bcrypt = require('bcrypt');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const twilio = require('twilio');
+// const twilio-common = require('twilio-common');
+// const twilio-chat = require('twilio-chat');
 
 // Including usage of routes
 const signin = require('./routes/signin');
@@ -27,6 +29,7 @@ const reachMethod = require('./routes/reachMethod');
 const password = require('./routes/password');
 const sendEmails = require('./routes/sendEmails');
 const messages = require('./routes/messages')
+// const friendsInvited = require('./routes/friendsInvited')
 
 
 
@@ -64,6 +67,7 @@ app.use('/reachMethod', reachMethod);
 app.use('/password', password);
 app.use('/sendEmails', sendEmails);
 app.use('/messages', messages);
+// app.use('/friendsInvited', friendsInvited);
 
 
 /*// Redirect the user to the OAuth provider for authentication.  When
