@@ -41,13 +41,17 @@ router.post('/', (req, res) => {
 		    to: people[i].phonenumber,  // Text this number
 		    from: '+3197004498785' // From a valid Twilio number
 		})
-		if(i == people.length - 1) {
+
+		if  (i == people.length - 1) {
 			console.log(people.length);
-			res.redirect('/inviteFriends')
-			// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
-		}
-	}
-});
+
+				res.redirect('/inviteFriends');
+				// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
+			}
+		};
+	});
+	
+
 
 
 
