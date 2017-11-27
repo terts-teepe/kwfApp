@@ -32,17 +32,16 @@ router.post('/', (req,res)=>{
 	let currentUser = req.session.user.name;
 	let friendName = req.body.name;
 	let friendEmail = req.body.email;
-	let friends = [];
+	let people = [];
 	for(var i= 0; i<friendEmail.length; i++){
-		friends.push({friendName: friendName[i] , friendEmail: friendEmail[i]})
-		console.log(friends)
+		people.push({name: friendName[i] , friendEmail: friendEmail[i]})
 		let message = {
 		    // Comma separated list of recipients
-		    to: `${friends[i].friendEmail}`,
+		    to: `${people[i].friendEmail}`,
 		    // Subject of the message
 		    subject: `${currentUser} Invited you`,
 		    // plaintext body
-		    text: `Hello ${friends[i].friendName}`,
+		    text: `Hello ${people[i].name}`,
 		    // HTML body
 		    html: `<p><b>Your friend ${currentUser}</b> would like you to join the Vriendendienst app </p>`
 		}
@@ -58,7 +57,7 @@ router.post('/', (req,res)=>{
 		    transporter.close();
 		});
 		if(i == friendEmail.length - 1){
-			res.send('Invitation has been sent')
+			res.render('friendsInvited', {people: people});
 		}
 	}
 })
