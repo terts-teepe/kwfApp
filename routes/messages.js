@@ -18,8 +18,6 @@ router.post('/', (req, res) => {
 				  {phonenumber: '+31614845655', name: 'Rawan'}];
 	var recipient = req.body.to;
 	var name = req.body.name;
-	console.log(people[0].phonenumber);
-	console.log(people[1].phonenumber);
 
 	for(var i=0; i<people.length; i++) {
 
@@ -37,17 +35,12 @@ router.post('/', (req, res) => {
 		    to: people[i].phonenumber,  // Text this number
 		    from: '+3197004498785' // From a valid Twilio number
 		})
-		.then((message) => {
+		if(i == people.length - 1) {
 			console.log(people.length);
-			if(i === people.length - 1) {
-				console.log(people.length);
-				console.log(message.sid)
-				res.redirect('/inviteFriends');
-				// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
-			}
-		});
+			res.redirect('/inviteFriends')
+			// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
+		}
 	}
-
 });
 
 
