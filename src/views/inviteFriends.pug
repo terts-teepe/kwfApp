@@ -8,26 +8,28 @@ html(lang='en')
 		.container
 			h2 Thank you for adding your friends!
 			h3 Can I meet your other friends which are not on the platform yet?
-			.container.vrienden
-				h4 Invite Friends To Network
-				.checkbox
-					label
-						input(type='checkbox', value='')
-						| WhatsApp
-				.checkbox
-					label
-						input(type='checkbox', value='')
-						| FB Messenger
-				.checkbox
-					label
-						input(type='checkbox', value='')
-						| SMS
-				.checkbox
-					label
-						input(type='checkbox', value='')
-						| Gmail
-				button.btn.btn-success.btn-lg.submit
-					a(href='/sendEmails') Invite Friends
+			form(method='post', action='/inviteFriends')
+				.container.vrienden
+					h4 Invite Friends To Network
+					.radio
+						label
+							input(type='radio', id='WhatsApp' name='inviteFriends' value='WhatsApp' disabled)
+							| WhatsApp
+					.radio
+						label
+							input(type='radio', id='fbMessenger' name='inviteFriends' value='fbMessenger' disabled)
+							| FB Messenger
+					.radio
+						label
+							input(type='radio', id='SMS' name='inviteFriends' value='SMS')
+							| SMS
+					.radio
+						label
+							input(type='radio', id='Gmail' name='inviteFriends' value='Gmail')
+							| Gmail
+					button.btn.btn-success.btn-lg.submit Invite Friends
+						
+
 		nav.navbar-fixed-bottom.navbar.navbar-default
 			.container
 				.row
