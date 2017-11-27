@@ -6,7 +6,8 @@ const bodyParser = require('body-parser');
 const db = require(__dirname + '/models/database.js');
 const app = express();
 const bcrypt = require('bcrypt');
-const io = require('socket.io');
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 const twilio = require('twilio');
 
 // Including usage of routes

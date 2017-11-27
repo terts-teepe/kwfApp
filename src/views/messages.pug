@@ -7,8 +7,10 @@ html(lang='en')
 	body
 		.container
 			.container.vrienden
-				h4 Invite Friends Via Gmail
+				h4 Invite Friends Via SMS
 				form(method='post', action='/messages', autocomplete="off")
+					.form-group
+						input.form-control(type="text", name="name" placeholder="Friend's Name")
 					.form-group
 						input.form-control(type="text", name="to" placeholder="Friend's Number")
 					.form-group
