@@ -47,7 +47,7 @@ router.post('/', (req, res) => {
 		if  (i == people.length - 1) {
 			console.log(people.length);
 
-				res.redirect('/friendsInvited?people='+ people[0].name);
+				res.render('friendsInvited', {people: people});
 				// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
 			}
 		};
