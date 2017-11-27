@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
 	})
 	.then((message) => {
 		console.log(message.sid)
-		res.send('Message sent')
+		res.render('messages', {done: 'Invitation has been sent'})
 	});
 
 });

@@ -7,6 +7,8 @@ html(lang='en')
 	body
 		.container
 			.container.vrienden
+				if done
+					h1 Invitation has been sent
 				h4 Invite Friends Via SMS
 				form(method='post', action='/messages', autocomplete="off")
 					.form-group
