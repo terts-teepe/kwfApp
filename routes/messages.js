@@ -18,30 +18,34 @@ router.post('/', (req, res) => {
 				  {phonenumber: '+31614845655', name: 'Rawan'}];
 	var recipient = req.body.to;
 	var name = req.body.name;
-	console.log(people[0].phonenumber);
-	console.log(people[1].phonenumber);
 
 	for(var i=0; i<people.length; i++) {
 
+/*	client.messages.create({
+	    body: `Hello ${name}, do you want to join the vriendendienst network!`,
+	    to: `${recipient}`,  // Text this number
+	    from: '+3197004498785' // From a valid Twilio number
+	})
+	.then((message) => {
+		console.log(message.sid)
+		res.render('messages', {done: 'Invitation has been sent'})
+	});*/
 		client.messages.create({
 		    body: `Hello ${people[i].name}, do you want to join the vriendendienst network! Check it out here: https://share.proto.io/FAFPRN/`,
 		    to: people[i].phonenumber,  // Text this number
 		    from: '+3197004498785' // From a valid Twilio number
 		})
-		.then((message) => {
+
+		if  (i == people.length - 1) {
 			console.log(people.length);
-			if (err) throw err;
-			
-			if(!err && (i === people.length - 1)) {
-				console.log(people.length);
-				console.log(message.sid)
+
 				res.redirect('/inviteFriends');
 				// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
 			}
-		});
-	}
+		};
+	});
+	
 
-});
 
 
 
