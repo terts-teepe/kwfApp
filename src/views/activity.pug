@@ -47,8 +47,8 @@ html(lang='en')
 					//- 	label
 					//- 	input(type='radio', name='time', value='later')
 					//- 	| Later
-					input#registration-date.form-control(name='registration_date', type='date')
-					input#registration-time.form-control(name='registration_time', type='time')
+					input#registration-date.form-control(name='date', type='date')
+					input#registration-time.form-control(name='time', type='time')
 						//- label.control-label.col-sm-3(for='registration-date')
 						//- .input-group.registration-date-time
 						//- 	span#basic-addon1.input-group-addon
@@ -57,13 +57,13 @@ html(lang='en')
 						//- 	span#basic-addon1.input-group-addon
 						//- 		span.glyphicon.glyphicon-time(aria-hidden='true')
 						//- 	input#registration-time.form-control(name='registration_time', type='time')
-						//- 	span.input-group-btn
-						//- 		button.btn.btn-default(type='button', onclick='addNow()')
-						//- 			span.glyphicon.glyphicon-map-marker(aria-hidden='true')
-						//- 			|  Now
-						//- 		button.btn.btn-default(type='button', onclick='stopNow()')
-						//- 			span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
-						//- 			|  Stop
+					span.input-group-btn
+						button.btn.btn-default(type='button', onclick='addNow()')
+							span.glyphicon.glyphicon-map-marker(aria-hidden='true')
+							|  Now
+						button.btn.btn-default(type='button', onclick='stopNow()')
+							span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
+							|  Stop
 				div.where
 					h1 Where do you want help?
 					.radio

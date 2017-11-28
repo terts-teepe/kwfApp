@@ -18,7 +18,6 @@ router.get('/', (req, res) => {
 			})
 			.then((friend)=>{
 				var friendName = friend.dataValues.name;
-				console.log(friendName)
 				friends.push(friendName);
 			})
 			.then(()=>{
@@ -36,7 +35,7 @@ router.post('/', (req,res)=>{
 	let categorie = req.body.categorie;
 	let friends = req.body.friends;
 	let time = req.body.time;
-/*	let date = req.body.date;*/
+	let date = req.body.date;
 	let location = req.body.location;
 	console.log('friends')
 	console.log(friends)
@@ -49,6 +48,7 @@ router.post('/', (req,res)=>{
 				plannerId: currentUserId,
 				categorie: categorie,
 				time: time,
+				date: date,
 				friend: friends[i],
 				location: location
 			})
@@ -62,6 +62,7 @@ router.post('/', (req,res)=>{
 			plannerId: currentUserId,
 			categorie: categorie,
 			time: time,
+			date: date,
 			friend: friends,
 			location: location
 		})

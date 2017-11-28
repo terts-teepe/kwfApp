@@ -26,8 +26,8 @@ const Relationship = db.define('relationship', {
 const Activity = db.define('activity', {
     plannerId: Sequelize.INTEGER,
     categorie: Sequelize.STRING,
-/*    time: Sequelize.DATE,*/
-    time: Sequelize.STRING,
+    time: Sequelize.TIME,
+    date: Sequelize.DATEONLY,
     friend: Sequelize.STRING,
     location: Sequelize.STRING
 });
