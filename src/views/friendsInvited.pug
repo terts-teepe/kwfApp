@@ -2,10 +2,22 @@ doctype html
 html(lang='en')
 	head
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
-		link(href ='css/home.css' type='text/css' rel='stylesheet')
+		link(href ='css/index.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
-		.container
-			h3 HallO!
+		.container.text-center
+			h1 Gefeliciteerd! Je hebt met succes de volgende vrienden een uitnodiging gestuurd: 
 			each person in people
-				h1 #{person.name}
+				h3 #{person.name}
+		nav.navbar-fixed-bottom.navbar.navbar-default
+			.container
+				.row
+					ul.nav.nav-justified
+						li.active
+							a(href="/activity") Plan activity
+						li
+							a(href='/addFriends') Add friends
+						li
+							a(href='/notification') Notification
+						li
+							a(href='/profile') Profile
