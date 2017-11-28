@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
   		}
   	})
   } else {
-    res.redirect('/login??message=' + encodeURIComponent("Login First"));
+    res.redirect('/login?message=' + encodeURIComponent("Login First"));
   }
 })
 
