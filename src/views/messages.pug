@@ -16,7 +16,7 @@ html(lang='en')
 					.form-group
 						input.form-control(type="text", name="to" placeholder="Friend's Number")
 					.form-group
-						input#more_fields(type='button', onclick='add_fields();', value='Add More')
+						input#more_fields(type='button', value='Add More')
 						button.btn.form-control(class="submit" type="submit") Invite!
 		nav.navbar-fixed-bottom.navbar.navbar-default
 			.container
@@ -30,4 +30,5 @@ html(lang='en')
 							a(href='/notification') Notification
 						li
 							a(href='/profile') Profile
+		script(src='js/jquery-3.2.1.js')
 		script(src='js/messages.js')

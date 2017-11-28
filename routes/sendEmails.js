@@ -39,11 +39,11 @@ router.post('/', (req,res)=>{
 		    // Comma separated list of recipients
 		    to: `${people[i].friendEmail}`,
 		    // Subject of the message
-		    subject: `${currentUser} Invited you`,
+		    subject: `You have an invitation`,
 		    // plaintext body
 		    text: `Hello ${people[i].name}`,
 		    // HTML body
-		    html: `<p><b>Your friend ${currentUser}</b> would like you to join the Vriendendienst app </p>`
+		    html: `<p>Would you like to join the vriendendienst network! Check it out here: <a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></p>`
 		}
 		console.log('Sending Mail');
 		transporter.sendMail(message, (error, info) => {
