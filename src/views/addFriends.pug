@@ -10,7 +10,7 @@ html(lang='en')
 			.text-center
 				h3 These friends are already using the app, would you like to add them to your network?
 					h3 Choose the friends you would like to add
-					.text-left.clickNames
+					.text-left.clickNames.col-md-2.col-md-push-5
 						form(action='/addFriends', method='post', role='form')
 							.checkbox
 								label
@@ -21,7 +21,7 @@ html(lang='en')
 									label
 										input(type='checkbox', value= user.id, name='friends')
 										h3.names #{user.name}
-							button.btn.btn-success.btn-lg.submit(type='submit') Add Friends
+							button.btn.btn-success.btn.submit(type='submit') Add Friends
 
 		nav.navbar-fixed-bottom.navbar.navbar-default
 			.container
@@ -36,4 +36,5 @@ html(lang='en')
 						li
 							a(href='/profile') Profile
 		script(src='js/addFriends.js')
+
 
