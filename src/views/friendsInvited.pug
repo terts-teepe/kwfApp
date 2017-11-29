@@ -7,8 +7,11 @@ html(lang='en')
 	body
 		.container.text-center
 			h1 Gefeliciteerd! Je hebt met succes de volgende vrienden een uitnodiging gestuurd: 
+			//- if Array.isArray(people)
 			each person in people
 				h3 #{person.name}
+			//- else
+			//- 	h3 #{people.name}
 		nav.navbar-fixed-bottom.navbar.navbar-default
 			.container
 				.row

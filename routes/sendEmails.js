@@ -29,9 +29,11 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', (req,res)=>{
-	let currentUser = req.session.user.name;
+/*	let currentUser = req.session.user.name;*/
 	let friendName = req.body.name;
 	let friendEmail = req.body.email;
+	console.log(friendEmail)
+	console.log(friendName)
 	let people = [];
 	for(var i= 0; i<friendEmail.length; i++){
 		people.push({name: friendName[i] , friendEmail: friendEmail[i]})
@@ -43,7 +45,7 @@ router.post('/', (req,res)=>{
 		    // plaintext body
 		    text: `Hello ${people[i].name}`,
 		    // HTML body
-		    html: `<p>Would you like to join the vriendendienst network! Check it out here: <a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></p>`
+		    html: `<p>Would you like to join the vriendendienst network! Check it out here: <a href='https://share.proto.io/FAFPRN/'></p>`
 		}
 		console.log('Sending Mail');
 		transporter.sendMail(message, (error, info) => {
