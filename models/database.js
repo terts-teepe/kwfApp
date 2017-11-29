@@ -54,41 +54,7 @@ db.sync({
 .then(yolo => {
 
     //create test data -- always do this after synchronizing the database, otherwise NodeJS with it's asynchronisity will fuck you up.
-/*    User.create({
-      username: 'terts-teepe',
-      password: 'weetikniet',
-      email: 'terts@live.nl'
-    })
-    User.create({
-      username: 'rawan.ad',
-      password: '1234r',
-      email: 'rawan@live.nl'
-    })    
-    User.create({
-      username: 'anuj',
-      password: '1234a',
-      email: 'anuj@live.nl'
-    })    
-    User.create({
-      username: 'fabio',
-      password: '1234f',
-      email: 'fabio@live.nl'
-    })    
-    User.create({
-      username: 'Pascal',
-      password: '1234p',
-      email: 'pascal@live.nl'
-    })    
-    User.create({
-      username: 'Pierre',
-      password: '1234p',
-      email: 'pierre@live.nl'
-    })
-    User.create({
-      username: 'Eva',
-      password: '1234e',
-      email: 'eva@live.nl'
-    })*/
+    
     User.create({
       name: 'Terts',
       password: 'weetikniet',
