@@ -17,7 +17,7 @@ let transporter = nodemailer.createTransport({
     }),
     debug: true // include SMTP traffic in the logs
 }, {
-    from: 'Emma van KWF <kwfvriendendienst@gmail.com>',
+ /*   from: 'Emma van KWF <kwfvriendendienst@gmail.com>',*/
     headers: {
         'X-Laziness-level': 1000 // just an example header, no need to use this
     }
@@ -29,7 +29,7 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', (req,res)=>{
-/*	let currentUser = req.session.user.name;*/
+	let currentUser = req.session.user;
 	let friendName = req.body.name;
 	let friendEmail = req.body.email;
 	console.log(friendEmail)
@@ -38,6 +38,7 @@ router.post('/', (req,res)=>{
 	for(var i= 0; i<friendEmail.length; i++){
 		people.push({name: friendName[i] , friendEmail: friendEmail[i]})
 		let message = {
+			from: `${currentUser.name} <${currentUser.email}>`,
 		    // Comma separated list of recipients
 		    to: `${people[i].friendEmail}`,
 		    // Subject of the message
@@ -45,7 +46,7 @@ router.post('/', (req,res)=>{
 		    // plaintext body
 		    text: `Hello ${people[i].name}`,
 		    // HTML body
-		    html: `<p>Would you like to join the vriendendienst network! Check it out here: <a href='https://share.proto.io/FAFPRN/'></p>`
+		    html: "<p>Would you like to join the vriendendienst network! Check it out here: <a href='https://share.proto.io/FAFPRN/'></a>'</p>"
 		}
 		console.log('Sending Mail');
 		transporter.sendMail(message, (error, info) => {
