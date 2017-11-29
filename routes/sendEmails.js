@@ -17,7 +17,7 @@ let transporter = nodemailer.createTransport({
     }),
     debug: true // include SMTP traffic in the logs
 }, {
-    from: 'Emma van KWF <kwfvriendendienst@gmail.com>',
+	from: 'Emma van KWF <kwfvriendendienst@gmail.com>',
     headers: {
         'X-Laziness-level': 1000 // just an example header, no need to use this
     }
@@ -29,23 +29,65 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', (req,res)=>{
-/*	let currentUser = req.session.user.name;*/
+/*	let currentUser = req.session.user;*/
 	let friendName = req.body.name;
 	let friendEmail = req.body.email;
+	let people = []
+	console.log("friendEmail")
 	console.log(friendEmail)
+	console.log("friendName")
 	console.log(friendName)
-	let people = [];
-	for(var i= 0; i<friendEmail.length; i++){
-		people.push({name: friendName[i] , friendEmail: friendEmail[i]})
+	function response (){
+		res.render('friendsInvited', {people: people});
+	}
+/*	function transport (){
+		transporter.sendMail(message, (error, info) => {
+		    if (error) {
+		        console.log('Error occurred');
+		        console.log(error.message);
+		        return;
+		    }
+		    console.log('Message sent successfully!');
+		    console.log('Server responded with "%s"', info.response);
+		    transporter.close();
+		});
+	}*/
+	if(Array.isArray(friendEmail)) {
+		for(var i= 0; i<friendEmail.length; i++){
+			people.push({name: friendName[i] , friendEmail: friendEmail[i]})
+			let message = {
+			    // Comma separated list of recipients
+			    to: `${people[i].friendEmail}`,
+			    // Subject of the message
+			    subject: `You have an invitation`,
+			    // HTML body
+			    html: `<h2>Hello ${people[i].name}</h2><p>Would you like to join the vriendendienst network! Check it out here: <b><a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></b></p>`
+			}
+			console.log('Sending Mail');
+			transporter.sendMail(message, (error, info) => {
+			    if (error) {
+			        console.log('Error occurred');
+			        console.log(error.message);
+			        return;
+			    }
+			    console.log('Message sent successfully!');
+			    console.log('Server responded with "%s"', info.response);
+			    transporter.close();
+			});
+			if(i == (friendEmail.length - 1)){
+				response ()
+			}
+		}
+	}
+	else {
+		people.push({name: friendName , friendEmail: friendEmail})
 		let message = {
 		    // Comma separated list of recipients
-		    to: `${people[i].friendEmail}`,
+		    to: `${people[0].friendEmail}`,
 		    // Subject of the message
 		    subject: `You have an invitation`,
-		    // plaintext body
-		    text: `Hello ${people[i].name}`,
 		    // HTML body
-		    html: `<p>Would you like to join the vriendendienst network! Check it out here: <a href='https://share.proto.io/FAFPRN/'></p>`
+		    html: `<h2>Hello ${people[0].name}</h2><p>Would you like to join the vriendendienst network! Check it out here: <a href=https://share.proto.io/FAFPRN>Vriendendienst</a></p>`
 		}
 		console.log('Sending Mail');
 		transporter.sendMail(message, (error, info) => {
@@ -58,9 +100,7 @@ router.post('/', (req,res)=>{
 		    console.log('Server responded with "%s"', info.response);
 		    transporter.close();
 		});
-		if(i == friendEmail.length - 1){
-			res.render('friendsInvited', {people: people});
-		}
+		response ()
 	}
 })
 

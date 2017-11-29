@@ -59,16 +59,11 @@ router.post('/', (req, res) => {
 		    from: '+3197004498785' // From a valid Twilio number
 		})
 		.then(() => {
+
 			res.render('friendsInvited', {people: people});
 		})
 	}
 });
-
-
-
-
-
-
 
 // router.post('/messages', (req, res) =>{
 //     console.log(req.body);
