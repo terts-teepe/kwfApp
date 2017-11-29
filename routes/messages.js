@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
 	for(var i=0; i<name.length; i++) {
 		people.push({name: name[i] , phonenumber: recipient[i]})
 		client.messages.create({
-		    body: `Hello ${people[i].name}, would you like to join the vriendendienst network! Check it out here: https://share.proto.io/FAFPRN/`,
+		    body: `Hello ${people[i].name}, would you like to join the vriendendienst network! Check it out here: https://pr.to/V9VKHX/`,
 		    to: people[i].phonenumber,  // Text this number
 		    from: '+3197004498785' // From a valid Twilio number
 		})

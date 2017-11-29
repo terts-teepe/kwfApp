@@ -5,6 +5,7 @@
 
 .clickNames {
 	margin-top: 50px;
+	border: 3px solid green;
 }
 
 ul li:nth-child(odd) {  
