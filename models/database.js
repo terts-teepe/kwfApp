@@ -29,8 +29,15 @@ const Activity = db.define('activity', {
     time: Sequelize.TIME,
     date: Sequelize.DATEONLY,
     friend: Sequelize.STRING,
-    location: Sequelize.STRING
+    location: Sequelize.STRING,
+    readStatus: Sequelize.BOOLEAN,
+    status: Sequelize.BOOLEAN
 });
+
+User.belongsToMany(Activity, {through: 'user_activity'})
+Activity.belongsToMany(User, {through: 'user_activity'})
+
+
 
 /*const User = db.define('user', {
     local: {
@@ -48,13 +55,13 @@ const Activity = db.define('activity', {
 });*/
 
 db.sync({
-    force: true,
+    force: false,
 })
 
 .then(yolo => {
 
     //create test data -- always do this after synchronizing the database, otherwise NodeJS with it's asynchronisity will fuck you up.
-    
+
     User.create({
       name: 'Terts',
       password: 'weetikniet',
