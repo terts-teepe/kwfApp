@@ -12,6 +12,15 @@ const twilio = require('twilio');
 // const twilio-common = require('twilio-common');
 // const twilio-chat = require('twilio-chat');
 
+// VAPID keys should only be generated only once.
+/*const vapidKeys = webpush.generateVAPIDKeys();
+
+webpush.setVapidDetails(
+  'mailto:web-push-book@gauntface.com',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);*/
+
 // Including usage of routes
 const signin = require('./routes/signin');
 const login = require('./routes/login');

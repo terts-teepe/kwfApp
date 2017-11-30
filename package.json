@@ -36,6 +36,7 @@
     "socket.io": "^2.0.4",
     "twilio": "^3.10.0",
     "twilio-chat": "^1.2.1",
-    "twilio-common": "^0.1.7"
+    "twilio-common": "^0.1.7",
+    "web-push": "^3.2.4"
   }
 }
