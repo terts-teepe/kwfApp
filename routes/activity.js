@@ -66,7 +66,15 @@ router.post('/', (req,res)=>{
 			friend: friends,
 			location: location
 		})
-		.then(()=>{
+		.then((activity)=>{
+			db.User.findAll({
+				where: {
+					id: currentUserId
+				}
+			})
+			.then((user)=>{
+				activity.setUsers(user)
+			})
 			res.redirect('/index')
 		})
 	}

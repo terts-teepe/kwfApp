@@ -11,19 +11,21 @@ router.get('/', function(req, res) {
 	db.Activity.findAll({
 		where: {
 			friend: currentUserName
-		}
+		},
+		include : [
+					{ model: db.User, where: {id: userId}},
+				]
 	})
-
 	.then((activities) => {
 		console.log("check activities here")
 		console.log(activities);
 		res.render('index', {activities: activities})
-		db.User.findOne({
+/*		db.User.findOne({
 			where: {
 				id: Activity.plannerId
 			}
 		})
-	})
+*/	})
 });
 
 
