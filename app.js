@@ -9,6 +9,16 @@ const bcrypt = require('bcrypt');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const twilio = require('twilio');
+const webpush = require('web-push');
+const gcm = require('node-gcm');
+const sender = new gcm.Sender('AIzaSyAnn1s-AWD_0i7pegLEZZty4U2-BopC5rA');
+// var message = new gcm.Message({
+//     data: { key1: 'msg1' }
+// });
+// VAPID keys should only be generated only once.
+const vapidKeys = webpush.generateVAPIDKeys();
+console.log(vapidKeys);
+
 // const twilio-common = require('twilio-common');
 // const twilio-chat = require('twilio-chat');
 
@@ -38,6 +48,21 @@ const reachMethod = require('./routes/reachMethod');
 const password = require('./routes/password');
 const sendEmails = require('./routes/sendEmails');
 const messages = require('./routes/messages')
+const firebase = require("firebase");
+
+//these are Terts his firebase details:
+var config = {
+  	apiKey: "AIzaSyAnn1s-AWD_0i7pegLEZZty4U2-BopC5rA",
+    authDomain: "kwfapp.firebaseapp.com",
+    databaseURL: "https://kwfapp.firebaseio.com",
+    projectId: "kwfapp",
+    storageBucket: "gs://kwfapp.appspot.com",
+    // messagingSenderId: "1034094468770"
+};
+
+firebase.initializeApp(config);
+
+
 // const friendsInvited = require('./routes/friendsInvited')
 
 
@@ -96,3 +121,21 @@ app.get('/auth/provider/callback',
 app.listen(3000, () => {
   console.log('Server running')
 })
+
+
+// <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+// <script>
+//   // Initialize Firebase
+//   var config = {
+//     apiKey: "AIzaSyAnn1s-AWD_0i7pegLEZZty4U2-BopC5rA",
+//     authDomain: "kwfapp.firebaseapp.com",
+//     databaseURL: "https://kwfapp.firebaseio.com",
+//     projectId: "kwfapp",
+//     storageBucket: "",
+//     messagingSenderId: "1034094468770"
+//   };
+//   firebase.initializeApp(config);
+// </script>
+
+
+
