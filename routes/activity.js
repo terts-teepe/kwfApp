@@ -124,7 +124,7 @@ router.post('/', (req,res)=>{
 		.then((activity)=>{
 			db.User.findAll({
 				where: {
-					id: friendsIds[i]/*{
+					id: friendsIds/*{
 						[Op.or]: [activity.plannerId, friendsIds[i]]
 					}*/
 				}
