@@ -34,28 +34,8 @@ const Activity = db.define('activity', {
     status: Sequelize.BOOLEAN
 });
 
-/*Activity.create({
-    plannerId: 1,
-    categorie: "groceries",
-    time: "12:30",
-    date: 12/12/2017,
-    location: "My current location",
-    readStatus: ture,
-    status: false
-})
-.then((activity)=>{
-	User.findAll({
-		
-	})
-	.then((day)=>{
-		route.setDays(day)
-	})
-})*/
-
 User.belongsToMany(Activity, {through: 'user_activity'})
 Activity.belongsToMany(User, {through: 'user_activity'})
-
-
 
 /*const User = db.define('user', {
     local: {
