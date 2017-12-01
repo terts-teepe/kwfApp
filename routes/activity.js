@@ -78,13 +78,11 @@ router.post('/', (req,res)=>{
 	console.log( date)*/
 	// If there are multiple friends
 	if(Array.isArray(friends)){
-/*		for (var i = 0; i < friends.length; i++) {*/
 			db.Activity.create({
 				plannerId: currentUserId,
 				categorie: categorie,
 				time: time,
 				date: date,
-/*				friend: friends[i],*/
 				location: location
 			})
 			.then((activity)=>{
@@ -95,15 +93,39 @@ router.post('/', (req,res)=>{
 						}
 					})
 					.then((friend)=>{*/
+/*						*****
+						db.User.findOne ({
+							where: {id: activity.plannerId}
+						})
+						.then((planner) => {
+							console.log("Check the planner here");
+							console.log(planner.name);
+							db.User.findOne ({
+								where: {name: friends[i]}
+							})
+							.then((user) => {
+								client.messages.create({
+								    body: `Hello ${user.name} this is Emma, your friend has planned an activity, check it out!`,
+								    to: user.phoneNumber,  // Text this number
+								    from: '+3197004498785' // From a valid Twilio number
+								})
+							});
+						******/
 						db.User.findOne({
 							where : {
-								id: friendsIds[i]/*{
-									[Op.or]: [activity.plannerId, friendsIds[i]]
-								}*/
-							}
+								id: friendsIds[i]
+							},
+							include : [	
+								{model: db.Activity}
+							]
 						})
 						.then ((user)=>{
 							activity.setUsers(user)
+							client.messages.create({
+							    body: `Hello ${user.name} this is Emma, your friend has planned an activity, check it out!`,
+							    to: user.phoneNumber,  // Text this number
+							    from: '+3197004498785' // From a valid Twilio number
+							})
 							if(i === friends.length - 1){
 								res.redirect('/index')
 							}
@@ -118,19 +140,25 @@ router.post('/', (req,res)=>{
 			categorie: categorie,
 			time: time,
 			date: date,
-/*			friend: friends,*/
 			location: location
 		})
 		.then((activity)=>{
 			db.User.findAll({
 				where: {
-					id: friendsIds[i]/*{
+					id: friendsIds/*{
 						[Op.or]: [activity.plannerId, friendsIds[i]]
 					}*/
 				}
 			})
 			.then((user)=>{
 				activity.setUsers(user)
+				client.messages.create({
+				    body: `Hello ${user.name} this is Emma, your friend has planned an activity, check it out!`,
+				    to: user.phoneNumber,  // Text this number
+				    from: '+3197004498785' // From a valid Twilio number
+				})
+			})
+			.then(()=>{
 				res.redirect('/index')
 			})
 		})
@@ -209,7 +237,7 @@ router.post('/', (req,res)=>{
 	}
 
 })
-<<<<<<< HEAD
+
 */
 
 
