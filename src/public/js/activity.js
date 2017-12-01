@@ -12,3 +12,10 @@ function toggle(source) {
     checkboxes[i].checked = source.checked;
   }
 }
+
+function changeradioother(){
+ var other= document.getElementById("ignoreThis");
+    other.value=document.getElementById("categorie").value;
+}
+
+changeradioother()

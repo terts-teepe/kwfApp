@@ -11,7 +11,7 @@ const db = new Sequelize(connectionString);
 
 const User = db.define('user', {
     name: Sequelize.STRING,
-    phoneNumber: Sequelize.INTEGER,
+    phoneNumber: Sequelize.STRING,
     email: Sequelize.STRING,
     password: Sequelize.STRING,
     image: Sequelize.STRING
@@ -55,7 +55,7 @@ Activity.belongsToMany(User, {through: 'user_activity'})
 });*/
 
 db.sync({
-    force: false,
+    force: true,
 })
 
 .then(yolo => {
@@ -66,28 +66,28 @@ db.sync({
       name: 'Terts',
       password: 'weetikniet',
       email: 'terts@live.nl',
-      phoneNumber: 0643526354,
+      phoneNumber: '+31620528245',
       image: 'img/terts.jpg'
     })
     User.create({
       name: 'Rawan',
       password: '1234r',
       email: 'rawan@live.nl',
-      phoneNumber: 0643526354,
+      phoneNumber: '+31614845655',
       image: 'img/rawan.jpg'
     })    
     User.create({
       name: 'Anuj',
       password: '1234a',
       email: 'anuj@live.nl',
-      phoneNumber: 0643526354,
+      phoneNumber: '+31687903132',
       image: 'img/anuj.jpg'
     })    
     User.create({
       name: 'Fabio',
       password: '1234f',
       email: 'fabio@live.nl',
-      phoneNumber: 0643526354,
+      phoneNumber: '+31637684022',
       image: 'img/fabio.jpg'
     })   
 

@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/database.js');
 const bodyParser = require('body-parser');
+const twilio = require('twilio');
+const accountSid = 'ACbcdc77c3e680fef8b9eecbdb7bcc5ba4'; // Your Account SID from www.twilio.com/console
+const authToken = 'f038a6a0dc3c0c41916100aeefca14f5';   // Your Auth Token from www.twilio.com/console
+const client = new twilio(accountSid, authToken);
 
 // Render profile page
 router.get('/', (req, res) => {
@@ -52,11 +56,44 @@ router.post('/', (req,res)=>{
 				friend: friends[i],
 				location: location
 			})
-			if(i === friends.length - 1){
-				res.redirect('/index')
-			}
+
+
+			.then((activity) => {
+				db.User.findOne ({
+					where: {id: activity.plannerId}
+				})
+
+				.then((planner) => {
+					console.log("Check the planner here");
+					console.log(planner.name);
+
+
+						db.User.findOne ({
+							where: {name: friends[i]}
+						})
+
+						.then((user) => {
+							// console.log("user.phoneNumber");
+							// console.log(user.phoneNumber);
+							// console.log(user);
+							// console.log("user.name")
+							// console.log(user.name)
+
+							client.messages.create({
+							    body: `Hello ${user.name} this is Emma, your friend has planned an activity, check it out!`,
+							    to: user.phoneNumber,  // Text this number
+							    from: '+3197004498785' // From a valid Twilio number
+							})
+						});
+
+					if(i === friends.length - 1) {
+						res.redirect('/index')
+					}
+				});
+			})
 		}
 	}
+
 	else {
 		db.Activity.create({
 			plannerId: currentUserId,
@@ -66,6 +103,8 @@ router.post('/', (req,res)=>{
 			friend: friends,
 			location: location
 		})
+
+
 		.then((activity)=>{
 			db.User.findAll({
 				where: {
@@ -78,6 +117,18 @@ router.post('/', (req,res)=>{
 			res.redirect('/index')
 		})
 	}
+
 })
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+

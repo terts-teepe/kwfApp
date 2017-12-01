@@ -26,6 +26,11 @@ html(lang='en')
 						label
 						input(type='radio', name='categorie', value='Cook')
 						| Cook
+					.radio
+						label
+						input(type='radio' name='categorie', id='ignoreThis', value="other")
+						| Other 
+						input(type='text', id='categorie' onchange="changeradioother()")
 				div.choose
 					h1 Choose who you want to ask for help
 					.checkbox
