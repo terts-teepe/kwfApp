@@ -8,20 +8,20 @@ html(lang='en')
 	body
 		.container
 			.text-center
-				h1 Welcome #{user}
+				h1 Welcome #{user.name}
 				br
 				table.table
 					thead
 						tr
 							th Activity
-							//- th Friends
+							th From
 							th Time
 							th Location
-					each activity in activities
+					each activity in user.activities
 						tbody
 							tr
 								td #{activity.categorie}
-								//- td #{activity.friend}
+								td #{activity.plannerId}
 								td #{activity.date} om #{activity.time}
 								td #{activity.location}
 		nav.navbar-fixed-bottom.navbar.navbar-default

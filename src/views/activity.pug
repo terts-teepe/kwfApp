@@ -35,8 +35,11 @@ html(lang='en')
 					each friend in friends
 						.checkbox
 							label
-								input(type='checkbox', name='friends', value=friend)
-								h3.names #{friend}
+								//- h1 #{friend.name}
+								//- h1 #{friend.id}
+								input(type='checkbox', name='friends',id="name", value=friend.name)
+								h3.names #{friend.name}
+								input(name='friendId' , type='hidden',value=friend.id)
 				div.when
 					h1 When do you want help?
 					//- .radio

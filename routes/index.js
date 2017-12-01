@@ -8,18 +8,28 @@ router.get('/', function(req, res) {
 	let currentUserId = user.id;
 	let currentUserName = user.name;
 
-	db.Activity.findAll({
+	db.User.findOne({
 		where: {
-			friend: currentUserName
+			id: currentUserId
 		},
-		include : [
-					{ model: db.User, where: {id: userId}},
-				]
+		include : [	
+			{model: db.Activity}
+		]
 	})
-	.then((activities) => {
-		console.log("check activities here")
-		console.log(activities);
-		res.render('index', {activities: activities})
+	.then((user) => {
+		console.log("user")
+		console.log(user)
+		res.render('index', {user: user})
+/*		User.findAll({
+			where: {
+				id: activities.plannerId
+			}
+		})
+		.then((planners)=>{
+			console.log("check activities here")
+			console.log(activities);
+			res.render('index', {activities: activities, planners: planners})
+		})*/
 /*		db.User.findOne({
 			where: {
 				id: Activity.plannerId
