@@ -143,7 +143,7 @@ router.post('/', (req,res)=>{
 			location: location
 		})
 		.then((activity)=>{
-			db.User.findAll({
+			db.User.findOne({
 				where: {
 					id: friendsIds/*{
 						[Op.or]: [activity.plannerId, friendsIds[i]]
@@ -151,6 +151,8 @@ router.post('/', (req,res)=>{
 				}
 			})
 			.then((user)=>{
+				console.log("check phoneNumber");
+				console.log(user.phoneNumber);
 				activity.setUsers(user)
 				client.messages.create({
 				    body: `Hello ${user.name} this is Emma, your friend has planned an activity, check it out!`,
