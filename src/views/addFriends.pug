@@ -16,11 +16,11 @@ html(lang='en')
 								label
 									input(type='checkbox', onclick='toggle(this)') 
 									h3.names Select All
-							each user in users
+							each notFriend in notFriends
 								.checkbox
 									label
-										input(type='checkbox', value= user.id, name='friends')
-										h3.names #{user.name}
+										input(type='checkbox', value= notFriend.id, name='friends')
+										h3.names #{notFriend.name}
 							button.btn.btn-success.btn.submit(type='submit') Add Friends
 
 		nav.navbar-fixed-bottom.navbar.navbar-default
