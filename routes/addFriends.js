@@ -41,31 +41,39 @@ router.get('/', (req, res) =>{
 			console.log("ids")
 			console.log(ids)
 			var notFriends = [];
+			// If you have friends
 			if(ids.length !== 0){
-				for(var i=0; i<ids.length; i++){
-					var friendId = ids[i].user_two_id;
-					db.User.findOne({
-						where: {
-							id: {
-								[Op.ne] : friendId/*,
-								[Op.ne] : currentUserId*/
+				db.User.findAll({
+					where: {
+						id: {
+							[Op.ne] : currentUserId
+						}						
+					}
+				})
+				.then((allButMe)=>{
+					for(var i=0; i<allButMe.length; i++){
+						var friendId = ids[i].user_two_id;
+						if(allButMe[i].id != friendId)
+/*						db.User.findAll({
+							where: {
+								id: {
+									[Op.ne] : friendId,
+									[Op.ne] : currentUserId
+								}
 							}
+						})*/
+							var notFriendName = allButMe[i].name;
+							notFriends.push(notFriendName);
 						}
-					})
-					.then((notFriend)=>{
-						console.log("notFriend")
-						console.log(notFriend)
-						var notFriendName = notFriend.dataValues.name;
-						notFriends.push(notFriendName);
-					})
-					.then(()=>{
-						console.log("notFriends")
-						console.log(notFriends)
-						if(notFriends.length === ids.length && notFriends.length !== 0){
+/*						.then(()=>{
+							console.log("notFriends")
+							console.log(notFriends)*/
+						if(notFriends.length === allButMe.length && notFriends.length !== 0){
 							res.render('addFriends', {notFriends: notFriends})
 						}
-					})
-				}
+/*						})*/
+					}
+				})
 			}
 			else {
 				// Find friends
