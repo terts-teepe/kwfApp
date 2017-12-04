@@ -38,8 +38,8 @@ router.get('/', (req, res) =>{
 			where: {user_one_id: currentUserId}
 		})
 		.then((ids) =>{
-			console.log("ids")
-			console.log(ids)
+/*			console.log("ids")
+			console.log(ids)*/
 			var notFriends = [];
 			// If you have friends
 			if(ids.length !== 0){
@@ -52,8 +52,17 @@ router.get('/', (req, res) =>{
 				})
 				.then((allButMe)=>{
 					for(var i=0; i<allButMe.length; i++){
-						var friendId = ids[i].user_two_id;
-						if(allButMe[i].id != friendId)
+						console.log("ids")
+						console.log(ids)
+						console.log("ids[i].user_two_id")
+						console.log(ids[i].user_two_id)
+/*						var friendId = ids[i].user_two_id;*/
+						console.log("allButMe[i].id")
+						console.log(allButMe[i].id)
+						console.log("allButMe[i].dataValues.id")
+						console.log(allButMe[i].dataValues.id)
+						// ******* Don't have the same length
+						if(allButMe[i].id !== (ids[i].user_two_id) && allButMe[i].id !== currentUserId){
 /*						db.User.findAll({
 							where: {
 								id: {

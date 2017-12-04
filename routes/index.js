@@ -31,7 +31,7 @@ router.get('/', function(req, res) {
 					console.log(planner.dataValues.name)
 /*					console.log("user.dataValues.activities[i]")
 					console.log(user.dataValues.activities[i])*/
-					user.dataValues.activities[i].dataValues["plannerName"] = planner.dataValues.name;
+					user.dataValues.activities[i]["plannerName"] = planner.dataValues.name;
 					console.log("user.dataValues.activities[i]")
 					console.log(user.dataValues.activities[i])
 /*					console.log("user.dataValues.activities")
