@@ -7,15 +7,6 @@ const Op = Sequelize.Op;
 
 router.get('/', (req, res) =>{
 	if (req.session.user) {
-/*		let currentUsername = req.session.user.username;
-		// Find friends
-		db.User.findAll({
-			where: {
-				username: {
-					[Op.ne]: currentUsername
-				}
-			}
-		})*/
 		let currentUsername = req.session.user.name;
 		// Find friends
 		db.User.findAll({
@@ -25,9 +16,38 @@ router.get('/', (req, res) =>{
 				}
 			}
 		})
-		.then((users) =>{
-			res.render('addFriends', {users: users});
-		});
+		.then((notMe)=>{
+
+		
+
+			db.Relationship.findAll({
+				where: {action_user_id: currentUserId}
+			})
+
+			.then((ids) =>{
+				var friends = [];
+				if(ids.length !== 0){
+					for(var i=0; i<ids.length; i++){
+						var friendId = ids[i].user_two_id;
+						db.User.findOne({
+							where: {id: friendId}
+						})
+						.then((friend)=>{
+							var friendName = friend.dataValues.name;
+							friends.push(friendName);
+						})
+						.then(()=>{
+							if(friends.length === ids.length && friends.length !== 0){
+								res.render('addFriends', {friends: friends, notMe: notMe})
+							}
+						})
+					}
+				}
+			})		
+		})
+
+
+
 	} 
 	else {
     	res.redirect('/login?message=' + encodeURIComponent("Login First"));
