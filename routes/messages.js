@@ -51,7 +51,10 @@ router.post('/', (req, res) => {
 		};
 	}
 
+	
+
 	else {
+		
 		people.push({name: name , phonenumber: recipient})
 		client.messages.create({
 		    body: `Hello ${people[0].name}, would you like to join the vriendendienst network! Check it out here: https://share.proto.io/FAFPRN/`,
