@@ -17,9 +17,37 @@ router.get('/', function(req, res) {
 		]
 	})
 	.then((user) => {
-		console.log("user")
-		console.log(user)
-		res.render('index', {user: user})
+		console.log("user.activity")
+		console.log(user.dataValues.activities)
+		if(user.dataValues.activities){
+			for (var i = 0; i < (user.dataValues.activities).length; i++) {
+				db.User.findOne({
+					where: {
+						id: user.dataValues.activities[i].plannerId
+					}
+				})
+				.then((planner)=>{
+					console.log("planner")
+					console.log(planner.dataValues.name)
+/*					console.log("user.dataValues.activities[i]")
+					console.log(user.dataValues.activities[i])*/
+					user.dataValues.activities[i].dataValues["plannerName"] = planner.dataValues.name;
+					console.log("user.dataValues.activities[i]")
+					console.log(user.dataValues.activities[i])
+/*					console.log("user.dataValues.activities")
+					console.log(user.dataValues.activities)*/
+/*					console.log("user.dataValues.activities[i]")
+					console.log(user.dataValues.activities[i])*/
+				})
+				.then(()=>{
+					if(i = (user.dataValues.activities).length - 1){
+						console.log("user")
+						console.log(user)
+						res.render('index', {user: user})
+					}
+				})
+			}
+		}
 /*		User.findAll({
 			where: {
 				id: activities.plannerId
