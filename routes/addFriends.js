@@ -56,21 +56,21 @@ router.get('/', (req, res) =>{
 
 						
 						for (var j = 0; j < friends.length; j++) {
-							if (allButMe[i].id !== (friends[j].user_two_id) && allButMe[i].id !== currentUserId) {
+							if (allButMe[i].id !== (friends[j].user_two_id)) {
 
-								var notFriendName = allButMe[i].name;
+								var notFriendName = allButMe[i];
 								notFriends.push(notFriendName);
-								
+
 								console.log('check here for not friends');
 								console.log(notFriends);
-								console.log("check here for allButMe");
-								console.log(allButMe);
+								// console.log("check here for allButMe");
+								// console.log(allButMe);
+							}
+							if(i === (allButMe.length -1) && notFriends.length !== 0){
+								res.render('addFriends', {notFriends: notFriends})
 							}
 						}
 						
-						if(notFriends.length === allButMe.length && notFriends.length !== 0){
-							res.render('addFriends', {notFriends: notFriends})
-						}
 					}
 				}
 				

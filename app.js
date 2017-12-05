@@ -118,7 +118,7 @@ app.get('/auth/provider/callback',
                                       failureRedirect: '/' })); */
 
 // Running server
-app.listen(8000, () => {
+app.listen(8080, () => {
   console.log('Server running')
 })
 
