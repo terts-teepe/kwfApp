@@ -17,27 +17,32 @@ router.get('/', function(req, res) {
 		]
 	})
 	.then((user) => {
-		console.log("user.activity")
-		console.log(user.dataValues.activities)
+		console.log("user.dataValues.activities[0].dataValues")
+		console.log(user.dataValues.activities[0].dataValues)
 		if(user.dataValues.activities){
 			for (var i = 0; i < (user.dataValues.activities).length; i++) {
+				console.log("plannerId")
+				console.log(user.dataValues.activities[i].dataValues.plannerId)
 				db.User.findOne({
 					where: {
-						id: user.dataValues.activities[i].plannerId
+						id: user.dataValues.activities[i].dataValues.plannerId
 					}
 				})
 				.then((planner)=>{
-					console.log("planner")
-					console.log(planner.dataValues.name)
+/*					console.log("planner")
+					console.log(planner.dataValues.name)*/
+					var planner = planner.dataValues.name
 /*					console.log("user.dataValues.activities[i]")
-					console.log(user.dataValues.activities[i])*/
-					user.dataValues.activities[i]["plannerName"] = planner.dataValues.name;
-					console.log("user.dataValues.activities[i]")
 					console.log(user.dataValues.activities[i])
+					console.log("typeof******")
+					console.log(typeof(user.dataValues))*/
+					user.dataValues["plannerName"] = planner;
+/*					console.log("user.dataValues")
+					console.log(user.dataValues)*/
 /*					console.log("user.dataValues.activities")
 					console.log(user.dataValues.activities)*/
-/*					console.log("user.dataValues.activities[i]")
-					console.log(user.dataValues.activities[i])*/
+					console.log("user.dataValues")
+					console.log(user.dataValues)
 				})
 				.then(()=>{
 					if(i = (user.dataValues.activities).length - 1){
