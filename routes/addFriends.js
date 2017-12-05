@@ -34,72 +34,140 @@ router.get('/', (req, res) =>{
 		let currentUserId = req.session.user.id;
 		let currentUsername = req.session.user.name;
 		// Find friends
-		db.Relationship.findAll({
-			where: {user_one_id: currentUserId}
+		db.User.findAll({
+			where: {
+				id: {
+					[Op.ne] : currentUserId
+				}						
+			}
 		})
-		.then((ids) =>{
-/*			console.log("ids")
-			console.log(ids)*/
-			var notFriends = [];
-			// If you have friends
-			if(ids.length !== 0){
-				db.User.findAll({
-					where: {
-						id: {
-							[Op.ne] : currentUserId
-						}						
-					}
-				})
-				.then((allButMe)=>{
-					for(var i=0; i<allButMe.length; i++){
-						console.log("ids")
-						console.log(ids)
-						console.log("ids[i].user_two_id")
-						console.log(ids[i].user_two_id)
-/*						var friendId = ids[i].user_two_id;*/
-						console.log("allButMe[i].id")
-						console.log(allButMe[i].id)
-						console.log("allButMe[i].dataValues.id")
-						console.log(allButMe[i].dataValues.id)
-						// ******* Don't have the same length
-						if(allButMe[i].id !== (ids[i].user_two_id) && allButMe[i].id !== currentUserId){
-/*						db.User.findAll({
-							where: {
-								id: {
-									[Op.ne] : friendId,
-									[Op.ne] : currentUserId
-								}
+
+		.then((allButMe) => {
+			db.Relationship.findAll({
+			where: {user_one_id: currentUserId}
+			})
+
+			.then((friends) => {
+				if(friends.length !== 0) {
+					var notFriends = [];
+					for(var i=0; i<allButMe.length; i++) {
+
+						
+
+						
+						for (var j = 0; j < friends.length; j++) {
+							if (allButMe[i].id !== (friends[j].user_two_id) && allButMe[i].id !== currentUserId) {
+
+								var notFriendName = allButMe[i].name;
+								notFriends.push(notFriendName);
+								
+								console.log('check here for not friends');
+								console.log(notFriends);
+								console.log("check here for allButMe");
+								console.log(allButMe);
 							}
-						})*/
-							var notFriendName = allButMe[i].name;
-							notFriends.push(notFriendName);
 						}
-/*						.then(()=>{
-							console.log("notFriends")
-							console.log(notFriends)*/
+						
 						if(notFriends.length === allButMe.length && notFriends.length !== 0){
 							res.render('addFriends', {notFriends: notFriends})
 						}
-/*						})*/
 					}
-				})
-			}
-			else {
+				}
+				
+				else {
 				// Find friends
-				db.User.findAll({
-					where: {
-						id: {
-							[Op.ne]: currentUserId
+					db.User.findAll({
+						where: {
+							id: {
+								[Op.ne]: currentUserId
+							}
 						}
-					}
-				})
-				.then((users)=>{
-					res.render('addFriends', {notFriends: users})
-				})
-			}
+					})
+
+					.then((users)=>	{
+						res.render('addFriends', {notFriends: users})
+					})
+				}	
+			});	
 		})
 	}
-})
+});	
+				
+
+
+				
+
+
+		
+
+
+
+// 		db.Relationship.findAll({
+// 			where: {user_one_id: currentUserId}
+// 		})
+// 		.then((ids) =>{
+// /*			console.log("ids")
+// 			console.log(ids)*/
+// 			var notFriends = [];
+// 			// If you have friends
+// 			if(ids.length !== 0){
+// 				// db.User.findAll({
+// 				// 	where: {
+// 				// 		id: {
+// 				// 			[Op.ne] : currentUserId
+// 				// 		}						
+// 				// 	}
+// 				// })
+// 				.then((allButMe)=>{
+// 					for(var i=0; i<allButMe.length; i++){
+// 						console.log("ids")
+// 						console.log(ids)
+// 						console.log("ids[i].user_two_id")
+// 						console.log(ids[i].user_two_id)
+// /*						var friendId = ids[i].user_two_id;*/
+// 						console.log("allButMe[i].id")
+// 						console.log(allButMe[i].id)
+// 						console.log("allButMe[i].dataValues.id")
+// 						console.log(allButMe[i].dataValues.id)
+// 						// ******* Don't have the same length
+// 						if(allButMe[i].id !== (ids[i].user_two_id) && allButMe[i].id !== currentUserId){
+// /*						db.User.findAll({
+// 							where: {
+// 								id: {
+// 									[Op.ne] : friendId,
+// 									[Op.ne] : currentUserId
+// 								}
+// 							}
+// 						})*/
+// 							var notFriendName = allButMe[i].name;
+// 							notFriends.push(notFriendName);
+// 						}
+// /*						.then(()=>{
+// 							console.log("notFriends")
+// 							console.log(notFriends)*/
+// 						if(notFriends.length === allButMe.length && notFriends.length !== 0){
+// 							res.render('addFriends', {notFriends: notFriends})
+// 						}
+// /*						})*/
+// 					}
+// 				})
+// 			}
+// 			else {
+// 				// Find friends
+// 				db.User.findAll({
+// 					where: {
+// 						id: {
+// 							[Op.ne]: currentUserId
+// 						}
+// 					}
+// 				})
+// 				.then((users)=>{
+// 					res.render('addFriends', {notFriends: users})
+// 				})
+// 			}
+// 		})
+// 	}
+// })
 /*		.then((relationships)=>{
 			db.User.findAll({
 				where: {

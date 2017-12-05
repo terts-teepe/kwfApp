@@ -16,8 +16,8 @@ const sender = new gcm.Sender('AIzaSyAnn1s-AWD_0i7pegLEZZty4U2-BopC5rA');
 //     data: { key1: 'msg1' }
 // });
 // VAPID keys should only be generated only once.
-const vapidKeys = webpush.generateVAPIDKeys();
-console.log(vapidKeys);
+// const vapidKeys = webpush.generateVAPIDKeys();
+// console.log(vapidKeys);
 
 // const twilio-common = require('twilio-common');
 // const twilio-chat = require('twilio-chat');
@@ -118,7 +118,7 @@ app.get('/auth/provider/callback',
                                       failureRedirect: '/' })); */
 
 // Running server
-app.listen(3000, () => {
+app.listen(8000, () => {
   console.log('Server running')
 })
 
