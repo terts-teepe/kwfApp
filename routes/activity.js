@@ -39,6 +39,7 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req,res)=>{
+	var currentUserName = req.session.user.name;
 	let currentUserId = req.session.user.id;
 	let categorie = req.body.categorie;
 	let friends = req.body.friends;
@@ -46,10 +47,12 @@ router.post('/', (req,res)=>{
 	let time = req.body.time;
 	let date = req.body.date;
 	let location = req.body.location;
-	console.log('friends')
-	console.log(friends)
-	console.log("friendsIds")
-	console.log(friendsIds)
+	// console.log('friends')
+	// console.log(friends)
+	// console.log("friendsIds")
+	// console.log(friendsIds)
+	console.log("check here for currentUserName")
+	console.log(currentUserName);
 /*	console.log('friendsis')
 	console.log(friendsIds)*/
 /*
@@ -122,11 +125,12 @@ router.post('/', (req,res)=>{
 						.then ((user)=>{
 							activity.setUsers(user)
 							client.messages.create({
-							    body: `Hello ${user.name} this is Emma, your friend has planned an activity, check it out!`,
+							    body: `Hello ${user.name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
 							    to: user.phoneNumber,  // Text this number
 							    from: '+3197004498785' // From a valid Twilio number
 							})
-							if(i === friends.length - 1){
+							
+							if(i === friends.length){
 								res.redirect('/index')
 							}
 						})
@@ -155,12 +159,10 @@ router.post('/', (req,res)=>{
 				console.log(user.phoneNumber);
 				activity.setUsers(user)
 				client.messages.create({
-				    body: `Hello ${user.name} this is Emma, your friend has planned an activity, check it out!`,
+				    body: `Hello ${user.name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
 				    to: user.phoneNumber,  // Text this number
 				    from: '+3197004498785' // From a valid Twilio number
 				})
-			})
-			.then(()=>{
 				res.redirect('/index')
 			})
 		})
