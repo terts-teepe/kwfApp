@@ -26,6 +26,8 @@ router.get('/', (req, res) =>{
 			})
 			.then((friends) => {
 				if(friends.length !== 0) {
+					console.log("*****************")
+					console.log(friends)
 					var notFriends = [];
 					var friend = false;
 					for(var i=0; i<allButMe.length; i++) { //3			
@@ -34,10 +36,12 @@ router.get('/', (req, res) =>{
 								friend = true;
 							}
 							if (j === friends.length - 1){
+								// If not friend
 								if (friend === false){
 									var notFriendName = allButMe[i].dataValues;
 									notFriends.push(notFriendName);							
 								}
+								// If friend
 								if (friend === true){
 									friend = false;
 								}
