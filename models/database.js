@@ -25,6 +25,7 @@ const Relationship = db.define('relationship', {
 
 const Activity = db.define('activity', {
     plannerId: Sequelize.INTEGER,
+    plannerName: Sequelize.STRING,
     categorie: Sequelize.STRING,
     time: Sequelize.TIME,
     date: Sequelize.DATEONLY,
