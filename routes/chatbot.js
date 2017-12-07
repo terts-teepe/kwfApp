@@ -31,6 +31,7 @@ router.get('/', function(req, res) {
       // Display the output from dialog, if any.
       if (response.output.text.length != 0) {
         console.log("check output here")
+        console.log(response.output.text);
         console.log(response.output.text[0]);
       }
     }
@@ -42,6 +43,17 @@ router.get('/', function(req, res) {
 
 // Endpoint to be call from the client side
 router.post('/', function(req, res) {
+  var payload = {
+    workspace_id: 'd11b2b05-b64c-4914-9ccf-3db1480c8b05',
+    context: req.body.context || {},
+    input: req.body.input || {}
+  };
+
+  console.log("payload.context")
+  console.log(payload.context)
+  console.log("payload.input")
+  console.log(payload.input)
+
   var workspace = process.env.WORKSPACE_ID || 'd11b2b05-b64c-4914-9ccf-3db1480c8b05';
   if (!workspace || workspace === 'd11b2b05-b64c-4914-9ccf-3db1480c8b05') {
     return res.json({
@@ -50,17 +62,14 @@ router.post('/', function(req, res) {
       }
     });
   }
-  var payload = {
-    workspace_id: workspace,
-    context: req.body.context || {},
-    input: req.body.input || {}
-  };
+  
 
   // Send the input to the conversation service
   conversation.message(payload, function(err, data) {
     if (err) {
       return res.status(err.code || 500).json(err);
     }
+    console.log("check if input works");
     return res.json(updateMessage(payload, data));
   });
 });
