@@ -48,6 +48,7 @@ const reachMethod = require('./routes/reachMethod');
 const password = require('./routes/password');
 const sendEmails = require('./routes/sendEmails');
 const messages = require('./routes/messages')
+const chatbot = require('./routes/chatbot')
 const firebase = require("firebase");
 
 //these are Terts his firebase details:
@@ -101,6 +102,7 @@ app.use('/reachMethod', reachMethod);
 app.use('/password', password);
 app.use('/sendEmails', sendEmails);
 app.use('/messages', messages);
+app.use('/chatbot', chatbot);
 // app.use('/friendsInvited', friendsInvited);
 
 

@@ -39,6 +39,7 @@
     "twilio": "^3.10.0",
     "twilio-chat": "^1.2.1",
     "twilio-common": "^0.1.7",
+    "watson-developer-cloud": "^2.42.0",
     "web-push": "^3.2.4"
   }
 }

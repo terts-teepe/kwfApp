@@ -90,10 +90,9 @@ router.get('/', function(req, res) {
 							console.log(user)
 							res.render('index', {user: user, planner: planner})
 						}
-					})		
 					
-				}
-			}
+			
+			
 
 			else {
 				res.render('index', {user: user})
@@ -108,17 +107,22 @@ router.get('/', function(req, res) {
 				console.log(activities);
 				res.render('index', {activities: activities, planners: planners})
 			})*/
-	/*		db.User.findOne({
-				where: {
-					id: Activity.plannerId
-				}
-			})
-	*/	})
+			// db.User.findOne({
+			// 	where: {
+			// 		id: Activity.plannerId
+			// 	}
+			// })
+	})
+
 	}
+	
 	else {
-    	res.redirect('/login?message=' + encodeURIComponent("Login First"));
-    }
+		res.redirect('/login?message=' + encodeURIComponent("Login First"));
+	}
+
+	
 });
+
 
 
 
