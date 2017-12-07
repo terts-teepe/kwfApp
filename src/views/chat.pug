@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+	head
+		title Chat
+		link(href ='css/chat.css' type='text/css' rel='stylesheet')
+	body
+		.chat_window
+			.top_menu
+				.buttons
+					.button.close
+					.button.minimize
+					.button.maximize
+				.title Chat
+			ul.messages
+			.bottom_wrapper.clearfix
+				.message_input_wrapper
+					input.message_input(placeholder='Type your message here...')
+				.send_message
+					.icon
+					.text Send
+		.message_template
+			each activity in user.activities
+				li.message
+					.avatar
+					.text_wrapper
+						.text #{activity.categorie} #{activity.plannerName} #{activity.date} om #{activity.time} #{activity.location}

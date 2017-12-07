@@ -6,13 +6,14 @@ const Conversation = require('watson-developer-cloud/conversation/v1');
 
 'use strict';
 
-    // Set up Conversation service wrapper.
-    var conversation = new Conversation({
-      username: 'd9770ce8-59fa-4134-88fd-e42fdfc86642', // replace with username from service key
-      password: 'JLSm1G40w02H', // replace with password from service key
-      path: { workspace_id: 'd11b2b05-b64c-4914-9ccf-3db1480c8b05' }, // replace with workspace ID
-      version_date: '2017-05-26'
-    });
+/*// Create the service wrapper
+var conversation = new Conversation({
+  // If unspecified here, the CONVERSATION_USERNAME and CONVERSATION_PASSWORD env properties will be checked
+  // After that, the SDK will fall back to the bluemix-provided VCAP_SERVICES environment property
+  'username': process.env.CONVERSATION_USERNAME,
+  'password': process.env.CONVERSATION_PASSWORD,
+  'version_date': '2017-05-26'
+});
 
 // Render profile page
 router.get('/', function(req, res) {
@@ -35,15 +36,15 @@ router.get('/', function(req, res) {
       }
     }
     res.render('chatbot')
-})
+})*/
 
 
 
 
 // Endpoint to be call from the client side
-router.post('/', function(req, res) {
-  var workspace = process.env.WORKSPACE_ID || 'd11b2b05-b64c-4914-9ccf-3db1480c8b05';
-  if (!workspace || workspace === 'd11b2b05-b64c-4914-9ccf-3db1480c8b05') {
+/*router.post('/api/message', function(req, res) {
+  var workspace = process.env.WORKSPACE_ID || '<workspace-id>';
+  if (!workspace || workspace === '<workspace-id>') {
     return res.json({
       'output': {
         'text': 'The app has not been configured with a <b>WORKSPACE_ID</b> environment variable. Please refer to the ' + '<a href="https://github.com/watson-developer-cloud/conversation-simple">README</a> documentation on how to set this variable. <br>' + 'Once a workspace has been defined the intents may be imported from ' + '<a href="https://github.com/watson-developer-cloud/conversation-simple/blob/master/training/car_workspace.json">here</a> in order to get a working application.'
@@ -63,7 +64,7 @@ router.post('/', function(req, res) {
     }
     return res.json(updateMessage(payload, data));
   });
-});
+});*/
 
 /**
  * Updates the response text using the intent confidence
