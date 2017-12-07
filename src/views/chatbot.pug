@@ -11,20 +11,21 @@ html(lang='en')
 		link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
 		link(rel='stylesheet', href='css/app.css')
 	body
-		#view-change-button.button(onclick='PayloadPanel.togglePanel(event, this)')
-			img.option.full(src='../img/Chat Button.png')
-			img.option.not-full(src='../img/Code Button.png')
-		#contentParent.responsive-columns-wrapper
-			#chat-column-holder.responsive-column.content-column
-				.chat-column
-				#scrollingChat
-				label.inputOutline(for='textInput')
-					input#textInput.input.responsive-column(placeholder='Type something', type='text', onkeydown='ConversationPanel.inputKeyDown(event, this)')
-			#payload-column.fixed-column.content-column
-				#payload-initial-message
-				|	Type something to see the output
-				#payload-request.payload
-				#payload-response.payload
+		form(action='/chatbot', method='post')
+			#view-change-button.button(onclick='PayloadPanel.togglePanel(event, this)')
+				img.option.full(src='../img/Chat Button.png')
+				img.option.not-full(src='../img/Code Button.png')
+			#contentParent.responsive-columns-wrapper
+				#chat-column-holder.responsive-column.content-column
+					.chat-column
+					#scrollingChat
+					label.inputOutline(for='textInput')
+						input#textInput.input.responsive-column(placeholder='Type something', type='text', onkeydown='ConversationPanel.inputKeyDown(event, this)')
+				#payload-column.fixed-column.content-column
+					#payload-initial-message
+					|	Type something to see the output
+					#payload-request.payload
+					#payload-response.payload
 		script(src='js/common.js')
 		script(src='js/api.js')
 		script(src='js/conversation.js')
