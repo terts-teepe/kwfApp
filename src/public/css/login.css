@@ -6,3 +6,47 @@ button.form-control {
 	background-color: #0059a2;
 	color: white;
 }
+
+.layout {
+	color: white;
+	background: linear-gradient(90deg, #2C7BB4 50%, #E44541 50%);
+	padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 0px;
+    position: relative;
+
+}
+
+img {
+	transform: translateX(-50%);
+	left: 50.05%;
+  	position: absolute;
+  	height: 79px;
+	margin-top: -20;
+	top: auto;
+	z-index: 1;
+	margin-bottom: 0px;
+	bottom: 325px;
+
+}
+
+.left {
+	color: white;
+	background: #2C7BB4;
+	padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 0px;
+    position: relative;
+    z-index: -1;
+}
+
+.right {
+	color: white;
+	background: #E44541;
+	padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 0px;
+    position: relative;
+    z-index: -1;
+}
+
