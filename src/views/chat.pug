@@ -25,6 +25,8 @@ html(lang='en')
 									.row.msg_container.base_sent
 										.col-md-10.col-xs-10
 											.messages.msg_sent
+												input#access_token(type='hidden') 
+												| #{activity.id}
 												p
 													| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
 													| on #{activity.date} at #{activity.time} in #{activity.location}
@@ -105,5 +107,5 @@ html(lang='en')
 						a(href='#')
 							span.glyphicon.glyphicon-eye-close
 							|  Invisivel
-		script(src='js/jquery-3.2.1.js')
-		script(src='chat.js')
+			script(src='js/jquery-3.2.1.js')
+			script(src='js/chat.js')
