@@ -12,6 +12,7 @@ const twilio = require('twilio');
 const webpush = require('web-push');
 const gcm = require('node-gcm');
 const sender = new gcm.Sender('AIzaSyAnn1s-AWD_0i7pegLEZZty4U2-BopC5rA');
+const firebase = require("firebase");
 // var message = new gcm.Message({
 //     data: { key1: 'msg1' }
 // });
@@ -49,7 +50,7 @@ const password = require('./routes/password');
 const sendEmails = require('./routes/sendEmails');
 const messages = require('./routes/messages')
 const chatbot = require('./routes/chatbot')
-const firebase = require("firebase");
+const chat = require('./routes/chat')
 
 //these are Terts his firebase details:
 var config = {
@@ -103,6 +104,7 @@ app.use('/password', password);
 app.use('/sendEmails', sendEmails);
 app.use('/messages', messages);
 app.use('/chatbot', chatbot);
+app.use('/chat', chat);
 // app.use('/friendsInvited', friendsInvited);
 
 

@@ -6,13 +6,14 @@ const Conversation = require('watson-developer-cloud/conversation/v1');
 
 'use strict';
 
-    // Set up Conversation service wrapper.
-    var conversation = new Conversation({
-      username: 'd9770ce8-59fa-4134-88fd-e42fdfc86642', // replace with username from service key
-      password: 'JLSm1G40w02H', // replace with password from service key
-      path: { workspace_id: 'd11b2b05-b64c-4914-9ccf-3db1480c8b05' }, // replace with workspace ID
-      version_date: '2017-05-26'
-    });
+/*// Create the service wrapper
+var conversation = new Conversation({
+  // If unspecified here, the CONVERSATION_USERNAME and CONVERSATION_PASSWORD env properties will be checked
+  // After that, the SDK will fall back to the bluemix-provided VCAP_SERVICES environment property
+  'username': process.env.CONVERSATION_USERNAME,
+  'password': process.env.CONVERSATION_PASSWORD,
+  'version_date': '2017-05-26'
+});
 
 // Render profile page
 router.get('/', function(req, res) {
@@ -36,12 +37,16 @@ router.get('/', function(req, res) {
       }
     }
     res.render('chatbot')
-})
+})*/
 
 
 
 
 // Endpoint to be call from the client side
+/*router.post('/api/message', function(req, res) {
+  var workspace = process.env.WORKSPACE_ID || '<workspace-id>';
+  if (!workspace || workspace === '<workspace-id>') {
+=======
 router.post('/', function(req, res) {
   var payload = {
     workspace_id: 'd11b2b05-b64c-4914-9ccf-3db1480c8b05',
@@ -72,7 +77,7 @@ router.post('/', function(req, res) {
     console.log("check if input works");
     return res.json(updateMessage(payload, data));
   });
-});
+});*/
 
 /**
  * Updates the response text using the intent confidence
