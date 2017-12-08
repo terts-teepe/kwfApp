@@ -103,7 +103,7 @@ app.use('/reachMethod', reachMethod);
 app.use('/password', password);
 app.use('/sendEmails', sendEmails);
 app.use('/messages', messages);
-app.use('/chatbot', chatbot);
+/*app.use('/chatbot', chatbot);*/
 app.use('/chat', chat);
 // app.use('/friendsInvited', friendsInvited);
 

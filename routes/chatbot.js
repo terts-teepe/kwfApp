@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const router = express.Router();
 const db = require('../models/database.js');
 const bodyParser = require('body-parser');
@@ -6,7 +6,7 @@ const Conversation = require('watson-developer-cloud/conversation/v1');
 
 'use strict';
 
-/*// Create the service wrapper
+// Create the service wrapper
 var conversation = new Conversation({
   // If unspecified here, the CONVERSATION_USERNAME and CONVERSATION_PASSWORD env properties will be checked
   // After that, the SDK will fall back to the bluemix-provided VCAP_SERVICES environment property
@@ -37,7 +37,7 @@ router.get('/', function(req, res) {
       }
     }
     res.render('chatbot')
-})*/
+})
 
 
 
@@ -45,19 +45,9 @@ router.get('/', function(req, res) {
 // Endpoint to be call from the client side
 /*router.post('/api/message', function(req, res) {
   var workspace = process.env.WORKSPACE_ID || '<workspace-id>';
-  if (!workspace || workspace === '<workspace-id>') {
-=======
+  if (!workspace || workspace === '<workspace-id>') {*/
+/*
 router.post('/', function(req, res) {
-  var payload = {
-    workspace_id: 'd11b2b05-b64c-4914-9ccf-3db1480c8b05',
-    context: req.body.context || {},
-    input: req.body.input || {}
-  };
-
-  console.log("payload.context")
-  console.log(payload.context)
-  console.log("payload.input")
-  console.log(payload.input)
 
   var workspace = process.env.WORKSPACE_ID || 'd11b2b05-b64c-4914-9ccf-3db1480c8b05';
   if (!workspace || workspace === 'd11b2b05-b64c-4914-9ccf-3db1480c8b05') {
@@ -85,7 +75,8 @@ router.post('/', function(req, res) {
  * @param  {Object} response The response from the Conversation service
  * @return {Object}          The response with the updated message
  */
-function updateMessage(input, response) {
+
+/*function updateMessage(input, response) {
   var responseText = null;
   if (!response.output) {
     response.output = {};
@@ -112,4 +103,4 @@ function updateMessage(input, response) {
 }
 
 
-module.exports = router;
+module.exports = router;*/
