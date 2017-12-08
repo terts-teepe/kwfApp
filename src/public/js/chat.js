@@ -1,7 +1,53 @@
-$(".accept").on('click', function(){
-    $(this).style.color = 'yellow'
-})
+function sendAjaxRequest(element,urlToSend) {
+     var clickedButton = element;
+      $.ajax({type: "POST",
+          url: urlToSend,
+          data: { id: clickedButton.val(), access_token: $("#access_token").val() },
+          success:function(result){
+            alert('ok');
+          },
+         error:function(result)
+          {
+          alert('error');
+         }
+     });
+}
 
+$(document).ready(function(){
+  $("#button_1").click(function(e){
+      e.preventDefault();
+      sendAjaxRequest($(this),'http://localhost:8080/activitystatus');
+  });
+
+  $("#button_2").click(function(e){
+      e.preventDefault();
+      sendAjaxRequest($(this),'http://localhost:8080/activitystatus');
+  });
+});
+
+        /*// Part 2: Bandwidth optimization
+        // Modify your form again so that AJAX requests happen at most once every 300 milliseconds. 
+        var firstTime = Date.now()
+
+        function sugg(typedIn){
+            var secondTime = Date.now()
+            var timePassed = secondTime - firstTime
+            if(timePassed < 300){
+                //do nothing
+            }
+            else{
+                $.post('/suggestionFinder',{typedIn: typedIn}, function(data,status){
+                    $('#suggestedName').text(data)
+                })  
+            }
+            firstTime = secondTime // Every time a button is pressed firstTime will take the value of the secondTime        
+            console.log('firstTime')
+            console.log(firstTime)
+            console.log('secondTime')
+            console.log(secondTime) 
+            console.log('timePassed')
+            console.log(timePassed)
+        }*/
 /*$(document).on('click', '.panel-heading span.icon_minim', function (e) {
     var $this = $(this);
     if (!$this.hasClass('panel-collapsed')) {
