@@ -8,6 +8,7 @@ html(lang='en')
 		meta(charset='UTF-8')
 		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
 		link(href ='css/name.css' type='text/css' rel='stylesheet')
+		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
 	body
 		nav.navbar-fixed-top.navbar.navbar-default
@@ -16,24 +17,24 @@ html(lang='en')
 				.col-xs-6.right.edit
 				img.image(src='img/kwfLogo.png')
 		.container
-			.col-md-1.col-md-push-2.col-xs-1.col-xs-push-1
-				img.imageOne(src='img/emma.png')
-			.col-md-6.col-md-push-2.col-xs-6.col-xs-push-2.text-center.tekstbubbels
-				.talk-bubble.tri-right.round
-					.talktext
-						p
-							| Hoi, ik ben Emma van Vriendendienst!
-				.talk-bubble.tri-right.round
-					.talktext
-						p
-							| En hoe heet jij?
-				form(method='post', action='/name', autocomplete="off")
-					.row
-						.col-md-6.col-md-push-3.col-xs-6.col-xs-push-1.naam
-							input(class="login", type="text", name="name", placeholder="Type hier je naam")
-					.row
-						.col-md-6.col-md-push-3.col-xs-6.col-xs-push-1.doorgaan
-							input.btn.btn-primary.btn-md.change(class="submit" type="submit", value="Doorgaan")
+			.flex-col
+				.flex-row
+					.check.text-center
+						img.imageOne(src='img/emma.png')
+					.check.tekstbubbels
+						.talk-bubble.tri-right.round
+							.talktext
+								p.text-center
+									| Hoi, ik ben Emma van Vriendendienst!
+						.talk-bubble.tri-right.round
+							.talktext
+								p.text-center
+									| En hoe heet jij?
+				form.flex-col.flex-row(method='post', action='/name', autocomplete="off")
+					.naam.check.text-center
+						input(class="login", type="text", name="name", placeholder="Type hier je naam")
+					.doorgaan.check.text-center
+						input.btn.btn-primary.btn-md.change(class="submit" type="submit", value="Doorgaan")
 		.wrapper.navbar-fixed-bottom
 			.box.box1
 				a(href="/addFriends")
