@@ -29,9 +29,7 @@ const Activity = db.define('activity', {
     categorie: Sequelize.STRING,
     time: Sequelize.TIME,
     date: Sequelize.DATEONLY,
-/*    friend: Sequelize.STRING,*/
     location: Sequelize.STRING,
-    readStatus: Sequelize.BOOLEAN,
     status: Sequelize.BOOLEAN
 });
 

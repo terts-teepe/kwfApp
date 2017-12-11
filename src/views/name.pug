@@ -2,11 +2,56 @@ doctype html
 html(lang='en')
 	head
 		title Activity
+		meta(charset='UTF-8')
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		meta(charset='UTF-8')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+		link(href ='css/name.css' type='text/css' rel='stylesheet')
+		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
 	body
-		.container.col-md-6.col-md-push-3.col-xs-8.col-xs-push-2.text-center
-			h1 What shall I call you?
-			form(method='post', action='/name', autocomplete="off")
-				input(class="login", type="text", name="name", placeholder="Naam")
-				input(class="submit" type="submit", value="Next")
+		.container
+			.col-md-1.col-md-push-2.col-xs-1.col-xs-push-1
+				img.imageOne(src='img/emma.png')
+			.col-md-6.col-md-push-2.col-xs-6.col-xs-push-2.text-center.tekstbubbels
+				.talk-bubble.tri-right.round
+					.talktext
+						p
+							| Hoi, ik ben Emma van Vriendendienst!
+				.talk-bubble.tri-right.round
+					.talktext
+						p
+							| En hoe heet jij?
+				form(method='post', action='/name', autocomplete="off")
+					.row
+						.col-md-6.col-md-push-3.col-xs-6.col-xs-push-1.naam
+							input(class="login", type="text", name="name", placeholder="Type hier je naam")
+					.row
+						.col-md-6.col-md-push-3.col-xs-6.col-xs-push-1.doorgaan
+							input.btn.btn-primary.btn-md.change(class="submit" type="submit", value="Doorgaan")
+		nav.navbar-fixed-top.navbar.navbar-default
+			.row
+				.col-xs-6.left.edit
+				.col-xs-6.right.edit
+				img.image(src='img/kwfLogo.png')
+		.wrapper
+			.box.box1
+				a(href="/addFriends")
+					i.fa.fa-user-plus(aria-hidden='true')
+			.box.box1
+				a(href="/index")
+					i.fa.fa-list(aria-hidden='true')
+			.box.box1
+				a(href="/Activity")
+					i.fa.fa-plus-circle(aria-hidden='true')
+			.box.box1
+				a(href="/messages")
+					i.fa.fa-comments(aria-hidden='true')
+			.box.box1
+				a(href="/profile")
+					i.fa.fa-user(aria-hidden='true')
+
+
+
+
+

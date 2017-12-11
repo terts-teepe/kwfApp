@@ -7,21 +7,21 @@ html(lang='en')
 	body
 		h1.text-center.col-md-12.layout Vriendendienst
 		.container
-			.col-md-6.col-md-push-3.col-xs-8.col-xs-push-2.text-center
+			.col-md-6.col-md-push-3.col-xs-8.col-xs-push-2.text-center.inlog
 				form(method='post', action='/login', autocomplete="off")
 					.form-group
-						input.form-control(class="login", type="text", name="name", id='username')
+						input.form-control(class="login", type="text", name="name", id='username', placeholder='gebruikersnaam')
 					.form-group
-						input.form-control(class="login", type="password", name="password", id="pass")
+						input.form-control(class="login", type="password", name="password", id="pass", placeholder='wachtwoord')
 					.form-group
-						input(type='checkbox' id="remember_me")
-						|Remember me
+						input(type='checkbox' id="remember_me" style='margin-right: 5px;')
+						| Onthoud inloggegevens
 					.form-group
-						button.btn.form-control(class="submit" type="submit") Log in
-					a(href='/name') Register here!
+						button.btn.form-control(class="submit" type="submit") Inloggen
+					a(href='/name') Registreren
 		nav.navbar-fixed-bottom.navbar.navbar-default
 			.row
-				.col-xs-6.left Powered by
+				.col-xs-6.left Gerealiseerd Door
 				.col-xs-6.right KWF
 				img(src='img/kwfLogo.png')
 
