@@ -89,13 +89,13 @@ app.use(session({
 }));
 
 //Routes
-app.use('/login', login);
+app.use(['/login', '/'], login);
 app.use('/logout', logout);
 app.use('/index', index);
 app.use('/register', register);
 app.use('/profile', profile);
 app.use('/activity', activity);
-app.use(['/home', '/'], home);
+app.use('/home', home);
 app.use('/addFriends', addFriends);
 app.use('/inviteFriends', invite);
 app.use('/signin', signin);
