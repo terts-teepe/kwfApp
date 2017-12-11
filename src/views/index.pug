@@ -4,11 +4,19 @@ html(lang='en')
 		title Activity
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		link(href ='css/index.css' type='text/css' rel='stylesheet')
+		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
+		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
+		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
+		nav.navbar-fixed-top.navbar.navbar-default
+			.row
+				.col-xs-6.left.edit
+				.col-xs-6.right.edit
+				//- img.image(src='img/kwfLogo.png')
 		.container
 			.text-center
-				h1 Welcome #{user.name}
+				h1 Geplande Activiteiten van #{user.name}
 				br
 				table.table
 					thead
@@ -24,15 +32,25 @@ html(lang='en')
 								td #{activity.plannerName}
 								td #{activity.date} om #{activity.time}
 								td #{activity.location}
-		nav.navbar-fixed-bottom.navbar.navbar-default
-			.container
-				.row
-					ul.nav.nav-justified
-						li.active
-							a(href="/activity") Plan Activity
-						li
-							a(href='/addFriends') Add Friends
-						li
-							a(href='/notification') Notification
-						li
-							a(href='/profile') Profile
+		.wrapper.navbar-fixed-bottom
+			.box.box1
+				a(href="/addFriends")
+					i.fa.fa-user-plus(aria-hidden='true')
+					h5 Vrienden
+			.box.box2
+				a(href="/index")
+					i.fa.fa-list(aria-hidden='true')
+					h5 Activiteiten
+			.box.box3
+				a(href="/Activity")
+					i.fa.fa-plus-circle(aria-hidden='true')
+					h5 Plannen
+			.box.box4
+				a(href="/messages")
+					i.fa.fa-comments(aria-hidden='true')
+					h5 Berichten
+			.box.box5
+				a(href="/profile")
+					i.fa.fa-user(aria-hidden='true')
+					h5 Profiel
+					

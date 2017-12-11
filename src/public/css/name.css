@@ -5,7 +5,7 @@
 	padding: 0;
 }*/
 
-.right, .left {
+/*.right, .left {
 	color: white;
 	padding-bottom: 20px;
     padding-top: 20px;
@@ -36,9 +36,9 @@
 	height: 160px;
 	width: 160px;
 	margin-top: 100px;
-}
+}*/
 
-@media screen and (max-width: 880px) {
+/*@media screen and (max-width: 880px) {
     .imageOne {
          width: 120px;
          height: 120px;
@@ -50,7 +50,7 @@
     .vorm {
 	margin-top: 120px;
 	}
-}
+}*/
 
 
 .tekstbubbels {
