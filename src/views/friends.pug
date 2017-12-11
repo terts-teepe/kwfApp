@@ -1,0 +1,65 @@
+doctype html
+html(lang='en')
+	head
+		title Activity
+		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+		link(href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
+		link(href ='css/activity.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+	body
+		.container
+			form(method='post', action='/activity', autocomplete="off")
+				.col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
+					div.choose
+						h1 Choose who you want to ask for help
+						.checkbox
+							label
+								input(type='checkbox', onclick='toggle(this)') 
+								h3.names Select All
+						each friend in friends
+							input(name='friendId' , type='hidden',value=friend.id)
+							.checkbox
+								label
+									//- h1 #{friend.name}
+									//- h1 #{friend.id}/
+									input(type='checkbox', name='friends',id="name" , value=friend.name)
+									h3.names #{friend.name}
+				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
+				//- 	div.when
+				//- 		h1 When do you want help?
+				//- 		input#registration-date.form-control(name='date', type='date')
+				//- 		input#registration-time.form-control(name='time', type='time')
+				//- 		span.input-group-btn
+				//- 			button.btn.btn-default(type='button', onclick='addNow()')
+				//- 				span.glyphicon.glyphicon-map-marker(aria-hidden='true')
+				//- 				|  Now
+				//- 			button.btn.btn-default(type='button', onclick='stopNow()')
+				//- 				span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
+				//- 				|  Stop
+				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
+				//- 	div.where
+				//- 		h1 Where do you want help?
+				//- 		.radio
+				//- 			label
+				//- 			input(type='radio', name='location', value='My current location')
+				//- 			| My current location
+				//- 		.radio
+				//- 			label
+				//- 			input(type='radio', name='location', value='Somewhere else')
+				//- 			| Somewhere else
+					button.btn.btn-success.btn-lg.submit(type='submit') Plan Activity!
+		nav.navbar-fixed-bottom.navbar.navbar-default
+			.container
+				.row
+					ul.nav.nav-justified
+						li.active
+							a(href="/activity") Plan Activity
+						li
+							a(href='/addFriends') Add Friends
+						li
+							a(href='/notification') Notification
+						li
+							a(href='/profile') Profile
+	script(src='http://momentjs.com/downloads/moment-with-locales.js')
+	script(src='http://momentjs.com/downloads/moment-timezone-with-data.js')
+	script(src='js/activity.js')

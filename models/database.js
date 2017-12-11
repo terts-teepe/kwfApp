@@ -30,11 +30,12 @@ const Activity = db.define('activity', {
     time: Sequelize.TIME,
     date: Sequelize.DATEONLY,
     location: Sequelize.STRING,
+    accept: Sequelize.INTEGER,
     status: Sequelize.BOOLEAN
 });
 
-User.belongsToMany(Activity, {through: 'user_activity'})
-Activity.belongsToMany(User, {through: 'user_activity'})
+User.belongsToMany(Activity, {through: 'user_activity'});
+Activity.belongsToMany(User, {through: 'user_activity'});
 
 /*const User = db.define('user', {
     local: {

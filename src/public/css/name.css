@@ -102,9 +102,11 @@ i, h5 {
 
 /* We start writing out flexbox here. The above is just page setup */
 .wrapper {
-  display:flex;
-  height: 100vh;
-  align-items: flex-end;
+	display:flex;
+	height: auto;
+	margin-top: 20px;
+	align-items: flex-end;
+	line-height: 0.5px;
 }
 
 .box {
@@ -389,9 +391,9 @@ i, h5 {
 
 /* talk bubble contents */
 .talktext{
-  padding: 1em;
+	padding: 0.5em;
 	text-align: left;
-  line-height: 1.5em;
+	line-height: 1.3em;
 }
 .talktext p{
   /* remove webkit p margins */

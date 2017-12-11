@@ -3,86 +3,91 @@ html(lang='en')
 	head
 		title Activity
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+		link(href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
 		link(href ='css/activity.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		.container
-			form.col-sm-10.col-sm-offset-1(method='post', action='/activity', autocomplete="off")
-				div.categorie
-					h1 Choose an activity
-					.radio
-						label
-						input(type='radio', name='categorie', value='Groceries')
-						| Groceries
-					.radio
-						label
-						input(type='radio', name='categorie', value='Drive me')
-						| Drive me
-					.radio
-						label
-						input(type='radio', name='categorie', value='Baby sit')
-						| Baby sit
-					.radio
-						label
-						input(type='radio', name='categorie', value='Cook')
-						| Cook
-					.radio
-						label
-						input(type='radio' name='categorie', id='ignoreThis', value="other")
-						| Other 
-						input(type='text', id='categorie' onchange="changeradioother()")
-				div.choose
-					h1 Choose who you want to ask for help
-					.checkbox
-						label
-							input(type='checkbox', onclick='toggle(this)') 
-							h3.names Select All
-					each friend in friends
-						input(name='friendId' , type='hidden',value=friend.id)
-						.checkbox
-							label
-								//- h1 #{friend.name}
-								//- h1 #{friend.id}/
-								input(type='checkbox', name='friends',id="name" , value=friend.name)
-								h3.names #{friend.name}
-				div.when
-					h1 When do you want help?
-					//- .radio
-					//- 	label
-					//- 	input(type='radio', name='time', value='now')
-					//- 	| Now
-					//- .radio
-					//- 	label
-					//- 	input(type='radio', name='time', value='later')
-					//- 	| Later
-					input#registration-date.form-control(name='date', type='date')
-					input#registration-time.form-control(name='time', type='time')
-						//- label.control-label.col-sm-3(for='registration-date')
-						//- .input-group.registration-date-time
-						//- 	span#basic-addon1.input-group-addon
-						//- 		span.glyphicon.glyphicon-calendar(aria-hidden='true')
-						//- 	input#registration-date.form-control(name='registration_date', type='date')
-						//- 	span#basic-addon1.input-group-addon
-						//- 		span.glyphicon.glyphicon-time(aria-hidden='true')
-						//- 	input#registration-time.form-control(name='registration_time', type='time')
-					span.input-group-btn
-						button.btn.btn-default(type='button', onclick='addNow()')
-							span.glyphicon.glyphicon-map-marker(aria-hidden='true')
-							|  Now
-						button.btn.btn-default(type='button', onclick='stopNow()')
-							span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
-							|  Stop
-				div.where
-					h1 Where do you want help?
-					.radio
-						label
-						input(type='radio', name='location', value='My current location')
-						| My current location
-					.radio
-						label
-						input(type='radio', name='location', value='Somewhere else')
-						| Somewhere else
-				button.btn.btn-success.btn-lg.submit(type='submit') Plan Activity!
+			form(method='post', action='/activity', autocomplete="off")
+				.col-md-12.col-md-offset-0.col-sm-10.col-sm-offset-1
+					div.categorie
+						h1.text-center Kies een activiteit
+						.col-md-4.col-sm-5
+							.radio.eachCategorie
+								label
+								input(type='radio', name='categorie', value='Groceries')
+								i(class="fa fa-shopping-cart" aria-hidden="true")
+								h4 Boodschappen
+						.col-md-4.col-sm-5
+							.radio.eachCategorie
+								label
+								input(type='radio', name='categorie', value='Drive me')
+								i(class="fa fa-coffee" aria-hidden="true")
+								h4 Koffie
+						.col-md-4.col-sm-5
+							.radio.eachCategorie
+								label
+								input(type='radio', name='categorie', value='Baby sit')
+								i(class="fa fa-car" aria-hidden="true")
+								h4 Vervoer
+						.col-md-4.col-sm-5
+							.radio.eachCategorie
+								label
+								input(type='radio', name='categorie', value='Cook')
+								img.i(src='img/baby_icon.jpg')
+								h4 Babysitten
+						.col-md-4.col-sm-5
+							.radio.eachCategorie
+								label
+								input(type='radio', name='categorie', value='Cook')
+								img.i(src='img/cooking-icon-png.jpg')
+								h4 Koken
+						.col-md-4.col-sm-5
+							.radio.eachCategorie
+								label
+								input(type='radio' name='categorie', id='ignoreThis', value="other")
+								i(class="fa fa-question-circle-o" aria-hidden="true")
+								h4 Iets anders
+								input(type='text', id='categorie' onchange="changeradioother()")
+				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
+				//- 	div.choose
+				//- 		h1 Choose who you want to ask for help
+				//- 		.checkbox
+				//- 			label
+				//- 				input(type='checkbox', onclick='toggle(this)') 
+				//- 				h3.names Select All
+				//- 		each friend in friends
+				//- 			input(name='friendId' , type='hidden',value=friend.id)
+				//- 			.checkbox
+				//- 				label
+				//- 					//- h1 #{friend.name}
+				//- 					//- h1 #{friend.id}/
+				//- 					input(type='checkbox', name='friends',id="name" , value=friend.name)
+				//- 					h3.names #{friend.name}
+				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
+				//- 	div.when
+				//- 		h1 When do you want help?
+				//- 		input#registration-date.form-control(name='date', type='date')
+				//- 		input#registration-time.form-control(name='time', type='time')
+				//- 		span.input-group-btn
+				//- 			button.btn.btn-default(type='button', onclick='addNow()')
+				//- 				span.glyphicon.glyphicon-map-marker(aria-hidden='true')
+				//- 				|  Now
+				//- 			button.btn.btn-default(type='button', onclick='stopNow()')
+				//- 				span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
+				//- 				|  Stop
+				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
+				//- 	div.where
+				//- 		h1 Where do you want help?
+				//- 		.radio
+				//- 			label
+				//- 			input(type='radio', name='location', value='My current location')
+				//- 			| My current location
+				//- 		.radio
+				//- 			label
+				//- 			input(type='radio', name='location', value='Somewhere else')
+				//- 			| Somewhere else
+				//- 	button.btn.btn-success.btn-lg.submit(type='submit') Plan Activity!
 		nav.navbar-fixed-bottom.navbar.navbar-default
 			.container
 				.row
