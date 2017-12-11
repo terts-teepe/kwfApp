@@ -24,3 +24,14 @@ ul li:nth-child(even) {
 ul a {
 	color: white;
 }
+
+h1 {
+	color: white;
+	z-index: 1;
+	/*position: relative;*/
+}
+
+.navbar {
+	z-index: -1;
+	/*position: relative;*/
+}

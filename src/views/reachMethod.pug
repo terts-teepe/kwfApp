@@ -2,13 +2,62 @@ doctype html
 html(lang='en')
 	head
 		title Activity
+		meta(charset='UTF-8')
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		meta(charset='UTF-8')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+		link(href ='css/name.css' type='text/css' rel='stylesheet')
+		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
+		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
+		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
 	body
-		.container.col-md-6.col-md-push-3.col-xs-8.col-xs-push-2.text-center
-			h1 Nice to meet you #{name}
-			h2 How may I reach you
-			form(method='post', action='/reachMethod?name='+ name, autocomplete="off")
-				input(class="login", type="text", name="email", placeholder="Email")
-				input(class="login", type="text", name="number", placeholder="Phone Number")
-				input(class="submit" type="submit", value="Next")
+		nav.navbar-fixed-top.navbar.navbar-default
+			.row
+				.col-xs-6.left.edit
+				.col-xs-6.right.edit
+				img.image(src='img/kwfLogo.png')
+		.container
+			.flex-col
+				.flex-row
+					.check.text-center
+						img.imageOne(src='img/emma.png')
+					.check.tekstbubbels
+						.talk-bubble.tri-right.round
+							.talktext
+								p.text-center
+									| Leuk om je te ontmoeten #{name}
+						.talk-bubble.tri-right.round
+							.talktext
+								p.text-center
+									| We zijn bijna klaar!
+						.talk-bubble.tri-right.round
+							.talktext
+								p.text-center
+									| Zullen we contact maken met je vrienden? Vul hieronder je gegevens in.
+						form.flex-col.flex-row(method='post', action='/reachMethod?name='+ name, autocomplete="off")
+							input.check.text-center(class="login", type="text", name="email", placeholder="Email")
+							input.check.text-center(class="login", type="text", name="phoneNumber", placeholder="Telefoonnummer")
+							input.check.text-center(class="login", type="password", name="password", placeholder="Wachtwoord")
+							input.check.text-center(class="submit" type="submit", value="Doorgaan")
+		.wrapper.navbar-fixed-bottom
+			.box.box1
+				a(href="/addFriends")
+					i.fa.fa-user-plus(aria-hidden='true')
+					h5 Vrienden
+			.box.box2
+				a(href="/index")
+					i.fa.fa-list(aria-hidden='true')
+					h5 Activiteiten
+			.box.box3
+				a(href="/Activity")
+					i.fa.fa-plus-circle(aria-hidden='true')
+					h5 Plannen
+			.box.box4
+				a(href="/messages")
+					i.fa.fa-comments(aria-hidden='true')
+					h5 Berichten
+			.box.box5
+				a(href="/profile")
+					i.fa.fa-user(aria-hidden='true')
+					h5 Profiel
