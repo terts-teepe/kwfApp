@@ -4,11 +4,18 @@ const db = require('../models/database.js');
 const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const twilio = require('twilio');
+const accountSid = 'ACbcdc77c3e680fef8b9eecbdb7bcc5ba4'; // Your Account SID from www.twilio.com/console
+const authToken = 'f038a6a0dc3c0c41916100aeefca14f5';   // Your Auth Token from www.twilio.com/console
+const client = new twilio(accountSid, authToken);
 
 // Render profile page
 router.get('/', (req, res) => {
-	var currentUserId = req.session.user.id;
-	var friends = [];
+	let categorie = req.query.categorie;
+	let friend = req.query.friends;
+	let friendsIds = req.query.friendsIds;
+	let currentUserId = req.session.user.id;
+	let friends = [];
 	db.Relationship.findAll({
 		where: {action_user_id: currentUserId}
 	})
@@ -21,12 +28,13 @@ router.get('/', (req, res) => {
 			.then((friend)=>{
 				var friendName = friend.dataValues.name;
 				var id = friend.dataValues.id;
-				friends.push({name: friendName, id: id}); // Adding the same id
+				var img = friend.dataValues.image;
+				friends.push({name: friendName, id: id, img: img}); // Adding the same id
 			})
 			.then(()=>{
 				console.log(friends)
 				if(friends.length === ids.length){
-					res.render('activity', {friends: friends})
+					res.render('time', {friends: friends, categorie: categorie, friend: friend, friendsIds: friendsIds})
 				}
 			})
 		}
@@ -109,10 +117,79 @@ router.get('/', (req, res) => {
 })*/
 
 router.post('/', (req, res) =>{
-    let categorie = req.body.categorie;
-    console.log("categorie")
-    console.log(categorie)
-    res.redirect('/friends?categorie=' + categorie);
+    let categorie = req.query.categorie;
+    let friends = req.query.friends;
+	let friendsIds = req.query.friendsIds;
+   	let currentUserName = req.session.user.name;
+	let currentUserId = req.session.user.id;
+	let time = req.body.time;
+	let date = req.body.date;
+	let location = req.body.location;
+	console.log("friends");
+	console.log(friends);
+	console.log("friendsIds");
+	console.log(friendsIds);
+	// If there are multiple friends
+	if(Array.isArray(friends)){
+			db.Activity.create({
+				plannerId: currentUserId,
+				plannerName: currentUserName,
+				categorie: categorie,
+				time: time,
+				date: date,
+				location: location
+			})
+			.then((activity)=>{
+				for (var i = 0; i < friends.length; i++) {
+					db.User.findOne({
+						where : {
+							id: friendsIds[i]
+						},
+						include : [	
+							{model: db.Activity}
+						]
+					})
+					.then ((user)=>{
+						activity.setUsers(user)
+						client.messages.create({
+						    body: `Hello ${user.name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
+						    to: user.phoneNumber,  // Text this number
+						    from: '+3197004498785' // From a valid Twilio number
+						})
+						
+						if(i === friends.length){
+							res.redirect('/index')
+						}
+					})
+				}
+			})
+	}
+	else {
+		db.Activity.create({
+			plannerId: currentUserId,
+			plannerName: currentUserName,
+			categorie: categorie,
+			time: time,
+			date: date,
+			location: location
+		})
+		.then((activity)=>{
+			db.User.findOne({
+				where: {
+					id: friendsIds
+				}
+			})
+			.then((user)=>{
+				activity.setUsers(user)
+				client.messages.create({
+				    body: `Hello ${user.name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
+				    to: user.phoneNumber,  // Text this number
+				    from: '+3197004498785' // From a valid Twilio number
+				})
+				res.redirect('/index')
+			})
+		})
+	}
 });
 
 module.exports = router;

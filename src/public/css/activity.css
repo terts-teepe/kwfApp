@@ -28,11 +28,16 @@ ul a {
 }
 
 .eachCategorie > i {
-	font-size: 150px;
+	font-size: 8.5em;
+	color: black;
 }
 
 img.i {
-	height: 60%;
-	width: 45%;
+	height: 8.5em;
+	width: 8.5em;
 	margin-top: 16px;
 }
+
+/* button.btn {
+	background-color: red;
+} */

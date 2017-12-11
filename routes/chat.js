@@ -43,25 +43,32 @@ router.post('/', (req,res)=>{
 
 	let clickedBtn = JSON.stringify(req.body.btn)
 	let activityId = JSON.stringify(req.body.id)
-		db.User.findOne({
+/*		db.User.findOne({
 			where: {
 				id: currentUserId
 			},
 			include: {model: Activity, where: {id: activityId}}
 		})
-		.then((user)=>{
+		.then((user)=>{*/
 			let status;
-			if(clickedBtn === 'Accept'){
+			if(clickedBtn === 1){
 				status = true;
 /*				Filter.find({
 				  where: { id: 3 }, 
 				  include: [ { model : FilteredContent, as : 'filteredContent' } ] 
 				}).then ( function( filter ) {*/
-				  user.Activities[0].updateAttributes({
-						accept: currentUserId,
-						status: status
-				  })
-				  res.send(req.body);
+				  db.Activity.update({
+					  status: true,
+					}, {
+					  where: { id: activityId }
+					})
+					.then(function (result) {
+					  console.log(result);  
+					  	 res.send(req.body); 
+					  // result = [x] or [x, y]
+					  // [x] if you're not using Postgres
+					  // [x, y] if you are using Postgres
+					});
 /*				}).then(function () {
 				  // DONE! :)
 				});*/
@@ -83,7 +90,7 @@ router.post('/', (req,res)=>{
 				status = false
 				res.send(req.body);
 			}
-		})
+	/*	})*/
 })
 
 module.exports = router;

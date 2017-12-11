@@ -52,6 +52,7 @@ const messages = require('./routes/messages')
 const chatbot = require('./routes/chatbot')
 const chat = require('./routes/chat')
 const friends = require('./routes/friends')
+const time = require('./routes/time')
 
 //these are Terts his firebase details:
 var config = {
@@ -107,6 +108,7 @@ app.use('/messages', messages);
 /*app.use('/chatbot', chatbot);*/
 app.use('/chat', chat);
 app.use('/friends', friends);
+app.use('/time', time);
 // app.use('/friendsInvited', friendsInvited);
 
 

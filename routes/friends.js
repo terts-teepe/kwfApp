@@ -4,13 +4,10 @@ const db = require('../models/database.js');
 const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-const twilio = require('twilio');
-const accountSid = 'ACbcdc77c3e680fef8b9eecbdb7bcc5ba4'; // Your Account SID from www.twilio.com/console
-const authToken = 'f038a6a0dc3c0c41916100aeefca14f5';   // Your Auth Token from www.twilio.com/console
-const client = new twilio(accountSid, authToken);
 
 // Render profile page
 router.get('/', (req, res) => {
+	let categorie = req.query.categorie;
 	var currentUserId = req.session.user.id;
 	var friends = [];
 	db.Relationship.findAll({
@@ -25,12 +22,13 @@ router.get('/', (req, res) => {
 			.then((friend)=>{
 				var friendName = friend.dataValues.name;
 				var id = friend.dataValues.id;
-				friends.push({name: friendName, id: id}); // Adding the same id
+				var img = friend.dataValues.image;
+				friends.push({name: friendName, id: id, img: img}); // Adding the same id
 			})
 			.then(()=>{
 				console.log(friends)
 				if(friends.length === ids.length){
-					res.render('friends', {friends: friends})
+					res.render('friends', {friends: friends, categorie: categorie})
 				}
 			})
 		}
@@ -112,9 +110,11 @@ router.get('/', (req, res) => {
 	}
 })*/
 
-/*router.post('/', (req, res) =>{
-    let categorie = req.body.categorie;
-    res.redirect('/friends?categorie=' + categorie);
-});*/
+router.post('/', (req, res) =>{
+    let categorie = req.query.categorie;
+    let friends = req.body.friends;
+    let friendsIds = req.body.friendId;
+    res.redirect('/time?categorie=' + categorie + '&friends=' + friends + '&friendsIds=' + friendsIds);
+});
 
 module.exports = router;

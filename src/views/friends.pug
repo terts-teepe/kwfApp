@@ -1,29 +1,29 @@
 doctype html
 html(lang='en')
 	head
-		title Activity
+		title Activiteit
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		link(href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
-		link(href ='css/activity.css' type='text/css' rel='stylesheet')
+		link(href ='css/friends.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		.container
-			form(method='post', action='/activity', autocomplete="off")
+			form(method='post', action='/friends?categorie=' + categorie, autocomplete="off")
 				.col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
 					div.choose
-						h1 Choose who you want to ask for help
+						h1 Selecteer vrienden
 						.checkbox
 							label
 								input(type='checkbox', onclick='toggle(this)') 
-								h3.names Select All
+								h3.names Iedereen uitnodiging
 						each friend in friends
 							input(name='friendId' , type='hidden',value=friend.id)
 							.checkbox
 								label
-									//- h1 #{friend.name}
-									//- h1 #{friend.id}/
 									input(type='checkbox', name='friends',id="name" , value=friend.name)
+									//- img.image(src=friend.img)
 									h3.names #{friend.name}
+					button.btn.btn-success.btn-lg.submit(type='submit') Volgende	
 				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
 				//- 	div.when
 				//- 		h1 When do you want help?

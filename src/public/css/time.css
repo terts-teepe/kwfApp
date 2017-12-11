@@ -1,0 +1,24 @@
+i.icon {
+	margin-top: 30px;
+	font-size: 8em;
+}
+
+p {
+	border: #2C7BB4 1px solid;
+	padding: 8px;
+	margin: 0;
+}
+
+p.day {
+	background: #2C7BB4;
+	color: white;
+}
+
+input#registration-date {
+	background: #E44541;
+	color: white;
+}
+
+.where {
+	margin-top: 150px;
+}
