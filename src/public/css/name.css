@@ -83,7 +83,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   background-color: #E2E2E2;
 }
 
-i {
+i, h5 {
   color: #7b7f84;
 }
 
@@ -108,7 +108,7 @@ i {
 }
 
 .box {
-  width:33.333%;
+  width:20%;
 }
 
 
