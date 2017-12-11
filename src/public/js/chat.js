@@ -2,7 +2,7 @@ function sendAjaxRequest(element,urlToSend) {
      var clickedButton = element;
       $.ajax({type: "POST",
           url: urlToSend,
-          data: { id: clickedButton.val(), access_token: $("#access_token").val() },
+          data: { btn: clickedButton.val(), access_token: $("#access_token").val() },
           success:function(result){
             alert('ok');
           },
@@ -16,12 +16,12 @@ function sendAjaxRequest(element,urlToSend) {
 $(document).ready(function(){
   $("#button_1").click(function(e){
       e.preventDefault();
-      sendAjaxRequest($(this),'http://localhost:8080/activitystatus');
+      sendAjaxRequest($(this),'http://localhost:8080/chat');
   });
 
   $("#button_2").click(function(e){
       e.preventDefault();
-      sendAjaxRequest($(this),'http://localhost:8080/activitystatus');
+      sendAjaxRequest($(this),'http://localhost:8080/chat');
   });
 });
 

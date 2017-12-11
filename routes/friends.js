@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 			.then(()=>{
 				console.log(friends)
 				if(friends.length === ids.length){
-					res.render('activity', {friends: friends})
+					res.render('friends', {friends: friends})
 				}
 			})
 		}
@@ -112,9 +112,9 @@ router.get('/', (req, res) => {
 	}
 })*/
 
-router.post('/', (req, res) =>{
+/*router.post('/', (req, res) =>{
     let categorie = req.body.categorie;
     res.redirect('/friends?categorie=' + categorie);
-});
+});*/
 
 module.exports = router;

@@ -21,3 +21,18 @@ ul a {
 	bottom: 22px;
 }
 
+.eachCategorie {
+	border: solid 2px black;
+	height: 210px;
+	text-align: center;
+}
+
+.eachCategorie > i {
+	font-size: 150px;
+}
+
+img.i {
+	height: 60%;
+	width: 45%;
+	margin-top: 16px;
+}

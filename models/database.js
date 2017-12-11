@@ -29,14 +29,13 @@ const Activity = db.define('activity', {
     categorie: Sequelize.STRING,
     time: Sequelize.TIME,
     date: Sequelize.DATEONLY,
-/*    friend: Sequelize.STRING,*/
     location: Sequelize.STRING,
-    readStatus: Sequelize.BOOLEAN,
+    accept: Sequelize.INTEGER,
     status: Sequelize.BOOLEAN
 });
 
-User.belongsToMany(Activity, {through: 'user_activity'})
-Activity.belongsToMany(User, {through: 'user_activity'})
+User.belongsToMany(Activity, {through: 'user_activity'});
+Activity.belongsToMany(User, {through: 'user_activity'});
 
 /*const User = db.define('user', {
     local: {
