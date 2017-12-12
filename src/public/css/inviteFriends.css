@@ -1,17 +1,28 @@
+
+.vrienden {
+	  margin: auto;
+    width: 50%;
+    padding: 10px;
+    max-width: 250px;
+    margin-top: 150px;
+}
+
 h2 {
-	text-align: center;
+  text-align: center;
 }
 
 h3 {
-	text-align: center;
+  text-align: center;
 }
 
-.vrienden {
-	margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
-    max-width: 250px;
+.tekst {
+  margin-top: 150px;
+}
+.container-one {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 ul li:nth-child(odd) {  
@@ -25,7 +36,14 @@ ul li:nth-child(even) {
 }
 
 ul a {
-	color: white;
+  color: white;
+}
+
+.foto {
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 

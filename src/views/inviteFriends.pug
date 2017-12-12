@@ -14,28 +14,34 @@ html(lang='en')
 				.col-xs-6.left.edit
 				.col-xs-6.right.edit
 				img.image(src='img/kwfLogo.png')
-		.container
-			h3 Can I meet your other friends which are not on the platform yet?
+		.container-one
 			form(method='post', action='/inviteFriends')
-				.container.vrienden
-					h4 Invite Friends To Network
+				h4.text-center.tekst Nodig Vrienden Uit:
+				.col-md-6.col-md-push-3.col-xs-8.col-xs-push-2.text-center
 					.radio
-						label
-							input(type='radio', id='WhatsApp' name='inviteFriends' value='WhatsApp' disabled)
-							| WhatsApp
+						a(href="/messages")
+							img.foto(src='img/smsLogo.png' type='radio', id='WhatsApp' name='inviteFriends' value='SMS' disabled)
 					.radio
-						label
-							input(type='radio', id='fbMessenger' name='inviteFriends' value='fbMessenger' disabled)
-							| FB Messenger
-					.radio
-						label
-							input(type='radio', id='SMS' name='inviteFriends' value='SMS')
-							| SMS
-					.radio
-						label
-							input(type='radio', id='Gmail' name='inviteFriends' value='Gmail')
-							| Gmail
-					button.btn.btn-success.btn-lg.submit Invite Friends
+						a(href="/sendEmails")
+							img.foto(src='img/gmailLogo.png' type='radio', id='fbMessenger' name='inviteFriends' value='Gmail' disabled)
+					//- h4.move Nodig Vrienden Uit:
+					//- .radio
+					//- 	label
+					//- 		input(type='radio', id='WhatsApp' name='inviteFriends' value='WhatsApp' disabled)
+					//- 		| WhatsApp
+					//- .radio
+					//- 	label
+					//- 		input(type='radio', id='fbMessenger' name='inviteFriends' value='fbMessenger' disabled)
+					//- 		| FB Messenger
+					//- .radio
+					//- 	label
+					//- 		input(type='radio', id='SMS' name='inviteFriends' value='SMS')
+					//- 		| SMS
+					//- .radio
+					//- 	label
+					//- 		input(type='radio', id='Gmail' name='inviteFriends' value='Gmail')
+					//- 		| Gmail
+					//- button.btn.btn-success.btn-lg.submit Invite Friends
 		.wrapper.navbar-fixed-bottom
 			.box.box1
 				a(href="/addFriends")
@@ -57,3 +63,11 @@ html(lang='en')
 				a(href="/profile")
 					i.fa.fa-user(aria-hidden='true')
 					h5 Profiel
+
+
+
+			//- h1.text-center Nodig Vrienden:
+			//- .col-md-6.col-md-push-3.col-xs-8.col-xs-push-2.text-center
+			//- 	img(src='img/fbLogo.jpg')
+			//- 	img(src='img/gmailLogo.png') 
+			//- 	p <a href='/name'> Other

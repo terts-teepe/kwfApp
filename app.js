@@ -53,6 +53,7 @@ const chatbot = require('./routes/chatbot')
 const chat = require('./routes/chat')
 const friends = require('./routes/friends')
 const time = require('./routes/time')
+const friendsInvited = require('./routes/friendsInvited')
 
 //these are Terts his firebase details:
 var config = {
@@ -89,27 +90,27 @@ app.use(session({
 }));
 
 //Routes
-app.use('/login', login);
+app.use(['/login', '/'], login);
 app.use('/logout', logout);
 app.use('/index', index);
 app.use('/register', register);
 app.use('/profile', profile);
 app.use('/activity', activity);
-app.use(['/home', '/'], home);
+// app.use('/home', home);
 app.use('/addFriends', addFriends);
 app.use('/inviteFriends', invite);
 app.use('/signin', signin);
 app.use('/tutorial', tutorial);
 app.use('/name', name);
 app.use('/reachMethod', reachMethod);
-app.use('/password', password);
+// app.use('/password', password);
 app.use('/sendEmails', sendEmails);
 app.use('/messages', messages);
 /*app.use('/chatbot', chatbot);*/
 app.use('/chat', chat);
 app.use('/friends', friends);
 app.use('/time', time);
-// app.use('/friendsInvited', friendsInvited);
+app.use('/friendsInvited', friendsInvited);
 
 
 /*// Redirect the user to the OAuth provider for authentication.  When
