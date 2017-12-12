@@ -23,16 +23,32 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 	margin-top: 20px;
 	align-items: flex-end;
 	line-height: 0.5px;
+  background-color: #E2E2E2;
 }
 
 .box {
-  width:20%;
+  width:16%;
+}
+
+.box1 {
+  margin-left: 10%;
+}
+
+.box5 {
+  margin-right: 10%;
 }
 
 i, h5 {
   color: #7b7f84;
 }
 
+.box> a > i {
+  font-size: 32px;
+  margin-top: 5px;
+}
+
 h5 {
-	font-size: 10px;
+  margin-top: 5px;
+	font-size: 12px;
+  font-weight: bold;
 }

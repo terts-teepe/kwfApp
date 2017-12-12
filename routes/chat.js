@@ -35,62 +35,34 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', (req,res)=>{
-	let user = req.session.user
+	let user = req.session.user;
 	let currentUserId = user.id;
 	let currentUserName = user.name;
-	let obj = {};
-	console.log('body: ' + JSON.stringify(req.body));
+	let clickedBtn = req.body.btn;
+	let activityId = req.body.id;
+	let status;
 
-	let clickedBtn = JSON.stringify(req.body.btn)
-	let activityId = JSON.stringify(req.body.id)
-/*		db.User.findOne({
+	if(clickedBtn === "Accept"){
+		status = true;
+		db.Activity.findOne({
 			where: {
-				id: currentUserId
-			},
-			include: {model: Activity, where: {id: activityId}}
+				id: activityId
+			}
 		})
-		.then((user)=>{*/
-			let status;
-			if(clickedBtn === 1){
-				status = true;
-/*				Filter.find({
-				  where: { id: 3 }, 
-				  include: [ { model : FilteredContent, as : 'filteredContent' } ] 
-				}).then ( function( filter ) {*/
-				  db.Activity.update({
-					  status: true,
-					}, {
-					  where: { id: activityId }
-					})
-					.then(function (result) {
-					  console.log(result);  
-					  	 res.send(req.body); 
-					  // result = [x] or [x, y]
-					  // [x] if you're not using Postgres
-					  // [x, y] if you are using Postgres
-					});
-/*				}).then(function () {
-				  // DONE! :)
-				});*/
-/*				status = true;
-				db.Activity.findOne({
-					where: {id: activityId}
-				})
-				.then((activity)=>{
-					activity.update({
-						accept: currentUserId,
-						status: status
-					})
-					.then(()=>{
-						res.send(req.body);
-					})
-				})*/
-			}
-			else {
-				status = false
-				res.send(req.body);
-			}
-	/*	})*/
+		.then((activity)=> {
+			activity.update({
+				status: true,
+				accepter: currentUserId
+			})
+			.then(()=>{
+				res.send(req.body);			
+			})
+		})
+	}
+	else {
+		status = false
+		res.send(req.body);
+	}
 })
 
 module.exports = router;

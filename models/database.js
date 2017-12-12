@@ -30,7 +30,7 @@ const Activity = db.define('activity', {
     time: Sequelize.TIME,
     date: Sequelize.DATEONLY,
     location: Sequelize.STRING,
-    accept: Sequelize.INTEGER,
+    accepter: Sequelize.INTEGER,
     status: Sequelize.BOOLEAN
 });
 
@@ -59,7 +59,7 @@ db.sync({
 .then(yolo => {
 
     //create test data -- always do this after synchronizing the database, otherwise NodeJS with it's asynchronisity will fuck you up.
-
+    // open json(models.json) file form same folder
     User.create({
       name: 'Terts',
       password: 'weetikniet',

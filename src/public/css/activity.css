@@ -1,6 +1,6 @@
-button.btn.btn-success {
+/* button.btn.btn-success {
 	margin-bottom: 130px;
-}
+} */
 
 ul li:nth-child(odd) {  
   background-color: #FE0606;
@@ -16,28 +16,46 @@ ul a {
 	color: white;
 }
 
-.names {
+/* .names {
 	position: relative;
 	bottom: 22px;
-}
+} */
 
-.eachCategorie {
+/* .eachCategorie {
 	border: solid 2px black;
-	height: 210px;
+	height: 18em;
 	text-align: center;
-}
+	padding: auto;
+} */
 
 .eachCategorie > i {
-	font-size: 8.5em;
+	font-size: 5.8em;
 	color: black;
+	margin: auto 0;
 }
 
 img.i {
-	height: 8.5em;
-	width: 8.5em;
-	margin-top: 16px;
+	height: 5.8em;
+	width: 5.8em;
+	margin: auto 0;
 }
 
-/* button.btn {
-	background-color: red;
-} */
+.wrapper {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.square {
+	border: solid 2px black;
+	width: 30%;
+	height: 150px;
+	margin: 1.66%;
+	float: left;
+	padding: auto 0;
+}
+
+button.myBtn {
+	display: block;
+	clear: both;
+	margin-left: 300px;
+}

@@ -9,47 +9,47 @@ html(lang='en')
 	body
 		.container
 			form(method='post', action='/activity', autocomplete="off")
-				.col-md-12.col-md-offset-0.col-xs-10.col-xs-offset-1
-					div.categorie
-						h1.text-center Kies een activiteit
-						.col-md-4.col-xs-5
+				div.categorie
+					h1.text-center Kies een activiteit
+					.wrapper
+						.square
 							.radio.eachCategorie
 								label
-								input(type='radio', name='categorie', value='Groceries')
+								input(type='radio', name='categorie', value='Boodschappen')
 								i(class="fa fa-shopping-cart" aria-hidden="true")
 								h4 Boodschappen
-						.col-md-4.col-xs-5
+						.square
 							.radio.eachCategorie
 								label
-								input(type='radio', name='categorie', value='Drive me')
+								input(type='radio', name='categorie', value='Koffie')
 								i(class="fa fa-coffee" aria-hidden="true")
 								h4 Koffie
-						.col-md-4.col-xs-5
+						.square
 							.radio.eachCategorie
 								label
-								input(type='radio', name='categorie', value='Baby sit')
+								input(type='radio', name='categorie', value='Vervoer')
 								i(class="fa fa-car" aria-hidden="true")
 								h4 Vervoer
-						.col-md-4.col-xs-5
+						.square
 							.radio.eachCategorie
 								label
-								input(type='radio', name='categorie', value='Cook')
+								input(type='radio', name='categorie', value='Babysitten')
 								img.i(src='img/baby_icon.jpg')
 								h4 Babysitten
-						.col-md-4.col-xs-5
+						.square
 							.radio.eachCategorie
 								label
-								input(type='radio', name='categorie', value='Cook')
+								input(type='radio', name='categorie', value='Koken')
 								img.i(src='img/cooking-icon-png.jpg')
 								h4 Koken
-						.col-md-4.col-xs-5
+						.square
 							.radio.eachCategorie
 								label
 								input(type='radio' name='categorie', id='ignoreThis', value="other")
 								i(class="fa fa-question-circle-o" aria-hidden="true")
 								h4 Iets anders
 								input(type='text', id='categorie' onchange="changeradioother()")
-					button.btn.btn-success.btn-lg.submit(type='submit') Volgende
+					button.myBtn(type='submit') Volgende
 				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
 				//- 	div.choose
 				//- 		h1 Choose who you want to ask for help
