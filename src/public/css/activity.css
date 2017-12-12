@@ -1,37 +1,29 @@
-/* button.btn.btn-success {
-	margin-bottom: 130px;
-} */
-
-ul li:nth-child(odd) {  
-  background-color: #FE0606;
-  opacity: 0.9;
+/* Surrounding div */
+div.categorie {
+	margin-top: 90px;
 }
 
-ul li:nth-child(even) {  
-  background-color: #0153A3;
-  opacity: 0.9;
+/* Insider div */
+.wrap {
+	width: 600px;
+	margin: 0 auto;
 }
 
-ul a {
-	color: white;
-}
-
-/* .names {
-	position: relative;
-	bottom: 22px;
-} */
-
-/* .eachCategorie {
+/* Each square */
+.square {
 	border: solid 2px black;
-	height: 18em;
+	width: 30%;
+	height: 150px;
+	margin: 1.66%;
+	float: left;
+	padding: 5px 30px;
 	text-align: center;
-	padding: auto;
-} */
+}
 
+/* Icons */
 .eachCategorie > i {
 	font-size: 5.8em;
 	color: black;
-	margin: auto 0;
 }
 
 img.i {
@@ -54,8 +46,11 @@ img.i {
 	padding: auto 0;
 }
 
+/* Next Button */
 button.myBtn {
 	display: block;
 	clear: both;
-	margin-left: 300px;
+	margin-left: 290px;
+	background-color: #00ACC1;
+	color: white;
 }

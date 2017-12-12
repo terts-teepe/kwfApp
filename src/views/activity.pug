@@ -5,10 +5,9 @@ html(lang='en')
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		link(href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
 		link(href ='css/activity.css' type='text/css' rel='stylesheet')
-		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
-		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		nav.navbar-fixed-top.navbar.navbar-default
 			.row
@@ -56,8 +55,8 @@ html(lang='en')
 								input(type='radio' name='categorie', id='ignoreThis', value="other")
 								i(class="fa fa-question-circle-o" aria-hidden="true")
 								h4 Iets anders
-								input(type='text', id='categorie' onchange="changeradioother()")
-					button.myBtn(type='submit') Volgende
+								input.form-control(type='text', id='categorie' onchange="changeradioother()")
+					button.btn.btn-default.myBtn(type='submit') Volgende
 				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
 				//- 	div.choose
 				//- 		h1 Choose who you want to ask for help
