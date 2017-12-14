@@ -26,7 +26,6 @@ ul a {
 }
 
 h1 {
-	color: white;
 	z-index: 1;
 	/*position: relative;*/
 }
@@ -35,3 +34,33 @@ h1 {
 	z-index: -1;
 	/*position: relative;*/
 }
+
+body {
+	background-color: #eeeee4
+}
+
+.wrap {
+	width: 600px;
+	margin: 10px auto 100px;
+	height: 16em;
+	background-color: white;
+}
+
+.wrap > img {
+	height: 200px;
+	width: 200px;
+	float: left;
+}
+
+.header {
+	color: white;
+}
+/* .wrap:nth-of-type(odd) {
+	border: 1px #efede0 solid;
+background-color: #efede0;
+}
+
+.wrap:nth-of-type(even) {
+border: 2px #ecddca solid;
+	background-color: #ecddca;
+} */

@@ -125,44 +125,59 @@ router.post('/', (req, res) =>{
 	let time = req.body.time;
 	let date = req.body.date;
 	let location = req.body.location;
+	console.log("Array.isArray(friends)")
+	console.log(Array.isArray(friends))
+	console.log("Array.isArray(friendsIds)")
+	console.log(Array.isArray(friendsIds))
 	console.log("friends");
 	console.log(friends);
 	console.log("friendsIds");
 	console.log(friendsIds);
 	// If there are multiple friends
 	if(Array.isArray(friends)){
-			db.Activity.create({
-				plannerId: currentUserId,
-				plannerName: currentUserName,
-				categorie: categorie,
-				time: time,
-				date: date,
-				location: location
-			})
-			.then((activity)=>{
-				for (var i = 0; i < friends.length; i++) {
-					db.User.findOne({
-						where : {
-							id: friendsIds[i]
-						},
-						include : [	
-							{model: db.Activity}
-						]
-					})
-					.then ((user)=>{
-						activity.setUsers(user)
-						client.messages.create({
-						    body: `Hello ${user.name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
-						    to: user.phoneNumber,  // Text this number
-						    from: '+3197004498785' // From a valid Twilio number
-						})
-						
-						if(i === friends.length){
-							res.redirect('/index')
-						}
-					})
+		db.Activity.create({
+			plannerId: currentUserId,
+			plannerName: currentUserName,
+			categorie: categorie,
+			time: time,
+			date: date,
+			location: location,
+			status: false
+		})
+		.then((activity)=>{
+			/* Link activity to planner */
+			db.User.findOne({
+				where : {
+					id: currentUserId
 				}
 			})
+			.then ((user)=>{
+				activity.setUsers(user)
+			});
+			for (var i = 0; i < friends.length; i++) {
+				/* Link activity to friends */
+				db.User.findOne({
+					where : {
+						id: friendsIds[i]
+					},
+					include : [	
+						{model: db.Activity}
+					]
+				})
+				.then ((user)=>{
+					activity.setUsers(user)
+					client.messages.create({
+					    body: `Hello ${user.name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
+					    to: user.phoneNumber,  // Text this number
+					    from: '+3197004498785' // From a valid Twilio number
+					})
+					
+					if(i === friends.length){
+						res.redirect('/index')
+					}
+				})
+			}
+		});
 	}
 	else {
 		db.Activity.create({
@@ -171,9 +186,20 @@ router.post('/', (req, res) =>{
 			categorie: categorie,
 			time: time,
 			date: date,
-			location: location
+			location: location,
+			status: false
 		})
 		.then((activity)=>{
+			/* Link activity to planner */
+			db.User.findOne({
+				where : {
+					id: currentUserId
+				}
+			})
+			.then ((user)=>{
+				activity.setUsers(user)
+			});
+			/* Link activity to friends */
 			db.User.findOne({
 				where: {
 					id: friendsIds

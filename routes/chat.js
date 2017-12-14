@@ -45,29 +45,31 @@ router.post('/', (req,res)=>{
 	let clickedBtn = req.body.btn;
 	let activityId = req.body.id;
 	let status;
-
+	console.log("From Ajax request*****")
+	console.log(req.body)
 	if(clickedBtn === "Accept"){
 		status = true;
 		db.Activity.findOne({
 			where: {
 				id: activityId
-			},
-			include: {model: db.User}
+			}
 		})
 		.then((activity)=> {
-			console.log("activity")
-			console.log(activity)
 			activity.update({
 				status: true,
 				accepter: currentUserId
 			})
 			.then(()=>{
 				db.User.findOne({
-					where: {id: activity.plannerId}
+					where: {
+						id: activity.plannerId
+					}
 				})
 				.then((planner)=>{
 					db.User.findOne({
-						where: {id: activity.accepter}						
+						where: {
+							id: activity.accepter
+						}						
 					})
 					.then ((accepter)=>{
 						client.messages.create({
@@ -75,6 +77,13 @@ router.post('/', (req,res)=>{
 						    to: planner.phoneNumber,  // Text this number
 						    from: '+3197004498785' // From a valid Twilio number
 						})
+					})
+					db.User.findAll({
+						include: [{model: db.Activity, where: {id: activityId}}]
+					})
+					.then((users)=> {
+						console.log("Request sent to")
+						console.log(users)
 					})
 				})
 				.then(()=> {

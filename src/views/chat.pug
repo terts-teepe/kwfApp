@@ -20,20 +20,33 @@ html(lang='en')
 								a(href='#')
 									span.glyphicon.glyphicon-remove.icon_close(data-id='chat_window_1')
 						each activity in user.activities
-							.panel-body.msg_container_base
-								form(method='post', action='/login')
+							if activity.status === false
+								.panel-body.msg_container_base
+									form(method='post', action='/chat')
+										.row.msg_container.base_sent
+											.col-md-10.col-xs-10
+												.messages.msg_sent
+													input#access_token(type='hidden', value=activity.id)
+													p
+														| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
+														| on #{activity.date} at #{activity.time} in #{activity.location}
+													time(datetime='2009-11-13T20:00') Timothy • 51 min
+											.col-md-2.col-xs-2.avatar
+												img.img-responsive(src='')
+										button.btn.btn-primary#button_1(value='Accept') Accept
+										button.btn.btn-danger#button_2(value='Decline') Decline	
+							else		
+								.panel-body.msg_container_base
 									.row.msg_container.base_sent
 										.col-md-10.col-xs-10
 											.messages.msg_sent
-												input#access_token(type='hidden', value=activity.id)
 												p
 													| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
 													| on #{activity.date} at #{activity.time} in #{activity.location}
 												time(datetime='2009-11-13T20:00') Timothy • 51 min
 										.col-md-2.col-xs-2.avatar
-											img.img-responsive(src='http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg')
-									button.btn.btn-primary#button_1(value='Accept') Accept
-									button.btn.btn-danger#button_2(value='Decline') Decline
+											img.img-responsive(src='')
+									p This activity has been accepted			
 							//- .row.msg_container.base_receive
 							//- 	.col-md-2.col-xs-2.avatar
 							//- 		img.img-responsive(src='http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg')
