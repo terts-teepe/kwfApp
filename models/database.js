@@ -65,28 +65,28 @@ db.sync({
       password: 'weetikniet',
       email: 'terts@live.nl',
       phoneNumber: '+31620528245',
-      image: 'img/terts.jpg'
+      image: 'img/avatars/avatar-eleven.png'
     })
     User.create({
       name: 'Rawan',
       password: '1234r',
       email: 'rawan@live.nl',
       phoneNumber: '+31614845655',
-      image: 'img/rawan.jpg'
+      image: 'img/avatars/avatar-four.png'
     })    
     User.create({
       name: 'Anuj',
       password: '1234a',
       email: 'anuj@live.nl',
       phoneNumber: '+31687903132',
-      image: 'img/anuj.jpg'
+      image: 'img/avatars/avatar-one.png'
     })    
     User.create({
       name: 'Fabio',
       password: '1234f',
       email: 'fabio@live.nl',
       phoneNumber: '+31637684022',
-      image: 'img/fabio.jpg'
+      image: 'img/avatars/avatar-two.png'
     })   
 
     .catch(e => console.log(e))

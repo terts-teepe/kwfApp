@@ -16,19 +16,19 @@ html(lang='en')
 				img.image(src='img/kwfLogo.png')
 		.container
 			.text-center
-				h3.tekst Voeg je vrienden toe zodat je straks activiteiten met ze kan plannen!
-				.text-left.clickNames.col-md-2.col-md-push-5
-					form(action='/addFriends', method='post', role='form')
+				.text-left.clickNames.wrapper-one
+					form.wrapper-one(action='/addFriends', method='post', role='form')
 						.checkbox
 							label
 								input(type='checkbox', onclick='toggle(this)') 
 								h3.names Select All
 						each notFriend in notFriends
-							.checkbox
+							.checkbox.checkBoxStyle.boks
 								label
 									input(type='checkbox', value= notFriend.id, name='friends')
-									h3.names #{notFriend.name}
-						button.btn.btn-success.btn.submit(type='submit') Add Friends
+								img.foto(src=notFriend.image)
+								h3.names.text-center #{notFriend.name} 
+						button.btn.btn-success.btn.submit.submitStyle(type='submit') Add Friends
 		.wrapper.navbar-fixed-bottom
 			.box.box1
 				a(href="/addFriends")
