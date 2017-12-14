@@ -36,9 +36,9 @@ html(lang='en')
 								p.text-center
 									| Zullen we contact maken met je vrienden? Vul hieronder je gegevens in.
 						form.flex-col.flex-row(method='post', action='/reachMethod?name='+ name, autocomplete="off")
-							input.form-control.check.text-center(class="login", type="text", name="email", placeholder="Email")
-							input.form-control.check.text-center(class="login", type="text", name="phoneNumber", placeholder="Telefoonnummer")
-							input.form-control.check.text-center(class="login", type="password", name="password", placeholder="Wachtwoord")
+							input.form-control.check.text-center(class="login", type="text", name="email", placeholder="Email", value="")
+							input.form-control.check.text-center(class="login", type="text", name="phoneNumber", placeholder="Telefoonnummer", value="")
+							input.form-control.check.text-center(class="login", type="password", name="password", placeholder="Wachtwoord", value="")
 							input.form-control.check.text-center(class="submit" type="submit", value="Doorgaan")
 		.wrapper.navbar-fixed-bottom
 			.box.box1

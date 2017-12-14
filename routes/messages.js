@@ -14,6 +14,7 @@ router.get('/', function(req, res) {
 
 
 router.post('/', (req, res) => {
+	var currentUserName = req.session.user.name;
 /*	var people = [{phonenumber: '+31620528245', name: 'Terts'},
 				  {phonenumber: '+31614845655', name: 'Rawan'}];*/
 	let recipient = req.body.to;
@@ -44,7 +45,7 @@ router.post('/', (req, res) => {
 				console.log(people.length);
 				// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
 
-				res.render('friendsInvited', {people: people});
+				res.redirect('index');
 				// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
 
 			}
@@ -62,7 +63,7 @@ router.post('/', (req, res) => {
 		    from: '+3197004498785' // From a valid Twilio number
 		})
 		.then(() => {
-			res.render('friendsInvited', {people: people});
+			res.redirect('index');
 		})
 	}
 });

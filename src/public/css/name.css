@@ -62,9 +62,9 @@
 	margin-top: 130px;
 }*/
 
-.edit {
+/*.edit {
 	height: 75px;
-}
+}*/
 /* CSS talk bubble */
 .talk-bubble {
 
@@ -80,7 +80,7 @@
 .flex-row {
 	display: flex;
 	justify-content: center;
-	margin-top: 20px;
+	margin-top: 60px;
 }
 
 .flex-col {
@@ -139,6 +139,10 @@
 .change {
 	width: 200px;
 	/*margin-bottom: 150px;*/
+}
+
+.naam {
+	margin-top: 60px;
 }
 
 

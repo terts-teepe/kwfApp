@@ -1,6 +1,7 @@
 .names {
-	position: relative;
-	bottom: 22px;
+    position: relative;
+    bottom: 60px;
+    /* margin-bottom: 50px; */
 }
 
 .clickNames {
@@ -24,3 +25,108 @@ ul a {
 .tekst {
 	margin-top: 150px;
 }
+
+.foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 90px;
+}
+
+.wrapper-one {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.boks {
+	width: 10%
+}
+
+
+
+h3 {
+	display: inline;
+}
+
+.checkBoxStyle {
+	margin-top: 50px;
+	width: 70%;
+}
+
+.submitStyle {
+	margin-bottom: 100px;
+	width: 100%;
+}
+
+.checkbox label, .radio label {
+    /* min-height: 20px; */
+    /* padding-left: 20px; */
+    /* margin-bottom: 0; */
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: -50px;
+    min-height: 0px; 
+    padding-left: 0px; 
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+
+/*$green: #22b573;
+$grey: #555;
+$transitionSpeed: 200ms;
+
+input[type="checkbox"] + label {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 10px solid $grey;
+  border-radius: 100%;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  transition: all ease-out $transitionSpeed;
+  text-indent: 90px;
+  font: normal normal 30px/60px "Helvetica";
+  white-space: nowrap;
+  color: $grey;
+  user-select: none;
+  
+   &:after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 25px;
+    border-bottom: 10px solid $green;
+    border-left: 10px solid $green;
+    top: 25%;
+    left: 50%;
+    transform-origin: bottom left;
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: all ease-out $transitionSpeed;
+  }
+}
+
+input[type="checkbox"]:checked + label {
+  border: 10px solid $green;
+  
+  &:after {
+    opacity: 1;
+    width: 70px;
+  }
+}
+
+#chk {
+  display: none;
+}
+
+
+
+
+
+}*/

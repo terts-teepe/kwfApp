@@ -29,6 +29,21 @@ div.categorie {
 img.i {
 	height: 5.8em;
 	width: 5.8em;
+	margin: auto 0;
+}
+
+.wrap {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.square {
+	border: solid 2px black;
+	width: 30%;
+	height: 150px;
+	margin: 1.66%;
+	float: left;
+	padding: auto 0;
 }
 
 /* Next Button */
