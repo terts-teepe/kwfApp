@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 						where: {id: friendId}
 					})
 					.then((friend)=>{
-						var friendName = friend.dataValues.name;
+						var friendName = friend;
 						friends.push(friendName);
 					})
 					.then(()=>{

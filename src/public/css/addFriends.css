@@ -1,7 +1,11 @@
 .names {
     position: relative;
-    bottom: 60px;
-    /* margin-bottom: 50px; */
+    top: 70px;
+}
+
+.selectAll {
+    margin-top: 70px;
+    margin-left: 22px;
 }
 
 .clickNames {
