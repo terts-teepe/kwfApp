@@ -38,7 +38,7 @@ router.post('/', (req,res)=>{
 	console.log("friendName")
 	console.log(friendName)
 	function response (){
-		res.render('friendsInvited', {people: people});
+		res.redirect('index')
 	}
 /*	function transport (){
 		transporter.sendMail(message, (error, info) => {
