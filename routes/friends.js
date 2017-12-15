@@ -112,9 +112,43 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) =>{
     let categorie = req.query.categorie;
-    let friends = req.body.friends;
-    let friendsIds = req.body.friendId;
-    res.redirect('/time?categorie=' + categorie + '&friends=' + friends + '&friendsIds=' + friendsIds);
+    let friendsAndIds = req.body.friends;
+    let friends = [];
+    let Ids = [];
+    let newFriends = []
+
+	if(Array.isArray(friendsAndIds)){
+		for (var i = 0; i < friendsAndIds.length; i++) {
+			newFriends.push(friendsAndIds[i].split('#'))
+			if(i == friendsAndIds.length-1){
+				for (var j = 0; j < newFriends.length; j++) {
+					for (var z = 0; z < 2; z++) {
+						if(z == 0){
+							friends.push(newFriends[j][z])
+						}
+						else if(z == 1){
+							Ids.push(newFriends[j][z])
+						}
+						if(j = newFriends.length-1){
+							if(z == 1){
+								console.log("*****friends*****")
+								console.log(friends)
+							    console.log("friends")
+							    console.log("friendsIds")
+							    console.log(Ids)
+								console.log("newFriends")
+								console.log(newFriends)
+					    		res.redirect('/time?categorie=' + categorie + '&friends=' + friends + '&Ids=' + Ids);
+							}
+						}
+					}
+				}
+			}
+		}
+	
+	}
+
 });
+
 
 module.exports = router;
