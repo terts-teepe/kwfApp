@@ -13,7 +13,7 @@ const client = new twilio(accountSid, authToken);
 router.get('/', (req, res) => {
 	let categorie = req.query.categorie;
 	let friend = req.query.friends;
-	let friendsIds = req.query.friendsIds;
+	let Ids = req.query.friendsIds;
 	let currentUserId = req.session.user.id;
 	let friends = [];
 	db.Relationship.findAll({
@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
 			.then(()=>{
 				console.log(friends)
 				if(friends.length === ids.length){
-					res.render('time', {friends: friends, categorie: categorie, friend: friend, friendsIds: friendsIds})
+					res.render('time', {friends: friends, categorie: categorie, friend: friend, Ids: Ids})
 				}
 			})
 		}
@@ -118,8 +118,10 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) =>{
     let categorie = req.query.categorie;
-    let friends = req.query.friends;
-	let friendsIds = req.query.friendsIds;
+/*    let friends = req.query.friends;*/ 
+	let friendsIds = req.query.Ids;
+	console.log("friendsIds")
+	console.log(friendsIds)
    	let currentUserName = req.session.user.name;
 	let currentUserId = req.session.user.id;
 	let time = req.body.time;
@@ -159,7 +161,7 @@ router.post('/', (req, res) =>{
 				/* Link activity to friends */
 				db.User.findOne({
 					where : {
-						id: friendsIds[i]
+						id: Number(friendsIds[i])
 					},
 					include : [	
 						{model: db.Activity}
@@ -215,7 +217,7 @@ router.post('/', (req, res) =>{
 				})
 				res.redirect('/index')
 			})
-		})
+		});
 	}
 });
 

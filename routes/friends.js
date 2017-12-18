@@ -112,41 +112,40 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) =>{
     let categorie = req.query.categorie;
-    let friendsAndIds = req.body.friends;
-    let friends = [];
-    let Ids = [];
-    let newFriends = []
-
-	if(Array.isArray(friendsAndIds)){
-		for (var i = 0; i < friendsAndIds.length; i++) {
-			newFriends.push(friendsAndIds[i].split('#'))
-			if(i == friendsAndIds.length-1){
+    let friendsIds = req.body.friends;
+	if(Array.isArray(friendsIds)){
+		for (var i = 0; i < friendsIds.length; i++) {			
+			res.redirect('/time?categorie=' + categorie + '&friends=' + friendsIds);
+		}
+	}
+	else {
+		res.redirect('/time?categorie=' + categorie + '&friends=' + friendsIds);		
+	}
+/*	if(Array.isArray(friendsAndIds)){
+		for (var i = 0; i < friendsIds.length; i++) {
+			newFriends.push(friendsIds[i].split('#'))
+			if(i == friendsIds.length-1){
 				for (var j = 0; j < newFriends.length; j++) {
 					for (var z = 0; z < 2; z++) {
-						if(z == 0){
-							friends.push(newFriends[j][z])
-						}
-						else if(z == 1){
-							Ids.push(newFriends[j][z])
-						}
+						friends.push(newFriends[j][z])
 						if(j = newFriends.length-1){
 							if(z == 1){
 								console.log("*****friends*****")
-								console.log(friends)
-							    console.log("friends")
 							    console.log("friendsIds")
-							    console.log(Ids)
+							    console.log("typeof Ids")
+
 								console.log("newFriends")
 								console.log(newFriends)
-					    		res.redirect('/time?categorie=' + categorie + '&friends=' + friends + '&Ids=' + Ids);
+					    		res.redirect('/time?categorie=' + categorie + '&friends=' + friends);
 							}
 						}
 					}
 				}
 			}
-		}
+		}*/
 	
-	}
+	// }
+
 
 });
 
