@@ -12,8 +12,8 @@ const client = new twilio(accountSid, authToken);
 // Render profile page
 router.get('/', (req, res) => {
 	let categorie = req.query.categorie;
-	let friend = req.query.friends;
-	let Ids = req.query.friendsIds;
+/*	let Ids = req.query.friendsIds;*/
+	let friendsIds = req.query.friends;
 	let currentUserId = req.session.user.id;
 	let friends = [];
 	db.Relationship.findAll({
@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
 			.then(()=>{
 				console.log(friends)
 				if(friends.length === ids.length){
-					res.render('time', {friends: friends, categorie: categorie, friend: friend, Ids: Ids})
+					res.render('time', {friends: friends, categorie: categorie, friendsIds: friendsIds/*, Ids: Ids*/})
 				}
 			})
 		}
@@ -118,26 +118,18 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) =>{
     let categorie = req.query.categorie;
-/*    let friends = req.query.friends;*/ 
-	let friendsIds = req.query.Ids;
-	console.log("friendsIds")
-	console.log(friendsIds)
+	let friendsIds = req.query.friends.split(',');
    	let currentUserName = req.session.user.name;
 	let currentUserId = req.session.user.id;
 	let time = req.body.time;
 	let date = req.body.date;
 	let location = req.body.location;
-	console.log("Array.isArray(friends)")
-	console.log(Array.isArray(friends))
 	console.log("Array.isArray(friendsIds)")
 	console.log(Array.isArray(friendsIds))
-	console.log("friends");
-	console.log(friends);
 	console.log("friendsIds");
 	console.log(friendsIds);
-/*	console.log(window.location.hash.split('#')[1]friendsIds);*/
 	// If there are multiple friends
-	if(Array.isArray(friends)){
+	if(Array.isArray(friendsIds)){
 		db.Activity.create({
 			plannerId: currentUserId,
 			plannerName: currentUserName,
@@ -157,7 +149,7 @@ router.post('/', (req, res) =>{
 			.then ((user)=>{
 				activity.setUsers(user)
 			});
-			for (var i = 0; i < friends.length; i++) {
+			for (var i = 0; i < friendsIds.length; i++) {
 				/* Link activity to friends */
 				db.User.findOne({
 					where : {
@@ -174,8 +166,10 @@ router.post('/', (req, res) =>{
 					    to: user.phoneNumber,  // Text this number
 					    from: '+3197004498785' // From a valid Twilio number
 					})
-					
-					if(i === friends.length){
+				})
+				.then(()=>{
+					/* ***** Fix this */
+					if(i === friendsIds.length){
 						res.redirect('/index')
 					}
 				})
@@ -209,6 +203,10 @@ router.post('/', (req, res) =>{
 				}
 			})
 			.then((user)=>{
+				console.log('friendsIds')
+				console.log(friendsIds)
+				console.log('Invited****')
+				console.log(user)
 				activity.setUsers(user)
 				client.messages.create({
 				    body: `Hello ${user.name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
