@@ -80,7 +80,7 @@
 .flex-row {
 	display: flex;
 	justify-content: center;
-	margin-top: 60px;
+	margin-top: 30px;
 }
 
 .flex-col {
@@ -89,7 +89,13 @@
   	justify-content: space-around;
 }
 
+.formStyle {
+	margin-top: 60px;
+}
 
+.styleInvite {
+	padding-bottom: 80px;
+}
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -106,6 +112,12 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+}
+
+.form-control {
+	margin-top: 5px;
+	margin-bottom: 5px;
+
 }
 
 /* Change the color of links on hover */
@@ -131,6 +143,7 @@
 	-moz-border-radius: 30px;
 
 }
+
 
 .doorgaan {
 	margin-top: 20px;

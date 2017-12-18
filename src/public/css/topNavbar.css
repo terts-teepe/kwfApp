@@ -34,3 +34,10 @@
 .edit {
 	height: 75px;
 }
+
+.backStyle {
+    position: absolute;
+    top: 33px;
+    right: 350px;
+    color: white;
+}

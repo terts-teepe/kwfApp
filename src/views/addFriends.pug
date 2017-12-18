@@ -21,10 +21,15 @@ html(lang='en')
 					form.wrapper-one(action='/addFriends', method='post', role='form')
 						.checkbox.selectAll
 							label
+
+								input(type='checkbox', onclick='toggle(this)') 
+								h3.selectAllStyle Select All
+
 								input(type="checkbox", onclick='toggle(this)')
 								span.cr
 									i.cr-icon.glyphicon.glyphicon-ok
 								|        <b>   Select All </b>
+
 						each notFriend in notFriends
 							//- .checkbox.checkBoxStyle.boks.checkbox-circle
 							.checkbox
