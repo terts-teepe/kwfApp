@@ -2,7 +2,8 @@ doctype html
 html(lang='en')
 	head
 		title Activity
-		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+		//- link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
 		link(href ='css/addFriends.css' type='text/css' rel='stylesheet')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
@@ -20,13 +21,24 @@ html(lang='en')
 					form.wrapper-one(action='/addFriends', method='post', role='form')
 						.checkbox.selectAll
 							label
+
 								input(type='checkbox', onclick='toggle(this)') 
 								h3.selectAllStyle Select All
+
+								input(type="checkbox", onclick='toggle(this)')
+								span.cr
+									i.cr-icon.glyphicon.glyphicon-ok
+								|        <b>   Select All </b>
+
 						each notFriend in notFriends
-							.checkbox.checkBoxStyle.boks
+							//- .checkbox.checkBoxStyle.boks.checkbox-circle
+							.checkbox
 								label
-									input(type='checkbox', value= notFriend.id, name='friends')
-								h3.names.text-center #{notFriend.name} 
+									input(type="checkbox", value= notFriend.id, name='friends')
+									span.cr
+										i.cr-icon.glyphicon.glyphicon-ok
+									|        <b>   #{notFriend.name} </b>
+								//- h3.names.text-center #{notFriend.name} 
 								img.foto(src=notFriend.image)
 						button.btn.btn-success.btn.submit.submitStyle(type='submit') Add Friends
 		.wrapper.navbar-fixed-bottom

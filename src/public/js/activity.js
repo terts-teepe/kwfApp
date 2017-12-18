@@ -4,8 +4,11 @@ function addNow() {
   document.getElementById('registration-date').value = nowDate;
   document.getElementById('registration-time').value = nowTime;
   set = setTimeout(function () { addNow(); }, 1000);
-}
+} 
 
+function stopNow() {
+  clearTimeout(set);
+}
 
 function toggle(source) {
   checkboxes = document.getElementsByName('friends');
