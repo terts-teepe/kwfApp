@@ -1,0 +1,61 @@
+img {
+	width: 150%
+	height: 150%;
+	z-index: -1
+
+}
+
+html, body {
+	height: 100vh;
+	min-height: 100vh;
+}
+
+.terts {
+    width: 37px;
+    height: 36px;
+    z-index: 1;
+    position: relative;
+    bottom: 140px;
+    border-radius: 50%;
+    right: 20px;
+}
+
+.pierre {
+    width: 35px;
+    height: 35px;
+    z-index: 1;
+    position: relative;
+    right: 160px;
+    bottom: 20;
+}
+
+.layout {
+	color: white;
+	background: linear-gradient(90deg, #2C7BB4 50%, #E44541 50%);
+	padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 0px;
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.wrapper-one {
+	display: flex;
+	align-items: stretch;
+}
+
+.boks {
+	min-height: 85vh;
+	display:block;
+    margin:auto;
+}
+
+
+
+
+
+
+
+
+
+

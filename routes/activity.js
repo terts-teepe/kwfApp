@@ -13,22 +13,28 @@ router.get('/', (req, res) => {
 		where: {action_user_id: currentUserId}
 	})
 	.then((ids) =>{
-		for(var i=0; i<ids.length; i++){
-			var friendId = ids[i].user_two_id;
-			db.User.findOne({
-				where: {id: friendId}
-			})
-			.then((friend)=>{
-				var friendName = friend.dataValues.name;
-				var id = friend.dataValues.id;
-				friends.push({name: friendName, id: id}); // Adding the same id
-			})
-			.then(()=>{
-				console.log(friends)
-				if(friends.length === ids.length){
-					res.render('activity', {friends: friends})
-				}
-			})
+		if (ids.length === 0) {
+			res.render('volunteers');
+		}
+
+		else { 
+			for(var i=0; i<ids.length; i++){
+				var friendId = ids[i].user_two_id;
+				db.User.findOne({
+					where: {id: friendId}
+				})
+				.then((friend)=>{
+					var friendName = friend.dataValues.name;
+					var id = friend.dataValues.id;
+					friends.push({name: friendName, id: id}); // Adding the same id
+				})
+				.then(()=>{
+					console.log(friends)
+					if(friends.length === ids.length){
+						res.render('activity', {friends: friends})
+					}
+				})
+			}
 		}
 	})
 })
