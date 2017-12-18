@@ -1,16 +1,15 @@
 img {
-	width: 150%
-	height: 150%;
-	z-index: -1
-
+	width: 160%;
+	height: 140%;
+	z-index: -1;
 }
 
 html, body {
-	height: 100vh;
-	min-height: 100vh;
+	height: 60vh;
+	min-height: 60vh;
 }
 
-.terts {
+/* .terts {
     width: 37px;
     height: 36px;
     z-index: 1;
@@ -27,12 +26,12 @@ html, body {
     position: relative;
     right: 160px;
     bottom: 20;
-}
+} */
 
 .layout {
 	color: white;
 	background: linear-gradient(90deg, #2C7BB4 50%, #E44541 50%);
-	padding-bottom: 20px;
+    padding-bottom: 20px;
     padding-top: 20px;
     margin-top: 0px;
     position: relative;
@@ -42,20 +41,19 @@ html, body {
 .wrapper-one {
 	display: flex;
 	align-items: stretch;
+    margin-top: -120px;
 }
 
 .boks {
 	min-height: 85vh;
 	display:block;
-    margin:auto;
+    margin: 0 auto;
 }
 
+.col-xs-12 {
+    padding: 0;
+}
 
-
-
-
-
-
-
-
-
+.container-fluid {
+    padding: 0;
+}
