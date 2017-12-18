@@ -52,6 +52,10 @@
 	}
 }*/
 
+body {
+  font-size: 17px;
+}
+
 
 .tekstbubbels {
 	margin-top: 100px;
@@ -73,8 +77,13 @@
 	height: auto;
 	background-color: #E2E2E2;
 }
+
 .border{
   border: 8px solid #666;
+}
+
+.logos {
+	margin-top: 50px;
 }
 
 .flex-row {
@@ -89,9 +98,6 @@
   	justify-content: space-around;
 }
 
-.formStyle {
-	margin-top: 60px;
-}
 
 .styleInvite {
 	padding-bottom: 80px;

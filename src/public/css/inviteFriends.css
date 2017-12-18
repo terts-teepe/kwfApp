@@ -1,3 +1,7 @@
+body {
+  font-size: 17px;
+}
+
 
 .vrienden {
 	  margin: auto;
@@ -22,6 +26,17 @@ h3 {
 .tekst {
   margin-top: 150px;
 }
+
+.checkbox+.checkbox, .radio+.radio {
+     margin-top: 0px; 
+}
+
+.checkbox, .radio {
+    
+     margin-top: 0px;
+     margin-bottom: 0px; 
+}
+
 .container-one {
     padding-left: 0px;
     padding-right: 0px;

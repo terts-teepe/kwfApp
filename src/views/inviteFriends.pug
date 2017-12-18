@@ -15,15 +15,27 @@ html(lang='en')
 				.col-xs-6.right.edit
 				img.image(src='img/kwfLogo.png')
 		.container-one
-			form(method='post', action='/inviteFriends')
-				h4.text-center.tekst Nodig Vrienden Uit
-				.col-md-6.col-md-push-3.col-xs-8.col-xs-push-2.text-center
-					.radio
-						a(href="/messages")
-							img.foto(src='img/smsLogo.png' type='radio', id='WhatsApp' name='inviteFriends' value='SMS' disabled)
-					.radio
-						a(href="/sendEmails")
-							img.foto(src='img/gmailLogo.png' type='radio', id='fbMessenger' name='inviteFriends' value='Gmail' disabled)
+			.container
+				.flex-col
+					.flex-row
+						.check.text-center
+							img.imageOne(src='img/emma.png')
+						.check.tekstbubbels
+							.talk-bubble.tri-right.round
+								.talktext
+									p.text-center
+										| Het lijkt erop dat er nog weinig vrienden op dit platform zijn
+							.talk-bubble.tri-right.round
+								.talktext
+									p.text-center
+										| Laten we ze uitnodigen via SMS of Mail
+		.row.text-center.logos
+			.radio.col-md-3.col-md-push-4.col-xs-6
+				a(href="/messages")
+					img.foto(src='img/smsLogo.png' type='radio', id='WhatsApp' name='inviteFriends' value='SMS' disabled)
+			.radio.col-md-3.col-md-push-2.col-xs-6
+				a(href="/sendEmails")
+					img.foto(src='img/gmailLogo.png' type='radio', id='fbMessenger' name='inviteFriends' value='Gmail' disabled)
 					//- h4.move Nodig Vrienden Uit:
 					//- .radio
 					//- 	label
