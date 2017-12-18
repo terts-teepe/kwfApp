@@ -17,7 +17,8 @@ html(lang='en')
 		.container
 			.text-center
 				h1.header Geplande Activiteiten van #{user.name}
-				a.btn.btn-primary(href="/activity") Een nieuwe activiteit plannen
+				button.btn.btn-lg.btn-primary
+					a.btn.btn-primary(href="/activity") Een nieuwe activiteit plannen
 				br
 				//- if activities
 				//- 	each activity in activities

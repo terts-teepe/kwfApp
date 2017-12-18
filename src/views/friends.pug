@@ -5,10 +5,10 @@ html(lang='en')
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		link(href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
 		link(href ='css/friends.css' type='text/css' rel='stylesheet')
-		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		.container
 			form(method='post', action='/friends?categorie=' + categorie, autocomplete="off")
@@ -20,10 +20,10 @@ html(lang='en')
 								input(type='checkbox', onclick='toggle(this)') 
 								h3.names Iedereen uitnodiging
 						each friend in friends
-							input(name='friendId' , type='hidden',value=friend.id)
 							.checkbox
 								label
-									input(type='checkbox', name='friends',id="name" , value=friend.name)
+									input(type='checkbox', name='friends',id="name" , value=friend.name + '#' + friend.id)
+									//- input(name='friendId' , type='hidden',value=friend.id)
 									//- img.image(src=friend.img)
 									h3.names #{friend.name}
 					button.btn.btn-success.btn-lg.submit(type='submit') Volgende	
@@ -65,4 +65,5 @@ html(lang='en')
 							a(href='/profile') Profile
 	script(src='http://momentjs.com/downloads/moment-with-locales.js')
 	script(src='http://momentjs.com/downloads/moment-timezone-with-data.js')
-	script(src='js/activity.js')
+	script(src='js/jquery-3.2.1.js')
+	script(src='js/friends.js')

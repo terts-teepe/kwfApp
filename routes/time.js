@@ -133,6 +133,7 @@ router.post('/', (req, res) =>{
 	console.log(friends);
 	console.log("friendsIds");
 	console.log(friendsIds);
+/*	console.log(window.location.hash.split('#')[1]friendsIds);*/
 	// If there are multiple friends
 	if(Array.isArray(friends)){
 		db.Activity.create({
