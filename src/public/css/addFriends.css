@@ -54,6 +54,9 @@ h3 {
 	display: inline;
 }
 
+.submitStyle {
+  margin-bottom: 100px;
+}
 /* .checkBoxStyle {
   margin-top: 50px;
   width: 70%;

@@ -16,6 +16,9 @@ html(lang='en')
 				img.image(src='img/kwfLogo.png')
 		.container
 			form(method='post', action='/activity', autocomplete="off")
+				select.image-picker.show-labels.show-html
+					option(data-img-src="img/baby_icon.jpg" value="Boodschappen") Boodschappen
+					option(data-img-src="img/cooking-icon-png.jpg" value="Koken") Koken
 				div.categorie
 					h1.text-center Kies een activiteit
 					.wrap
