@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 	})
 	.then((ids) =>{
 		if (ids.length === 0) {
-			res.render('volunteers');
+			res.render('noFriends');
 		}
 
 		else { 

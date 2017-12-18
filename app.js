@@ -55,6 +55,8 @@ const friends = require('./routes/friends')
 const time = require('./routes/time')
 const friendsInvited = require('./routes/friendsInvited')
 const volunteers = require('./routes/volunteers')
+const noFriends = require('./routes/noFriends')
+
 
 //these are Terts his firebase details:
 var config = {
@@ -113,6 +115,7 @@ app.use('/friends', friends);
 app.use('/time', time);
 app.use('/volunteers', volunteers);
 app.use('/friendsInvited', friendsInvited);
+app.use('/noFriends', noFriends);
 
 
 /*// Redirect the user to the OAuth provider for authentication.  When
