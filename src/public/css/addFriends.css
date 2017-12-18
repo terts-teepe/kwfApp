@@ -65,7 +65,14 @@ h3 {
 	display: inline;
 }
 
+
  /*.checkBoxStyle {
+=======
+.submitStyle {
+  margin-bottom: 100px;
+}
+/* .checkBoxStyle {
+>>>>>>> 978c3e85610ba929ad573941c84b8e88c8fb90ae
   margin-top: 50px;
   width: 70%;
 }*/
