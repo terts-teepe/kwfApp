@@ -4,8 +4,8 @@
 }
 
 .selectAll {
-    margin-top: 70px;
-    margin-left: 22px;
+  margin-top: 70px;
+  margin-left: -170px;
 }
 
 .clickNames {
@@ -34,7 +34,7 @@ ul a {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    margin-left: 90px;
+    margin-left: 100px;
 }
 
 .wrapper-one {
@@ -54,20 +54,20 @@ h3 {
 	display: inline;
 }
 
-.checkBoxStyle {
-	margin-top: 50px;
-	width: 70%;
+/* .checkBoxStyle {
+  margin-top: 50px;
+  width: 70%;
 }
 
 .submitStyle {
-	margin-bottom: 100px;
-	width: 100%;
-}
+  margin-bottom: 100px;
+  width: 100%;
+} */
 
-.checkbox label, .radio label {
-    /* min-height: 20px; */
-    /* padding-left: 20px; */
-    /* margin-bottom: 0; */
+/* .checkbox label, .radio label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
     font-weight: 400;
     cursor: pointer;
     margin-bottom: -50px;
@@ -76,61 +76,46 @@ h3 {
     border-radius: 100%;
     transform: translate(-50%, -50%);
 
+} */
+
+.checkbox {
+  margin-bottom: 40px;
 }
 
+.checkbox label:after {
+  content: '';
+  display: table;
+  clear: both;
+  font-size: 5em;
+}
 
+.checkbox .cr {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #a9a9a9;
+  border-radius: .25em;
+  width: 1.3em;
+  height: 1.3em;
+  float: left;
+  margin-right: .5em;
+}
 
-/*$green: #22b573;
-$grey: #555;
-$transitionSpeed: 200ms;
-
-input[type="checkbox"] + label {
+.checkbox .cr .cr-icon {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  border: 10px solid $grey;
-  border-radius: 100%;
+  font-size: .8em;
+  line-height: 0;
   top: 50%;
-  left: 10%;
-  transform: translate(-50%, -50%);
-  transition: all ease-out $transitionSpeed;
-  text-indent: 90px;
-  font: normal normal 30px/60px "Helvetica";
-  white-space: nowrap;
-  color: $grey;
-  user-select: none;
-  
-   &:after {
-    content: "";
-    position: absolute;
-    width: 0px;
-    height: 25px;
-    border-bottom: 10px solid $green;
-    border-left: 10px solid $green;
-    top: 25%;
-    left: 50%;
-    transform-origin: bottom left;
-    transform: rotate(-45deg);
-    opacity: 0;
-    transition: all ease-out $transitionSpeed;
-  }
+  left: 20%;
 }
 
-input[type="checkbox"]:checked + label {
-  border: 10px solid $green;
-  
-  &:after {
-    opacity: 1;
-    width: 70px;
-  }
-}
-
-#chk {
+.checkbox label input[type="checkbox"] {
   display: none;
 }
 
+.checkbox label input[type="checkbox"]+.cr>.cr-icon {
+  opacity: 0;
+}
 
-
-
-
-}*/
+.checkbox label input[type="checkbox"]:checked+.cr>.cr-icon {
+  opacity: 1;
+}
