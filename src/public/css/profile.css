@@ -9,8 +9,8 @@
 }
 
 .profilePic {
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
 }
 
 ul li:nth-child(odd) {  
@@ -43,6 +43,16 @@ ul a {
 	padding-bottom: 120px;
 }
 
+.button-one {
+    margin-right: 15px;
+    
+}
+
+.button-two {
+    
+    margin-left: 15px;
+}
+
 @media all and (max-width: 550px) {
 	.wrapper-one {
 	display: flex;
@@ -64,6 +74,10 @@ ul a {
 	align-self: center;
 }
 
+.uitlogStyle {
+    margin-top: 5px;
+}
+
 .names {
     position: relative;
     top: 160px;
@@ -83,7 +97,7 @@ a {
 .dropbtn {
     background-color: #2C7BB4;
     color: white;
-    padding: 16px;
+    padding: 12px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -102,10 +116,10 @@ a {
 }
 
 .badges {
-    /*width: 360px;*/
+    /* width: 360px; */
     height: 170px;
-    margin-top: 25px;
-    margin-bottom: 35px;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {

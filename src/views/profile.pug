@@ -25,6 +25,7 @@ html(lang='en')
 		if friends
 			.dropdown.col-md-4.col-md-push-4.col-xs-8.col-xs-push-2.text-center
 				button.dropbtn.buttonStyle(onclick="myFunction()") Vrienden
+				a.button-two.btn.btn-danger.btn-outline.uitlogStyle(type='button' href='/logout') Uitloggen
 				#myDropdown.dropdown-content
 					.wrapper-one
 						each friend in friends
