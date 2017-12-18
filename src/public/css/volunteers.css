@@ -1,6 +1,6 @@
 img {
-	width: 160%;
-	height: 140%;
+	width: 100%;
+	height: 100%;
 	z-index: -1;
 }
 
@@ -9,24 +9,31 @@ html, body {
 	min-height: 60vh;
 }
 
-/* .terts {
-    width: 37px;
-    height: 36px;
-    z-index: 1;
-    position: relative;
-    bottom: 140px;
-    border-radius: 50%;
-    right: 20px;
+
+.rowTop, .towBottom {
+    width:100%;
+    height:50%;
+}
+
+.terts {
+    position: absolute;
+    left: 120px;
+    top: 350px;
+    padding: 200px;
 }
 
 .pierre {
-    width: 35px;
-    height: 35px;
-    z-index: 1;
-    position: relative;
-    right: 160px;
-    bottom: 20;
-} */
+    position: absolute;
+    top: 180px;
+    left: 200px;
+    padding: 200px;
+}
+
+.imageStyle {
+	width: 100%;
+	height: 100%;
+}
+
 
 .layout {
 	color: white;
@@ -41,11 +48,11 @@ html, body {
 .wrapper-one {
 	display: flex;
 	align-items: stretch;
-    margin-top: -120px;
+    margin-top: 0px;
 }
 
 .boks {
-	min-height: 85vh;
+	min-height: 80vh;
 	display:block;
     margin: 0 auto;
 }

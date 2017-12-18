@@ -35,7 +35,7 @@ html(lang='en')
 							.talktext
 								p.text-center
 									| Zullen we contact maken met je vrienden? Vul hieronder je gegevens in.
-						form.flex-col.flex-row(method='post', action='/reachMethod?name='+ name, autocomplete="off")
+						form.flex-col.flex-row.formStyle(method='post', action='/reachMethod?name='+ name, autocomplete="off")
 							input.form-control.check.text-center(class="login", type="text", name="email", placeholder="Email", value="")
 							input.form-control.check.text-center(class="login", type="text", name="phoneNumber", placeholder="Telefoonnummer", value="")
 							input.form-control.check.text-center(class="login", type="password", name="password", placeholder="Wachtwoord", value="")

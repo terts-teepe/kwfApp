@@ -1,3 +1,10 @@
+  
+
+.selectAllStyle {
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .names {
     position: relative;
     top: 70px;

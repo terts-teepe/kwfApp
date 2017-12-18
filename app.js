@@ -56,6 +56,8 @@ const time = require('./routes/time')
 const friendsInvited = require('./routes/friendsInvited')
 const volunteers = require('./routes/volunteers')
 const noFriends = require('./routes/noFriends')
+const profielTerts = require('./routes/profielTerts')
+const profielPierre = require('./routes/profielPierre')
 
 
 //these are Terts his firebase details:
@@ -116,6 +118,8 @@ app.use('/time', time);
 app.use('/volunteers', volunteers);
 app.use('/friendsInvited', friendsInvited);
 app.use('/noFriends', noFriends);
+app.use('/profielPierre', profielPierre);
+app.use('/profielTerts', profielTerts);
 
 
 /*// Redirect the user to the OAuth provider for authentication.  When
