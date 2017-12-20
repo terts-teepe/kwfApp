@@ -15,15 +15,4 @@ html(lang='en')
 				h3 #{person.name}
 			//- else
 			//- 	h3 #{people.name}
-		nav.navbar-fixed-bottom.navbar.navbar-default
-			.container
-				.row
-					ul.nav.nav-justified
-						li.active
-							a(href="/activity") Plan activity
-						li
-							a(href='/addFriends') Add friends
-						li
-							a(href='/notification') Notification
-						li
-							a(href='/profile') Profile
+		include bottomNavbar

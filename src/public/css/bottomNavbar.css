@@ -17,10 +17,10 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 }
 
 
-.wrapper {
+.wrapper.navbar-fixed-bottom {
 	display:flex;
 	height: auto;
-	margin-top: 20px;
+	margin-top: 100px;
 	align-items: flex-end;
 	line-height: 0.5px;
   background-color: #E2E2E2;

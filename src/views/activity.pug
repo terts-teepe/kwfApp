@@ -9,117 +9,37 @@ html(lang='en')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
-		nav.navbar-fixed-top.navbar.navbar-default
-			.row
-				.col-xs-6.left.edit
-				.col-xs-6.right.edit
-				img.image(src='img/kwfLogo.png')
-		.container
+		include topNavbar
+		div.categorie
+			h1.text-center Kies een activiteit
 			form(method='post', action='/activity', autocomplete="off")
-				select.image-picker.show-labels.show-html
-					option(data-img-src="img/baby_icon.jpg" value="Boodschappen") Boodschappen
-					option(data-img-src="img/cooking-icon-png.jpg" value="Koken") Koken
-				div.categorie
-					h1.text-center Kies een activiteit
-					.wrap
-						.square
-							.radio.eachCategorie
-								label
-								input(type='radio', name='categorie', value='Boodschappen')
-								i(class="fa fa-shopping-cart" aria-hidden="true")
-								h4 Boodschappen
-						.square
-							.radio.eachCategorie
-								label
-								input(type='radio', name='categorie', value='Koffie')
-								i(class="fa fa-coffee" aria-hidden="true")
-								h4 Koffie
-						.square
-							.radio.eachCategorie
-								label
-								input(type='radio', name='categorie', value='Vervoer')
-								i(class="fa fa-car" aria-hidden="true")
-								h4 Vervoer
-						.square
-							.radio.eachCategorie
-								label
-								input(type='radio', name='categorie', value='Babysitten')
-								img.i(src='img/baby_icon.jpg')
-								h4 Babysitten
-						.square
-							.radio.eachCategorie
-								label
-								input(type='radio', name='categorie', value='Koken')
-								img.i(src='img/cooking-icon-png.jpg')
-								h4 Koken
-						.square
-							.radio.eachCategorie
-								label
-								input(type='radio' name='categorie', id='ignoreThis', value="other")
-								i(class="fa fa-question-circle-o" aria-hidden="true")
-								h4 Iets anders
-								input.form-control(type='text', id='categorie' onchange="changeradioother()")
-					button.btn.btn-default.myBtn(type='submit') Volgende
-				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
-				//- 	div.choose
-				//- 		h1 Choose who you want to ask for help
-				//- 		.checkbox
-				//- 			label
-				//- 				input(type='checkbox', onclick='toggle(this)') 
-				//- 				h3.names Select All
-				//- 		each friend in friends
-				//- 			input(name='friendId' , type='hidden',value=friend.id)
-				//- 			.checkbox
-				//- 				label
-				//- 					//- h1 #{friend.name}
-				//- 					//- h1 #{friend.id}/
-				//- 					input(type='checkbox', name='friends',id="name" , value=friend.name)
-				//- 					h3.names #{friend.name}
-				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
-				//- 	div.when
-				//- 		h1 When do you want help?
-				//- 		input#registration-date.form-control(name='date', type='date')
-				//- 		input#registration-time.form-control(name='time', type='time')
-				//- 		span.input-group-btn
-				//- 			button.btn.btn-default(type='button', onclick='addNow()')
-				//- 				span.glyphicon.glyphicon-map-marker(aria-hidden='true')
-				//- 				|  Now
-				//- 			button.btn.btn-default(type='button', onclick='stopNow()')
-				//- 				span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
-				//- 				|  Stop
-				//- .col-md-9.col-sm-offset-2.col-sm-10.col-sm-offset-1
-				//- 	div.where
-				//- 		h1 Where do you want help?
-				//- 		.radio
-				//- 			label
-				//- 			input(type='radio', name='location', value='My current location')
-				//- 			| My current location
-				//- 		.radio
-				//- 			label
-				//- 			input(type='radio', name='location', value='Somewhere else')
-				//- 			| Somewhere else
-				//- 	button.btn.btn-success.btn-lg.submit(type='submit') Plan Activity!
-		.wrapper.navbar-fixed-bottom
-			.box.box1
-				a(href="/addFriends")
-					i.fa.fa-user-plus(aria-hidden='true')
-					h5 Vrienden
-			.box.box2
-				a(href="/index")
-					i.fa.fa-list(aria-hidden='true')
-					h5 Activiteiten
-			.box.box3
-				a(href="/Activity")
-					i.fa.fa-plus-circle(aria-hidden='true')
-					h5 Plannen
-			.box.box4
-				a(href="/messages")
-					i.fa.fa-comments(aria-hidden='true')
-					h5 Berichten
-			.box.box5
-				a(href="/profile")
-					i.fa.fa-user(aria-hidden='true')
-					h5 Profiel
+				.col-md-8.col-md-push-2.col-xs-12
+					.col-md-4.col-xs-6
+						.eachCategorie
+							input.img(type="image" alt="Login" src="img/baby_icon.jpg" style="max-width:100%;", name="categorie", value="Babysitten")
+							h4 <b>Babysitten</b>
+					.col-md-4.col-xs-6
+						.eachCategorie
+							input.img(type="image" alt="Login" src="img/cooking-icon-png.jpg" style="max-width:100%;", name="categorie", value="Koken")
+							h4 <b>Koken</b>
+					.col-md-4.col-xs-6
+						.eachCategorie
+							input.img(type="image" alt="Login" src="img/shopping.png" style="max-width:100%;", name="categorie", value="Boodschappen")
+							h4 <b>Boodschappen</b>
+					.col-md-4.col-xs-6
+						.eachCategorie
+							input.img(type="image" alt="Login" src="img/car.png" style="max-width:100%;", name="categorie", value="Vervoer")
+							h4 <b>Vervoer</b>
+					.col-md-4.col-xs-6
+						.eachCategorie
+							input.img(type="image" alt="Login" src="img/coffee.png" style="max-width:100%;", name="categorie", value="Koffie")
+							h4 <b>Koffie</b>
+					.col-md-4.col-xs-6
+						.eachCategorie
+							input.img#ignoreThis(type="image" alt="Login" src="img/other.png" style="max-width:100%;", name="categorie", value="Iets anders")
+							h4 <b>Iets anders</b>
+							input.form-control(type='text', id='categorie' onchange="changeradioother()")
+		include bottomNavbar
 	script(src='http://momentjs.com/downloads/moment-with-locales.js')
 	script(src='http://momentjs.com/downloads/moment-timezone-with-data.js')
 	script(src='js/activity.js')

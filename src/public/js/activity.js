@@ -31,3 +31,17 @@ changeradioother()
   var clickedSquare = document.getElementBy
   document.getElementById('type').value=o.innerHTML;
 }*/
+
+
+$(document).ready(function() {
+    $('#Carousel').carousel({
+        interval: 5000
+    })
+});
+
+
+
+
+$( "input" ).focus(function() {
+  alert( "Handler for .focus() called." );
+});

@@ -154,6 +154,3 @@ app.listen(8080, () => {
 //   };
 //   firebase.initializeApp(config);
 // </script>
-
-
-

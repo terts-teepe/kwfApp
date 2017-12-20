@@ -3,19 +3,21 @@ html(lang='en')
 	head
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		link(href ='css/login.css' type='text/css' rel='stylesheet')
-		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
-		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
-		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		h1.text-center.col-md-12.layout Vriendendienst
 		.container
-			.col-md-6.col-md-push-3.col-xs-8.col-xs-push-2.text-center.inlog
+			.col-md-6.col-md-push-3.col-xs-10.col-xs-push-1.text-center.inlog
 				form(method='post', action='/login', autocomplete="off")
 					.form-group
-						input.form-control(class="login", type="text", name="name", id='username', placeholder='gebruikersnaam')
+						.inner-addon.left-addon
+							i.fa.fa-user(aria-hidden="true")
+							input.form-control(class="login", type="text", name="name", id='username', placeholder='gebruikersnaam')
 					.form-group
-						input.form-control(class="login", type="password", name="password", id="pass", placeholder='wachtwoord')
+						.inner-addon.left-addon
+							i.fa.fa-lock(aria-hidden="true")
+							input.form-control(class="login", type="password", name="password", id="pass", placeholder='wachtwoord')
 					.form-group
 						input(type='checkbox' id="remember_me" style='margin-right: 5px;')
 						| Onthoud inloggegevens
@@ -27,6 +29,5 @@ html(lang='en')
 				.col-xs-6.left Gerealiseerd Door
 				.col-xs-6.right KWF
 				img(src='img/kwfLogo.png')
-
 	script(src='js/jquery-3.2.1.js')
 	script(src='js/login.js')

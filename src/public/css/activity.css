@@ -1,49 +1,31 @@
 /* Surrounding div */
 div.categorie {
-	margin-top: 90px;
+	margin-top: 95px;
 }
 
-/* Insider div */
-.wrap {
-	width: 600px;
-	margin: 0 auto;
+/* Surrounding div of squares */
+.col-md-8.col-md-push-2.col-xs-12 {
+	margin-bottom: 120px;
+}
+
+
+.col-md-4.col-xs-6 {
+	padding: 0;
 }
 
 /* Each square */
-.square {
-	border: solid 2px black;
-	width: 30%;
-	height: 150px;
-	margin: 1.66%;
-	float: left;
-	padding: 5px 30px;
+.eachCategorie {
+	border: 1px solid gray;
+	padding: 1em;
+	height: 15em;
 	text-align: center;
 }
 
-/* Icons */
-.eachCategorie > i {
-	font-size: 5.8em;
-	color: black;
-}
-
-img.i {
-	height: 5.8em;
-	width: 5.8em;
-	margin: auto 0;
-}
-
-.wrap {
-	width: 600px;
-	margin: 0 auto;
-}
-
-.square {
-	border: solid 2px black;
-	width: 30%;
-	height: 150px;
-	margin: 1.66%;
-	float: left;
-	padding: auto 0;
+input.img {
+	height: 8.4em;
+	width: 8.4em;
+	margin: auto;
+	outline: none;
 }
 
 /* Next Button */
@@ -53,4 +35,20 @@ button.myBtn {
 	margin-left: 290px;
 	background-color: #00ACC1;
 	color: white;
+}
+
+/* For mobile */
+@media all and (max-width: 500px) {
+	.eachCategorie {
+		border: 1px solid gray;
+		padding: 0.7em;
+		height: 10.9em;
+		text-align: center;
+	}
+
+	input.img {
+		height: 5.4em;
+		width: 5.4em;
+		margin: auto;
+	}
 }
