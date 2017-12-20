@@ -1,45 +1,35 @@
 doctype html
 html(lang='en')
-	head
-		title Activity
-		meta(charset='UTF-8')
+	head 
+		title Account maken
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
-		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
-		meta(charset='UTF-8')
-		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
+		link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+		link(href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet")
 		link(href ='css/name.css' type='text/css' rel='stylesheet')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
-		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		meta(charset='UTF-8')
 	body
-		nav.navbar-fixed-top.navbar.navbar-default
-			.row
-				.col-xs-6.left.edit
-				.col-xs-6.right.edit
-				img.image(src='img/kwfLogo.png')
-		.container
+		include topNavbar 
+		.container 
 			.flex-col
 				.flex-row
 					.check.text-center
 						img.imageOne(src='img/emma.png')
 					.check.tekstbubbels
-						.talk-bubble.tri-right.round
+						.talk-bubble
 							.talktext
 								p.text-center
 									| Hoi, ik ben Emma van Vriendendienst!
-						.talk-bubble.tri-right.round
+						.talk-bubble
 							.talktext
 								p.text-center
 									| En hoe heet jij?
 				form.flex-col.flex-row(method='post', action='/name', autocomplete="off")
-					.naam.check.text-center
-						input(class="login", type="text", name="name", placeholder="Type hier je naam")
-					.doorgaan.check.text-center
-						input.btn.btn-primary.btn-md.change(class="submit" type="submit", value="Doorgaan")
+					.naam.text-center
+						input(class="login", type="text", name="name", placeholder="Typ hier je naam")
+					.doorgaan.text-center
+						input.btn.btn-md.change(class="submit" type="submit", value="Doorgaan")
 		include bottomNavbar
-
-
-
-
-
-

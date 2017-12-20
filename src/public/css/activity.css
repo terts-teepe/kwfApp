@@ -35,6 +35,8 @@ button.myBtn {
 	margin-left: 290px;
 	background-color: #00ACC1;
 	color: white;
+	border: none;
+	outline: none;
 }
 
 /* For mobile */

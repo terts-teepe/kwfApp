@@ -1,16 +1,17 @@
 doctype html
 html(lang='en')
 	head
-		title Activity
-		meta(charset='UTF-8')
+		title Account maken
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
-		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
-		meta(charset='UTF-8')
-		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
+		link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+		link(href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet")
 		link(href ='css/name.css' type='text/css' rel='stylesheet')
+		link(href ='css/reachMethod.css' type='text/css' rel='stylesheet')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
-		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		meta(charset='UTF-8')
 	body
 		nav.navbar-fixed-top.navbar.navbar-default
 			.row
@@ -23,23 +24,28 @@ html(lang='en')
 					.check.text-center
 						img.imageOne(src='img/emma.png')
 					.check.tekstbubbels
-						.talk-bubble.tri-right.round
+						.talk-bubble
 							.talktext
 								p.text-center
-									| Leuk om je te ontmoeten #{name}
-						.talk-bubble.tri-right.round
+									| Leuk om je te ontmoeten <span id='name'> #{name} </span>
+						.talk-bubble
 							.talktext
 								p.text-center
 									| We zijn bijna klaar!
-						.talk-bubble.tri-right.round
+						.talk-bubble
 							.talktext
 								p.text-center
 									| Zullen we contact maken met je vrienden? Vul hieronder je gegevens in.
-						form.flex-col.flex-row.formStyle(method='post', action='/reachMethod?name='+ name, autocomplete="off")
-							input.form-control.check.text-center(class="login", type="text", name="email", placeholder="Email", value="")
-							input.form-control.check.text-center(class="login", type="text", name="phoneNumber", placeholder="Telefoonnummer", value="")
-							input.form-control.check.text-center(class="login", type="password", name="password", placeholder="Wachtwoord", value="")
-							input.form-control.check.text-center(class="submit" type="submit", value="Doorgaan")
+						form.flex-col.flex-row(method='post', action='/reachMethod?name='+ name, autocomplete="off")
+							.inp.text-center
+								input(class="login", type="text", name="email", placeholder="Email", value="")
+							.inp.text-center
+								input(class="login", type="text", name="phoneNumber", placeholder="Telefoonnummer", value="")
+							.inp.text-center
+								input(class="login", type="password", name="password", placeholder="Wachtwoord", value="")
+							.doorgaan.text-center
+								input.btn.btn-sm.change(class="submit" type="submit", value="Doorgaan")
+		include bottomNavbar
 		//- .wrapper.navbar-fixed-bottom
 		//- 	.box.box1
 		//- 		a(href="/addFriends")

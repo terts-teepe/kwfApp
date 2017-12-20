@@ -1,0 +1,26 @@
+										/* User name */
+#name {
+	font-weight: 900;
+}
+
+										/* Inputs */
+.inp > input{
+	border: 2px solid #999999;
+ 	width: 250px; 
+	padding: 6px 5px;
+	border-radius: 5px;
+	color: #999999;
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 4px;
+}
+
+/* For mobile */
+@media all and (max-width: 500px) {
+	.talk-bubble {
+		margin: 10px auto;
+		width: 210px;
+	}
+	.inp > input {
+	 	width: 210px;
+	}
+}
