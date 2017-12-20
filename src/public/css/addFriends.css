@@ -3,6 +3,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  font-size: 17px;
+}
+
 .names {
     position: relative;
     top: 70px;
@@ -59,18 +63,21 @@ h3 {
 	display: inline;
 }
 
+
+ /*.checkBoxStyle {
 .submitStyle {
   margin-bottom: 100px;
 }
 /* .checkBoxStyle {
   margin-top: 50px;
   width: 70%;
-}
+}*/
 
 .submitStyle {
   margin-bottom: 100px;
-  width: 100%;
-} */
+  margin-top: 40px;
+  /*width: 100%;*/
+} 
 
 /* .checkbox label, .radio label {
     min-height: 20px;
