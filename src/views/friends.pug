@@ -75,6 +75,8 @@ html(lang='en')
 				.col-xs-6.left.edit
 				.col-xs-6.right.edit
 				img.image(src='img/kwfLogo.png')
+		.row.rowStyle.text-center
+			h4 Inner Circle
 		.container
 			.text-center
 				.text-left.clickNames.wrapper-one
@@ -88,8 +90,7 @@ html(lang='en')
 								input(type="checkbox", onclick='toggle(this)')
 								span.cr
 									i.cr-icon.glyphicon.glyphicon-ok
-								h3.text-center.selectAllStyle Select All
-
+								h3.text-center.selectAllStyle Iedereen Uitnodigen
 						each friend in friends
 							//- .checkbox.checkBoxStyle.boks.checkbox-circle
 							.checkbox.selectOne
@@ -102,25 +103,9 @@ html(lang='en')
 								img.foto(src=friend.img)
 						.doorgaan.text-center
 							button.btn.btn-success.btn-lg.submit(type='submit') Volgende
-		.wrapper.navbar-fixed-bottom
-			.box.box1
-				a(href="/addFriends")
-					i.fa.fa-user-plus(aria-hidden='true')
-					h5 Vrienden
-			.box.box2
-				a(href="/index")
-					i.fa.fa-list(aria-hidden='true')
-					h5 Activiteiten
-			.box.box3
-				a(href="/Activity")
-					i.fa.fa-plus-circle(aria-hidden='true')
-					h5 Plannen
-			.box.box4
-				a(href="/messages")
-					i.fa.fa-comments(aria-hidden='true')
-					h5 Berichten
-			.box.box5
-				a(href="/profile")
-					i.fa.fa-user(aria-hidden='true')
-					h5 Profiel
-		script(src="js/activity.js")
+				include bottomNavbar			
+		script(src='http://momentjs.com/downloads/moment-with-locales.js')
+		script(src='http://momentjs.com/downloads/moment-timezone-with-data.js')
+		script(src='js/jquery-3.2.1.js')
+		script(src='js/friends.js')
+		script(src='js/activity.js')

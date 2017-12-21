@@ -15,17 +15,38 @@ body {
 }
 
 .selectAll {
-  margin-top: 70px;
+  margin-top: 50px;
   margin-right: 30px;
+  padding-left: 14px;
 }
 
 .selectOne {
+   /*margin-top: 50px;*/
    margin-left: -170px; 
+   top: 60px;
+}
+
+h4 {
+  color: white;
 }
 
 .clickNames {
 	margin-top: 50px;
 }
+
+.rowStyle {
+    background-color: #E44541;
+    position: absolute;
+    margin-top: 150px;
+    /* left: 100px; */
+    width: 100%;
+    margin-right: 0px;
+    right: 0px;
+    margin-left: 0px;
+    height: 50px;
+    padding-top: 6px;
+}
+
 
 ul li:nth-child(odd) {  
   background-color: #FE0606;
@@ -96,6 +117,7 @@ h3 {
 .checkbox {
   margin-bottom: 40px;
   margin-left: 0px;
+  margin-top: 50px;
 }
 
 .checkbox label:after {
