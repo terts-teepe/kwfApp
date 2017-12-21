@@ -28,6 +28,7 @@ router.get('/', (req, res) => {
 			.then(()=>{
 				console.log(friends)
 				if(friends.length === ids.length){
+					console.log(friends)
 					res.render('friends', {friends: friends, categorie: categorie})
 				}
 			})
