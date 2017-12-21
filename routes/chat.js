@@ -20,7 +20,13 @@ router.get('/', function(req, res) {
 				id: currentUserId
 			},
 			include : [	
-				{model: db.Activity}
+				{model: db.Activity, 
+                    where: {
+                        plannerId: {
+                            [Op.ne]: currentUserId
+                        }
+                    }
+                }
 			]
 		})
 		.then((user) => {
@@ -54,7 +60,24 @@ router.post('/', (req,res)=>{
 		db.Activity.findOne({
 			where: {
 				id: activityId
-			}
+			},
+            include: [{ model: db.User,
+                where: {
+                    [Op.and]: [
+                        {id:
+                            {
+                                [Op.ne]: planner.id
+                            }
+                        },
+                        {id:
+                            {
+                                [Op.ne]: accepter.id
+                            }
+                        }
+                    ]
+                }
+            }]
+
 		})
 		.then((activity)=> {
 			activity.update({
@@ -80,33 +103,75 @@ router.post('/', (req,res)=>{
 						    to: planner.phoneNumber,  // Text this number
 						    from: '+3197004498785' // From a valid Twilio number
 						})
+						console.log('planner')
+						console.log(planner.name)
+						console.log(planner.id)
+						console.log('accepter')
+						console.log(accepter.id)
+						console.log(accepter.name)
+                        console.log("activity")
+                        console.log(activity)
+                        console.log("activity.dataValues")
+                        console.log(activity.dataValues)
+                        console.log(activity.dataValues.users)
+						// Send notification to all but accepter
 
-/*						// Send notification to all but accepter
-						db.User.findAll({
+                        for (var i = 0; i < activity.dataValues.users.length; i++) {
+                            console.log("activity.users[i]")
+                            console.log(activity.users[i])
+                            if(activity.users[i].id != activity.plannerId && activity.users[i].id != activity.accepterId){
+                                client.messages.create({
+                                    body: `Hello ${activity.users[i].name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
+                                    to: activity.users[i].phoneNumber,  // Text this number
+                                    from: '+3197004498785' // From a valid Twilio number
+                                })
+                                if(i === activity.users.length){
+                                   res.redirect('/index')
+                                }
+                            }
+                        }
+/*						db.User.findAll({
 							where: {
-								id: {
-									[Op.ne] : accepter.id
-								}						
-							},
-							include: [{model: db.Activity, where: {id: activityId}}]
-						})
+							    [Op.and]: [
+								    {id:
+								      	{
+								      		[Op.ne]: planner.id
+								      	}
+								    },
+								    {id:
+								      	{
+								      		[Op.ne]: accepter.id
+								        }
+								    }
+								]
+							  },
+/*							include: [{model: db.Activity, where: {id: activityId}}]*/
+						/*})
 						.then((users)=> {
-							console.log("Request sent to")
+							console.log("****People who didn't accept****")
 							console.log(users)
-							for()
-						})*/
-					})
-				})
-				.then(()=> {
-					res.send(req.body);				
-				})
-			})
-		})
+                            for (var i = 0; i < users.length; i++) {
+                                client.messages.create({
+                                    body: `Hallo ${users[i].name}, jouw vriend ${planner.name} heeft de hulp die hij nodig heeft gekregen , volgende keer meer succes!`,
+                                    to: users[i].phoneNumber,  // Text this number
+                                    from: '+3197004498785' // From a valid Twilio number
+                                })
+                                if(i === users.length-1){
+                                    res.send(req.body);
+                                }
+                            }
+							
+						});*/
+
+					});
+				});
+			});
+		});
 	}
 	else {
-		status = false
+		status = false;
 		res.send(req.body);
 	}
-})
+});
 
 module.exports = router;
