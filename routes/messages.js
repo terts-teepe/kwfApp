@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
 				console.log("this is people" + people);
 				client.messages.create({
 				    // body: `Hello ${people[i].name}, would you like to join the vriendendienst network! Check it out here: https://share.proto.io/FAFPRN/`,
-				    body: `Hallo dit is Emma van KWF. Sorry, Ik heb je een oude link gestuurd, gebruik deze link alsjeblieft om het prototype te downloaden: https://share.proto.io/V9VKHX/. Instructie en feedbackformulier staan op uw e-mail. Groetjes, Emma.`,
+				    body: `Hallo dit is Emma van KWF. Sorry, Ik heb je een oude link gestuurd, gebruik deze link alsjeblieft om het prototype te downloaden: https://share.proto.io/V9VKHX/. Als u het feedbackformulier al heeft ingevuld, geen probleem. Heeft u dit nog niet gedaan, gebruikt u dan de nieuwe link. Instructie en feedbackformulier staan op uw e-mail. Groetjes, Emma.`,
 				    to: people[i].phonenumber,  // Text this number
 				    from: '+3197004498785' // From a valid Twilio number
 				})
@@ -60,7 +60,7 @@ router.post('/', (req, res) => {
 		people.push({name: name , phonenumber: recipient})
 		client.messages.create({
 /*		    body: `Hello ${people[0].name}, Would you like to join the vriendendienst network! Check it out here: https://share.proto.io/V9VKHX/`,*/
-			body: `Hallo dit is Emma van KWF. Sorry, Ik heb je een oude link gestuurd, gebruik deze link alsjeblieft om het prototype te downloaden: https://share.proto.io/V9VKHX/. Instructie en feedbackformulier staan op uw e-mail. Groetjes, Emma.`,
+			body: `Hallo dit is Emma van KWF. Sorry, Ik heb je een oude link gestuurd, gebruik deze link alsjeblieft om het prototype te downloaden: https://share.proto.io/V9VKHX/. Als u het feedbackformulier al heeft ingevuld, geen probleem. Heeft u dit nog niet gedaan, gebruikt u dan de nieuwe link. Instructie en feedbackformulier staan op uw e-mail. Groetjes, Emma.`,
 		    to: people[0].phonenumber,  // Text this number
 		    from: '+3197004498785' // From a valid Twilio number
 		})
