@@ -6,6 +6,8 @@ const twilio = require('twilio');
 const accountSid = 'ACbcdc77c3e680fef8b9eecbdb7bcc5ba4'; // Your Account SID from www.twilio.com/console
 const authToken = 'f038a6a0dc3c0c41916100aeefca14f5';   // Your Auth Token from www.twilio.com/console
 const client = new twilio(accountSid, authToken);
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 router.get('/', function(req, res) {
 	if(req.session.user) {
@@ -66,6 +68,7 @@ router.post('/', (req,res)=>{
 					}
 				})
 				.then((planner)=>{
+					// Send a notification to accepter
 					db.User.findOne({
 						where: {
 							id: activity.accepter
@@ -77,13 +80,21 @@ router.post('/', (req,res)=>{
 						    to: planner.phoneNumber,  // Text this number
 						    from: '+3197004498785' // From a valid Twilio number
 						})
-					})
-					db.User.findAll({
-						include: [{model: db.Activity, where: {id: activityId}}]
-					})
-					.then((users)=> {
-						console.log("Request sent to")
-						console.log(users)
+
+/*						// Send notification to all but accepter
+						db.User.findAll({
+							where: {
+								id: {
+									[Op.ne] : accepter.id
+								}						
+							},
+							include: [{model: db.Activity, where: {id: activityId}}]
+						})
+						.then((users)=> {
+							console.log("Request sent to")
+							console.log(users)
+							for()
+						})*/
 					})
 				})
 				.then(()=> {

@@ -17,6 +17,10 @@ body {
   margin-left: -170px;
 }
 
+.selectOne {
+   margin-left: -170px; 
+}
+
 .clickNames {
 	margin-top: 50px;
 }
@@ -72,12 +76,6 @@ h3 {
   margin-top: 50px;
   width: 70%;
 }*/
-
-.submitStyle {
-  margin-bottom: 100px;
-  margin-top: 40px;
-  /*width: 100%;*/
-} 
 
 /* .checkbox label, .radio label {
     min-height: 20px;
@@ -137,4 +135,18 @@ h3 {
 
 span.cr > i.cr-icon.glyphicon.glyphicon-ok > b{
   width: 20px;
+}
+
+
+/* Button */
+.doorgaan {
+  margin-bottom: 100px;
+  margin-top: 10px;
+}
+.change {
+  width: 150px;
+  background-color: #1B9AF7;
+  color: white;
+  font-size: 20px;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
