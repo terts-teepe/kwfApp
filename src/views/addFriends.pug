@@ -29,7 +29,7 @@ html(lang='en')
 								input(type="checkbox", onclick='toggle(this)')
 								span.cr
 									i.cr-icon.glyphicon.glyphicon-ok
-								|        <b>   Select All </b>
+								h3.names.text-center.selectAllStyle Select All
 
 						each notFriend in notFriends
 							//- .checkbox.checkBoxStyle.boks.checkbox-circle
@@ -38,7 +38,7 @@ html(lang='en')
 									input(type="checkbox", value= notFriend.id, name='friends')
 									span.cr
 										i.cr-icon.glyphicon.glyphicon-ok
-									|        <b>   #{notFriend.name} </b>
+								h3.names.text-center #{notFriend.name}
 								//- h3.names.text-center #{notFriend.name} 
 								img.foto(src=notFriend.image)
 						.doorgaan.text-center
