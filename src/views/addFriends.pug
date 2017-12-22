@@ -9,35 +9,63 @@ html(lang='en')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
-		nav.navbar-fixed-top.navbar.navbar-default
-			.row
-				.col-xs-6.left.edit
-				.col-xs-6.right.edit
-				img.image(src='img/kwfLogo.png')
+		include topNavbar
+		.row.rowStyle.text-center
+			h4 Inner Circle
 		.container
-			form(action='/addFriends', method='post', role='form')
-				.row
-					.col-md-8.col-md-push-4.col-xs-10-col-xs-push-1
-						.checkbox
+			.text-center
+				.text-left.clickNames.wrapper-one
+					form.wrapper-one(action='/addFriends', method='post', role='form')
+						.checkbox.selectAll
 							label
 								input(type="checkbox", onclick='toggle(this)')
 								span.cr
 									i.cr-icon.glyphicon.glyphicon-ok
-								h3 Select All
-											
-				each notFriend in notFriends
-					//- .checkbox.checkBoxStyle.boks.checkbox-circle
-					.row
-						.col-md-8.col-md-push-4.col-xs-10-col-xs-push-1
-							.checkbox
+								h3.text-center.selectAllStyle Select All
+						each notFriend in notFriends
+							//- .checkbox.checkBoxStyle.boks.checkbox-circle
+							.checkbox.selectOne
 								label
 									input(type="checkbox", value= notFriend.id, name='friends')
 									span.cr
 										i.cr-icon.glyphicon.glyphicon-ok
-									h3 #{notFriend.name}
+									h3.names.text-center #{notFriend.name}
 								
 								img.foto(src=notFriend.image)
-				.doorgaan.text-center
-					button.btn.btn.change(type='submit') Add Friends
+						.doorgaan.text-center
+							button.btn.btn.change(type='submit') Add Friends
 		include bottomNavbar
 		script(src="js/activity.js")
+
+
+.row.rowStyle.text-center
+h4 Inner Circle
+.container
+.text-center
+.text-left.clickNames.wrapper-one
+form.wrapper-one(action='/addFriends', method='post', role='form')
+.checkbox.selectAll
+label
+
+//- input(type='checkbox', onclick='toggle(this)') 
+//- h3.selectAllStyle Select All
+
+input(type="checkbox", onclick='toggle(this)')
+span.cr
+i.cr-icon.glyphicon.glyphicon-ok
+h3.text-center.selectAllStyle Select All
+
+each notFriend in notFriends
+//- .checkbox.checkBoxStyle.boks.checkbox-circle
+.checkbox.selectOne
+label
+input(type="checkbox", value= notFriend.id, name='friends')
+span.cr
+i.cr-icon.glyphicon.glyphicon-ok
+h3.names.text-center #{notFriend.name}
+
+img.foto(src=notFriend.image)
+.doorgaan.text-center
+button.btn.btn.submit.submitStyle.change(type='submit') Add Friends
+include bottomNavbar
+script(src="js/activity.js")
