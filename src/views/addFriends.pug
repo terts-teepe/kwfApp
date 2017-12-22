@@ -36,36 +36,3 @@ html(lang='en')
 							button.btn.btn.change(type='submit') Add Friends
 		include bottomNavbar
 		script(src="js/activity.js")
-
-
-.row.rowStyle.text-center
-h4 Inner Circle
-.container
-.text-center
-.text-left.clickNames.wrapper-one
-form.wrapper-one(action='/addFriends', method='post', role='form')
-.checkbox.selectAll
-label
-
-//- input(type='checkbox', onclick='toggle(this)') 
-//- h3.selectAllStyle Select All
-
-input(type="checkbox", onclick='toggle(this)')
-span.cr
-i.cr-icon.glyphicon.glyphicon-ok
-h3.text-center.selectAllStyle Select All
-
-each notFriend in notFriends
-//- .checkbox.checkBoxStyle.boks.checkbox-circle
-.checkbox.selectOne
-label
-input(type="checkbox", value= notFriend.id, name='friends')
-span.cr
-i.cr-icon.glyphicon.glyphicon-ok
-h3.names.text-center #{notFriend.name}
-
-img.foto(src=notFriend.image)
-.doorgaan.text-center
-button.btn.btn.submit.submitStyle.change(type='submit') Add Friends
-include bottomNavbar
-script(src="js/activity.js")
