@@ -65,7 +65,7 @@ db.sync({
       password: 'weetikniet',
       email: 'terts@live.nl',
       phoneNumber: '+31620528245',
-      image: 'img/avatars/avatar-eleven.png'
+      image: 'img/avatars/avatar-three.png'
     })
     User.create({
       name: 'Rawan',
