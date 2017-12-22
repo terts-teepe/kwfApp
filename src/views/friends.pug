@@ -64,7 +64,7 @@ html(lang='en')
 		//- link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
 		include bottomNavbarStyle
-		link(href ='css/addFriends.css' type='text/css' rel='stylesheet')
+		link(href ='css/friends.css' type='text/css' rel='stylesheet')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
@@ -76,13 +76,9 @@ html(lang='en')
 		.container
 			.text-center
 				.text-left.clickNames.wrapper-one
-					form.wrapper-one(action='/addFriends', method='post', role='form')
+					form.wrapper-one(action= action='/friends?categorie=' + categorie, method='post', role='form')
 						.checkbox.selectAll
 							label
-
-								//- input(type='checkbox', onclick='toggle(this)') 
-								//- h3.selectAllStyle Select All
-
 								input(type="checkbox", onclick='toggle(this)')
 								span.cr
 									i.cr-icon.glyphicon.glyphicon-ok
@@ -94,12 +90,11 @@ html(lang='en')
 									input(type='checkbox', name='friends',id="name" ,value= friend.id)
 									span.cr
 										i.cr-icon.glyphicon.glyphicon-ok
-										h3.names.text-center #{friend.name}
-								
+									h3.names.text-center #{friend.name}
 								img.foto(src=friend.img)
 						.doorgaan.text-center
 							button.btn.btn-success.btn-lg.submit(type='submit') Volgende
-				include bottomNavbar			
+		include bottomNavbar			
 		script(src='http://momentjs.com/downloads/moment-with-locales.js')
 		script(src='http://momentjs.com/downloads/moment-timezone-with-data.js')
 		script(src='js/jquery-3.2.1.js')
