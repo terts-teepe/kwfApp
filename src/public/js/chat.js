@@ -2,7 +2,7 @@ function sendAjaxRequest(element,urlToSend) {
      var clickedButton = element;
       $.ajax({type: "POST",
           url: urlToSend,
-          data: { btn: clickedButton.val(), id: $("#access_token").val() },
+          data: { btn: clickedButton.val(), id: $("#access_token").val(), plannerId: $("#planner").val() },
           success:function(result){
             alert('ok');
           },

@@ -28,6 +28,7 @@ html(lang='en')
 											.col-md-10.col-xs-10
 												.messages.msg_sent
 													input#access_token(type='hidden', value=activity.id)
+													input#planner(type='hidden', value=activity.plannerId)
 													p
 														| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
 														| on #{activity.date} at #{activity.time} in #{activity.location}
