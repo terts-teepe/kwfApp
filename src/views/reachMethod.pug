@@ -30,12 +30,12 @@ html(lang='en')
 						.talk-bubble
 							.talktext
 								p.text-center
-									| Zullen we contact maken met je vrienden? Vul hieronder je gegevens in.
+									| Vul hieronder je gegevens in zodat ik contact kunnen maken met je vrienden.
 						form.flex-col.flex-row(method='post', action='/reachMethod?name='+ name, autocomplete="off")
 							.inp.text-center
 								input(class="login", type="text", name="email", placeholder="Email", value="")
 							.inp.text-center
-								input(class="login", type="text", name="phoneNumber", placeholder="Telefoonnummer", value="")
+								input(class="login", type="text", name="phoneNumber", placeholder="Telefoonnummer (+316)", value="")
 							.inp.text-center
 								input(class="login", type="password", name="password", placeholder="Wachtwoord", value="")
 							.doorgaan.text-center

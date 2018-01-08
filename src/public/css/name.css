@@ -73,7 +73,6 @@ body {
 	background-color: #1B9AF7;
 	color: white;
 	font-size: 24px;
-	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
 
 
@@ -81,10 +80,10 @@ body {
 @media all and (max-width: 500px) {
 	.talk-bubble {
 		margin: 10px auto;
-		width: 210px;
+		width: 190px;
 	}
 	.naam > input {
-	 	width: 210px;
+	 	width: 218px;
 	}
 
 	/* Button */
@@ -94,8 +93,8 @@ body {
 	.change {
 		width: 220px;
 		background-color: #1B9AF7;
+		border-radius: 7px;
 		color: white;
 		font-size: 24px;
-		font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 	}
 }
