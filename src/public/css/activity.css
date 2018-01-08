@@ -3,6 +3,10 @@ div.categorie {
 	margin-top: 95px;
 }
 
+div.categorie > h1 {
+	font-family: 'Roboto', sans-serif;
+}
+
 /* Surrounding div of squares */
 .col-md-8.col-md-push-2.col-xs-12 {
 	margin-bottom: 120px;
@@ -19,6 +23,8 @@ div.categorie {
 	padding: 1em;
 	height: 15em;
 	text-align: center;
+	font-family: 'Nunito', sans-serif; 
+   	font-weight: 400;
 }
 
 input.img {
@@ -26,6 +32,14 @@ input.img {
 	width: 8.4em;
 	margin: auto;
 	outline: none;
+}
+
+ .eachCategorie.ietsAnders > input {
+	margin-bottom: -10px;
+} 
+
+.eachCategorie > h4 {
+	font-weight: 900;
 }
 
 /* Next Button */
@@ -48,9 +62,17 @@ button.myBtn {
 		text-align: center;
 	}
 
+	.eachCategorie > h4 {
+		font-size: 19px;
+	}
+
 	input.img {
 		height: 5.4em;
 		width: 5.4em;
 		margin: auto;
 	}
+
+	.eachCategorie.ietsAnders > input {
+		margin-bottom: -17px;
+	} 
 }

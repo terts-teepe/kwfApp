@@ -4,6 +4,7 @@ html(lang='en')
 		title Activity
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		include bottomNavbarStyle
+		include fonts
 		link(href ='css/activity.css' type='text/css' rel='stylesheet')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
@@ -17,27 +18,27 @@ html(lang='en')
 					.col-md-4.col-xs-6
 						.eachCategorie
 							input.img(type="image" alt="Login" src="img/baby_icon.jpg" style="max-width:100%;", name="categorie", value="Babysitten")
-							h4 <b>Babysitten</b>
+							h4 Babysitten
 					.col-md-4.col-xs-6
 						.eachCategorie
 							input.img(type="image" alt="Login" src="img/cooking-icon-png.jpg" style="max-width:100%;", name="categorie", value="Koken")
-							h4 <b>Koken</b>
+							h4 Koken
 					.col-md-4.col-xs-6
 						.eachCategorie
 							input.img(type="image" alt="Login" src="img/shopping.png" style="max-width:100%;", name="categorie", value="Boodschappen")
-							h4 <b>Boodschappen</b>
+							h4 Boodschappen
 					.col-md-4.col-xs-6
 						.eachCategorie
 							input.img(type="image" alt="Login" src="img/car.png" style="max-width:100%;", name="categorie", value="Vervoer")
-							h4 <b>Vervoer</b>
+							h4 Vervoer
 					.col-md-4.col-xs-6
 						.eachCategorie
 							input.img(type="image" alt="Login" src="img/coffee.png" style="max-width:100%;", name="categorie", value="Koffie")
-							h4 <b>Koffie</b>
+							h4 Koffie
 					.col-md-4.col-xs-6
-						.eachCategorie
+						.eachCategorie.ietsAnders
 							input.img#ignoreThis(type="image" alt="Login" src="img/other.png" style="max-width:100%;", name="categorie", value="Iets anders")
-							h4 <b>Iets anders</b>
+							h4 Iets anders
 							input.form-control(type='text', id='categorie' onchange="changeradioother()")
 		include bottomNavbar
 	script(src='http://momentjs.com/downloads/moment-with-locales.js')
