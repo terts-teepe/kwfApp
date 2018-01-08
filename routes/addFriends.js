@@ -64,7 +64,7 @@ router.get('/', (req, res) =>{
 					})
 
 					.then((users)=>	{
-						res.render('addFriends', {notFriends: users})
+						res.render('addFriends', {notFriends: users, title: 'friends'})
 					})
 				}	
 			});	

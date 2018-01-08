@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
 				}
 			}
 			else {
-				res.render('profile', {user: user})
+				res.render('profile', {user: user, title: 'profile'})
 			}
 		})
 	}

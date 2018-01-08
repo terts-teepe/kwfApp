@@ -35,7 +35,7 @@ router.get('/', function(req, res) {
 			}
 
 			else {
-				res.render('chat', {user: user})
+				res.render('chat', {user: user, title: 'chat'})
 			}
 		})
 

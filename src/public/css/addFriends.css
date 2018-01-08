@@ -1,8 +1,3 @@
-.selectAllStyle {
- font-style: italic;
- font-family: Arial, Helvetica, sans-serif;
-}
-
 body {
  font-size: 17px;
 }
@@ -10,6 +5,11 @@ body {
 .names {
     position: absolute;
     bottom: 34px;
+}
+
+.selectAllStyle, .selectOne {
+/*  font-style: italic; */
+ font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
 
 .selectAll {
@@ -27,32 +27,31 @@ body {
 
 
 .selectOne {
-  /*margin-top: 50px;*/
+  margin-top: 10px;
   margin-left: -170px; 
   top: 60px;
 }
 
-h4 {
- color: white;
-}
 
 .clickNames {
 margin-top: 50px;
 }
 
+/* Inner circle */
 .rowStyle {
    background-color: #E44541;
    position: absolute;
-   margin-top: 150px;
-   /* left: 100px; */
+   margin: 150px 0px 20px 0px;
    width: 100%;
-   margin-right: 0px;
    right: 0px;
-   margin-left: 0px;
    height: 60px;
-   padding-top: 6px;
 }
 
+h4 {
+ color: white;
+ font-size: 1.9em;
+ margin-top: 14px;
+}
 
 ul li:nth-child(odd) {  
  background-color: #FE0606;
@@ -84,10 +83,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-}
-
-h4 {
- margin-top: 14px;
 }
 
 .boks {
@@ -185,4 +180,17 @@ span.cr > i.cr-icon.glyphicon.glyphicon-ok > b{
  color: white;
  font-size: 20px;
  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+}
+
+
+/* For mobile */
+@media all and (max-width: 500px) {
+  .rowStyle {
+     background-color: #E44541;
+     position: absolute;
+     margin: 150px 0px 20px 0px;
+     width: 100%;
+     right: 0px;
+     height: 70px;
+  }
 }
