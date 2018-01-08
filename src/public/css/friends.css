@@ -17,6 +17,10 @@ body {
     bottom: 34px;
 }
 
+.styleLabel {
+  position: relative;
+  left: 57.5px;
+}
 
 .selectAll {
  margin-top: 50px;

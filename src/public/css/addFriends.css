@@ -20,6 +20,11 @@ body {
  right: 57.5px;
 }
 
+.styleLabel {
+  position: relative;
+  left: 57.5px;
+}
+
 
 .selectOne {
   /*margin-top: 50px;*/
