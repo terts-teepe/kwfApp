@@ -35,6 +35,16 @@ h1 {
 	/*position: relative;*/
 }
 
+
+
+
+.backBtn {
+    color: white;
+    margin-top: 15px;
+    position: relative;
+    left: 15.5px;
+}
+
 body {
 	/*background-color: #eeeee4*/
 }
