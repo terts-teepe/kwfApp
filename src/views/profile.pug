@@ -19,8 +19,10 @@ html(lang='en')
 				.col-md-4.col-md-push-4.col-xs-10.col-xs-push-1.text-center.fotoProfile
 					img.badges(src='img/profile.png')
 			if friends
-				.dropdown.col-md-4.col-md-push-4.col-xs-8.col-xs-push-2.text-center
-					button.dropbtn.buttonStyle(onclick="myFunction()") Vrienden
+				.row
+					.dropdown.col-md-4.col-md-push-4.col-xs-8.col-xs-push-2.text-center
+						button.dropbtn.buttonStyle(onclick="myFunction()") Vrienden	
+				.col-md-4.col-md-push-4.col-xs-8.col-xs-push-2.text-center
 					a.button-two.btn.btn-danger.btn-outline.uitlogStyle(type='button' href='/logout') Uitloggen
 					#myDropdown.dropdown-content
 						.wrapper-one
@@ -32,8 +34,8 @@ html(lang='en')
 				.row
 					.col-md-4.col-md-push-4.col-xs-8.col-xs-push-2.text-center
 						a.btn.btn-success.submitStyle(href="/addFriends") Voeg Vrienden Toe
-			.row
-				.col-md-4.col-md-push-4.col-xs-8.col-xs-push-2.text-center
-					a.btn.btn-danger.buttonStyle(href="/logout") Uitloggen
+				.row
+					.col-md-4.col-md-push-4.col-xs-8.col-xs-push-2.text-center
+						a.btn.btn-danger.buttonStyle(href="/logout") Uitloggen
 		include bottomNavbar
 	script(src='js/profile.js')

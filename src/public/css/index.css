@@ -36,7 +36,7 @@ h1 {
 }
 
 body {
-	background-color: #eeeee4
+	/*background-color: #eeeee4*/
 }
 
 .wrap {
@@ -54,6 +54,11 @@ body {
 
 .header {
 	color: white;
+}
+
+.container-one {
+    position: relative;
+    bottom: 80px;
 }
 /* .wrap:nth-of-type(odd) {
 	border: 1px #efede0 solid;

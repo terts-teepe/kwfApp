@@ -6,7 +6,6 @@
 .foto {
 	width: 100px;
 	height: 100px; 
-	margin-top: 20px;
 }
 
 .tekst {
@@ -45,7 +44,7 @@ ul a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-bottom: 120px;
+    padding-bottom: 40px;
 }
 
 .button-one {
@@ -80,12 +79,17 @@ ul a {
 }
 
 .uitlogStyle {
-    margin-top: 5px;
+    margin-top: 8px;
+    /* position: absolute; */
+    width: 200px;
+    margin-left: 0px;
+    bottom: 100px;
+    position: relative;
 }
 
 .names {
     position: relative;
-    top: 160px;
+    top: 136px;
     /* margin-bottom: 50px; */
 }
 
@@ -105,6 +109,7 @@ a {
     font-size: 16px;
     border: none;
     cursor: pointer;
+    width: 200px;
 }
 
 /* Dropdown button on hover & focus */
@@ -149,8 +154,8 @@ a {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
-	display:block;
-	position: relative;
-	margin-bottom: 100px;
-    margin-top: 10px;
+    display: block;
+    position: relative;
+    margin-bottom: 100px;
+    margin-top: -70px;
 }
