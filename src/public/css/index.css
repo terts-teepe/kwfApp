@@ -35,31 +35,14 @@ h1 {
 	/*position: relative;*/
 }
 
-body {
-	/*background-color: #eeeee4*/
-}
-
-.wrap {
-	width: 600px;
-	margin: 10px auto 100px;
-	height: 16em;
-	background-color: white;
-}
-
-.wrap > img {
-	height: 200px;
-	width: 200px;
-	float: left;
-}
-
 .header {
 	color: white;
 }
-
+/* 
 .container-one {
     position: relative;
     bottom: 80px;
-}
+} */
 /* .wrap:nth-of-type(odd) {
 	border: 1px #efede0 solid;
 background-color: #efede0;
@@ -69,3 +52,70 @@ background-color: #efede0;
 border: 2px #ecddca solid;
 	background-color: #ecddca;
 } */
+
+											/* Flex container */
+.flex-col {
+	display: flex;
+  	flex-direction: column;
+  	justify-content: space-around;
+}
+
+.flex-row {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+											/* talk bubble */
+.tekstbubbels {
+	margin-top: 100px;
+	display:inline;
+}
+
+.talk-bubble {
+	margin: 10px auto;
+	width: 240px;
+	height: auto;
+	background-color: #E2E2E2;
+	border-radius: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+.talk-bubble > #name {
+	font-weight: bold;
+}
+/* talk bubble contents */
+.talktext{
+	padding: 0.5em;
+	text-align: left;
+	line-height: 1.3em;
+}
+.talktext p{
+  /* remove webkit p margins */
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
+/* For mobile */
+@media all and (max-width: 500px) {
+	.talk-bubble {
+		margin: 10px auto;
+		width: 190px;
+	}
+	.naam > input {
+	 	width: 218px;
+	}
+
+	/* Button */
+	.doorgaan {
+		margin-top: 15px;
+	}
+	.change {
+		width: 220px;
+		background-color: #1B9AF7;
+		border-radius: 7px;
+		color: white;
+		font-size: 24px;
+	}
+}
