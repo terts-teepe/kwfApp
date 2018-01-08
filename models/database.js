@@ -87,6 +87,20 @@ db.sync({
       email: 'fabio@live.nl',
       phoneNumber: '+31637684022',
       image: 'img/avatars/avatar-two.png'
+    })    
+    User.create({
+      name: 'Aida',
+      password: '1234a',
+      email: 'aida@live.nl',
+      phoneNumber: '+31634061173',
+      image: 'img/avatars/avatar-five.png'
+    })      
+    User.create({
+      name: 'Omar',
+      password: '1234o',
+      email: 'omar@live.nl',
+      phoneNumber: '+31636462976',
+      image: 'img/avatars/avatar-five.png'
     })   
 
     .catch(e => console.log(e))

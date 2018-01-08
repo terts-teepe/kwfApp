@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/database.js');
 const bodyParser = require('body-parser');
-const twilio = require('twilio');
+const twilio = require('twilio'); 
 const accountSid = 'ACbcdc77c3e680fef8b9eecbdb7bcc5ba4'; // Your Account SID from www.twilio.com/console
 const authToken = 'f038a6a0dc3c0c41916100aeefca14f5';   // Your Auth Token from www.twilio.com/console
 const client = new twilio(accountSid, authToken);
@@ -52,6 +52,7 @@ router.post('/', (req,res)=>{
 	let currentUserName = user.name;
 	let clickedBtn = req.body.btn;
 	let activityId = req.body.id;
+	let plannerId = req.body.plannerId;
 	let status;
 	console.log("From Ajax request*****")
 	console.log(req.body)
@@ -66,12 +67,12 @@ router.post('/', (req,res)=>{
                     [Op.and]: [
                         {id:
                             {
-                                [Op.ne]: planner.id
+                                [Op.ne]: plannerId
                             }
                         },
                         {id:
                             {
-                                [Op.ne]: accepter.id
+                                [Op.ne]: currentUserId
                             }
                         }
                     ]
@@ -80,6 +81,8 @@ router.post('/', (req,res)=>{
 
 		})
 		.then((activity)=> {
+			console.log("Activity")
+			console.log(activity)
 			activity.update({
 				status: true,
 				accepter: currentUserId
@@ -114,6 +117,8 @@ router.post('/', (req,res)=>{
                         console.log("activity.dataValues")
                         console.log(activity.dataValues)
                         console.log(activity.dataValues.users)
+                        console.log("activity.dataValues.users.length")
+                        console.log(activity.dataValues.users.length)
 						// Send notification to all but accepter
 
                         for (var i = 0; i < activity.dataValues.users.length; i++) {
@@ -125,8 +130,8 @@ router.post('/', (req,res)=>{
                                     to: activity.users[i].phoneNumber,  // Text this number
                                     from: '+3197004498785' // From a valid Twilio number
                                 })
-                                if(i === activity.users.length){
-                                   res.redirect('/index')
+                                if(i === activity.dataValues.users.length){
+                                   res.redirect('/chat')
                                 }
                             }
                         }
