@@ -16,9 +16,9 @@ html(lang='en')
 				h4.text-center Nodig vrienden uit via SMS
 				form(method='post', action='/messages', autocomplete="off")
 					.form-group
-						input.form-control(type="text", name="name" placeholder="Friend's Name")
+						input.form-control(type="text", name="name" placeholder="Naam")
 					.form-group
-						input.form-control(type="text", name="to" placeholder="Friend's Number")
+						input.form-control(type="text", name="to" value="+316")
 					.form-group.text-center
 						input#more_fields(type='button', value='Add More')
 						button.styleInvite.btn.form-control(class="submit" type="submit") Invite!

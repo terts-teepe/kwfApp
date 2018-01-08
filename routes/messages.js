@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
 				console.log(people.length);
 				// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
 
-				res.redirect('index');
+				res.redirect('friendsInvited');
 				// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
 
 			}
@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
 		    from: '+3197004498785' // From a valid Twilio number
 		})
 		.then(() => {
-			res.redirect('index');
+			res.redirect('friendsInvited');
 		})
 	}
 });
