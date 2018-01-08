@@ -9,6 +9,35 @@ h1 {
 	z-index: -1;
 }
 
+
+
+
+
+.backBtn {
+    color: white;
+    margin-top: 15px;
+    position: relative;
+    left: 15.5px;
+}
+
+body {
+	/*background-color: #eeeee4*/
+}
+
+.wrap {
+	width: 600px;
+	margin: 10px auto 100px;
+	height: 16em;
+	background-color: white;
+}
+
+.wrap > img {
+	height: 200px;
+	width: 200px;
+	float: left;
+}
+
+
 .header {
 	color: white;
 	height: 1px;
