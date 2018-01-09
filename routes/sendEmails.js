@@ -37,9 +37,9 @@ router.post('/', (req,res)=>{
 	console.log(friendEmail)
 	console.log("friendName")
 	console.log(friendName)
-	function response (){
-		res.redirect('index')
-	}
+	// function response (){
+	// 	res.redirect('index')
+	// }
 /*	function transport (){
 		transporter.sendMail(message, (error, info) => {
 		    if (error) {
@@ -75,7 +75,7 @@ router.post('/', (req,res)=>{
 			    transporter.close();
 			});
 			if(i == (friendEmail.length - 1)){
-				response ()
+				res.render('friendsInvited', {people: people});
 			}
 		}
 	}
@@ -100,7 +100,7 @@ router.post('/', (req,res)=>{
 		    console.log('Server responded with "%s"', info.response);
 		    transporter.close();
 		});
-		response ()
+		res.render('friendsInvited', {people: people});
 	}
 })
 

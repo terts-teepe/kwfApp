@@ -1,18 +1,37 @@
 doctype html
 html(lang='en')
-	head
+	head 
+		title Account maken
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		include bottomNavbarStyle
+		include fonts
 		link(href ='css/index.css' type='text/css' rel='stylesheet')
-		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		link(href ='css/name.css' type='text/css' rel='stylesheet')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		meta(charset='UTF-8')
 	body
-		.container.text-center
-			h1 Gefeliciteerd! Je hebt met succes de volgende vrienden een uitnodiging gestuurd: 
-			//- if Array.isArray(people)
-			each person in people
-				h3 #{person.name}
-			//- else
-			//- 	h3 #{people.name}
+		include topNavbar 
+		.container 
+			.flex-col
+				.flex-row
+					.check.text-center
+						img.imageOne(src='img/emma.png')
+					.check.tekstbubbels
+						.talk-bubble
+							.talktext
+								p.text-center
+									| Goed gedaan! Je hebt de volgende mensen uitgenodigd: 
+									if Array.isArray(people)
+										each person in people
+											| #{person.name}, 
+									else	
+										| #{people.name}.
+						.talk-bubble
+							.talktext
+								p.text-center
+									| Je bent nu klaar om activiteiten te plannen!
+			.doorgaan.text-center
+				a.btn.btn-md.change(href="/activity") Een activiteit plannen	
 		include bottomNavbar
