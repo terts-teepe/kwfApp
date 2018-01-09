@@ -9,7 +9,7 @@
 				<i class="material-icons">group_add</i>
 				h5 Vrienden			
 	.box.box2
-		if title === "Activities"
+		if title === "activities"
 			a(href="/index")
 				i.fa.fa-bars(aria-hidden='true', style="color:#2c7bb4;")
 				h5(style="color:#2c7bb4;") Activiteiten
@@ -18,9 +18,14 @@
 				i.fa.fa-bars(aria-hidden='true')
 				h5 Activiteiten
 	.box.box3
-		a(href="/Activity")
-			<i class="material-icons">control_point</i>
-			h5 Plannen
+		if title === "plan activity"
+			a(href="/Activity")
+				<i class="material-icons", style="color:#2c7bb4;">control_point</i>
+				h5(style="color:#2c7bb4;") Plannen
+		else 
+			a(href="/Activity")
+				<i class="material-icons">control_point</i>
+				h5 Plannen
 	.box.box4
 		if title === 'chat'
 			a(href="/chat")

@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 // Render profile page
 router.get('/', function(req, res) {
-	res.render('inviteFriends')
+	res.render('inviteFriends', {title: 'friends'})
 });
 
 router.post('/', function(req, res) {

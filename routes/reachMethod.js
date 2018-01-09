@@ -10,7 +10,7 @@ const randomNumber = function() {
 
 router.get('/', (req, res) => {
 	let name = req.query.name;
-	res.render('reachMethod', {name: name});
+	res.render('reachMethod', {name: name, title: 'plan activity'});
 })
 
 router.post('/', (req,res) => {
@@ -21,17 +21,17 @@ router.post('/', (req,res) => {
 	console.log(randomNumber);
 
 	db.User.create({
-	            name: name,
-	            password: password,
-	            email: email,
-	            phoneNumber: phoneNumber,
-	            image: avatars[randomNumber()]
-	        })
-	        .then((user) => {
-	            req.session.user = user;
-	            res.redirect('/addFriends?message=' + encodeURIComponent("User created"));
-	            // Alert that user registered worked
-        	})
+        name: name,
+        password: password,
+        email: email,
+        phoneNumber: phoneNumber,
+        image: avatars[randomNumber()]
+    })
+    .then((user) => {
+        req.session.user = user;
+        res.redirect('/addFriends?message=' + encodeURIComponent("User created"));
+        // Alert that user registered worked
+	})
 })
 
 module.exports = router;

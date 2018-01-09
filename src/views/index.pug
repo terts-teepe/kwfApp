@@ -60,10 +60,8 @@ html(lang='en')
 				.doorgaan.text-center
 					a.btn.btn-md.change(href="/activity") Een activiteit plannen
 			else
-				.row
-					.col-md-4.col-md-push-4.col-xs-8.col-xs-push-2.text-center
-						button.btn.btn-lg.btn-primary.doorgaan
-							a.btn.change(href="/activity") Een nieuwe activiteit plannen
+				.doorgaan.text-center
+					a.btn.btn-md.change(href="/activity") Een nieuwe activiteit plannen
 				each activity in user.activities
 
 						if activity.status === true

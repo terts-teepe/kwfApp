@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 // Render profile page
 router.get('/', function(req, res) {
-	res.render('profielTerts')
+	res.render('profielTerts', {title: 'plan activity'})
 })
 
 module.exports = router;

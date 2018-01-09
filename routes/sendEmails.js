@@ -25,7 +25,7 @@ let transporter = nodemailer.createTransport({
 
 // Render profile page
 router.get('/', function(req, res) {
-	res.render('sendEmails')
+	res.render('sendEmails', {title: 'friends'})
 })
 
 router.post('/', (req,res)=>{
