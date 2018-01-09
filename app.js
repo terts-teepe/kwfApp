@@ -53,7 +53,7 @@ const chatbot = require('./routes/chatbot')
 const chat = require('./routes/chat')
 const friends = require('./routes/friends')
 const time = require('./routes/time')
-const friendsInvited = require('./routes/friendsInvited')
+// const friendsInvited = require('./routes/friendsInvited')
 const volunteers = require('./routes/volunteers')
 const noFriends = require('./routes/noFriends')
 const profielTerts = require('./routes/profielTerts')
@@ -116,7 +116,7 @@ app.use('/chat', chat);
 app.use('/friends', friends);
 app.use('/time', time);
 app.use('/volunteers', volunteers);
-app.use('/friendsInvited', friendsInvited);
+// app.use('/friendsInvited', friendsInvited);
 app.use('/noFriends', noFriends);
 app.use('/profielPierre', profielPierre);
 app.use('/profielTerts', profielTerts);

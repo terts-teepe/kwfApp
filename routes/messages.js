@@ -35,6 +35,11 @@ router.post('/', (req, res) => {
 	/*			people = []*/
 				people.push({name: name[i] , phonenumber: recipient[i]})
 				console.log("this is people" + people);
+				console.log(people);
+				console.log("this is recipient");
+				console.log(recipient);
+				console.log("name");
+				console.log(name);
 				client.messages.create({
 				    // body: `Hello ${people[i].name}, would you like to join the vriendendienst network! Check it out here: https://share.proto.io/FAFPRN/`,
 				    body: `Hallo dit is Emma, van KWF. Bedankt voor uw deelname aan de gebruikerstest. Klik op de onderstaande link om het prototype te downloaden: https://share.proto.io/V9VKHX/. Instructie en de vragen staan op uw e-mail.`,
@@ -46,7 +51,7 @@ router.post('/', (req, res) => {
 				console.log(people.length);
 				// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
 
-				res.redirect('friendsInvited');
+				res.render('friendsInvited', {people: people});
 				// res.send(`Your invitation has been sent to your friend ${people[i].name}! Send another invitation here: `)
 
 			}
@@ -65,7 +70,7 @@ router.post('/', (req, res) => {
 		    from: '+3197004498785' // From a valid Twilio number
 		})
 		.then(() => {
-			res.redirect('friendsInvited');
+			res.render('friendsInvited', {people: people});
 		})
 	}
 });
