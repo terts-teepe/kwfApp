@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 				console.log(friends)
 				if(friends.length === ids.length){
 					console.log(friends)
-					res.render('friends', {friends: friends, categorie: categorie})
+					res.render('friends', {friends: friends, categorie: categorie, title: 'plan activity'})
 				}
 			})
 		}

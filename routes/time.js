@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
 			.then(()=>{
 				console.log(friends)
 				if(friends.length === ids.length){
-					res.render('time', {friends: friends, categorie: categorie, friendsIds: friendsIds/*, Ids: Ids*/})
+					res.render('time', {friends: friends, categorie: categorie, friendsIds: friendsIds/*, Ids: Ids*/ , title: 'plan activity'})
 				}
 			})
 		}

@@ -62,7 +62,7 @@ router.get('/', function(req, res) {
 /*				})*/
 			}
 			else {
-				res.render('index', {user: user, title: 'Activities'})
+				res.render('index', {user: user, title: 'activities'})
 			}
 		})
 
