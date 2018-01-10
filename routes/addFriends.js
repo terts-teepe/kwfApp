@@ -25,48 +25,53 @@ router.get('/', (req, res) =>{
 				}
 			})
 			.then((friends) => {
-				if(friends.length !== 0) {
-					console.log("*****************")
-					console.log(friends)
-					var notFriends = [];
-					var friend = false;
-					for(var i=0; i<allButMe.length; i++) { //3			
-						for (var j = 0; j < friends.length; j++) { //2
-							if (allButMe[i].id === (friends[j].user_two_id)) {
-								friend = true;
+				if(allButMe.length === friends.length){
+					res.render('inviteFriends', {note: 'No people left'})
+				}
+				else {
+					if(friends.length !== 0) {
+						console.log("*****************")
+						console.log(friends)
+						var notFriends = [];
+						var friend = false;
+						for(var i=0; i<allButMe.length; i++) { //3			
+							for (var j = 0; j < friends.length; j++) { //2
+								if (allButMe[i].id === (friends[j].user_two_id)) {
+									friend = true;
+								}
+								if (j === friends.length - 1){
+									// If not friend
+									if (friend === false){
+										var notFriendName = allButMe[i].dataValues;
+										notFriends.push(notFriendName);							
+									}
+									// If friend
+									if (friend === true){
+										friend = false;
+									}
+									else if(i === (allButMe.length -1)){
+										res.render('addFriends', {notFriends: notFriends})
+									}
+								}
+							}					
+						}
+					}
+					
+					else {
+					// Find friends
+						db.User.findAll({
+							where: {
+								id: {
+									[Op.ne]: currentUserId
+								}
 							}
-							if (j === friends.length - 1){
-								// If not friend
-								if (friend === false){
-									var notFriendName = allButMe[i].dataValues;
-									notFriends.push(notFriendName);							
-								}
-								// If friend
-								if (friend === true){
-									friend = false;
-								}
-								else if(i === (allButMe.length -1)){
-									res.render('addFriends', {notFriends: notFriends})
-								}
-							}
-						}					
+						})
+
+						.then((users)=>	{
+							res.render('addFriends', {notFriends: users, title: 'friends'})
+						})
 					}
 				}
-				
-				else {
-				// Find friends
-					db.User.findAll({
-						where: {
-							id: {
-								[Op.ne]: currentUserId
-							}
-						}
-					})
-
-					.then((users)=>	{
-						res.render('addFriends', {notFriends: users, title: 'friends'})
-					})
-				}	
 			});	
 		})
 	}

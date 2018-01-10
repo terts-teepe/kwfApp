@@ -67,10 +67,20 @@ margin-top: 50px;
    height: 60px;
 }
 
+/* Outer circle */
+.rowStyle2 {
+   background-color: #E44541;
+   position: absolute;
+   margin: 350px 0px 100px 0px;
+   width: 100%;
+   right: 0px;
+   height: 60px;
+}
+
 h4 {
  color: white;
  font-size: 1.9em;
- margin-top: 12px;
+ margin: 12px 0;
 }
 
 ul li:nth-child(odd) {  
@@ -190,7 +200,7 @@ span.cr > i.cr-icon.glyphicon.glyphicon-ok > b{
 
 /* Button */
 .doorgaan {
- margin-bottom: 100px;
+  margin-bottom: 100px;
  margin-top: 72px;
 }
 

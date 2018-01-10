@@ -15,17 +15,30 @@ html(lang='en')
 			.container
 				.flex-col
 					.flex-row
-						.check.text-center
-							img.imageOne(src='img/emma.png')
-						.check.tekstbubbels
-							.talk-bubble.tri-right.round
-								.talktext
-									p.text-center
-										| Goed gedaan! Je kan nu activiteiten plannen met je vrienden!
-							.talk-bubble.tri-right.round
-								.talktext
-									p.text-center
-										| Wil je nog meer vrienden uitnodigen via SMS of Mail?
+						if note
+							.check.text-center
+								img.imageOne(src='img/emma.png')
+							.check.tekstbubbels
+								.talk-bubble.tri-right.round
+									.talktext
+										p.text-center
+											| Er zijn geen vrienden om toe te voegen
+								.talk-bubble.tri-right.round
+									.talktext
+										p.text-center
+											| Je kan wel vrienden uitnodigen via SMS of Mail?
+						else
+							.check.text-center
+								img.imageOne(src='img/emma.png')
+							.check.tekstbubbels
+								.talk-bubble.tri-right.round
+									.talktext
+										p.text-center
+											| Goed gedaan! Je kan nu activiteiten plannen met je vrienden!
+								.talk-bubble.tri-right.round
+									.talktext
+										p.text-center
+											| Wil je nog meer vrienden uitnodigen via SMS of Mail?
 		.row.text-center.logos
 			.radio.col-md-2.col-md-push-4.col-xs-4.col-xs-push-2
 				a(href="/messages")
