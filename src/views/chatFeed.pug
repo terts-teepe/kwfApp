@@ -17,19 +17,12 @@ html(lang='en')
 				.row.app-one
 					.col-md-12.col-sm-4.side
 						.side-one
-							.row.heading
-								.col-sm-3.col-xs-3.heading-avatar
-									.heading-avatar-icon
-										img(src='https://bootdey.com/img/Content/avatar/avatar1.png')
-								.col-sm-1.col-xs-1.heading-dot.pull-right
-									i.fa.fa-ellipsis-v.fa-2x.pull-right(aria-hidden='true')
-								.col-sm-2.col-xs-2.heading-compose.pull-right
-									i.fa.fa-comments.fa-2x.pull-right(aria-hidden='true')
 							.row.searchBox
 								.col-sm-12.searchBox-inner
 									.form-group.has-feedback
 										input#searchText.form-control(type='text', name='searchText', placeholder='Search')
-										span.glyphicon.glyphicon-search.form-control-feedback
+										span.form-control-feedback
+											i(class= 'fa fa-search' aria-hidden="true")
 							.row.sideBar
 								.row.sideBar-body
 									.col-md-3.col-sm-3.col-xs-3.sideBar-avatar
@@ -38,16 +31,16 @@ html(lang='en')
 									.col-md-7.col-sm-9.col-xs-9.sideBar-main
 										.row
 											.col-md-4.col-sm-8.col-xs-8.sideBar-name
-												span.name-meta Emma
+												span.name-meta <a href='/chat'>Emma</a>
 											.col-md-4.col-sm-4.col-xs-4.pull-right.sideBar-time
 												span.time-meta.pull-right 18:18
 										.row
 											.col-md-4.col-sm-8.col-xs-8
-												span Uitnodiging van Pierre
+												span <a href='/chat'>Uitnodiging van Pierre</a>
 								.row.sideBar-body
 									.col-md-3.col-sm-3.col-xs-3.sideBar-avatar
 										.avatar-icon
-											img(src='https://bootdey.com/img/Content/avatar/avatar2.png')
+											img.image(src='img/avatars/avatar-four.png')
 									.col-md-7.col-sm-9.col-xs-9.sideBar-main
 										.row
 											.col-md-4.col-sm-8.col-xs-8.sideBar-name
@@ -60,7 +53,7 @@ html(lang='en')
 								.row.sideBar-body
 									.col-md-3.col-sm-3.col-xs-3.sideBar-avatar
 										.avatar-icon
-											img(src='https://bootdey.com/img/Content/avatar/avatar3.png')
+											img(src='img/avatars/avatar-three.png')
 									.col-md-7.col-sm-9.col-xs-9.sideBar-main
 										.row
 											.col-md-4.col-sm-8.col-xs-8.sideBar-name
@@ -73,7 +66,7 @@ html(lang='en')
 								.row.sideBar-body
 									.col-md-3.col-sm-3.col-xs-3.sideBar-avatar
 										.avatar-icon
-											img(src='https://bootdey.com/img/Content/avatar/avatar4.png')
+											img(src='img/avatars/avatar-one.png')
 									.col-md-7.col-sm-9.col-xs-9.sideBar-main
 										.row
 											.col-md-4.col-sm-8.col-xs-8.sideBar-name
@@ -86,7 +79,7 @@ html(lang='en')
 								.row.sideBar-body
 									.col-md-3.col-sm-3.col-xs-3.sideBar-avatar
 										.avatar-icon
-											img(src='https://bootdey.com/img/Content/avatar/avatar5.png')
+											img(src='img/avatars/avatar-two.png')
 									.col-md-7.col-sm-9.col-xs-9.sideBar-main
 										.row
 											.col-md-4.col-sm-8.col-xs-8.sideBar-name
@@ -99,7 +92,7 @@ html(lang='en')
 								.row.sideBar-body
 									.col-md-3.col-sm-3.col-xs-3.sideBar-avatar
 										.avatar-icon
-											img(src='https://bootdey.com/img/Content/avatar/avatar6.png')
+											img(src='img/avatars/avatar-ten.png')
 									.col-md-7.col-sm-9.col-xs-9.sideBar-main
 										.row
 											.col-md-4.col-sm-8.col-xs-8.sideBar-name
@@ -112,7 +105,7 @@ html(lang='en')
 								.row.sideBar-body
 									.col-md-3.col-sm-3.col-xs-3.sideBar-avatar
 										.avatar-icon
-											img(src='https://bootdey.com/img/Content/avatar/avatar1.png')
+											img(src='img/avatars/avatar-twelve.png')
 									.col-md-7.col-sm-9.col-xs-9.sideBar-main
 										.row
 											.col-md-4.col-sm-8.col-xs-8.sideBar-name

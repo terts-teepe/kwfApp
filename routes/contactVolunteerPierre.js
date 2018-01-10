@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 router.get('/', (req, res) => {
 	let name = req.query.name;
-	res.render('contactVolunteerPierre', {name: name});
+	res.render('contactVolunteerPierre', {name: name, title: 'plan activity'});
 })
 
 module.exports = router;
