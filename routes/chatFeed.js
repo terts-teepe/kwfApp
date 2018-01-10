@@ -8,20 +8,4 @@ router.get('/', (req,res)=>{
 	res.render('chatFeed')
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;
