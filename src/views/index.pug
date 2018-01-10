@@ -62,7 +62,7 @@ html(lang='en')
 					a.btn.btn-md.change(href="/activity") Een activiteit plannen
 			else
 				.doorgaan.text-center
-					a.btn.btn-md.change(href="/activity") Een nieuwe activiteit plannen
+					a.btn.btn-md.change.nieuweActiviteit(href="/activity") Een nieuwe activiteit plannen
 				each activity in user.activities
 
 						if activity.status === true
@@ -81,15 +81,15 @@ html(lang='en')
 									each user in activity.users
 										if user.id === activity.plannerId
 											img(src=user.image)
-											h3 #{activity.categorie} met #{user.name}
-											p  in #{activity.date} om #{activity.time}
-											p in #{activity.location}
+											h3.styleActivity #{activity.categorie} met #{user.name}
+											p.styleActivity  in #{activity.date} om #{activity.time}
+											p.styleActivity in #{activity.location}
 								//- If the user is the one who planned
 								else if activity.plannerId === currentUserId
 									each user in activity.users
 										if user.id === activity.accepter
 											img(src=user.image)
-											h3 #{activity.categorie} met #{user.name}
-											p  in #{activity.date} om #{activity.time}
-											p in #{activity.location}							
+											h3.styleActivity #{activity.categorie} met #{user.name}
+											p.styleActivity  in #{activity.date} om #{activity.time}
+											p.styleActivity in #{activity.location}							
 		include bottomNavbar

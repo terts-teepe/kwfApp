@@ -46,16 +46,20 @@ body {
 }
 
 .wrap {
-	width: 600px;
-	margin: 10px auto 100px;
-	height: 16em;
-	background-color: white;
+    width: 600px;
+    margin: 10px auto 100px;
+    height: 16em;
+    background-color: white;
+    position: relative;
+    bottom: 70px;
+    left: 15px;
 }
 
 .wrap > img {
-	height: 200px;
-	width: 200px;
-	float: left;
+    height: 150px;
+    width: 150px;
+    float: left;
+    margin-right: 20px;
 }
 
 
@@ -70,6 +74,7 @@ body {
 	text-decoration: none;
 }
 
+
 											/* Flex container */
 .flex-col {
 	display: flex;
@@ -83,7 +88,7 @@ body {
 	justify-content: center;
 	margin-top: 30px;
     position: relative;
-    top: 53px;
+    /*top: 53px;*/
 }
 
 											/* talk bubble */
@@ -243,6 +248,12 @@ h1 {
     padding: 0;
 }
 
+.styleActivity {
+    max-width: 340px;
+    position: relative;
+    top: 10px;
+}
+
 /* For mobile */
 @media all and (max-width: 500px) {
 	.talk-bubble {
@@ -271,4 +282,18 @@ h1 {
 		position: relative;
     	top: 5px;
 	}
+
+	.nieuweActiviteit {
+    width: 295px;
+    position: relative;
+    top: 280px;
 }
+
+}
+
+
+
+
+
+
+
