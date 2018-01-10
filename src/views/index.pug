@@ -64,7 +64,6 @@ html(lang='en')
 				.doorgaan.text-center
 					a.btn.btn-md.change.nieuweActiviteit(href="/activity") Een nieuwe activiteit plannen
 				each activity in user.activities
-
 						if activity.status === true
 							//- if activity.plannerId === user.id
 							//- 	.wrap
@@ -92,4 +91,40 @@ html(lang='en')
 											h3.styleActivity #{activity.categorie} met #{user.name}
 											p.styleActivity  in #{activity.date} om #{activity.time}
 											p.styleActivity in #{activity.location}							
-		include bottomNavbar
+		include bottomNavbar		
+		//- 			if activity.status === true
+		//- 				//- if activity.plannerId === user.id
+		//- 				//- 	.wrap
+		//- 				//- 		each user in activity.users
+		//- 				//- 			if user.id === activity.accepter
+		//- 				//- 				img(src=user.image)
+		//- 				//- 		h3 #{activity.categorie} met #{activity.accepter}
+		//- 				//- 		p  om #{activity.date} #{activity.time}
+		//- 				//- 		p in #{activity.location}
+		//- 				//- else if activity.accepter === user.id
+		//- 				.wrap
+		//- 					//- If the user is the one who accepted
+		//- 					if activity.accepter === currentUserId
+		//- 						each user in activity.users
+		//- 							if user.id === activity.plannerId
+		//- 								.row
+		//- 									.col-xs-12
+		//- 										.col-xs-3.col-xs-push-3
+		//- 											img(src=user.image)
+		//- 										.col-xs-4.col-xs-push-1
+		//- 											h3 #{activity.categorie} met #{user.name}
+		//- 											p  in #{activity.date} om #{activity.time}
+		//- 											p in #{activity.location}
+		//- 					//- If the user is the one who planned
+		//- 					else if activity.plannerId === currentUserId
+		//- 						each user in activity.users
+		//- 							if user.id === activity.accepter
+		//- 								.row.activity
+		//- 									.col-xs-12
+		//- 										.col-xs-3.col-xs-push-3
+		//- 											img(src=user.image)
+		//- 										.col-xs-4.col-xs-push-1
+		//- 											h3 #{activity.categorie} met #{user.name}
+		//- 											p  in #{activity.date} om #{activity.time}
+		//- 											p in #{activity.location}							
+		//- include bottomNavbar

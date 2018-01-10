@@ -42,7 +42,7 @@ router.post('/', (req, res) => {
 				console.log(name);
 				client.messages.create({
 				    // body: `Hello ${people[i].name}, would you like to join the vriendendienst network! Check it out here: https://share.proto.io/FAFPRN/`,
-				    body: `Hallo dit is Emma, van KWF. Bedankt voor uw deelname aan de gebruikerstest. Klik op de onderstaande link om het prototype te downloaden: https://share.proto.io/V9VKHX/. Instructie en de vragen staan op uw e-mail.`,
+				    body: `Hallo, dit is Emma van KWF! Heb je de prototype al uitgeprobeerd? Zo niet, gebruik dan alsjeblieft de link om de prototype te downloaden en te testen: https://share.proto.io/V9VKHX/. De instructies en het feedback formulier staan op je mail. Alvast bedankt!`,
 				    to: people[i].phonenumber,  // Text this number
 				    from: '+3197004498785' // From a valid Twilio number
 				})
@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
 		people.push({name: name , phonenumber: recipient})
 		client.messages.create({
 /*		    body: `Hello ${people[0].name}, Would you like to join the vriendendienst network! Check it out here: https://share.proto.io/V9VKHX/`,*/
-			body: `Hallo dit is Emma, van KWF. Bedankt voor uw deelname aan de gebruikerstest. Klik op de onderstaande link om het prototype te downloaden: https://share.proto.io/V9VKHX/. Instructie en de vragen staan op uw e-mail.`,
+			body: `Hallo, dit is Emma van KWF! Heb je de prototype al uitgeprobeerd? Zo niet, gebruik dan alsjeblieft de link om de prototype te downloaden en te testen: https://share.proto.io/V9VKHX/. De instructies en het feedback formulier staan op je mail. Alvast bedankt!`,
 		    to: people[0].phonenumber,  // Text this number
 		    from: '+3197004498785' // From a valid Twilio number
 		})

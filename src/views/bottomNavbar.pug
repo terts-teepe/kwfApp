@@ -20,7 +20,7 @@
 	.box.box3
 		if title === "plan activity"
 			a(href="/Activity")
-				<i class="material-icons", style="color:#2c7bb4;">control_point</i>
+				i.material-icons(style="color:#2c7bb4;") control_point
 				h5(style="color:#2c7bb4;") Plannen
 		else 
 			a(href="/Activity")
@@ -28,11 +28,11 @@
 				h5 Plannen
 	.box.box4
 		if title === 'chat'
-			a(href="/chat")
+			a(href="/chatfeed")
 				i.fa.fa-comments-o(aria-hidden='true', style="color:#2c7bb4;")
 				h5(style="color:#2c7bb4;") Berichten
 		else
-			a(href="/chat")
+			a(href="/chatfeed")
 				i.fa.fa-comments-o(aria-hidden='true')
 				h5 Berichten
 	.box.box5
