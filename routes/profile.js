@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 					})
 					.then(()=>{
 						if(friends.length === ids.length && friends.length !== 0){
-							res.render('profile', {friends: friends, user: user})
+							res.render('profile', {friends: friends, user: user, title: 'profile'})
 						}
 					})
 				}

@@ -62,8 +62,8 @@ router.post('/', (req,res)=>{
 			where: {
 				id: activityId
 			},
-            include: [{ model: db.User,
-                where: {
+            include: [{ model: db.User
+/*                where: {
                     [Op.and]: [
                         {id:
                             {
@@ -76,18 +76,20 @@ router.post('/', (req,res)=>{
                             }
                         }
                     ]
-                }
+                }*/
             }]
-
 		})
 		.then((activity)=> {
 			console.log("Activity")
 			console.log(activity)
+			console.log("activity.users")
+			console.log(activity.users)
 			activity.update({
 				status: true,
 				accepter: currentUserId
 			})
 			.then(()=>{
+				// Find planner
 				db.User.findOne({
 					where: {
 						id: activity.plannerId
@@ -124,14 +126,14 @@ router.post('/', (req,res)=>{
                         for (var i = 0; i < activity.dataValues.users.length; i++) {
                             console.log("activity.users[i]")
                             console.log(activity.users[i])
-                            if(activity.users[i].id != activity.plannerId && activity.users[i].id != activity.accepterId){
+                            if(activity.users[i].id !== planner.id && activity.users[i].id !== accepter.id){
                                 client.messages.create({
-                                    body: `Hello ${activity.users[i].name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
+                                    body: `Hallo ${activity.users[i].name} someone has beaten you on to accepting ${planner.name}'s activity, better luck next time!`,
                                     to: activity.users[i].phoneNumber,  // Text this number
                                     from: '+3197004498785' // From a valid Twilio number
                                 })
                                 if(i === activity.dataValues.users.length){
-                                   res.redirect('/chat')
+                                   res.redirect('/index')
                                 }
                             }
                         }
@@ -175,7 +177,7 @@ router.post('/', (req,res)=>{
 	}
 	else {
 		status = false;
-		res.send(req.body);
+		res.redirect('/index');
 	}
 });
 

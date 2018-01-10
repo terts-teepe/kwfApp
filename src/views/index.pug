@@ -14,13 +14,14 @@ html(lang='en')
 	body
 		nav.navbar-fixed-top.navbar.navbar-default
 			.row
-				.col-xs-6.left.edit
-					.row
-						.col-xs-2
-							a(href='javascript:history.back()')
-								i.backBtn.fa.fa-chevron-left.fa-lg(aria-hidden='true')
-				.col-xs-6.right.edit
-				//- img.image(src='img/kwfLogo.png')
+				.col-xs-12
+					.col-xs-6.left.edit
+						.row
+							.col-xs-2
+								a(href='javascript:history.back()')
+									i.backBtn.fa.fa-chevron-left.fa-lg(aria-hidden='true')
+					.col-xs-6.right.edit
+					//- img.image(src='img/kwfLogo.png')
 		.container
 			.text-center
 				h1.header Activiteiten van #{user.name}
