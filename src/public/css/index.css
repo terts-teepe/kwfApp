@@ -10,8 +10,12 @@ h1 {
 }
 
 
-
-
+.backStyle {
+    position: absolute;
+    top: 33px;
+    right: 350px;
+    color: white;
+}
 
 .backBtn {
     color: white;
