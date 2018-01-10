@@ -3,10 +3,10 @@ const router = express.Router();
 const db = require('../models/database.js');
 const bodyParser = require('body-parser');
 
-// Render profile page
-router.get('/', function(req, res) {
+
+router.get('/', (req, res) => {
 	let name = req.query.name;
-	res.render('profielTerts', {title: 'plan activity', name: name})
+	res.render('contactVolunteerPierre', {name: name});
 })
 
 module.exports = router;

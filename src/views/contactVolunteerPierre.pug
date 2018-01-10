@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+	head
+		title Account maken
+		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+		include bottomNavbarStyle
+		link(href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet")
+		link(href ='css/name.css' type='text/css' rel='stylesheet')
+		link(href ='css/reachMethod.css' type='text/css' rel='stylesheet')
+		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
+		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		meta(charset='UTF-8')
+	body
+		include topNavbar
+		.container
+			.flex-col
+				.flex-row
+					.check.text-center
+						img.imageOne(src='img/emma.png')
+					.check.tekstbubbels
+						.talk-bubble
+							.talktext
+								p.text-center
+									| Hoi <span id='name'> #{name} </span>
+						.talk-bubble
+							.talktext
+								p.text-center
+									| Pierre komt je op 6 juni om 15:00 uur helpen met boodschappen!
+			.row
+				.col-md-4.col-md-push-4.col-xs-6.col.text-center
+					video.videoStyle(width='320', height='240', autoplay='', controls='', loop='')
+						source(src='img/giphy.mp4', type='video/mp4')
+						source(src='movie.ogg', type='video/ogg')
+		include bottomNavbar
