@@ -1,16 +1,33 @@
 /* Top navbar */
 h1 {
 	padding-bottom: 5px;
-	z-index: 1;
+	/*z-index: 1;*/
 	position: relative;
 }
 
 .navbar {
-	z-index: -1;
+    z-index: -1;
 }
 
+.styleBackButton {
+    top: 21px;
+    left: 10px;
+}
 
-.backStyle {
+h1 {
+    padding-bottom: 5px;
+    z-index: 1;
+    position: relative;
+}
+
+.header {
+    color: white;
+    height: 1px;
+    /*position: relative;*/
+    bottom: 25px;
+}
+
+/*.backStyle {
     position: absolute;
     top: 33px;
     right: 350px;
@@ -21,8 +38,8 @@ h1 {
     color: white;
     margin-top: 15px;
     position: relative;
-    left: 15.5px;
-}
+    
+}*/
 
 body {
 	/*background-color: #eeeee4*/
@@ -42,10 +59,10 @@ body {
 }
 
 
-.header {
+/*.header {
 	color: white;
 	height: 1px;
-}
+}*/
 
 /* Button */
 .btn > a {
@@ -58,8 +75,7 @@ body {
 	display: flex;
   	flex-direction: column;
   	justify-content: space-around;
-    position: relative;
-    top: 53px;
+    
 }
 
 .flex-row {
@@ -110,6 +126,121 @@ body {
 	background-color: #1B9AF7;
 	color: white;
 	font-size: 24px;
+	position: relative;
+    top: 115px;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+html, body {
+	height: 60vh;
+	min-height: 60vh;
+}
+
+
+.rowTop, .towBottom {
+    width:100%;
+    height:50%;
+}
+
+.terts {
+    position: absolute;
+    left: 120px;
+    top: 350px;
+    padding: 200px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+}
+
+.styleBackButton {
+    top: 21px;
+    left: 10px;
+}
+
+h1 {
+    padding-bottom: 5px;
+    z-index: 1;
+    position: relative;
+}
+
+.header {
+    color: white;
+    height: 1px;
+    /*position: relative;*/
+    bottom: 25px;
+}
+
+.pierre {
+    position: absolute;
+    top: 180px;
+    left: 200px;
+    padding: 200px;
+    padding-right: 0px;
+}
+
+.imageStyle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 5px;
+}
+
+.navbar {
+    z-index: -1;
+}
+
+.backStyle {
+    position: absolute;
+    top: 33px;
+    right: 350px;
+    color: white;
+}
+
+.backBtn {
+    color: white;
+    margin-top: 15px;
+}
+
+
+.layout {
+	color: white;
+	background: linear-gradient(90deg, #2C7BB4 50%, #E44541 50%);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 0px;
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.wrapper-one {
+	display: flex;
+	align-items: stretch;
+    margin-top: 0px;
+}
+
+.rowStyle {
+    height: 0px;
+    width: 0px;
+}
+
+.boks {
+    position: relative;
+    min-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    top: 8px;
+}
+
+.col-xs-12 {
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 0;
 }
 
 /* For mobile */
@@ -117,6 +248,14 @@ body {
 	.talk-bubble {
 		margin: 10px auto;
 		width: 190px;
+	}
+
+	.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /*position: relative;*/
+    bottom: 65px;
 	}
 
 	/* Button */
@@ -129,5 +268,7 @@ body {
 		border-radius: 7px;
 		color: white;
 		font-size: 21px;
+		position: relative;
+    	top: 5px;
 	}
 }

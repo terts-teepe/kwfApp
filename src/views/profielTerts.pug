@@ -8,8 +8,21 @@ html(lang='en')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
 	body
+		.row
+			.col-xs-2.styleBackButton
+				a(href='javascript:history.back()')
+					i.backBtn.fa.fa-chevron-left.fa-lg(aria-hidden='true')
+		nav.navbar-fixed-top.navbar.navbar-default
+			.row
+				.col-xs-12
+					.col-xs-6.left.edit
+					.col-xs-6.right.edit
+					//- img.image(src='img/kwfLogo.png')
 		.container-fluid
-			h1.text-center.layout Vriendendienst
+			.text-center
+				h1.header Vriendendienst
 			.col-md-6.col-md-push-3.col-xs-12.text-center.wrapper-one
 				img.imageStyle(src='img/profielTerts.png')
+			.col-md-12.col-xs-12
+			a#trapParent.pierre(href='/contactVolunteerTerts')
 		include bottomNavbar

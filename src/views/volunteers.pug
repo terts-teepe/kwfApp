@@ -7,9 +7,21 @@ html(lang='en')
 		link(href ='css/volunteers.css' type='text/css' rel='stylesheet')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
+		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
 	body
+		.row
+			.col-xs-2.styleBackButton
+				a(href='javascript:history.back()')
+					i.backBtn.fa.fa-chevron-left.fa-lg(aria-hidden='true')
+		nav.navbar-fixed-top.navbar.navbar-default
+			.row
+				.col-xs-12
+					.col-xs-6.left.edit
+					.col-xs-6.right.edit
+					//- img.image(src='img/kwfLogo.png')
 		.container-fluid
-			h1.text-center.layout Vrijwilligers in de buurt
+			.text-center
+				h1.header Vrijwilligers in de buurt
 			.col-md-6.col-md-push-3.col-xs-12.text-center.wrapper-one
 				img.boks(src='img/volunteersGroot.png')
 				a#trapParent.pierre(href='/profielPierre')
