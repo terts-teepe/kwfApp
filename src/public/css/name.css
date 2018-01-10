@@ -9,7 +9,7 @@ body {
   	flex-direction: column;
   	justify-content: space-around;
   	position: relative;
-    top: 24px;
+    /*top: 24px;*/
 }
 
 .flex-row {
