@@ -360,7 +360,7 @@
     	width: 150px;
     	height: 150px;
     }
-    
+
     .col-xs-7.col-xs-push-2 {
         position: relative;
         top: 18px;
@@ -402,6 +402,11 @@
     border-top-width: 0px;
     position: relative;
     bottom: 6px;
+	}
+
+	.noActivityDoorgaan {
+		position: relative;
+		bottom: 50px;
 	}
 }
 

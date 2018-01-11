@@ -1,54 +1,131 @@
 doctype html
 html(lang='en')
-	head
+	head 
 		title Activiteit
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
-		include bottomNavbarStyle
 		link(href ='css/time.css' type='text/css' rel='stylesheet')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
+		include bottomNavbarStyle
+		include fonts
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
 	body
+		.row.styleRowTop
+			.col-xs-2.styleBackButton
+				a(href='javascript:history.back()')
+					i.backBtn.fa.fa-chevron-left.fa-lg(aria-hidden='true')
+		nav.navbar.navbar-default.extraStyleNav
+			.row
+				.col-xs-12
+					.col-xs-6.left.edit
+					.col-xs-6.right.edit
 		.container
-			form(method='post', action='/time?categorie=' + categorie + '&friends=' + friendsIds, autocomplete="off")
-				.col-xs-12
-					.col-xs-2.col-xs-push-5
-						i.icon(class="fa fa-clock-o" aria-hidden="true")
-				.col-xs-12
-					div.when
-						.row
-							.col-xs-4
-								p.day Dag
-							.col-xs-4
-								p Uur
-							.col-xs-4
-								p Minuten
-						.row
-							.col-xs-4
-								input#registration-date.form-control(name='date', type='date')
-							.col-xs-4
-								input#registration-time.form-control(name='time', type='time')
-								span.input-group-btn
-									button.btn.btn-default(type='button', onclick='addNow()')
-										span.glyphicon.glyphicon-map-marker(aria-hidden='true')
-										|  Now
-									button.btn.btn-default(type='button', onclick='stopNow()')
-										span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
-										|  Stop
-				.col-xs-2.col-xs-push-5
-					i.icon(class="fa fa-map-marker" aria-hidden="true")
-				.col-sm-3.col-sm-push-4
-					div.where
-						.radio
-							label
-							input(type='radio', name='location', value='My home')
-							| Mijn huis
-						.radio
-							label
-							input(type='radio', name='location', value='Somewhere else')
-							| Ergens anders
-					button.btn.btn-success.btn-lg.submit(type='submit') Klaar
+			.text-center
+				h1.header Activiteit inplannen
+				.flex-col.NoActivity
+					.flex-row
+						.check.text-center
+							img.imageOne.NoActivityEmma(src='img/emma.png')
+						.check.tekstbubbels
+							form.formStyleDate(method='post', action='/time?categorie=' + categorie + '&friends=' + friendsIds, autocomplete="off")
+								.talk-bubble
+									.talktext.text-center
+										p Kies de datum:
+										input.inputStyleDate#registration-date.form-control(name='date', type='date')
+								.talk-bubble
+									.talktext.text-center
+										p Het tijdstip:
+										input.inputStyleTime#registration-time.form-control(name='time', type='time')
+								.talk-bubble
+									.talktext.text-center
+										p En de locatie:
+										.radio
+										label
+										input(type='radio', name='location', value='My home')
+										| Mijn huis
+										.radio
+										label
+										input(type='radio', name='location', value='Somewhere else')
+										| Ergens anders
+								button.buttonStyle.btn.btn-success.btn-lg.submit(type='submit') Klaar
 		include bottomNavbar
 	script(src='js/activity.js')
 	script(src='http://momentjs.com/downloads/moment-with-locales.js')
 	script(src='http://momentjs.com/downloads/moment-timezone-with-data.js')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- doctype html
+//- html(lang='en')
+//- 	head
+//- 		title Activiteit
+//- 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+//- 		include bottomNavbarStyle
+//- 		link(href ='css/time.css' type='text/css' rel='stylesheet')
+//- 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
+//- 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
+//- 		link(rel='stylesheet', href='pikaday.css')
+//- 		link(rel='stylesheet', href='theme.css')
+//- 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+//- 	body
+//- 		.container
+//- 			form(method='post', action='/time?categorie=' + categorie + '&friends=' + friendsIds, autocomplete="off")
+//- 				.col-xs-12
+//- 					.col-xs-2.col-xs-push-5
+//- 						i.icon(class="fa fa-clock-o" aria-hidden="true")
+//- 				.col-xs-12
+//- 					div.when
+//- 						.row
+//- 							.col-xs-4
+//- 								p.day Dag
+//- 							.col-xs-4
+//- 								p Uur
+//- 							.col-xs-4
+//- 								p Minuten
+//- 						.row
+//- 							.col-xs-4
+//- 								input#registration-date.form-control(name='date', type='date')
+//- 							.col-xs-4
+//- 								input#registration-time.form-control(name='time', type='time')
+//- 								span.input-group-btn
+//- 									button.btn.btn-default(type='button', onclick='addNow()')
+//- 										span.glyphicon.glyphicon-map-marker(aria-hidden='true')
+//- 										|  Now
+//- 									button.btn.btn-default(type='button', onclick='stopNow()')
+//- 										span.glyphicon.glyphicon-minus-sign(aria-hidden='true')
+//- 										|  Stop
+//- 				.col-xs-2.col-xs-push-5
+//- 					i.icon(class="fa fa-map-marker" aria-hidden="true")
+//- 				.col-sm-3.col-sm-push-4
+//- 					div.where
+//- 						.radio
+//- 							label
+//- 							input(type='radio', name='location', value='My home')
+//- 							| Mijn huis
+//- 						.radio
+//- 							label
+//- 							input(type='radio', name='location', value='Somewhere else')
+//- 							| Ergens anders
+//- 					button.btn.btn-success.btn-lg.submit(type='submit') Klaar
+//- 		include bottomNavbar
+//- 	script(src='js/activity.js')
+//- 	script(src='http://momentjs.com/downloads/moment-with-locales.js')
+//- 	script(src='http://momentjs.com/downloads/moment-timezone-with-data.js')
