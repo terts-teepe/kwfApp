@@ -15,14 +15,13 @@ html(lang='en')
 				.row.app-one
 					each activity in user.activities
 						if activity.status === false
-							|m
 							form(method='post', action='/chat')
 								.col-md-12.col-sm-12.side.conversation
 									.row.heading
 										.col-sm-2.col-md-1.col-xs-3.heading-avatar
 											.heading-avatar-icon
 												img(src='img/emma.png')
-										.col-sm-8.col-xs-7.heading-name
+										.col-xs-7.heading-name
 											a.heading-name-meta
 												| Emma
 											span.heading-online Online
@@ -30,19 +29,19 @@ html(lang='en')
 											i.fa.fa-ellipsis-v.fa-2x.pull-right(aria-hidden='true')
 									#conversation.row.message
 										.row.message-previous
-											.col-sm-12.previous
+											.col-xs-12.previous
 												a#ankitjain28(onclick='previous(this)', name='20')
 													| Show Previous Message!
 										.row.message-body
-											.col-sm-12.message-main-receiver
+											.col-xs-12.message-main-receiver
 												.receiver
 													.message-text
 														| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
 														| on #{activity.date} at #{activity.time} in #{activity.location}
 													span.message-time.pull-right
 														| Sun
-											button.btn.btn-primary#button_1(value='Accept', class=activity.id) Accept
-											button.btn.btn-danger#button_2(value='Decline', class=activity.id) Decline
+													button.btn.btn-primary#button_1(value='Accept', class=activity.id) Accept
+													button.btn.btn-danger#button_2(value='Decline', class=activity.id) Decline
 									.row.reply
 										.col-sm-1.col-xs-1.reply-emojis
 											i.fa.fa-smile-o.fa-2x
@@ -70,67 +69,57 @@ html(lang='en')
 												a#ankitjain28(onclick='previous(this)', name='20')
 													| Show Previous Message!
 										.row.message-body
-											.col-sm-12.message-main-receiver
+											.col-xs-12.message-main-receiver
 												.receiver
 													.message-text
 														| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
 														| on #{activity.date} at #{activity.time} in #{activity.location}
 													span.message-time.pull-right
 														| Sun
-											.col-sm-12
-												p This activity has been accepted
-									.row.reply
-										.col-sm-1.col-xs-1.reply-emojis
-											i.fa.fa-smile-o.fa-2x
-										.col-sm-9.col-xs-9.reply-main
-											textarea#comment.form-control(rows='1')
-										.col-sm-1.col-xs-1.reply-recording
-											i.fa.fa-microphone.fa-2x(aria-hidden='true')
-										.col-sm-1.col-xs-1.reply-send
-											i.fa.fa-send.fa-2x(aria-hidden='true')
+													p This activity has been accepted
 
-			#chat_window_1.row.chat-window.col-xs-5.col-md-10.col-md-push-1
-				.col-xs-12.col-md-12 
-					.panel.panel-default
-						.panel-heading.top-bar
-							.col-md-8.col-xs-8
-								h3.panel-title
-									span.glyphicon.glyphicon-comment
-									|  Chat - Emma
-							.col-md-4.col-xs-4(style='text-align: right;')
-								a(href='#')
-									span#minim_chat_window.glyphicon.glyphicon-minus.icon_minim
-								a(href='#')
-									span.glyphicon.glyphicon-remove.icon_close(data-id='chat_window_1')
-						each activity in user.activities
-							if activity.status === false
-								.panel-body.msg_container_base
-									form(method='post', action='/chat')
-										.row.msg_container.base_sent
-											.col-md-10.col-xs-10
-												.messages.msg_sent
-													input#access_token(type='hidden', value=activity.id)
-													input#planner(type='hidden', value=activity.plannerId)
-													p
-														| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
-														| on #{activity.date} at #{activity.time} in #{activity.location}
-													time(datetime='2009-11-13T20:00') Timothy • 51 min
-											.col-md-2.col-xs-2.avatar
-												img.img-responsive(src='')
-										button.btn.btn-primary#button_1(value='Accept', class=activity.id) Accept
-										button.btn.btn-danger#button_2(value='Decline', class=activity.id) Decline	
-							else		
-								.panel-body.msg_container_base
-									.row.msg_container.base_sent
-										.col-md-10.col-xs-10
-											.messages.msg_sent
-												p
-													| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
-													| on #{activity.date} at #{activity.time} in #{activity.location}
-												time(datetime='2009-11-13T20:00') Timothy • 51 min
-										.col-md-2.col-xs-2.avatar
-											img.img-responsive(src='')
-									p This activity has been accepted		
+			//- #chat_window_1.row.chat-window.col-xs-5.col-md-10.col-md-push-1
+			//- 	.col-xs-12.col-md-12 
+			//- 		.panel.panel-default
+			//- 			.panel-heading.top-bar
+			//- 				.col-md-8.col-xs-8
+			//- 					h3.panel-title
+			//- 						span.glyphicon.glyphicon-comment
+			//- 						|  Chat - Emma
+			//- 				.col-md-4.col-xs-4(style='text-align: right;')
+			//- 					a(href='#')
+			//- 						span#minim_chat_window.glyphicon.glyphicon-minus.icon_minim
+			//- 					a(href='#')
+			//- 						span.glyphicon.glyphicon-remove.icon_close(data-id='chat_window_1')
+			//- 			each activity in user.activities
+			//- 				if activity.status === false
+			//- 					.panel-body.msg_container_base
+			//- 						form(method='post', action='/chat')
+			//- 							.row.msg_container.base_sent
+			//- 								.col-md-10.col-xs-10
+			//- 									.messages.msg_sent
+			//- 										input#access_token(type='hidden', value=activity.id)
+			//- 										input#planner(type='hidden', value=activity.plannerId)
+			//- 										p
+			//- 											| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
+			//- 											| on #{activity.date} at #{activity.time} in #{activity.location}
+			//- 										time(datetime='2009-11-13T20:00') Timothy • 51 min
+			//- 								.col-md-2.col-xs-2.avatar
+			//- 									img.img-responsive(src='')
+			//- 							button.btn.btn-primary#button_1(value='Accept', class=activity.id) Accept
+			//- 							button.btn.btn-danger#button_2(value='Decline', class=activity.id) Decline	
+			//- 				else		
+			//- 					.panel-body.msg_container_base
+			//- 						.row.msg_container.base_sent
+			//- 							.col-md-10.col-xs-10
+			//- 								.messages.msg_sent
+			//- 									p
+			//- 										| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
+			//- 										| on #{activity.date} at #{activity.time} in #{activity.location}
+			//- 									time(datetime='2009-11-13T20:00') Timothy • 51 min
+			//- 							.col-md-2.col-xs-2.avatar
+			//- 								img.img-responsive(src='')
+			//- 						p This activity has been accepted		
 							//- .row.msg_container.base_receive
 							//- 	.col-md-2.col-xs-2.avatar
 							//- 		img.img-responsive(src='http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg')
@@ -181,28 +170,28 @@ html(lang='en')
 								input#btn-input.form-control.input-sm.chat_input(type='text', placeholder='Write your message here...')
 								span.input-group-btn
 									button#btn-chat.btn.btn-primary.btn-sm Send
-			.btn-group.dropup
-				button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-					span.glyphicon.glyphicon-cog
-					span.sr-only Toggle Dropdown
-				ul.dropdown-menu(role='menu')
-					li
-						a#new_chat(href='#')
-							span.glyphicon.glyphicon-plus
-							|  Novo
-					li
-						a(href='#')
-							span.glyphicon.glyphicon-list
-							|  Ver outras
-					li
-						a(href='#')
-							span.glyphicon.glyphicon-remove
-							|  Fechar Tudo
-					li.divider
-					li
-						a(href='#')
-							span.glyphicon.glyphicon-eye-close
-							|  Invisivel
+			//- .btn-group.dropup
+			//- 	button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+			//- 		span.glyphicon.glyphicon-cog
+			//- 		span.sr-only Toggle Dropdown
+			//- 	ul.dropdown-menu(role='menu')
+			//- 		li
+			//- 			a#new_chat(href='#')
+			//- 				span.glyphicon.glyphicon-plus
+			//- 				|  Novo
+			//- 		li
+			//- 			a(href='#')
+			//- 				span.glyphicon.glyphicon-list
+			//- 				|  Ver outras
+			//- 		li
+			//- 			a(href='#')
+			//- 				span.glyphicon.glyphicon-remove
+			//- 				|  Fechar Tudo
+			//- 		li.divider
+			//- 		li
+			//- 			a(href='#')
+			//- 				span.glyphicon.glyphicon-eye-close
+			//- 				|  Invisivel
 		include bottomNavbar
 		//- include bottomNavbar
 		script(src='js/jquery-3.2.1.js')
