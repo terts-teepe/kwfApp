@@ -2,8 +2,6 @@ doctype html
 html(lang='en')
 	head 
 		title Index
-		//- link(href ='css/inviteFriends.css' type='text/css' rel='stylesheet')
-		//- link(href ='css/name.css' type='text/css' rel='stylesheet')
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		include bottomNavbarStyle
 		include fonts
@@ -45,7 +43,7 @@ html(lang='en')
 				//- 						h3 #{activity.categorie} met #{user.name}
 				//- 			p  om #{activity.date} #{activity.time}
 				//- 			p in #{activity.location}
-			if user.activities.length === 0 
+			if user.activities.length === 0
 				.flex-col.NoActivity
 					.flex-row
 						.check.text-center
@@ -98,7 +96,8 @@ html(lang='en')
 											.col-xs-7.col-xs-push-2
 												h3.styleActivity #{activity.categorie} <span class='met'>met</span> #{user.name}
 												p.styleActivity  <span class='met'>in</span> #{activity.date} <span class='met'>om</span> #{activity.time}
-												p.styleActivity <span class='met'>in</span> #{activity.location}							
+												p.styleActivity <span class='met'>in</span> #{activity.location}
+
 		include bottomNavbar		
 		//- 			if activity.status === true
 		//- 				//- if activity.plannerId === user.id

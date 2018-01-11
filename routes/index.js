@@ -5,6 +5,19 @@ const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
+/*			include: [
+				{ model: Time, 
+					where: {
+			            date: {
+			                $gte: today,
+			                $lte: lastDay
+			            },
+		        	}, 
+		        	order: '"date" ASC',
+				include: [{model: Task}]
+			}]*/
+/*			include : {model: db.Activity, where: {status: true}}*/
+/*			include : {model: db.Activity, where: {status: true}, include: [db.User]}*/
 router.get('/', function(req, res) {
 	if(req.session.user) {
 		let user = req.session.user
@@ -14,6 +27,15 @@ router.get('/', function(req, res) {
 			where: {
 				id: currentUserId
 			},
+			// include : [	
+			// 	{
+			// 		model: db.Activity,
+			// 		where: {
+			// 			status: true
+			// 		},
+			// 		include: [model: db.User]
+			// 	}
+			// ]
 			include : [	
 				{
 					model: db.Activity,

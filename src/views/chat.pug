@@ -10,47 +10,19 @@ html(lang='en')
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 	body
 		include topNavbar
-		.container
-			.container.app
-				.row.app-one
-					each activity in user.activities
-						if activity.status === false
-							form(method='post', action='/chat')
-								.col-md-12.col-sm-12.side.conversation
-									input#access_token(type='hidden', value=activity.id)
-									input#planner(type='hidden', value=activity.plannerId)
-									.row.heading
-										.col-sm-2.col-md-1.col-xs-3.heading-avatar
-											.heading-avatar-icon
-												img(src='img/emma.png')
-										.col-xs-7.heading-name
-											a.heading-name-meta
-												| Emma
-											span.heading-online Online
-										.col-sm-1.col-xs-1.heading-dot.pull-right
-											i.fa.fa-ellipsis-v.fa-2x.pull-right(aria-hidden='true')
-									#conversation.row.message
-										.row.message-previous
-											.col-xs-12.previous
-												a#ankitjain28(onclick='previous(this)', name='20')
-													| Show Previous Message!
-										.row.message-body
-											.col-xs-12.message-main-receiver
-												.receiver
-													.message-text
-														| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
-														| on #{activity.date} at #{activity.time} in #{activity.location}
-													span.message-time.pull-right
-														| Sun
-													button.btn.btn-primary#button_1(value='Accept', class=activity.id) Accept
-													button.btn.btn-danger#button_2(value='Decline', class=activity.id) Decline
-						else
-							.col-md-12.col-sm-12.conversation
+		.container.app
+			.row.app-one
+				each activity in user.activities
+					if activity.status === false
+						form(method='post', action='/chat')
+							.col-md-12.col-sm-12.col-xs-12.side.conversation
+								input#access_token(type='hidden', value=activity.id)
+								input#planner(type='hidden', value=activity.plannerId)
 								.row.heading
-									.col-sm-2.col-md-3.col-xs-3.heading-avatar
+									.col-sm-2.col-md-1.col-xs-3.heading-avatar
 										.heading-avatar-icon
 											img(src='img/emma.png')
-									.col-sm-10.col-xs-7.heading-name
+									.col-xs-7.heading-name
 										a.heading-name-meta
 											| Emma
 										span.heading-online Online
@@ -58,7 +30,7 @@ html(lang='en')
 										i.fa.fa-ellipsis-v.fa-2x.pull-right(aria-hidden='true')
 								#conversation.row.message
 									.row.message-previous
-										.col-sm-12.previous
+										.col-xs-12.previous
 											a#ankitjain28(onclick='previous(this)', name='20')
 												| Show Previous Message!
 									.row.message-body
@@ -69,8 +41,40 @@ html(lang='en')
 													| on #{activity.date} at #{activity.time} in #{activity.location}
 												span.message-time.pull-right
 													| Sun
-												p This activity has been accepted
-
+												button.btn.btn-primary#button_1(value='Accept', class=activity.id) Accept
+												button.btn.btn-danger#button_2(value='Decline', class=activity.id) Decline
+					else
+						.col-md-12.col-sm-12.side.conversation
+							.row.heading
+								.col-sm-2.col-md-3.col-xs-3.heading-avatar
+									.heading-avatar-icon
+										img(src='img/emma.png')
+								.col-xs-7.heading-name
+									a.heading-name-meta
+										| Emma
+									span.heading-online Online
+								.col-sm-1.col-xs-1.heading-dot.pull-right
+									i.fa.fa-ellipsis-v.fa-2x.pull-right(aria-hidden='true')
+							#conversation.row.message
+								.row.message-previous
+									.col-sm-12.previous
+										a#ankitjain28(onclick='previous(this)', name='20')
+											| Show Previous Message!
+								.row.message-body
+									.col-xs-12
+										.message-main-receiver
+											.receiver
+												.message-text
+													.row
+														.col-xs-12.message-maintext
+															| Jouw vriend #{activity.plannerName} heeft je uitgenodigd om te #{activity.categorie}
+															| op #{activity.date} om #{activity.time} in #{activity.location}
+													.row
+														.col-xs-9
+															p.activity-accepted This activity has been accepted
+														.col-xs-2.col-xs-push-1
+															span.message-time.pull-right
+																| Sun
 			//- #chat_window_1.row.chat-window.col-xs-5.col-md-10.col-md-push-1
 			//- 	.col-xs-12.col-md-12 
 			//- 		.panel.panel-default
