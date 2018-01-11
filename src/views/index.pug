@@ -46,10 +46,10 @@ html(lang='en')
 				//- 			p  om #{activity.date} #{activity.time}
 				//- 			p in #{activity.location}
 			if user.activities.length === 0 
-				.flex-col
+				.flex-col.NoActivity
 					.flex-row
 						.check.text-center
-							img.imageOne(src='img/emma.png')
+							img.imageOne.NoActivityEmma(src='img/emma.png')
 						.check.tekstbubbels
 							.talk-bubble
 								.talktext
@@ -60,7 +60,7 @@ html(lang='en')
 									p.text-center
 										| Klik op de button om een activiteit te plannen!
 				.doorgaan.text-center
-					a.btn.btn-md.change(href="/activity") Een activiteit plannen
+					a.btn.btn-md.change.NoActivityPlannen(href="/activity") Een activiteit plannen
 			else
 				.button.doorgaan.text-center
 					a.btn.btn-md.change.nieuweActiviteit(href="/activity") Een nieuwe activiteit plannen
