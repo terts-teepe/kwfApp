@@ -6,6 +6,7 @@ html(lang='en')
 		//- link(href ='css/name.css' type='text/css' rel='stylesheet')
 		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
 		include bottomNavbarStyle
+		include fonts
 		link(href ='css/index.css' type='text/css' rel='stylesheet')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
@@ -22,7 +23,7 @@ html(lang='en')
 					.col-xs-6.left.edit
 					.col-xs-6.right.edit
 					//- img.image(src='img/kwfLogo.png')
-		.container-fluid
+		.container
 			.text-center
 				h1.header Activiteiten van #{user.name}
 				//- if activities
@@ -44,7 +45,7 @@ html(lang='en')
 				//- 						h3 #{activity.categorie} met #{user.name}
 				//- 			p  om #{activity.date} #{activity.time}
 				//- 			p in #{activity.location}
-			if user.activities.length === 0
+			if user.activities.length === 0 
 				.flex-col
 					.flex-row
 						.check.text-center
@@ -61,36 +62,43 @@ html(lang='en')
 				.doorgaan.text-center
 					a.btn.btn-md.change(href="/activity") Een activiteit plannen
 			else
-				.doorgaan.text-center
+				.button.doorgaan.text-center
 					a.btn.btn-md.change.nieuweActiviteit(href="/activity") Een nieuwe activiteit plannen
 				each activity in user.activities
-						if activity.status === true
-							//- if activity.plannerId === user.id
-							//- 	.wrap
-							//- 		each user in activity.users
-							//- 			if user.id === activity.accepter
-							//- 				img(src=user.image)
-							//- 		h3 #{activity.categorie} met #{activity.accepter}
-							//- 		p  om #{activity.date} #{activity.time}
-							//- 		p in #{activity.location}
-							//- else if activity.accepter === user.id
-							.wrap
-								//- If the user is the one who accepted
-								if activity.accepter === currentUserId
-									each user in activity.users
-										if user.id === activity.plannerId
-											img(src=user.image)
-											h3.styleActivity #{activity.categorie} met #{user.name}
-											p.styleActivity  in #{activity.date} om #{activity.time}
-											p.styleActivity in #{activity.location}
-								//- If the user is the one who planned
-								else if activity.plannerId === currentUserId
-									each user in activity.users
-										if user.id === activity.accepter
-											img(src=user.image)
-											h3.styleActivity #{activity.categorie} met #{user.name}
-											p.styleActivity  in #{activity.date} om #{activity.time}
-											p.styleActivity in #{activity.location}							
+					if activity.status === true
+						//- if activity.plannerId === user.id
+						//- 	.wrap
+						//- 		each user in activity.users
+						//- 			if user.id === activity.accepter
+						//- 				img(src=user.image)
+						//- 		h3 #{activity.categorie} met #{activity.accepter}
+						//- 		p  om #{activity.date} #{activity.time}
+						//- 		p in #{activity.location}
+						//- else if activity.accepter === user.id
+						.what
+						.wrap
+							//- If the user is the one who accepted
+							if activity.accepter === currentUserId
+								each user in activity.users
+									if user.id === activity.plannerId
+										.col-xs-12
+											.col-xs-3
+												img.image2(src=user.image)
+											.col-xs-7.col-xs-push-2
+												h3.styleActivity #{activity.categorie} <span class='met'>met</span> #{user.name}
+												p.styleActivity  <span class='met'>in</span> #{activity.date} <span class='met'>om</span> #{activity.time}
+												p.styleActivity <span class='met'>in</span> #{activity.location}
+							//- If the user is the one who planned
+							else if activity.plannerId === currentUserId
+								each user in activity.users
+									if user.id === activity.accepter
+										.col-xs-12
+											.col-xs-3
+												img.image2(src=user.image)
+											.col-xs-7.col-xs-push-2
+												h3.styleActivity #{activity.categorie} <span class='met'>met</span> #{user.name}
+												p.styleActivity  <span class='met'>in</span> #{activity.date} <span class='met'>om</span> #{activity.time}
+												p.styleActivity <span class='met'>in</span> #{activity.location}							
 		include bottomNavbar		
 		//- 			if activity.status === true
 		//- 				//- if activity.plannerId === user.id

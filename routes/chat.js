@@ -128,7 +128,7 @@ router.post('/', (req,res)=>{
                             console.log(activity.users[i])
                             if(activity.users[i].id !== planner.id && activity.users[i].id !== accepter.id){
                                 client.messages.create({
-                                    body: `Hallo ${activity.users[i].name} someone has beaten you on to accepting ${planner.name}'s activity, better luck next time!`,
+                                    body: `Hallo ${activity.users[i].name} someone has beaten you to accepting ${planner.name}'s activity, better luck next time!`,
                                     to: activity.users[i].phoneNumber,  // Text this number
                                     from: '+3197004498785' // From a valid Twilio number
                                 })
