@@ -86,7 +86,7 @@ html(lang='en')
 												img.image2(src=user.image)
 											.col-xs-7.col-xs-push-2
 												h3.styleActivity #{activity.categorie} <span class='met'>met</span> #{user.name}
-												p.styleActivity  <span class='met'>in</span> #{activity.date} <span class='met'>om</span> #{activity.time}
+												p.styleActivity  <span class='met'>op</span> #{activity.date} <span class='met'>om</span> #{activity.time}
 												p.styleActivity <span class='met'>in</span> #{activity.location}
 							//- If the user is the one who planned
 							else if activity.plannerId === currentUserId
