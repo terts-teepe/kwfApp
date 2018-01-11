@@ -116,7 +116,7 @@ width: 100px; */
 
 .talk-bubble {
 	margin: 10px auto;
-	width: 240px;
+	width: 190px;
 	height: auto;
 	background-color: #E2E2E2;
 	border-radius: 10px;
@@ -149,7 +149,7 @@ width: 100px; */
 	color: white;
 	font-size: 21px;
 	position: relative;
-	top: 5px;
+	top: 50px;
 }
 
 img.imageOne {
@@ -268,16 +268,27 @@ h1 {
     max-width: 340px;
     position: relative;
     top: 10px;
+<<<<<<< HEAD
 } */
 .text {
 	padding: auto 10px;
 }
 
+
 /* For mobile */
 @media all and (max-width: 500px) {
+
 	.talk-bubble {
-		margin: 10px auto;
-		width: 190px;
+    margin: 10px auto;
+    width: 190px;
+    height: auto;
+    background-color: #E2E2E2;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    position: relative;
+    right: 10px;
+
 	}
 
 	.flex-col {
@@ -300,6 +311,7 @@ h1 {
 	.doorgaan {
 		margin-top: 120px;
 	}
+
 	.change {
 		background-color: #2C7BB4;
 		border-radius: 7px;
@@ -309,10 +321,10 @@ h1 {
     	top: 5px;
 	}
 
-    .nieuweActiviteit {
-        position: relative;
-        top: 280px;
-    }
+/*     .nieuweActiviteit {
+    position: relative;
+    top: 280px;
+} */
 
     .col-xs-3 {
         padding-right: 0 ;
@@ -329,5 +341,19 @@ h1 {
         top: 18px;
         margin-left: 12px;      
     }
+	.nieuweActiviteit {
+    width: 295px;
+    position: relative;
+    top: 280px;
+	}
 
 }
+
+
+
+
+
+
+
+
+>>>>>>> 7645cc1df8bb33358deecf85de35f63fb9bf3b24
