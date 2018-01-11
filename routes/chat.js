@@ -80,10 +80,6 @@ router.post('/', (req,res)=>{
             }]
 		})
 		.then((activity)=> {
-			console.log("Activity")
-			console.log(activity)
-			console.log("activity.users")
-			console.log(activity.users)
 			activity.update({
 				status: true,
 				accepter: currentUserId
@@ -108,7 +104,7 @@ router.post('/', (req,res)=>{
 						    to: planner.phoneNumber,  // Text this number
 						    from: '+3197004498785' // From a valid Twilio number
 						})
-						console.log('planner')
+/*						console.log('planner')
 						console.log(planner.name)
 						console.log(planner.id)
 						console.log('accepter')
@@ -120,7 +116,7 @@ router.post('/', (req,res)=>{
                         console.log(activity.dataValues)
                         console.log(activity.dataValues.users)
                         console.log("activity.dataValues.users.length")
-                        console.log(activity.dataValues.users.length)
+                        console.log(activity.dataValues.users.length)*/
 						// Send notification to all but accepter
 
                         for (var i = 0; i < activity.dataValues.users.length; i++) {

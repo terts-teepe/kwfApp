@@ -17,6 +17,8 @@ html(lang='en')
 						if activity.status === false
 							form(method='post', action='/chat')
 								.col-md-12.col-sm-12.side.conversation
+									input#access_token(type='hidden', value=activity.id)
+									input#planner(type='hidden', value=activity.plannerId)
 									.row.heading
 										.col-sm-2.col-md-1.col-xs-3.heading-avatar
 											.heading-avatar-icon
@@ -42,41 +44,32 @@ html(lang='en')
 														| Sun
 													button.btn.btn-primary#button_1(value='Accept', class=activity.id) Accept
 													button.btn.btn-danger#button_2(value='Decline', class=activity.id) Decline
-									.row.reply
-										.col-sm-1.col-xs-1.reply-emojis
-											i.fa.fa-smile-o.fa-2x
-										.col-sm-9.col-xs-9.reply-main
-											textarea#comment.form-control(rows='1')
-										.col-sm-1.col-xs-1.reply-recording
-											i.fa.fa-microphone.fa-2x(aria-hidden='true')
-										.col-sm-1.col-xs-1.reply-send
-											i.fa.fa-send.fa-2x(aria-hidden='true')
 						else
 							.col-md-12.col-sm-12.conversation
-									.row.heading
-										.col-sm-2.col-md-3.col-xs-3.heading-avatar
-											.heading-avatar-icon
-												img(src='img/emma.png')
-										.col-sm-10.col-xs-7.heading-name
-											a.heading-name-meta
-												| Emma
-											span.heading-online Online
-										.col-sm-1.col-xs-1.heading-dot.pull-right
-											i.fa.fa-ellipsis-v.fa-2x.pull-right(aria-hidden='true')
-									#conversation.row.message
-										.row.message-previous
-											.col-sm-12.previous
-												a#ankitjain28(onclick='previous(this)', name='20')
-													| Show Previous Message!
-										.row.message-body
-											.col-xs-12.message-main-receiver
-												.receiver
-													.message-text
-														| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
-														| on #{activity.date} at #{activity.time} in #{activity.location}
-													span.message-time.pull-right
-														| Sun
-													p This activity has been accepted
+								.row.heading
+									.col-sm-2.col-md-3.col-xs-3.heading-avatar
+										.heading-avatar-icon
+											img(src='img/emma.png')
+									.col-sm-10.col-xs-7.heading-name
+										a.heading-name-meta
+											| Emma
+										span.heading-online Online
+									.col-sm-1.col-xs-1.heading-dot.pull-right
+										i.fa.fa-ellipsis-v.fa-2x.pull-right(aria-hidden='true')
+								#conversation.row.message
+									.row.message-previous
+										.col-sm-12.previous
+											a#ankitjain28(onclick='previous(this)', name='20')
+												| Show Previous Message!
+									.row.message-body
+										.col-xs-12.message-main-receiver
+											.receiver
+												.message-text
+													| Your friend #{activity.plannerName} has invited you to #{activity.categorie}
+													| on #{activity.date} at #{activity.time} in #{activity.location}
+												span.message-time.pull-right
+													| Sun
+												p This activity has been accepted
 
 			//- #chat_window_1.row.chat-window.col-xs-5.col-md-10.col-md-push-1
 			//- 	.col-xs-12.col-md-12 
@@ -195,4 +188,4 @@ html(lang='en')
 		include bottomNavbar
 		//- include bottomNavbar
 		script(src='js/jquery-3.2.1.js')
-			script(src='js/chat.js')
+		script(src='js/chat.js')
