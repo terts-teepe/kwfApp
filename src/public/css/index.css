@@ -104,7 +104,7 @@ width: 100px; */
 
 .talk-bubble {
 	margin: 10px auto;
-	width: 240px;
+	width: 190px;
 	height: auto;
 	background-color: #E2E2E2;
 	border-radius: 10px;
@@ -137,7 +137,7 @@ width: 100px; */
 	color: white;
 	font-size: 21px;
 	position: relative;
-	top: 5px;
+	top: 50px;
 }
 
 img {
@@ -272,17 +272,23 @@ h1 {
     max-width: 340px;
     position: relative;
     top: 10px;
-
-.text {
-	padding: auto 10px;
-
 }
+
 
 /* For mobile */
 @media all and (max-width: 500px) {
+
 	.talk-bubble {
-		margin: 10px auto;
-		width: 190px;
+    margin: 10px auto;
+    width: 190px;
+    height: auto;
+    background-color: #E2E2E2;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    position: relative;
+    right: 10px;
+
 	}
 
 	.flex-col {
@@ -298,6 +304,7 @@ h1 {
 	.doorgaan {
 		margin-top: 120px;
 	}
+
 	.change {
 		width: 220px;
 		background-color: #2C7BB4;
@@ -312,7 +319,7 @@ h1 {
     width: 295px;
     position: relative;
     top: 280px;
-}
+	}
 
 }
 
@@ -322,6 +329,4 @@ h1 {
 
 
 
-=======
-}
->>>>>>> 046769e4d8d3fd343fd8076671f8896d2a34ae37
+
