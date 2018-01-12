@@ -47,9 +47,8 @@ router.get('/', function(req, res) {
 			var statusActivities = false;
 			if(user.dataValues.activities.length !== 0){
 				for (var i = 0; i < user.dataValues.activities.length; i++) {
-					if(user.dataValues.activities[i].length === true){
+					if(user.dataValues.activities[i].status === true){
 						statusActivities = true;
-						break;
 					}
 					if(i === user.dataValues.activities.length-1){
 						console.log("statusActivities")
