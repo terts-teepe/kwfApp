@@ -54,8 +54,8 @@ router.post('/', (req,res)=>{
 	let activityId = req.body.id;
 	let plannerId = req.body.plannerId;
 	let status;
-	console.log("From Ajax request*****")
-	console.log(req.body)
+	var obj = {};
+	console.log('body: ' + JSON.stringify(req.body));
 	if(clickedBtn === "Accept"){
 		status = true;
 		db.Activity.findOne({
@@ -128,8 +128,8 @@ router.post('/', (req,res)=>{
                                     to: activity.users[i].phoneNumber,  // Text this number
                                     from: '+3197004498785' // From a valid Twilio number
                                 })
-                                if(i === activity.dataValues.users.length){
-                                   res.redirect('/index')
+                                if(i === activity.dataValues.users.length-1){
+                                   res.send(req.body)
                                 }
                             }
                         }
