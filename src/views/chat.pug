@@ -27,19 +27,17 @@ html(lang='en')
 					form(method='post', action='/chat')
 						input#access_token(type='hidden', value=activity.id)
 						input#planner(type='hidden', value=activity.plannerId)
-						#conversation.row.message
-							.row.message-body
-								.col-xs-12.message-main-receiver
-									.receiver
-										.message-text
-											.col-xs-11.message-maintext
-												| Jouw vriend #{activity.plannerName} heeft je uitgenodigd om te #{activity.categorie}
-												| op #{activity.date} om #{activity.time} in #{activity.location}
+						.col-md-12.col-sm-12.col-xs-12
+							.message-main-receiver
+								.receiver
+									.message-text
+										.col-xs-11.message-maintext
+											| Jouw vriend #{activity.plannerName} heeft je uitgenodigd om te #{activity.categorie}
+											| op #{activity.date} om #{activity.time} in #{activity.location}
 										span.message-time.pull-right
-											.col-xs-2.col-xs-push-1
-												| Zon
-						button.btn.btn-primary#button_1(value='Accept') Accept
-						button.btn.btn-danger#button_2(value='Decline') Decline
+											| Zon
+										button.btn.btn-primary#button_1(value='Accept') Accept
+										button.btn.btn-danger#button_2(value='Decline') Decline
 				else
 					.col-md-12.col-sm-12.col-xs-12
 						.message-main-receiver
