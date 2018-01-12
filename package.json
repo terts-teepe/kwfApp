@@ -1,10 +1,14 @@
 {
   "name": "kwfapp",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "private": true,
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +26,7 @@
     "bunyan": "^1.8.12",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
-    "firebase": "^4.6.2",
+    "firebase": "^4.8.2",
     "node-gcm": "^0.14.9",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
@@ -37,10 +41,10 @@
     "social-login": "^0.2.8",
     "sociallogin": "0.0.15",
     "socket.io": "^2.0.4",
-    "twilio": "^3.10.0",
+    "twilio": "^3.11.0",
     "twilio-chat": "^1.2.1",
     "twilio-common": "^0.1.7",
     "watson-developer-cloud": "^2.42.0",
-    "web-push": "^3.2.4"
+    "web-push": "^3.2.5"
   }
 }
