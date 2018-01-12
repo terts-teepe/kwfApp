@@ -25,14 +25,17 @@
 	}
 	/* Button */
 	.doorgaan {
-		margin-top: 15px;
-	}
+    /* margin-top: 15px; */
+    position: relative;
+    bottom: 120px;
+}
 	.change {
 		width: 202px;
 		background-color: #1B9AF7;
 		border-radius: 7px;
 		color: white;
 		font-size: 24px;
+		padding: 0px;
 		font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 	}
 }
