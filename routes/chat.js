@@ -55,7 +55,6 @@ router.post('/', (req,res)=>{
 	let plannerId = req.body.plannerId;
 	let status;
 	var obj = {};
-	console.log('body: ' + JSON.stringify(req.body));
 	if(clickedBtn === "Accept"){
 		status = true;
 		db.Activity.findOne({
@@ -104,33 +103,20 @@ router.post('/', (req,res)=>{
 						    to: planner.phoneNumber,  // Text this number
 						    from: '+3197004498785' // From a valid Twilio number
 						})
-/*						console.log('planner')
-						console.log(planner.name)
-						console.log(planner.id)
-						console.log('accepter')
-						console.log(accepter.id)
-						console.log(accepter.name)
-                        console.log("activity")
-                        console.log(activity)
-                        console.log("activity.dataValues")
-                        console.log(activity.dataValues)
-                        console.log(activity.dataValues.users)
-                        console.log("activity.dataValues.users.length")
-                        console.log(activity.dataValues.users.length)*/
 						// Send notification to all but accepter
 
                         for (var i = 0; i < activity.dataValues.users.length; i++) {
-                            console.log("activity.users[i]")
-                            console.log(activity.users[i])
                             if(activity.users[i].id !== planner.id && activity.users[i].id !== accepter.id){
                                 client.messages.create({
                                     body: `Hallo ${activity.users[i].name} someone has beaten you to accepting ${planner.name}'s activity, better luck next time!`,
                                     to: activity.users[i].phoneNumber,  // Text this number
                                     from: '+3197004498785' // From a valid Twilio number
                                 })
-                                if(i === activity.dataValues.users.length-1){
-                                   res.send(req.body)
-                                }
+                            }
+                            if(i === activity.dataValues.users.length-1){
+                            	console.log("********")
+                            	console.log('body: ' + JSON.stringify(req.body));
+                               res.send(req.body)
                             }
                         }
 /*						db.User.findAll({

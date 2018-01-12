@@ -43,7 +43,8 @@ html(lang='en')
 				//- 						h3 #{activity.categorie} met #{user.name}
 				//- 			p  om #{activity.date} #{activity.time}
 				//- 			p in #{activity.location}
-			if user.activities.length === 0
+			if statusActivities === false
+				.what
 				.flex-col.NoActivity
 					.flex-row
 						.check.text-center

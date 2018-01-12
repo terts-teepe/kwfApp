@@ -118,7 +118,6 @@ html, body{
 .message {
   padding: 0 !important;
   margin: 0 !important;
-  background: url("w.jpg") no-repeat fixed center;
   background-size: cover;
   border: 1px solid #f7f7f7;
 }
@@ -145,6 +144,10 @@ html, body{
   max-width: 90%;
 }
 
+
+.message-body:last-of-type {
+  margin-bottom: 120px;
+}
 .message-text {
   margin: 0 !important;
   padding: 5px !important;
