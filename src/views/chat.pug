@@ -12,7 +12,7 @@ html(lang='en')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 	body
 		include topNavbar
-		.container-fluid.app1.navbar-fixed-top
+		.container-fluid.app1
 			.row.heading
 				.col-sm-2.col-md-1.col-xs-3.heading-avatar
 					.heading-avatar-icon
@@ -39,16 +39,19 @@ html(lang='en')
 										button.btn.btn-primary#button_1(value='Accept') Accept
 										button.btn.btn-danger#button_2(value='Decline') Decline
 				else
-					.col-md-12.col-sm-12.col-xs-12
-						.message-main-receiver
-							.receiver
-								.message-text
-									.col-xs-12.message-maintext
-										| Jouw vriend #{activity.plannerName} heeft je uitgenodigd om te #{activity.categorie}
-										| op #{activity.date} om #{activity.time} in #{activity.location}
-									p.activity-accepted Geaccepteerd
-									span.message-time.pull-right
-										| Zon
+					.incomingMessages
+						.col-md-12.col-sm-12.col-xs-12
+							.message-main-receiver
+								.receiver
+									.message-text
+										.col-xs-12.message-maintext
+											| Jouw vriend #{activity.plannerName} heeft je uitgenodigd om te #{activity.categorie}
+											| op #{activity.date} om #{activity.time} in #{activity.location}
+										p.activity-accepted Geaccepteerd
+										span.message-time.pull-right
+											| Zon
+			.row.rowStyle
+				.col-md-12.col-sm-12.col-xs-12.rowStyle
 		.row.reply.navbar-fixed-bottom
 			.col-sm-1.col-xs-1.reply-emojis
 				i.fa.fa-smile-o.fa-2x
