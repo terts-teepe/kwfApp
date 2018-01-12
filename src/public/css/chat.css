@@ -139,6 +139,10 @@ html, body{
   max-width: 90%;
 }
 
+
+.message-body:last-of-type {
+  margin-bottom: 120px;
+}
 .message-text {
   margin: 0 !important;
   padding: 5px !important;

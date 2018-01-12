@@ -44,6 +44,37 @@ router.get('/', function(req, res) {
 			]
 		})
 		.then((user) => {
+			var statusActivities = false;
+			if(user.dataValues.activities.length !== 0){
+				for (var i = 0; i < user.dataValues.activities.length; i++) {
+					if(user.dataValues.activities[i].length === true){
+						statusActivities = true;
+						break;
+					}
+					if(i === user.dataValues.activities.length-1){
+						console.log("statusActivities")
+						console.log(statusActivities)
+			/*				db.User.findOne({
+								where: {
+									id: user.activity.plannerId
+								}
+							})
+							.then((planner)=>{
+								db.User.findOne({
+									where: {
+										id: activity.accepter
+									}
+								})
+								.then((accepter)=>{*/
+									res.render('index', {user: user, currentUserId: currentUserId, statusActivities: statusActivities})
+			/*					})*/
+			/*				})*/
+					}
+				}
+			}
+			else {
+				res.render('index', {user: user, title: 'activities', statusActivities: statusActivities})
+			}
 /*			db.Activity.findAll({
 				where: {
 							[Op.or]: [{plannerId: currentUserId}, {accepter: currentUserId}]
@@ -64,28 +95,7 @@ router.get('/', function(req, res) {
 					res.render('index', {currentUserName})
 				}			
 			})*/
-			console.log("user.dataValues.activities[0]")
-			console.log(user.dataValues.activities[0])
-			if(user.dataValues.activities.length !== 0){
-/*				db.User.findOne({
-					where: {
-						id: user.activity.plannerId
-					}
-				})
-				.then((planner)=>{
-					db.User.findOne({
-						where: {
-							id: activity.accepter
-						}
-					})
-					.then((accepter)=>{*/
-						res.render('index', {user: user, currentUserId: currentUserId})
-/*					})*/
-/*				})*/
-			}
-			else {
-				res.render('index', {user: user, title: 'activities'})
-			}
+
 		})
 
 	}

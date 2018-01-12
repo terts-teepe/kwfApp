@@ -38,10 +38,3 @@ $(document).ready(function() {
         interval: 5000
     })
 });
-
-
-
-
-$( "input" ).focus(function() {
-  alert( "Handler for .focus() called." );
-});
