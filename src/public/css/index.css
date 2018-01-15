@@ -273,7 +273,11 @@
 		padding: auto 10px;
 	}
 
-
+p {
+    margin: 0 0 10px;
+    line-height: 26px;
+    font-size: 16px;
+}
 
 
 /* For mobile */
@@ -281,7 +285,7 @@
 
 	.talk-bubble {
     margin: 10px auto;
-    width: 190px;
+    width: 213px;
     height: auto;
     background-color: #eeeee4;
     border-radius: 10px;
@@ -322,7 +326,7 @@
 		color: white;
 		font-size: 21px;
 		position: relative;
-    	top: -30px;
+    	top: -60px;
 	}
 
 /*     .nieuweActiviteit {
