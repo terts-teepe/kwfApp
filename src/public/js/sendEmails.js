@@ -1,3 +1,3 @@
 $('#more_fields').click(function(){
-	$(this).before('<div class="form-group"><input type="text" name="name" placeholder="Friends Name" class="form-control"/></div><div class="form-group"><input type="text" name="email" placeholder="Friends Email" class="form-control"/></div>')
+	$(this).before('<div class="NaamStyle"><input type="text" name="name" placeholder="Naam" class="form-control"/></div><div class=""><input type="text" name="email" placeholder="E-mailadres" class="form-control"/></div>')
 })
