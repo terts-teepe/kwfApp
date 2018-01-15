@@ -25,7 +25,7 @@ body {
 
 											/* talk bubble */
 .tekstbubbels {
-	margin-top: 90px;
+	margin-top: 120px;
 	display:inline;
 }
 
@@ -43,11 +43,13 @@ body {
 	font-weight: bold;
 }
 /* talk bubble contents */
-.talktext{
-	padding: 0.5em;
-	text-align: left;
-	line-height: 1.3em;
+.talktext {
+    padding: 0.5em;
+    text-align: left;
+    line-height: 1.5em;
+    font-size: 17px;
 }
+
 .talktext p{
   /* remove webkit p margins */
   -webkit-margin-before: 0em;
@@ -66,7 +68,7 @@ body {
  	width: 250px; 
 	padding: 6px 5px;
 	border-radius: 5px;
-	color: #999999;
+	color: black;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -91,7 +93,11 @@ body {
     	top: 115px;
 	}
 
-
+p {
+	margin: 0 0 10px;
+    font-size: 17px;
+    line-height: 26px;
+}
 
 
 

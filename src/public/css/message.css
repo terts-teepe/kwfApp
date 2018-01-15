@@ -1,25 +1,391 @@
+body {
+  font-size: 17px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.logos {
+    position: relative;
+    top: 10px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #2C7BB4;
+    border-color: #4cae4c;
+}
+
+.neeDankje {
+    position: relative;
+    top: 45px;
+}
+
+.vrienden {
+	  margin: auto;
+    width: 50%;
+    padding: 10px;
+    max-width: 250px;
+    margin-top: 150px;
+}
+
+h2 {
+  text-align: center;
+}
+
+
+h3 {
+  text-align: center;
+}
+
+.tekst {
+  margin-top: 150px;
+}
+
+.checkbox+.checkbox, .radio+.radio {
+     margin-top: 0px; 
+}
+
+.checkbox, .radio {
+    
+     margin-top: 0px;
+     margin-bottom: 0px; 
+}
+
+.container-one {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+ul li:nth-child(odd) {  
+  background-color: #FE0606;
+  opacity: 0.9;
+}
+
+ul li:nth-child(even) {  
+  background-color: #0153A3;
+  opacity: 0.9;
+}
+
+ul a {
+  color: white;
+}
+
+.foto {
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+body {
+  font-size: 17px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.logos {
+    position: relative;
+    top: 10px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #2C7BB4;
+    border-color: #4cae4c;
+}
+
+.neeDankje {
+    position: relative;
+    top: 45px;
+}
+
+.vrienden {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    max-width: 250px;
+    margin-top: 150px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.styleInvite {
+    margin-bottom: 150px;
+    position: relative;
+    top: 75px;
+    left: -65px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    height: 35px;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    margin-bottom: -35px;
+    border-width: 0 0 1px;
+    position: absolute;
+}
+
+
+
+h3 {
+  text-align: center;
+}
+
+.tekst {
+  margin-top: 150px;
+}
+
+.checkbox+.checkbox, .radio+.radio {
+     margin-top: 0px; 
+}
+
+.checkbox, .radio {
+    
+     margin-top: 0px;
+     margin-bottom: 0px; 
+}
+
+.container-one {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.uitnodigenStyle {
+  width: 99%;
+  position: relative;
+  left: 1px;
+  padding-left: 10px;
+
+}
+
+.NaamStyle {
+  margin-top: 15px;
+}
+
+.form-control {
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+ul li:nth-child(odd) {  
+  background-color: #FE0606;
+  opacity: 0.9;
+}
+
+ul li:nth-child(even) {  
+  background-color: #0153A3;
+  opacity: 0.9;
+}
+
+ul a {
+  color: white;
+}
+
+.foto {
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+body {
+  font-size: 17px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.logos {
+    position: relative;
+    top: 10px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #2C7BB4;
+    border-color: #4cae4c;
+}
+
+.neeDankje {
+    position: relative;
+    top: 45px;
+}
+
+.vrienden {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    max-width: 250px;
+    margin-top: 150px;
+}
+
+h2 {
+  text-align: center;
+}
+
+
+h3 {
+  text-align: center;
+}
+
+.tekst {
+  margin-top: 150px;
+}
+
+.checkbox+.checkbox, .radio+.radio {
+     margin-top: 0px; 
+}
+
+.checkbox, .radio {
+    
+     margin-top: 0px;
+     margin-bottom: 0px; 
+}
+
+.container-one {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+ul li:nth-child(odd) {  
+  background-color: #FE0606;
+  opacity: 0.9;
+}
+
+ul li:nth-child(even) {  
+  background-color: #0153A3;
+  opacity: 0.9;
+}
+
+ul a {
+  color: white;
+}
+
+.foto {
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
+i.icon {
+  margin-top: 30px;
+  font-size: 8em;
+}
+
+p {
+  border: 0.05px solid rgba(44,123,180,0.5);
+  padding: 8px;
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.buttonStyle {
+  position: relative;
+  top: 10px;
+  right: 8px;
+}
+
+/*p.day {
+  background: #2C7BB4;
+  color: white;
+}*/
+
+input#registration-date {
+  /*background: #E44541;
+  color: white;*/
+}
+
+.where {
+  margin-top: 150px;
+}
+
+.tekstbubbels {
+  position: relative;
+  bottom: 30px;
+}
+
+.inputStyleDate {
+  padding-right: 0px;
+    /*padding-left: 53px;*/
+    margin-top: 5px
+}
+
+.inputStyleTime {
+  /*padding-left: 76px;*/
+  margin-top: 5px
+}
+
+.formStyleDate {
+  padding: 5px;
+}
+
+.formStyleTime {
+  padding: 5px;
+}
+
+.talk-bubble {
+  width: 209px;
+}
+
+
+@media all and (max-width: 500px) {
+  .inputStyleDate {
+  padding-right: 10px;
+  margin-top: 8px;
+  }
+
+  .inputStyleTime {
+    /*padding-left: 63px;*/
+  }
+
+  .formStyleDate {
+    padding: 5px;
+    text-align: left;
+  }
+
+  .formStyleTime {
+    padding: 5px;
+    text-align: left;
+  }
+
+  .talk-bubble {
+    width: 185px;
+  }
+
+  .formStyleLocation {
+    text-align: left;
+  }
+
+  .talktext {
+    line-height: 2.0em;
+  }
+
+}
+
   .container {
       font-family: 'Nunito', sans-serif;
   }
 
-  p {
-    margin: 0 0 10px;
-    font-size: 17px;
-    line-height: 25px;
-  }
-
   /* Top navbar */
   h1.header {
-      padding-bottom: 5px;
+    padding-bottom: 5px;
     /*z-index: 1;*/
-      position: relative;
+    position: relative;
       font-family: 'Roboto', sans-serif;
-      top: -127px; 
+      top: -127px;
   }
 
-  .navbar {
-      z-index: -1;
-  }
 
   .styleBackButton {
       top: 21px;
@@ -53,7 +419,9 @@
       
   }*/
 
-  
+  body {
+     /* background-color: #eeeee4*/
+  }
 
   /* Activity */
   .wrap {
@@ -120,8 +488,8 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
-      position: relative;
-      /*top: 53px;*/
+    position: relative;
+    top: 180px;
   }
 
                         /* talk bubble */
@@ -144,11 +512,12 @@
     font-weight: bold;
   }
   /* talk bubble contents */
-  .talktext{
-    padding: 0.5em;
+  .talktext {
+    padding: 0.7em;
     text-align: left;
-    line-height: 1.3em;
-  }
+    width: 235px;
+}
+
   .talktext p{
     /* remove webkit p margins */
     -webkit-margin-before: 0em;
@@ -233,9 +602,6 @@
       top: 5px;
   }
 
-  .navbar {
-      z-index: -1;
-  }
 
   .backStyle {
       position: absolute;
@@ -299,7 +665,7 @@
 
   .talk-bubble {
     margin: 10px auto;
-    width: 190px;
+    width: 233px;
     height: auto;
     background-color: #E2E2E2;
     border-radius: 10px;
@@ -361,8 +727,8 @@
     }
 
     .NoActivityEmma {
-      width: 150px;
-      height: 150px;
+      width: 130px;
+      height: 130px;
     }
 
     .col-xs-7.col-xs-push-2 {
@@ -414,127 +780,15 @@
   }
 }
 
-body {
-  font-size: 17px;
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-}
-
-                      /* Flex container */
-.flex-col {
-  display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    top: 24px;
-}
-
-.flex-row {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.doorgaanName {
-  position: relative;
-  bottom: 100px;
-}
-
-                      /* talk bubble */
-.tekstbubbels {
-  margin-top: 90px;
-  display:inline;
-}
-
-.talk-bubble {
-  margin: 10px auto;
-  width: 240px;
-  height: auto;
-  background-color: #E2E2E2;
-  border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
-
-.talk-bubble > #name {
-  font-weight: bold;
-}
-/* talk bubble contents */
-.talktext{
-  padding: 0.5em;
-  text-align: left;
-  line-height: 1.3em;
-}
-.talktext p{
-  /* remove webkit p margins */
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
-}
-
-
-                      /* Form */
-/* Name */
-.naam {
-  margin-top: 60px;
-}
-
-.naam > input {
-  border: 4px solid #999999;
-  width: 250px; 
-  padding: 6px 5px;
-  border-radius: 5px;
-  color: #999999;
-  font-family: 'Roboto', sans-serif;
-}
-
-/* Button */
-.doorgaan {
-  margin-top: 15px;
-}
-
-.videoStyle {
-    position: relative;
-    top: 33px;
-    left: 37px;
-}
-
-.change {
-    width: 220px;
-    background-color: #2C7BB4;
-    border-radius: 7px;
-    color: white;
-    font-size: 21px;
-      position: relative;
-      top: 115px;
-  }
 
 
 
 
 
-/* For mobile */
-@media all and (max-width: 500px) {
-  .talk-bubble {
-    margin: 10px auto;
-    width: 190px;
-  }
-  .naam > input {
-    width: 218px;
-  }
 
-  /* Button */
-  .doorgaan {
-    margin-top: 15px;
-  }
-  .change {
-    width: 220px;
-    background-color: #2C7BB4;
-    border-radius: 7px;
-    color: white;
-    font-size: 21px;
-    position: relative;
-    top: 160px;
-  }
-}
+
+
+
 
 
 

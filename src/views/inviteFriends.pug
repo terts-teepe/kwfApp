@@ -5,7 +5,6 @@ html(lang='en')
 		include bottomNavbarStyle
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 		link(href ='css/inviteFriends.css' type='text/css' rel='stylesheet')
-		link(href ='css/name.css' type='text/css' rel='stylesheet')
 		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
 		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
@@ -29,7 +28,7 @@ html(lang='en')
 											| Je kan wel vrienden uitnodigen via SMS of Mail?
 						else
 							.check.text-center
-								img.imageOne(src='img/emma.png')
+								img.imageOne(src='img/emmaTwo.png')
 							.check.tekstbubbels
 								.talk-bubble.tri-right.round
 									.talktext
@@ -48,7 +47,7 @@ html(lang='en')
 					img.foto(src='img/gmailLogo.png' type='radio', id='fbMessenger' name='inviteFriends' value='Gmail' disabled)
 		.row
 			.col-md-4.col-md-push-4.col-xs-8.col-xs-push-2.text-center.neeDankje
-				a.btn-lg.btn-success.submitStyle(href="/index") Nee dankje
+				a.btn.btn-success.submitStyle(href="/index") Nee dankje
 					//- h4.move Nodig Vrienden Uit:
 					//- .radio
 					//- 	label

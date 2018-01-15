@@ -168,6 +168,7 @@ h3 {
 
 .form-control {
   margin-top: 6px;
+  font-size: 16px;
 }
 
 ul li:nth-child(odd) {  
@@ -282,10 +283,10 @@ i.icon {
 
 p {
   border: 0.05px solid rgba(44,123,180,0.5);
-  padding: 8px;
-  margin: 0;
-  margin-bottom: 5px;
-  font-size: 16px;
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 18px;
 }
 
 .buttonStyle {
@@ -498,12 +499,14 @@ input#registration-date {
 
   .talk-bubble {
     margin: 10px auto;
-    width: 190px;
+    width: 233px;
     height: auto;
     background-color: #E2E2E2;
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    position: relative;
+    right: 10px;
   }
 
   .talk-bubble > #name {
@@ -513,7 +516,7 @@ input#registration-date {
   .talktext{
     padding: 0.7em;
     text-align: left;
-    width: 200px;
+    width: 235px;
   }
   .talktext p{
     /* remove webkit p margins */
@@ -662,7 +665,7 @@ input#registration-date {
 
   .talk-bubble {
     margin: 10px auto;
-    width: 205px;
+    width: 233px;
     height: auto;
     background-color: #E2E2E2;
     border-radius: 10px;
@@ -724,8 +727,8 @@ input#registration-date {
     }
 
     .NoActivityEmma {
-      width: 150px;
-      height: 150px;
+      width: 130px;
+      height: 130px;
     }
 
     .col-xs-7.col-xs-push-2 {

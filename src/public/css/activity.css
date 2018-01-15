@@ -7,6 +7,12 @@ div.categorie > h1 {
 	font-family: 'Roboto', sans-serif;
 }
 
+p {
+    margin: 0 0 10px;
+    line-height: 22px;
+    font-size: 15px;
+}
+
 /* Surrounding div of squares */
 .col-md-8.col-md-push-2.col-xs-12 {
 	margin-bottom: 120px;
