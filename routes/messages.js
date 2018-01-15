@@ -75,19 +75,4 @@ router.post('/', (req, res) => {
 	}
 });
 
-// router.post('/messages', (req, res) =>{
-//     console.log(req.body);
-//     var msgFrom = req.body.From;
-//     var msgBody = req.body.Body;
-
-//     res.send(`
-//     	<Response>
-//     		<messages>
-//     			Hello ${msgFrom}. You said: ${msgBody}
-//     		</messages>
-//     	</Response>
-//     `);
-// });
-
-
 module.exports = router;
