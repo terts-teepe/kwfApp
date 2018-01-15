@@ -44,7 +44,6 @@ html(lang='en')
 				//- 			p  om #{activity.date} #{activity.time}
 				//- 			p in #{activity.location}
 			if statusActivities === false
-				.what
 				.flex-col.NoActivity
 					.flex-row
 						.check.text-center
@@ -57,13 +56,15 @@ html(lang='en')
 							.talk-bubble
 								.talktext
 									p.text-center
-										| Klik op de button om een activiteit te plannen!
+										| Klik op de button hieronder om een activiteit te plannen
+										br
+										| of kijk of je activiteiten kan accepteren bij je berichten pagina!
 				.doorgaan.text-center.noActivityDoorgaan
 					a.btn.btn-md.change.NoActivityPlannen(href="/activity") Een activiteit plannen
 			else
 				.button.doorgaan.text-center
 					a.btn.btn-md.change.nieuweActiviteit(href="/activity") Een nieuwe activiteit plannen
-				each activity in user.activities
+
 					if activity.status === true
 						//- if activity.plannerId === user.id
 						//- 	.wrap
@@ -74,7 +75,6 @@ html(lang='en')
 						//- 		p  om #{activity.date} #{activity.time}
 						//- 		p in #{activity.location}
 						//- else if activity.accepter === user.id
-						.what
 						.wrap
 							//- If the user is the one who accepted
 							if activity.accepter === currentUserId

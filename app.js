@@ -62,6 +62,7 @@ const profielPierre = require('./routes/profielPierre');
 const chatFeed = require('./routes/chatfeed');
 const contactVolunteerTerts = require('./routes/contactVolunteerTerts');
 const contactVolunteerPierre = require('./routes/contactVolunteerPierre');
+const activityPlanned = require('./routes/activityPlanned');
 
 
 //these are Terts his firebase details:
@@ -127,6 +128,7 @@ app.use('/profielTerts', profielTerts);
 app.use('/chatfeed', chatFeed);
 app.use('/contactVolunteerTerts', contactVolunteerTerts);
 app.use('/contactVolunteerPierre', contactVolunteerPierre);
+app.use('/activityPlanned', activityPlanned);
 
 
 /*// Redirect the user to the OAuth provider for authentication.  When

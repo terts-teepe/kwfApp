@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 
 router.get('/', (req, res) => {
-	let name = req.query.name;
+	let name = req.session.user.name
 	res.render('contactVolunteerTerts', {name: name, title: 'plan activity'});
 })
 

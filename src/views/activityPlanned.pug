@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+	head 
+		title Index
+		link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+		include bottomNavbarStyle
+		include fonts
+		link(href ='css/activityPlanned.css' type='text/css' rel='stylesheet')
+		link(href ='css/bottomNavbar.css' type='text/css' rel='stylesheet')
+		link(href ='css/topNavbar.css' type='text/css' rel='stylesheet')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		link(href ='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' rel='stylesheet')
+	body
+		include topNavbar
+		.container
+			.flex-col
+				.flex-row
+					.check.text-center
+						img.imageOne.NoActivityEmma(src='img/emma.png')
+					.check.tekstbubbels
+						.talk-bubble
+							.talktext
+								p.text-center
+									| Je verzoek is nu verstuurd #{user}
+						.talk-bubble
+							.talktext
+								p.text-center
+									| Zodra iemand je uitnodiging geaccepteerd heeft kan je deze zien bij je activiteiten pagina.
+			.doorgaan.text-center.noActivityDoorgaan
+				a.btn.btn-md.change.NoActivityPlannen(href="/index") Geacepteerde activiteiten
+
+		include bottomNavbar		

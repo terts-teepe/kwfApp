@@ -4,9 +4,9 @@ const db = require('../models/database.js');
 const bodyParser = require('body-parser');
 
 
-router.get('/', (req, res) => {
-	let name = req.session.user.name
-	res.render('contactVolunteerPierre', {name: name, title: 'plan activity'});
+router.get('/', (req,res)=>{
+	var user = req.session.user.name;
+	res.render('activityPlanned', {user: user})
 })
 
 module.exports = router;
