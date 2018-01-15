@@ -9,7 +9,7 @@ body {
 
 .selectAllStyle, .selectOne {
 /*  font-style: italic; */
- font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 .selectAll {
@@ -209,7 +209,7 @@ span.cr > i.cr-icon.glyphicon.glyphicon-ok > b{
  background-color: #1B9AF7;
  color: white;
  font-size: 20px;
- font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+font-family: 'Nunito', sans-serif;
 }
 
 

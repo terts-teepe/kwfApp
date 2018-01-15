@@ -18,7 +18,7 @@ const pg = require('pg');
 //     data: { key1: 'msg1' }
 // });
 // VAPID keys should only be generated only once.
-// const vapidKeys = webpush.generateVAPIDKeys();
+// const vapidKeys = webpush.generateAPIDKeys();
 // console.log(vapidKeys);
 
 // const twilio-common = require('twilio-common');
@@ -49,19 +49,19 @@ const name = require('./routes/name');
 const reachMethod = require('./routes/reachMethod');
 const password = require('./routes/password');
 const sendEmails = require('./routes/sendEmails');
-const messages = require('./routes/messages')
-const chatbot = require('./routes/chatbot')
-const chat = require('./routes/chat')
-const friends = require('./routes/friends')
-const time = require('./routes/time')
+const messages = require('./routes/messages');
+const chatbot = require('./routes/chatbot');
+const chat = require('./routes/chat');
+const friends = require('./routes/friends');
+const time = require('./routes/time');
 // const friendsInvited = require('./routes/friendsInvited')
-const volunteers = require('./routes/volunteers')
-const noFriends = require('./routes/noFriends')
-const profielTerts = require('./routes/profielTerts')
-const profielPierre = require('./routes/profielPierre')
-const chatFeed = require('./routes/chatfeed')
-const contactVolunteerTerts = require('./routes/contactVolunteerTerts')
-const contactVolunteerPierre = require('./routes/contactVolunteerPierre')
+const volunteers = require('./routes/volunteers');
+const noFriends = require('./routes/noFriends');
+const profielTerts = require('./routes/profielTerts');
+const profielPierre = require('./routes/profielPierre');
+const chatFeed = require('./routes/chatfeed');
+const contactVolunteerTerts = require('./routes/contactVolunteerTerts');
+const contactVolunteerPierre = require('./routes/contactVolunteerPierre');
 
 
 //these are Terts his firebase details:

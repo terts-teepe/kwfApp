@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 
 
 router.get('/', (req,res)=>{
-	res.render('chatFeed')
+	var user = req.session.user.name;
+	res.render('chatfeed', {user: user})
 })
 
 module.exports = router;

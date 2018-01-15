@@ -32,6 +32,8 @@ html(lang='en')
 								.receiver
 									.message-text
 										.col-xs-11.message-maintext
+											| Hallo #{currentUserName}
+											<br>
 											| Jouw vriend #{activity.plannerName} heeft je uitgenodigd om te #{activity.categorie}
 											| op #{activity.date} om #{activity.time} in #{activity.location}
 										span.message-time.pull-right
@@ -44,7 +46,8 @@ html(lang='en')
 							.message-main-receiver
 								.receiver
 									.message-text
-										.col-xs-12.message-maintext
+										.col-xs-11.message-maintext
+											| Hallo #{currentUserName}
 											| Jouw vriend #{activity.plannerName} heeft je uitgenodigd om te #{activity.categorie}
 											| op #{activity.date} om #{activity.time} in #{activity.location}
 										p.activity-accepted Geaccepteerd
