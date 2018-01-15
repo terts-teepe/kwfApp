@@ -99,7 +99,7 @@ router.post('/', (req,res)=>{
 					})
 					.then ((accepter)=>{
 						client.messages.create({
-						    body: `Hallo ${planner.name}, jouw vriend ${accepter.name} heeft je uitnodiging om te ${activity.categorie} geaccepteerd, Bekijk het op je profiel!`,
+						    body: `Hallo ${planner.name}, je vriend ${accepter.name} heeft je uitnodiging om ${activity.categorie} geaccepteerd, Bekijk het op je profiel!`,
 						    to: planner.phoneNumber,  // Text this number
 						    from: '+3197004498785' // From a valid Twilio number
 						})
@@ -108,7 +108,7 @@ router.post('/', (req,res)=>{
                         for (var i = 0; i < activity.dataValues.users.length; i++) {
                             if(activity.users[i].id !== planner.id && activity.users[i].id !== accepter.id){
                                 client.messages.create({
-                                    body: `Hallo ${activity.users[i].name} someone has beaten you to accepting ${planner.name}'s activity, better luck next time!`,
+                                    body: `Hallo ${activity.users[i].name}, ${accepter.name} heeft de activiteit van ${planner.name} geaccepteerd`,
                                     to: activity.users[i].phoneNumber,  // Text this number
                                     from: '+3197004498785' // From a valid Twilio number
                                 })

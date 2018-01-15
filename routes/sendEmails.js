@@ -61,7 +61,7 @@ router.post('/', (req,res)=>{
 			    // Subject of the message
 			    subject: `You have an invitation`,
 			    // HTML body
-			    html: `<h2>Hello ${people[i].name}</h2><p>Would you like to join the vriendendienst network! Check it out here: <b><a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></b></p>`
+			    html: `<h2>Hello ${people[i].name}</h2><p>Je vriend Pierre zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen <a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></b></p>`
 			}
 			console.log('Sending Mail');
 			transporter.sendMail(message, (error, info) => {
@@ -87,7 +87,7 @@ router.post('/', (req,res)=>{
 		    // Subject of the message
 		    subject: `You have an invitation`,
 		    // HTML body
-		    html: `<h2>Hello ${people[0].name}</h2><p>Would you like to join the vriendendienst network! Check it out here: <a href=https://share.proto.io/FAFPRN>Vriendendienst</a></p>`
+		    html: `<h2>Hello ${people[0].name}</h2><p>Je vriend Pierre zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen <a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></b></p>`
 		}
 		console.log('Sending Mail');
 		transporter.sendMail(message, (error, info) => {

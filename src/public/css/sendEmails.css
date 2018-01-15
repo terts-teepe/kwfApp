@@ -384,9 +384,6 @@ input#registration-date {
       top: -127px;
   }
 
-  .navbar {
-      z-index: -1;
-  }
 
   .styleBackButton {
       top: 21px;
@@ -490,7 +487,7 @@ input#registration-date {
     justify-content: center;
     margin-top: 30px;
     position: relative;
-    top: 125px;
+    top: 180px;
   }
 
                         /* talk bubble */
@@ -602,9 +599,6 @@ input#registration-date {
       top: 5px;
   }
 
-  .navbar {
-      z-index: -1;
-  }
 
   .backStyle {
       position: absolute;
