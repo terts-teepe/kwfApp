@@ -194,7 +194,7 @@ router.post('/', (req, res) =>{
 				}
 			})
 			.then ((user)=>{
-				activity.setUsers(user)
+				activity.setUsers(user);
 			});
 			/* Link activity to friends */
 			db.User.findOne({
@@ -202,18 +202,14 @@ router.post('/', (req, res) =>{
 					id: friendsIds
 				}
 			})
-			.then((user)=>{
-				console.log('friendsIds')
-				console.log(friendsIds)
-				console.log('Invited****')
-				console.log(user)
+			.then((user)=> {
 				activity.setUsers(user)
 				client.messages.create({
 				    body: `Hello ${user.name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
 				    to: user.phoneNumber,  // Text this number
 				    from: '+3197004498785' // From a valid Twilio number
 				})
-				res.redirect('/index')
+				res.redirect('/activityPlanned')
 			})
 		});
 	}
