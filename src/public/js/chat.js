@@ -5,7 +5,7 @@ function sendAjaxRequest(element,urlToSend) {
           data: { btn: clickedButton.val(), id: $("#access_token").val(), plannerId: $("#planner").val() },
           success:function(result){
             // alert('ok');
-            window.location.replace('http://localhost:8080/activityPlanned')
+            window.location.replace('http://localhost:8080/index')
           },
            error:function(result)
             {

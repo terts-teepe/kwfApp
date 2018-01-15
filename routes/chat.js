@@ -31,11 +31,11 @@ router.get('/', function(req, res) {
 		})
 		.then((user) => {
 			if(user.dataValues.activities.length !== 0){
-				res.render('chat', {user: user})
+				res.render('chat', {user: user, title: 'chat', currentUserName: currentUserName})
 			}
 
 			else {
-				res.render('chat', {user: user, title: 'chat', currentUserName: currentUserName })
+				res.render('chat', {user: user, title: 'chat'})
 			}
 		})
 

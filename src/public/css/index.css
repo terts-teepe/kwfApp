@@ -47,18 +47,15 @@
 	    
 	}*/
 
-	body {
-	    background-color: #fff
-	}
-
 	/* Activity */
 	.wrap {
 	    width: 100%;
 	    margin: 10px auto 100px;
 	    height: 13em;
-	    background-color: white;
+	    background-color: #eeeee4;
 	    position: relative;
 	    bottom: 20px;
+	    border-radius: 8px;
 	}
 
 	.nieuweActiviteit {
@@ -163,17 +160,6 @@
 		position: relative;
 		top: 50px;
 	}
-
-	/*img.imageOne {
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-	}*/
-
-	/* .activity {
-		background-color: white;
-	} */
-
 
 	html, body {
 		height: 60vh;
@@ -317,8 +303,7 @@
 	    width: 100%;
 	    margin: 10px auto 10px;
 	    height: 13em;
-	    background-color: white;
-	    margin-top: 35px;
+	    margin-top: 77px;
 	    bottom: 75px;
 	    margin-bottom: 15px;
 	    bottom: 100px;

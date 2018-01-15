@@ -259,13 +259,12 @@ input#registration-date {
 	.doorgaan {
 		margin-top: 55px;
 	}
-	.change {
+	button.buttonStyle.btn.btn-lg.submit {
 		background-color: #2C7BB4;
 		border-radius: 7px;
 		color: white;
 		font-size: 21px;
 		position: relative;
-		top: 50px;
 	}
 
 	/*img.imageOne {
