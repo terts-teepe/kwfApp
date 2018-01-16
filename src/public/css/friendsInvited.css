@@ -17,9 +17,6 @@
       top: -127px; 
   }
 
-  .navbar {
-      z-index: -1;
-  }
 
   .styleBackButton {
       top: 21px;
@@ -233,9 +230,6 @@
       top: 5px;
   }
 
-  .navbar {
-      z-index: -1;
-  }
 
   .backStyle {
       position: absolute;
