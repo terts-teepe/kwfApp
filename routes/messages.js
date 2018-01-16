@@ -42,7 +42,7 @@ router.post('/', (req, res) => {
 				console.log(name);
 				client.messages.create({
 				    // body: `Hello ${people[i].name}, would you like to join the vriendendienst network! Check it out here: https://share.proto.io/FAFPRN/`,
-				    body: `Hello ${people[i].name} Je vriend ${user.name} zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen Vriendendienst https://share.proto.io/FAFPRN/`,
+				    body: `Hallo ${people[i].name} Je vriend ${currentUserName} zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen Vriendendienst https://share.proto.io/FAFPRN/`,
 				    to: people[i].phonenumber,  // Text this number
 				    from: '+3197004498785' // From a valid Twilio number
 				})
@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
 		people.push({name: name , phonenumber: recipient})
 		client.messages.create({
 /*		    body: `Hello ${people[0].name}, Would you like to join the vriendendienst network! Check it out here: https://share.proto.io/V9VKHX/`,*/
-			body: `Hello ${people[0].name} Je vriend ${user.name} zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen Vriendendienst https://share.proto.io/FAFPRN/`,
+			body: `Hallo ${people[0].name} Je vriend ${currentUserName} zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen Vriendendienst https://share.proto.io/FAFPRN/`,
 		    to: people[0].phonenumber,  // Text this number
 		    from: '+3197004498785' // From a valid Twilio number
 		})
