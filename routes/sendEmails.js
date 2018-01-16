@@ -41,7 +41,7 @@ router.post('/', (req,res)=>{
 			    // Comma separated list of recipients
 			    to: `${people[i].friendEmail}`,
 			    // Subject of the message
-			    subject: `You have an invitation`,
+			    subject: `Uitnodiging Vriendendienst`,
 			    // HTML body
 			    html: `<h2>Hello ${people[i].name}</h2><p>Je vriend ${user.name} zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen <a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></b></p>`
 			}
@@ -67,9 +67,9 @@ router.post('/', (req,res)=>{
 		    // Comma separated list of recipients
 		    to: `${people[0].friendEmail}`,
 		    // Subject of the message
-		    subject: `You have an invitation`,
+		    subject: `Uitnodiging Vriendendienst`,
 		    // HTML body
-		    html: `<h2>Hello ${people[0].name}</h2><p>Je vriend Pierre zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen <a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></b></p>`
+		    html: `<h2>Hello ${people[0].name}</h2><p>Je vriend ${user.name} zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen <a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></b></p>`
 		}
 		console.log('Sending Mail');
 		transporter.sendMail(message, (error, info) => {
