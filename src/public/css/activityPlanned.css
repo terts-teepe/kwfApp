@@ -15,6 +15,12 @@
 	    bottom: 127px;
 	}
 
+	p {
+	margin: 0 0 10px;
+    font-size: 15px;
+    line-height: 25px;
+	}
+
 	.NoActivity {
 		position: relative;
 		top: -150px;

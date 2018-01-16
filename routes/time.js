@@ -162,7 +162,7 @@ router.post('/', (req, res) =>{
 				.then ((user)=>{
 					activity.setUsers(user)
 					client.messages.create({
-					    body: `Hello ${user.name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
+					    body: `Hallo ${user.name} dit is Emma van Vriendendienst, je vriend ${currentUserName} heeft je uitgenodigd voor een activiteit, bekijk de activiteit op de website!`,
 					    to: user.phoneNumber,  // Text this number
 					    from: '+3197004498785' // From a valid Twilio number
 					})
@@ -204,7 +204,7 @@ router.post('/', (req, res) =>{
 			.then((user)=> {
 				activity.setUsers(user)
 				client.messages.create({
-				    body: `Hello ${user.name} this is Emma, your friend ${currentUserName} has planned an activity, check it out!`,
+				    body: `Hallo ${user.name} dit is Emma van Vriendendienst, je vriend ${currentUserName} heeft je uitgenodigd voor een activiteit, bekijk de activiteit op de website!`,
 				    to: user.phoneNumber,  // Text this number
 				    from: '+3197004498785' // From a valid Twilio number
 				})
