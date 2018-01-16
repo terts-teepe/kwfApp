@@ -33,25 +33,7 @@ router.post('/', (req,res)=>{
 	let friendName = req.body.name;
 	let friendEmail = req.body.email;
 	let people = []
-	console.log("friendEmail")
-	console.log(friendEmail)
-	console.log("friendName")
-	console.log(friendName)
-	// function response (){
-	// 	res.redirect('index')
-	// }
-/*	function transport (){
-		transporter.sendMail(message, (error, info) => {
-		    if (error) {
-		        console.log('Error occurred');
-		        console.log(error.message);
-		        return;
-		    }
-		    console.log('Message sent successfully!');
-		    console.log('Server responded with "%s"', info.response);
-		    transporter.close();
-		});
-	}*/
+	let user = req.session.user;
 	if(Array.isArray(friendEmail)) {
 		for(var i= 0; i<friendEmail.length; i++){
 			people.push({name: friendName[i] , friendEmail: friendEmail[i]})
@@ -61,7 +43,7 @@ router.post('/', (req,res)=>{
 			    // Subject of the message
 			    subject: `You have an invitation`,
 			    // HTML body
-			    html: `<h2>Hello ${people[i].name}</h2><p>Je vriend Pierre zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen <a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></b></p>`
+			    html: `<h2>Hello ${people[i].name}</h2><p>Je vriend ${user.name} zou het leuk vinden als je deel wilt uitmaken van zijn netwerk binnen <a href='https://share.proto.io/FAFPRN/'>Vriendendienst</a></b></p>`
 			}
 			console.log('Sending Mail');
 			transporter.sendMail(message, (error, info) => {

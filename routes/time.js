@@ -168,9 +168,8 @@ router.post('/', (req, res) =>{
 					})
 				})
 				.then(()=>{
-					/* ***** Fix this */
 					if(i === friendsIds.length){
-						res.redirect('/index')
+						res.redirect('/activityPlanned')
 					}
 				})
 			}
