@@ -11,6 +11,7 @@ const client = new twilio(accountSid, authToken);
 
 // Render profile page
 router.get('/', (req, res) => {
+	let currentUser = req.session.user.name;
 	let categorie = req.query.categorie;
 /*	let Ids = req.query.friendsIds;*/
 	let friendsIds = req.query.friends;
@@ -34,7 +35,7 @@ router.get('/', (req, res) => {
 			.then(()=>{
 				console.log(friends)
 				if(friends.length === ids.length){
-					res.render('time', {friends: friends, categorie: categorie, friendsIds: friendsIds/*, Ids: Ids*/ , title: 'plan activity'})
+					res.render('time', {friends: friends,user:currentUser,  categorie: categorie, friendsIds: friendsIds/*, Ids: Ids*/ , title: 'plan activity'})
 				}
 			})
 		}
