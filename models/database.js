@@ -1,8 +1,9 @@
 const Sequelize = require('sequelize');
-const connectionString = ('postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/friendmagnet');
+// const connectionString = ('postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/friendmagnet');
+const connectionString = process.env.DATABASE_URL || 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/friendmagnet'
 const db = new Sequelize(connectionString);
 const pg = require('pg');
-const conString = process.env.ELEPHANTSQL_URL || "postgres://postgres:5432@localhost/postgres";
+
 
 // defining elements of table user
 /*const User = db.define('user', {
