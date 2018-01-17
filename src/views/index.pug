@@ -73,11 +73,11 @@ html(lang='en')
 							//- 		p  om #{activity.date} #{activity.time}
 							//- 		p in #{activity.location}
 							//- else if activity.accepter === user.id
-							.wrap
-								//- If the user is the one who accepted
-								if activity.accepter === currentUserId
-									each user in activity.users
-										if user.id === activity.plannerId
+							//- If the user is the one who accepted
+							if activity.accepter === currentUserId
+								each user in activity.users
+									if user.id === activity.plannerId
+										.wrap
 											.col-xs-12
 												.col-xs-3
 													img.image2(src=user.image)
@@ -85,10 +85,11 @@ html(lang='en')
 													h3.styleActivity #{activity.categorie} <span class='met'>met</span> #{user.name}
 													p.styleActivity  <span class='met'>op</span> #{activity.date} <span class='met'>om</span> #{activity.time}
 													p.styleActivity <span class='met'>in</span> #{activity.location}
-								//- If the user is the one who planned
-								else if activity.plannerId === currentUserId
-									each user in activity.users
-										if user.id === activity.accepter
+							//- If the user is the one who planned
+							else if activity.plannerId === currentUserId
+								each user in activity.users
+									if user.id === activity.accepter
+										.wrap
 											.col-xs-12
 												.col-xs-3
 													img.image2(src=user.image)
@@ -96,6 +97,7 @@ html(lang='en')
 													h3.styleActivity #{activity.categorie} <span class='met'>met</span> #{user.name}
 													p.styleActivity  <span class='met'>in</span> #{activity.date} <span class='met'>om</span> #{activity.time}
 													p.styleActivity <span class='met'>in</span> #{activity.location}
+							else
 
 		include bottomNavbar		
 		//- 			if activity.status === true

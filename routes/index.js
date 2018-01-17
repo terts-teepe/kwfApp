@@ -43,11 +43,11 @@ router.get('/', function(req, res) {
 				}
 			]
 		})
-		.then((user) => {
+		.then((user) => { 
 			var statusActivities = false;
 			if(user.dataValues.activities.length !== 0){
 				for (var i = 0; i < user.dataValues.activities.length; i++) {
-					if(user.dataValues.activities[i].status === true){
+					if(user.dataValues.activities[i].status === true && (user.dataValues.activities[i].accepter === currentUserId || user.dataValues.activities[i].plannerId === currentUserId)){
 						statusActivities = true;
 					}
 					if(i === user.dataValues.activities.length-1){
