@@ -17,9 +17,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 }
 
 .space {
-    height: 140px;
-    position: relative;
-    bottom: 50px;
+    height: 110px;
 }
 
 .wrapper.navbar-fixed-bottom {
