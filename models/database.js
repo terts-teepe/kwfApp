@@ -12,7 +12,7 @@ const pg = require('pg');
   email: Sequelize.STRING
 });*/
 
-var client = new pg.Client(conString);
+var client = new pg.Client(connectionString);
 client.connect(function(err) {
   if(err) {
     return console.error('could not connect to postgres', err);
