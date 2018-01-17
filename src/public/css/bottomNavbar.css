@@ -16,6 +16,11 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   background-color: #E2E2E2;
 }
 
+.space {
+    height: 140px;
+    position: relative;
+    bottom: 50px;
+}
 
 .wrapper.navbar-fixed-bottom {
 	display:flex;
