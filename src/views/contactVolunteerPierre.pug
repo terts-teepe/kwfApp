@@ -29,7 +29,10 @@ html(lang='en')
 									| Pierre komt je op 6 juni om 15:00 uur helpen met boodschappen!
 			.row
 				.col-md-4.col-md-push-4.col-xs-6.col.text-center
-					video.videoStyle(width='280', height='240', autoplay='', controls='', loop='')
-						source(src='img/groceries.mp4', type='video/mp4')
-						source(src='movie.ogg', type='video/ogg')
+					iframe.giphy-embed.videoStyle(src='https://giphy.com/embed/bingRo5NpSj2U', width='280', height='240', frameborder='0', allowfullscreen='')
+					p
+						a(href='https://giphy.com/gifs/groceries-bingRo5NpSj2U')
 		include bottomNavbar
+
+
+		
