@@ -43,7 +43,7 @@ router.post('/', (req,res)=>{
 			    // Subject of the message
 			    subject: `Uitnodiging Vriendendienst`,
 			    // HTML body
-			    html: `<h2>Hallo ${people[i].name}</h2><p>Je vriend ${user.name} wil je graag uitnodigen voor <a href='www.vriendendienst.nl'>Vriendendienst</a>, ga naar de website om een account aan te maken en voeg ${user.name} toe aan je netwerk.</p>`
+			    html: `<h2>Hallo ${people[i].name}</h2><p>Je vriend ${user.name} wil je graag uitnodigen voor <a href='http://www.kwfvriendendienst.nl'>Vriendendienst</a>, ga naar de website om een account aan te maken en voeg ${user.name} toe aan je netwerk.</p>`
 			}
 			console.log('Sending Mail');
 			transporter.sendMail(message, (error, info) => {
@@ -69,7 +69,7 @@ router.post('/', (req,res)=>{
 		    // Subject of the message
 		    subject: `Uitnodiging Vriendendienst`,
 		    // HTML body
-		    html: `<h2>Hallo ${people[0].name}</h2><p>Je vriend ${user.name} wil je graag uitnodigen voor <a href='www.vriendendienst.nl'>Vriendendienst</a>, ga naar de website om een account aan te maken en voeg ${user.name} toe aan je netwerk.</p>`
+		    html: `<h2>Hallo ${people[0].name}</h2><p>Je vriend ${user.name} wil je graag uitnodigen voor Vriendendienst, ga naar de website om een account aan te maken en voeg ${user.name} toe aan je netwerk. --> <a href='http://www.kwfvriendendienst.nl'>Vriendendienst</a>`
 		}
 		console.log('Sending Mail');
 		transporter.sendMail(message, (error, info) => {
