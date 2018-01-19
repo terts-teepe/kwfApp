@@ -14,6 +14,7 @@ const gcm = require('node-gcm');
 const sender = new gcm.Sender('AIzaSyAnn1s-AWD_0i7pegLEZZty4U2-BopC5rA');
 const firebase = require("firebase");
 const pg = require('pg');
+
 // var message = new gcm.Message({
 //     data: { key1: 'msg1' }
 // });
