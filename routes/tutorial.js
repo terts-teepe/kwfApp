@@ -1,12 +1,12 @@
+											/* Require libraries */
 const express = require('express');
 const router = express.Router();
 const db = require('../models/database.js');
 const bodyParser = require('body-parser');
 
-// Render profile page
+											/* Tutorial page */
 router.get('/', function(req, res) {
-	res.render('tutorial')
+	res.render('tutorial');
 })
-
 
 module.exports = router;

@@ -31,8 +31,7 @@ const User = db.define('user', {
 
 const Relationship = db.define('relationship', {
   user_one_id: Sequelize.INTEGER,
-  user_two_id: Sequelize.INTEGER,
-  action_user_id: Sequelize.INTEGER
+  user_two_id: Sequelize.INTEGER
 });
 
 const Activity = db.define('activity', {
@@ -92,24 +91,6 @@ db.sync({
       email: 'fabio@live.nl',
       phoneNumber: '+31637684022',
       image: 'img/avatars/avatar-two.png'
-    });
-  });
-  bcrypt.hash('1234f', 10, function(err, hash) { 
-    User.create({
-      name: 'Aida',
-      password: hash,
-      email: 'aida@live.nl',
-      phoneNumber: '+31634061173',
-      image: 'img/avatars/avatar-five.png'
-    });
-  });
-  bcrypt.hash('1234o', 10, function(err, hash) {   
-    User.create({
-      name: 'Omar',
-      password: hash,
-      email: 'omar@live.nl',
-      phoneNumber: '+31636462976',
-      image: 'img/avatars/avatar-five.png'
     });
   });
 })

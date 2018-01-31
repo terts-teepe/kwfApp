@@ -1,3 +1,4 @@
+											/* Require libraries */
 const express = require('express');
 const router = express.Router();
 const db = require('../models/database.js');
@@ -9,12 +10,13 @@ const client = new twilio(accountSid, authToken);
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
+											/* chat with emma page */
 router.get('/', function(req, res) {
-	if(req.session.user) {
-		let user = req.session.user
+	// If session
+	let user = req.session.user;
+	if(user) {
 		let currentUserId = user.id;
-		let currentUserName = user.name;
-
+		// Find current user
 		db.User.findOne({
 			where: {
 				id: currentUserId
@@ -30,17 +32,17 @@ router.get('/', function(req, res) {
 			]
 		})
 		.then((user) => {
+			// If he has activities
 			if(user.dataValues.activities.length !== 0){
-				res.render('chat', {user: user, title: 'chat', currentUserName: currentUserName})
+				res.render('chat', {user: user, title: 'chat', currentUserName: user.name})
 			}
-
+			// If not
 			else {
 				res.render('chat', {user: user, title: 'chat'})
 			}
 		})
-
 	}
-	
+	// If no session
 	else {
 		res.redirect('/login?message=' + encodeURIComponent("Login First"));
 	}
@@ -54,36 +56,23 @@ router.post('/', (req,res)=>{
 	let activityId = req.body.id;
 	let plannerId = req.body.plannerId;
 	let status;
-	var obj = {};
+	let obj = {};
+	// If friend has accepted
 	if(clickedBtn === "Accept"){
 		status = true;
+		// Change activity status
 		db.Activity.findOne({
 			where: {
 				id: activityId
 			},
-            include: [{ model: db.User
-/*                where: {
-                    [Op.and]: [
-                        {id:
-                            {
-                                [Op.ne]: plannerId
-                            }
-                        },
-                        {id:
-                            {
-                                [Op.ne]: currentUserId
-                            }
-                        }
-                    ]
-                }*/
-            }]
+            include: [{ model: db.User}]
 		})
 		.then((activity)=> {
 			activity.update({
 				status: true,
 				accepter: currentUserId
 			})
-			.then(()=>{
+			.then(()=> {
 				// Find planner
 				db.User.findOne({
 					where: {
@@ -91,20 +80,20 @@ router.post('/', (req,res)=>{
 					}
 				})
 				.then((planner)=>{
-					// Send a notification to accepter
+					// Find accepter
 					db.User.findOne({
 						where: {
 							id: activity.accepter
 						}						
 					})
 					.then ((accepter)=>{
+						// Send notification to planner
 						client.messages.create({
 						    body: `Hallo ${planner.name}, je vriend ${accepter.name} heeft je uitnodiging om ${activity.categorie} geaccepteerd, Bekijk het op je profiel!`,
 						    to: planner.phoneNumber,  // Text this number
 						    from: '+3197004498785' // From a valid Twilio number
 						})
 						// Send notification to all but accepter
-
                         for (var i = 0; i < activity.dataValues.users.length; i++) {
                             if(activity.users[i].id !== planner.id && activity.users[i].id !== accepter.id){
                                 client.messages.create({
@@ -116,47 +105,15 @@ router.post('/', (req,res)=>{
                             if(i === activity.dataValues.users.length-1){
                             	console.log("********")
                             	console.log('body: ' + JSON.stringify(req.body));
-                               res.send(req.body)
+                               	res.send(req.body)
                             }
                         }
-/*						db.User.findAll({
-							where: {
-							    [Op.and]: [
-								    {id:
-								      	{
-								      		[Op.ne]: planner.id
-								      	}
-								    },
-								    {id:
-								      	{
-								      		[Op.ne]: accepter.id
-								        }
-								    }
-								]
-							  },
-/*							include: [{model: db.Activity, where: {id: activityId}}]*/
-						/*})
-						.then((users)=> {
-							console.log("****People who didn't accept****")
-							console.log(users)
-                            for (var i = 0; i < users.length; i++) {
-                                client.messages.create({
-                                    body: `Hallo ${users[i].name}, jouw vriend ${planner.name} heeft de hulp die hij nodig heeft gekregen , volgende keer meer succes!`,
-                                    to: users[i].phoneNumber,  // Text this number
-                                    from: '+3197004498785' // From a valid Twilio number
-                                })
-                                if(i === users.length-1){
-                                    res.send(req.body);
-                                }
-                            }
-							
-						});*/
-
 					});
 				});
 			});
 		});
 	}
+	// If friend has declined
 	else {
 		status = false;
 		res.redirect('/index');

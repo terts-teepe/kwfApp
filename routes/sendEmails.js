@@ -1,3 +1,4 @@
+											/* Require libraries */
 const express = require('express');
 const router = express.Router();
 const db = require('../models/database.js');
@@ -23,22 +24,31 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-// Render profile page
+											/* Invite friends through email page */
 router.get('/', function(req, res) {
-	res.render('sendEmails', {title: 'friends'})
-})
+	// If session
+	let user = req.session.user; 
+	if(user) {
+		res.render('sendEmails', {title: 'friends'});
+	}
+	// If no session
+	else {
+		res.redirect('/login?message=' + encodeURIComponent("Login First"));
+	}
+});
 
 router.post('/', (req,res)=>{
-/*	let currentUser = req.session.user;*/
 	let friendName = req.body.name;
 	let friendEmail = req.body.email;
-	let people = []
+	let people = [];
 	let user = req.session.user;
+	// If multiple friends are invited
 	if(Array.isArray(friendEmail)) {
+		// Loop over them and push them to people array
 		for(var i= 0; i<friendEmail.length; i++){
-			people.push({name: friendName[i] , friendEmail: friendEmail[i]})
+			people.push({name: friendName[i] , friendEmail: friendEmail[i]});
+			// Send each person an invite via email
 			let message = {
-			    // Comma separated list of recipients
 			    to: `${people[i].friendEmail}`,
 			    // Subject of the message
 			    subject: `Uitnodiging Vriendendienst`,
@@ -56,15 +66,17 @@ router.post('/', (req,res)=>{
 			    console.log('Server responded with "%s"', info.response);
 			    transporter.close();
 			});
+			// If loop is over
 			if(i == (friendEmail.length - 1)){
 				res.render('friendsInvited', {people: people});
 			}
 		}
 	}
+	// If one friend is invited
 	else {
+		// Send him an invite via email
 		people.push({name: friendName , friendEmail: friendEmail})
 		let message = {
-		    // Comma separated list of recipients
 		    to: `${people[0].friendEmail}`,
 		    // Subject of the message
 		    subject: `Uitnodiging Vriendendienst`,
@@ -84,6 +96,6 @@ router.post('/', (req,res)=>{
 		});
 		res.render('friendsInvited', {people: people});
 	}
-})
+});
 
 module.exports = router;
