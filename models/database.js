@@ -3,14 +3,7 @@ const Sequelize = require('sequelize');
 const connectionString = process.env.DATABASE_URL || 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/friendmagnet'
 const db = new Sequelize(connectionString);
 const pg = require('pg');
-
-
-// defining elements of table user
-/*const User = db.define('user', {
-  username: Sequelize.STRING,
-  password: Sequelize.STRING,
-  email: Sequelize.STRING
-});*/
+const bcrypt = require('bcrypt');
 
 var client = new pg.Client(connectionString);
 client.connect(function(err) {
@@ -27,105 +20,100 @@ client.connect(function(err) {
   });
 });
 
-
+                                                      /* Tables */
 const User = db.define('user', {
-    name: Sequelize.STRING,
-    phoneNumber: Sequelize.STRING,
-    email: Sequelize.STRING,
-    password: Sequelize.STRING,
-    image: Sequelize.STRING
+  name: Sequelize.STRING,
+  phoneNumber: Sequelize.STRING,
+  email: Sequelize.STRING,
+  password: Sequelize.STRING,
+  image: Sequelize.STRING
 });
 
 const Relationship = db.define('relationship', {
-    user_one_id: Sequelize.INTEGER,
-    user_two_id: Sequelize.INTEGER,
-    action_user_id: Sequelize.INTEGER
+  user_one_id: Sequelize.INTEGER,
+  user_two_id: Sequelize.INTEGER,
+  action_user_id: Sequelize.INTEGER
 });
 
 const Activity = db.define('activity', {
-    plannerId: Sequelize.INTEGER,
-    plannerName: Sequelize.STRING,
-    categorie: Sequelize.STRING,
-    time: Sequelize.TIME,
-    date: Sequelize.DATEONLY,
-    location: Sequelize.STRING,
-    accepter: Sequelize.INTEGER,
-    status: Sequelize.BOOLEAN
+  plannerId: Sequelize.INTEGER,
+  plannerName: Sequelize.STRING,
+  categorie: Sequelize.STRING,
+  time: Sequelize.TIME,
+  date: Sequelize.DATEONLY,
+  location: Sequelize.STRING,
+  accepter: Sequelize.INTEGER,
+  status: Sequelize.BOOLEAN
 });
 
+                                                  /* Relationships */
 User.belongsToMany(Activity, {through: 'user_activity'});
 Activity.belongsToMany(User, {through: 'user_activity'});
-
-/*const User = db.define('user', {
-    local: {
-      name: Sequelize.STRING,
-      phoneNumber: Sequelize.INTEGER,
-      email: Sequelize.STRING,
-      password: Sequelize.STRING     
-    },
-    facebook: {
-      id: Sequelize.STRING,
-      token: Sequelize.STRING,
-      email: Sequelize.STRING,
-      name: Sequelize.STRING
-    }
-});*/
 
 db.sync({
     force: true,
 })
-
 .then(yolo => {
+  //create test data -- always do this after synchronizing the database, otherwise NodeJS with it's asynchronisity will fuck you up.
+  // open json(models.json) file form same folder
 
-    //create test data -- always do this after synchronizing the database, otherwise NodeJS with it's asynchronisity will fuck you up.
-    // open json(models.json) file form same folder
+                                                /* Create some test data */
+  bcrypt.hash('weetikniet', 10, function(err, hash) {
     User.create({
       name: 'Terts',
-      password: 'weetikniet',
+      password: hash,
       email: 'terts@live.nl',
       phoneNumber: '+31620528245',
       image: 'img/avatars/avatar-three.png'
-    })
+    });
+  });
+  bcrypt.hash('1234r', 10, function(err, hash) {
     User.create({
       name: 'Rawan',
-      password: '1234r',
+      password: hash,
       email: 'rawan@live.nl',
       phoneNumber: '+31614845655',
       image: 'img/avatars/avatar-four.png'
-    })    
+    }) ;
+  });
+  bcrypt.hash('1234a', 10, function(err, hash) {
     User.create({
       name: 'Anuj',
-      password: '1234a',
+      password: hash,
       email: 'anuj@live.nl',
       phoneNumber: '+31687903132',
       image: 'img/avatars/avatar-one.png'
-    })    
+    });
+  });
+  bcrypt.hash('1234f', 10, function(err, hash) {
     User.create({
       name: 'Fabio',
-      password: '1234f',
+      password: hash,
       email: 'fabio@live.nl',
       phoneNumber: '+31637684022',
       image: 'img/avatars/avatar-two.png'
-    })    
+    });
+  });
+  bcrypt.hash('1234f', 10, function(err, hash) { 
     User.create({
       name: 'Aida',
-      password: '1234a',
+      password: hash,
       email: 'aida@live.nl',
       phoneNumber: '+31634061173',
       image: 'img/avatars/avatar-five.png'
-    })      
+    });
+  });
+  bcrypt.hash('1234o', 10, function(err, hash) {   
     User.create({
       name: 'Omar',
-      password: '1234o',
+      password: hash,
       email: 'omar@live.nl',
       phoneNumber: '+31636462976',
       image: 'img/avatars/avatar-five.png'
-    })   
-
-    .catch(e => console.log(e))
+    });
+  });
 })
-
-.catch(e => console.log(e))
+.catch(e => console.log(e));
 
 module.exports = {
   db: db,
